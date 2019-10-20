@@ -1,0 +1,155 @@
+header.header{
+	padding: 25px 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 20;
+}
+
+.hdr-lft{
+	float: left;
+	width: 20%;
+}
+.hdr-rgt{
+	float: right;
+	width: 80%;
+}
+.logo{
+	padding-top: 10px;
+}
+.logo a{
+	display: inline-block;
+	vertical-align: baseline;
+	max-width: 340px;
+}
+.logo a img{
+	width: 100%;
+}
+
+nav.main-nav{
+	float: right;
+}
+nav.main-nav ul{
+
+}
+nav.main-nav ul li{
+
+}
+nav.main-nav ul li a{
+	
+}
+nav.main-nav > ul{
+
+}
+nav.main-nav > ul > li{
+	display: inline-block;
+	vertical-align: baseline;
+	padding: 0 15px 20px;
+}
+nav.main-nav > ul > li > a{
+	font-weight: 600;
+	color: #7B8CA8;
+	text-transform: uppercase;
+}
+
+
+nav.main-nav ul li:after,
+.nw-lang ul li:after,
+.hdr-btm-nav ul li:after{
+	content: none;
+}
+.hdr-topbar{
+	font-size: 15px;
+	line-height: 18px;
+}
+
+.nw-lang{
+	float: right;
+	padding-left: 52px;
+	position: relative;
+	margin-left: 12px;
+}
+.nw-lang:before{
+	content: "";
+	height: 2px;
+	width: 44px;
+	background: #43587B;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+.nw-lang ul li{
+	display: inline-block;
+	vertical-align: baseline;
+}
+.nw-lang ul li{
+	padding: 0 0 0 18px;
+}
+.nw-lang ul li a{
+	font-weight: 600;
+	color: #fff;
+	text-transform: uppercase;
+}
+.nw-lang ul li.lag-active a{
+	color: #FF5C26;
+}
+
+
+.hdr-btmbar-bts{
+	float: right;
+}
+
+.hdr-btm-nav{
+	float: right;
+}
+.hdr-btm-nav{
+	padding-top: 10px;
+}
+.hdr-btm-nav ul li{
+	display: inline-block;
+	vertical-align: baseline;
+	padding-right: 50px;
+	font-size: 20px;
+	line-height: 23px;
+}
+.hdr-btm-nav ul li a{
+	color: #fff;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.hdr-search{
+	display: inline-block;
+	vertical-align: baseline;
+}
+.hdr-search input{
+	display: none;
+}
+.hdr-search button{
+	background: transparent;
+	border: 2px solid #43587B;
+	box-sizing: border-box;
+	border-radius: 8px;
+	width: 44px;
+	height: 44px;
+}
+.hdr-cart-btn{
+	background: #FF5C26;
+	border-radius: 8px;
+	text-align: center;
+	margin-left: 13px;
+	display: inline-block;
+	vertical-align: top;
+	width: 44px;
+	height: 44px;
+	padding-top: 10px;
+}
+.hdr-cart-btn em{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.hdr-cart-btn
