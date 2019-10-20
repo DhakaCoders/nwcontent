@@ -3,6 +3,8 @@ All Transitions
 */
 .nw-post-gird-innr:hover .nw-post-gird-img,
 a,input,img,textarea,button{
+a,input,img,textarea,button,
+.main-bnr-img-bx a em{
 	transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
