@@ -27,6 +27,25 @@ var windowWidth = $(window).width();
 //$("[data-fancybox]").fancybox({});
 
 
+
+if( $('.nw-product-slider').length ){
+    $('.nw-product-slider').slick({
+      pauseOnHover: false,
+      autoplay: false,
+      autoplaySpeed: 6000,
+      arrows:true,
+      dots: true,
+      infinite: false,
+      speed: 1000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      prevArrow: $('.spsliderarrows .leftArrow'),
+      nextArrow: $('.spsliderarrows .rightArrow'),
+    });
+}
+
+
 /**
 Slick slider
 */

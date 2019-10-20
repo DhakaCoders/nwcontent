@@ -1,11 +1,13 @@
 /**
 All Transitions
 */
+.nw-post-gird-innr:hover .nw-post-gird-img,
 a,input,img,textarea,button{
 	transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 }
+.nw-post-gird-innr:hover .nw-post-gird-img,
 .scale{
 	transform: scale(1.1);
 	-ms-transform: scale(1.1);
