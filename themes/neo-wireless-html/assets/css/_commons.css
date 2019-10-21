@@ -86,7 +86,9 @@ Containers
 	max-width: 1400px;
 	width: 100%;
 }
-.container-md{}
+.container-md{
+	max-width: 1200px;
+}
 
 .container-sm{}
 
