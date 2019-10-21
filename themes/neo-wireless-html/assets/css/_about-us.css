@@ -1,20 +1,27 @@
 
-
+.nw-neo-wireless-sec{
+	padding: 90px 0 80px;
+}
 
 .nw-neo-wireless-sec{
-
+	padding-right: 120px;
+	position: relative;
 }
-.nw-neo-wireless-sec .nw-neo-wireless-bg{
-
+.nw-neo-wireless-bg{
+    position: absolute;
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center center !important;
-    
-	position: absolute;
-	top:0;
-	left: 0;
-	bottom: 0;
-	right:15%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: block;
+    -ms-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+	min-height: 475px;
 }
 .nw-neo-wireless-dsc h1{
 	font-weight: 600;
