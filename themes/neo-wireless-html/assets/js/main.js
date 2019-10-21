@@ -87,6 +87,12 @@ if( $('.responsive-slider').length ){
     });
 }
 
+//match Height
+if (windowWidth > 768) {
+  if($('.matchHeightCol').length){
+    $('.matchHeightCol').matchHeight();
+  };
+}
     new WOW().init();
 
 })(jQuery);

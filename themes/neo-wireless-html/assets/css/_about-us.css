@@ -5,7 +5,10 @@
 
 .nw-neo-wireless-sec{
 	position: relative;
-	min-height: 475px;
+}
+.nw-neo-wireless-bg-wrp{
+	position: relative;
+	margin-right: 115px;
 }
 .nw-neo-wireless-bg{
     position: absolute;
@@ -21,24 +24,46 @@
     -ms-transition: all .3s ease;
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
-	/*min-height: 475px;*/
+}
+.nw-neo-wireless-dsc{
+	padding: 10px 0 10px
 }
 .nw-neo-wireless-dsc h1{
 	font-weight: 600;
 }
 
-.nw-neo-wireless-dsc h2{
+.nw-neo-wireless-dsc strong{
+	display: inline-block;
+    vertical-align: baseline;
+	font-size:30px;
 	font-weight: 300;
 	line-height: 36px;
-	margin-bottom: 45px;
+	margin-bottom: 15px;
 }
-
+.nw-neo-wireless-dsc span {
+    display: inline-block;
+    vertical-align: baseline;
+    margin-bottom: 15px;
+}
+.nw-neo-wireless-dsc span i{
+    display: inline-block;
+    vertical-align: baseline;
+}
 .nw-neo-wireless-dsc p{
 	margin-bottom: 15px;
 }
-
-
-
+.nw-neo-wireless-dsc-pera{
+	padding-bottom: 30px;
+}
+.nw-neo-wireless-dsc a{
+	display: inline-block;
+	vertical-align: baseline;
+	padding: 20px 47px;
+	border: 2px solid #7B8CA8;
+	box-sizing: border-box;
+	border-radius: 8px;
+	color:inherit;
+}
 
 
 
