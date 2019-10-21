@@ -4,8 +4,8 @@
 }
 
 .nw-neo-wireless-sec{
-	padding-right: 120px;
 	position: relative;
+	min-height: 475px;
 }
 .nw-neo-wireless-bg{
     position: absolute;
@@ -21,18 +21,21 @@
     -ms-transition: all .3s ease;
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
-	min-height: 475px;
+	/*min-height: 475px;*/
 }
 .nw-neo-wireless-dsc h1{
 	font-weight: 600;
 }
 
-.nw-neo-wireless-dsc h1{
+.nw-neo-wireless-dsc h2{
 	font-weight: 300;
 	line-height: 36px;
+	margin-bottom: 45px;
 }
 
-
+.nw-neo-wireless-dsc p{
+	margin-bottom: 15px;
+}
 
 
 

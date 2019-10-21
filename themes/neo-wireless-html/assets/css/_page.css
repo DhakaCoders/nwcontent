@@ -3,12 +3,21 @@
 
 /*page-banner*/
 
-.page-banner{
-	background-size:cover!important;
-
+.page-banner-con{
+	position: relative; 
+	overflow: hidden
 }
-
-.page-banner-des{
+.page-banner-bg{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+.page-banner-des-innr{
     padding: 240px 0 65px;
     position: relative;
 }
