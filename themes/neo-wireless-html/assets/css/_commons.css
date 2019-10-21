@@ -5,7 +5,7 @@ Commons
 	outline: 0!important;
 	text-decoration: none;
 }
-a, button, input{
+a, button, input{ 
 	outline: 0;
 	border: 0;
 }
