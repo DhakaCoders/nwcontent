@@ -45,7 +45,8 @@ nav.main-nav ul li.current-menu-item a{
 .hdr-cart-btn:hover{
 	background-color: #fff;
 }
-.hdr-cart-btn:hover em svg{
+.hdr-cart-btn:hover em svg,
+.dft-news-details-social-icon ul li a:hover svg{
 	fill: #FF5C26;
 }
 .hdr-search button:hover{
