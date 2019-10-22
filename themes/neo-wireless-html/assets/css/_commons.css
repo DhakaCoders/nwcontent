@@ -90,7 +90,9 @@ Containers
 	max-width: 1200px;
 }
 
-.container-sm{}
+.container-sm{
+	max-width: 935px;
+}
 
 
 .ulc{

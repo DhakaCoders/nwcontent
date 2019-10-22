@@ -404,6 +404,45 @@ if (windowWidth > 768) {
     $('.matchHeightCol').matchHeight();
   };
 }
+
+/*if( $('.dftPromoModuleSlider').length ){
+    $('.dftPromoModuleSlider').slick({
+      dots: true,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      fade: true,
+      dots: true,
+      arrows: false
+    });
+}
+*/
+
+if( $('.dft2grdImgConSlider').length ){
+    $('.dft2grdImgConSlider').slick({
+      dots: false,
+      infinite: false,
+      arrows: false,
+      speed: 300,
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            arrows: true
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+}
+
+
     new WOW().init();
 
 })(jQuery);
