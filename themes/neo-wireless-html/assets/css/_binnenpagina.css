@@ -446,8 +446,11 @@ Gallery design
 	border-right: 1px solid #E3E8F1;
 	padding: 11px 0 10px 0;
 }
-.dft-news-details-social-icon ul li{
-	padding: 0 0 15px 0;
+.dft-news-details-social-icon ul li {
+    padding: 0 0 15px 0;
+    width: 23px;
+    text-align: center;
+    line-height: 100%;
 }
 .dft-news-details-social-icon ul li:last-child{
 	padding-bottom: 0;

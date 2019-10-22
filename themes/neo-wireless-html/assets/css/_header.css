@@ -135,6 +135,18 @@ nav.main-nav ul li:after,
 	border-radius: 8px;
 	width: 44px;
 	height: 44px;
+	position: relative;
+}
+.hdr-search button em{
+	line-height: 6px;
+    display: inline-block;
+    vertical-align: baseline;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
 }
 .hdr-cart-btn{
 	background: #FF5C26;
@@ -145,7 +157,7 @@ nav.main-nav ul li:after,
 	vertical-align: top;
 	width: 44px;
 	height: 44px;
-	padding-top: 10px;
+	padding-top: 13px;
 }
 .hdr-cart-btn em{
 	display: block;
