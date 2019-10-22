@@ -1,8 +1,23 @@
 
 
 
-
-
+.search-result-sec-wrp{
+  position: relative;
+}
+.search-result-sec-wrp:after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width:50%;
+  background: #F4F7F9;
+  z-index: 1
+}
+.search-result-con{
+  position: relative;
+  z-index: 3
+}
 
 .search-result-left-sidebar{
 	width:29%;
@@ -10,13 +25,12 @@
 	background: #F4F7F9;
 	padding-right: 30px;
 }
-
-.search-result-rgt-main{
-	width:71%;
-	float: left;	
+.search-result-rgt-main {
+    width: 71%;
+    float: left;
+    padding-bottom: 98px;
+    background: #fff;
 }
-
-
 .search-box{
 	position: relative;
 }
@@ -245,21 +259,26 @@
 .search-result-rgt-main{
 
 }
-
-.search-result-rgt-main h1{
+.search-result-rgt-head{
+  padding-left: 70px;
+}
+.search-result-rgt-head h1{
 	font-weight: 700;
 	line-height: 42px;
 	margin-bottom: 40px;
 	text-transform: uppercase;
+  color: #43587B;
 }
-
+.search-result-rgt-head h1 span{
+  color: #FF5C26;
+}
 .search-pagi-controller{
 	padding-left: 70px;
+  border-top: 3px solid #F4F7F9;
+  border-bottom: 3px solid #F4F7F9;
 }
 .search-pagi-controller .search-pagi-main{
 	position: relative;
-	border-top: 3px solid #F4F7F9;
-	border-bottom: 3px solid #F4F7F9;
 }
 .search-pagi-controller .search-pagi-main ul{
 	display: table;
@@ -303,30 +322,131 @@
 	width:100%;
 	background: #FF5C26; 
 }
+.search-result-controller{
+  padding-left: 70px;
+  padding-bottom: 23px;
+}
+.product-search-result-wrp{
+  padding-bottom: 52px;
+}
+.article-search-result-wrp li,
+.product-search-result-wrp li{
+  padding: 0;
+  margin-bottom: 30px;
+}
+.article-search-result-wrp li:after,
+.product-search-result-wrp li:after{
+  content: none;
+}
+.article-search-result-wrp h2,
+.product-search-result-wrp h2{
+  font-weight: 600;
+  line-height: 32px;
+  color: #43587B;
+}
+.article-search-result-lft,
+.product-search-result-lft{
+  width:36%;
+  float: left;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  min-height: 207px;
 
+}
+.article-search-result-rgt,
+.product-search-result-rgt{
+  width: 64%;
+  float: left;
+  padding: 27px 20px 35px 25px;
+  position: relative;
+}
+.article-search-result-rgt > span,
+.product-search-result-rgt > span{
+  display: block;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #02BEE8;
+  margin-bottom: 10px;
+}
+.article-search-result-rgt h4,
+.product-search-result-rgt h4{
+  font-weight: 600;
+  line-height: 24px;
+  color: #43587B;
+  margin-bottom: 10px;
+}
+.article-search-result-rgt p,
+.product-search-result-rgt p{
+  font-weight: 600;
+  line-height: 24px;
+  color: #43587B;
+}
+.article-search-result-rgt a,
+.product-search-result-rgt a{
+  display: inline-block;
+  vertical-align: baseline;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #FF5C26;
+  position: relative;
+  padding-right: 22px;
+  margin-top: 6px;
+}
+.article-search-result-rgt a:after,
+.product-search-result-rgt a:after{
+  content: "";
+  position: absolute;
+  background:url(../images/search-more-inc.svg); 
+  background-repeat: no-repeat; 
+  background-position: center center;
+  background-size: 100% auto;
+  top: 2px;
+  right: 0;
+  width:16px;
+  height: 16px;
+  -webkit-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+}
 
+.article-search-result-rgt a:hover:after,
+.product-search-result-rgt a:hover:after{
+  right: -8px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.article-search-result-rgt .date{
+  border: 2px solid #7B8CA8;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 68px;
+  height: 68px;
+  position: absolute;
+  padding: 5px;
+  text-align: center;
+  top:10px;
+  right:0;
+}
+.article-search-result-rgt .date strong{
+  display: block;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 34px;
+}
+.article-search-result-rgt .date span{
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+}
+.article-search-result-wrp li{
+  padding: 0;
+  margin-bottom: 42px;
+}
 
 
 
