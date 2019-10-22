@@ -5,13 +5,14 @@ All Transitions
 a,input,img,textarea,button,
 .main-bnr-img-bx a em,
 .blog-post-grd-des a em,
-.dftPromoModuleSlider ul.slick-dots li,em{
+.dftPromoModuleSlider ul.slick-dots li,em,
+.dft-2grd-img-con-item-img{
 	transition: all 0.5s ease;
 	-ms-transition: all 0.5s ease;
 	-webkit-transition: all 0.5s ease;
 }
 .nw-post-gird-innr:hover .nw-post-gird-img,
-.scale{
+.scale,.dft-2grd-img-con-item-col:hover .dft-2grd-img-con-item-img{
 	transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-webkit-transform: scale(1.1);

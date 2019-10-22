@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Binnenpagina</title>
+	<title>Nieuws Details</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -103,7 +103,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="page-banner-des-innr">
-              <strong class="banner-page-title">Binnenpagina</strong>
+              <strong class="banner-page-title">BLOG</strong>
               <div class="breadcrumbs">
                 <ul>           
                   <li><a href="#">Home</a></li>
@@ -120,14 +120,24 @@
 </section>
 
 
-<section class="innerpage-con-wrap">
+<section class="innerpage-con-wrap" id="news-details-page-controller">
   <div class="container-sm">
     <div class="row">
       <div class="col-sm-12">
         <article class="default-page-con">
-
+          <div class="dft-news-details-social-icon">
+            <ul class="clearfix ulc">
+              <li><a href="#"><img src="assets/images/fb-icon.svg"></a></li>
+              <li><a href="#"><img src="assets/images/linkedin-icon.svg"></a></li>
+              <li><a href="#"><img src="assets/images/twitter-icon.svg"></a></li>
+            </ul>
+          </div>
           <div class="dfp-promo-module clearfix">
-            <h1>Praesent laoreet justo eget diam</h1>
+            <h1>Praesent laoreet justo eget diam volutpat, quis tincidunt</h1>
+            <div class="blog-post-date-bdr">
+              <strong>26</strong>
+              <span>oct</span>
+            </div>
             <div class="dfp-plate-one-img-bx">
               <img src="assets/images/dfp-img-01.jpg">
             </div>
@@ -160,7 +170,7 @@
             <p>Praesent ornare placerat ligula eget scelerisque. Vivamus dapibus quis felis eget consectetur. Cras condimentum risus tortor. Suspendisse scelerisque, orci eget interdum finibus, sem arcu auctor dolor, vel fringilla ante dui eleifend turpis.</p>
           </div>
 
-
+          <div class="gap" data-value='25' data-md='20' data-xs='0' data-sm='0' data-xxs='0'></div>
           <div class="dfp-text-module clearfix">
             <h2>Cras tempus, turpis ut imperdiet aliquet</h2>
             <p>Nulla vestibulum, arcu id mattis efficitur, magna nibh malesuada sapien, ut malesuada felis eros sit amet erat. Vivamus dapibus, erat id accumsan pulvinar, diam velit sagittis felis, non consequat magna nisl sit amet augue. Aliquam rhoncus laoreet nulla eu vehicula. Nunc cursus et ex sit amet ultrices.</p>
@@ -197,13 +207,13 @@
           <div class="dft-img-title-grd-controller clearfix">
             <div class="dft-img-title-grd-col">
               <div class="dft-img-title-grd-col-inner">
-                <em><img src="assets/images/dft-img-title-grd-img-01.svg"></em>
+                <span><img src="assets/images/dft-img-title-grd-img-01.svg"></span>
                 <h4>Long history of experience in enterprise.</h4>
               </div>
             </div>
             <div class="dft-img-title-grd-col">
               <div class="dft-img-title-grd-col-inner">
-                <em><img src="assets/images/dft-img-title-grd-img-02.svg"></em>
+                <span><img src="assets/images/dft-img-title-grd-img-02.svg"></span>
                 <h4>WiFi and LAN projects perfectly tailored to your company.</h4>
               </div>
             </div>
@@ -261,7 +271,9 @@
           <div class="dft-blockquote">
             <blockquote>Phasellus in felis tristique, finibus erat nec, molestie tellus. Morbi at sem malesuada, eleifend nisl at, porttitor augue.</blockquote>
           </div>
-
+          <div class="dft-share-link">
+            <img src="assets/images/share-link-img.jpg">
+          </div>
         </article>
       </div>
     </div>
