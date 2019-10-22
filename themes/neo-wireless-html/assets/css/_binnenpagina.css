@@ -1,5 +1,19 @@
 .innerpage-con-wrap{
 	overflow: hidden;
+	position: relative;
+}
+.innerpage-con-wrap:before{
+	content: "";
+	position: absolute;
+	background: url(../images/dot-icon-sky.png);
+	width: 12px;
+	height: 11px;
+	background-size: 100% 100%;
+	top: 30px;
+	left: 38%;
+	transform: translateX(-38%);
+	-ms-transform: translateX(-38%);
+	-webkit-transform: translateX(-38%);
 }
 .default-page-con {
 	padding-bottom: 125px;
