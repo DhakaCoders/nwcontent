@@ -17,6 +17,14 @@ var windowWidth = $(window).width();
   });
 
 
+if (windowWidth <= 767) {
+  $('.footer-menu-itm > h5').on('click', function(){
+    $(this).toggleClass('menu-expend-sub');
+    $(this).parent().find('ul').slideToggle(500);
+  });
+}
+
+
 // }
 
 
@@ -43,6 +51,25 @@ if( $('.nw-product-slider').length ){
       prevArrow: $('.spsliderarrows .leftArrow'),
       nextArrow: $('.spsliderarrows .rightArrow'),
     });
+}
+
+if (windowWidth <= 767) {
+    if( $('#NwPostSlider').length ){
+        $('#NwPostSlider').slick({
+          pauseOnHover: false,
+          autoplay: false,
+          autoplaySpeed: 6000,
+          arrows:true,
+          dots: true,
+          infinite: false,
+          speed: 1000,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          fade: true,
+          prevArrow: $('.nwpostsliderarrows .leftArrow'),
+          nextArrow: $('.nwpostsliderarrows .rightArrow'),
+        });
+    }
 }
 
 
