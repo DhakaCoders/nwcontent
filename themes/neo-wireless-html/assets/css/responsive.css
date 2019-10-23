@@ -7,7 +7,7 @@
 		display: block!important;
 	}
 
-}
+} 
 
 
 @media(max-width: 991px){
@@ -27,8 +27,25 @@
 	.show-xs{
 		display: block!important;
 	}
+
+h1{
+	font-size: 30px;
+}
+h2{
+	font-size: 25px ;
+}
+h3{
+	font-size: 20px;
+}
+h4{
+	font-size: 18px;
+}
+h5{
+	font-size: 15px;
 }
 
+}
+ 
 
 
 @media(max-width: 639px){
@@ -44,7 +61,21 @@
 
 
 @media(max-width: 479px){
-
+h1{
+	font-size: 27px;
+}
+h2{
+	font-size: 22px ;
+}
+h3{
+	font-size: 18px;
+}
+h4{
+	font-size: 16px;
+}
+h5{
+	font-size: 15px;
+}
 
 }
 

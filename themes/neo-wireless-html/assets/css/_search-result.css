@@ -3,6 +3,7 @@
 
 .search-result-sec-wrp{
   position: relative;
+  margin-bottom: 8px;
 }
 .search-result-sec-wrp:after{
   content: "";
@@ -28,7 +29,7 @@
 .search-result-rgt-main {
     width: 71%;
     float: left;
-    padding-bottom: 98px;
+    padding-bottom: 90px;
     background: #fff;
 }
 .search-box{
@@ -37,7 +38,7 @@
 .search-box input[type=text] {
     background: #fff;
     width: 100%;
-    padding: 23px 65px 23px 22px;
+    padding: 23px 85px 23px 22px;
     color: #7B8CA8;
     -ms-box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
     -webkit-box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
@@ -89,11 +90,9 @@
   opacity: 1;
 }
 .search-box-wrp {
-    margin-bottom: 100px;
-    margin-top: 35px;
+  margin-bottom: 72px;
+  margin-top: 35px;
 }
-
-
 .check-box-block .form-group {
   display: block;
   margin-bottom: 0;
@@ -113,6 +112,7 @@
   line-height: 29px;
   color:#7d7d7d;
   font-weight: 600;
+  margin-bottom: 7px;
   text-transform: uppercase;
 }
 .check-box-block .form-group label:focus{
@@ -262,10 +262,12 @@
 .search-result-rgt-head{
   padding-left: 70px;
 }
+.search-result-rgt-head {
+  padding:50px 0 40px 70px;
+}
 .search-result-rgt-head h1{
 	font-weight: 700;
 	line-height: 42px;
-	margin-bottom: 40px;
 	text-transform: uppercase;
   color: #43587B;
 }
@@ -306,13 +308,22 @@
 .search-pagi-controller .search-pagi-main li > span.active{
 	color: #FF5C26;
 }
-.search-pagi-main li a::after{
+.search-pagi-main li > a:after{
 	-ms-transition: all .5s ease;
 	-webkit-transition: all .5s ease;
 	transition: all .5s ease;
 }
-.search-pagi-main li span.active::after,
-.search-pagi-main li a:hover::after{
+.search-pagi-main li > a:hover:after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left:0;
+  right: 0;
+  height: 4px;
+  width:100%;
+  background: #FF5C26; 
+}
+.search-pagi-main li span.active:after{
 	content: "";
 	position: absolute;
 	bottom: 0;
@@ -322,9 +333,43 @@
 	width:100%;
 	background: #FF5C26; 
 }
-.search-result-controller{
-  padding-left: 70px;
-  padding-bottom: 23px;
+a.search-prev-link{
+  display: inline-block;
+  vertical-align: baseline;
+  max-width: 35px;
+  position: absolute;
+  top:50%;
+  left: 0;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+a.search-next-link{
+  display: inline-block;
+  vertical-align: baseline;
+  max-width: 35px;
+  position: absolute;
+  top:50%;
+  right: 0;
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+a.search-prev-link img,
+a.search-next-link img{
+  width: 100%;
+  -ms-transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+a.search-prev-link:hover img,
+a.search-next-link:hover img{
+  opacity: .6
+}
+
+
+.search-result-controller {
+  padding: 30px 0 20px 70px;
 }
 .product-search-result-wrp{
   padding-bottom: 52px;
@@ -338,11 +383,12 @@
 .product-search-result-wrp li:after{
   content: none;
 }
-.article-search-result-wrp h2,
-.product-search-result-wrp h2{
-  font-weight: 600;
-  line-height: 32px;
-  color: #43587B;
+.article-search-result-wrp h2, 
+.product-search-result-wrp h2 {
+    font-weight: 600;
+    line-height: 32px;
+    color: #43587B;
+    margin-bottom: 30px;
 }
 .article-search-result-lft,
 .product-search-result-lft{
@@ -351,7 +397,7 @@
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
-  min-height: 207px;
+  min-height: 195px;
 
 }
 .article-search-result-rgt,
@@ -360,6 +406,9 @@
   float: left;
   padding: 27px 20px 35px 25px;
   position: relative;
+}
+.article-search-result-rgt{
+    padding: 8px 20px 20px 25px;
 }
 .article-search-result-rgt > span,
 .product-search-result-rgt > span{
@@ -382,7 +431,6 @@
 .product-search-result-rgt p{
   font-weight: 600;
   line-height: 24px;
-  color: #43587B;
 }
 .article-search-result-rgt a,
 .product-search-result-rgt a{
@@ -457,3 +505,39 @@
 
 
 
+
+
+
+
+
+
+@media(max-width: 1199px){
+
+
+}
+
+@media(max-width: 991px){
+
+}
+
+@media(max-width: 767px){
+
+}
+
+@media(max-width: 639px){
+
+}
+
+@media(max-width: 575px){
+
+
+}
+
+@media(max-width: 479px){
+
+
+}
+
+@media(max-width: 359px){
+
+}
