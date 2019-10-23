@@ -446,6 +446,15 @@ if( $('.dft2grdImgConSlider').length ){
     });
 }
 
+if (windowWidth > 767) {
+  if( $('#sidebar').length ){
+  $('#sidebar').stickySidebar({
+      topSpacing: 100,
+      bottomSpacing: 60
+  });
+}
+}
+
 
     new WOW().init();
 

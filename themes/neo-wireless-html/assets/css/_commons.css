@@ -59,7 +59,8 @@ Containers
 .container-xlg,
 .container-lg,
 .container-md,
-.container-sm{
+.container-sm,
+.container-sm-2{
 	width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -75,7 +76,9 @@ Containers
 .container-sm:beofre,
 .container-sm:after,
 .container-xs:beofre,
-.container-xs:after{
+.container-xs:after,
+.container-sm-2:after,
+.container-sm-2:before{
 	content: "";
 	display: table;
 	clear: both;
@@ -89,7 +92,9 @@ Containers
 .container-md{
 	max-width: 1200px;
 }
-
+.container-sm-2{
+	max-width: 1160px;
+}
 .container-sm{
 	max-width: 935px;
 }

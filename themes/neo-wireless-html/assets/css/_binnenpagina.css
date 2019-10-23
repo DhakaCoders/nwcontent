@@ -420,6 +420,7 @@ Gallery design
 }
 #news-details-page-controller .default-page-con{
 	padding-bottom: 120px;
+	float: left;
 }
 #news-details-page-controller .blog-post-date-bdr{
 	position: absolute;
@@ -436,11 +437,20 @@ Gallery design
 #news-details-page-controller .default-page-con{
 	position: relative;
 }
-.dft-news-details-social-icon{
-	position: absolute;
-	left: -110px;
-	top: 220px;
+#main-content{
+	position: relative;
+	padding-left: 110px;
+	padding-right: 110px;
 }
+#main-content .sidebar {
+    max-width: 110px;
+    width: 100%;
+    position: absolute;
+    top: 220px;
+    left: 0;
+    float: left;
+}
+
 .dft-news-details-social-icon ul{
 	width: 45px;
 	border-right: 1px solid #E3E8F1;
@@ -459,6 +469,9 @@ Gallery design
 	content: none;
 	
 }
+
+
+
 @media(max-width: 1199px){
 
 }
