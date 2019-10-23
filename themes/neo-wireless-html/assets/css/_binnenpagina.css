@@ -439,6 +439,9 @@ Gallery design
 }
 #main-content{
 	position: relative;
+}
+#main-content .default-page-con{
+	position: relative;
 	padding-left: 110px;
 	padding-right: 110px;
 }
