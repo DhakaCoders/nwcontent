@@ -20,9 +20,14 @@
 	background-size: cover!important;
 	background-position: center center!important;
 }
+.blog-post-grd-img:hover .blog-post-date-bdr{
+	color: #FF5C26;
+	border-color: #FF5C26;
+}
 .blog-post-grd-img-iner{
 	width: 100%;
 	height: 100%;
+	position: relative;
 }
 .blog-post-date{
 	width: 102px;

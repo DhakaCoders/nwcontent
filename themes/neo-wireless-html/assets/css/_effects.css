@@ -5,13 +5,14 @@ All Transitions
 a,input,img,textarea,button,
 .main-bnr-img-bx a em,
 .blog-post-grd-des a em,
-.dftPromoModuleSlider ul.slick-dots li,em{
+.dftPromoModuleSlider ul.slick-dots li,em,
+.dft-2grd-img-con-item-img,.blog-post-date-bdr,.hdr-cart-btn,svg{
 	transition: all 0.5s ease;
 	-ms-transition: all 0.5s ease;
 	-webkit-transition: all 0.5s ease;
 }
 .nw-post-gird-innr:hover .nw-post-gird-img,
-.scale{
+.scale,.dft-2grd-img-con-item-col:hover .dft-2grd-img-con-item-img{
 	transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-webkit-transform: scale(1.1);
@@ -32,3 +33,26 @@ nav.main-nav ul li.current-menu-item a{
 	color:#fff;
 }
 
+
+.hdr-btm-nav ul li a:hover,
+.nw-lang ul li a:hover{
+	color: #FF5C26;
+}
+.hdr-cart-btn em{
+	cursor: pointer;
+}
+
+.hdr-cart-btn:hover{
+	background-color: #fff;
+}
+.hdr-cart-btn:hover em svg,
+.dft-news-details-social-icon ul li a:hover svg{
+	fill: #FF5C26;
+}
+.hdr-search button:hover{
+	border-color: #FF5C26;
+	background: #FF5C26;
+}
+.hdr-search button:hover em svg{
+	fill: #fff;
+}
