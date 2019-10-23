@@ -433,6 +433,7 @@ nw-post-grid-sec-wrp
 	background-size: cover!important;
 	background-position: center center!important;
 	padding: 200px 0 60px;
+	min-height: 840px;
 }
 
 .main-bnr-des{
