@@ -572,16 +572,25 @@ if( $('.dft2grdImgConSlider').length ){
       ]
     });
 }
-
+$('.hdr-search button').on('click', function(){
+    $(this).parent().toggleClass('hdr-search-field-show');
+});
 if (windowWidth > 767) {
   if( $('#sidebar').length ){
-  $('#sidebar').stickySidebar({
-      topSpacing: 100,
-      bottomSpacing: 60
-  });
+      $('#sidebar').stickySidebar({
+          topSpacing: 100,
+          bottomSpacing: 60
+      });
+    }
+    
+   
 }
-}
-
+    $('.home-bnr-xs-nav-bar-controller .nav-opener').on('click', function(){
+        $('.xs-popup-main-menu-controller').fadeIn(300);
+    });
+    $('.xs-menu-btn-bar-popup .nav-opener').on('click', function(){
+        $('.xs-popup-main-menu-controller').fadeOut(300);
+    });
 
     new WOW().init();
 

@@ -49,10 +49,12 @@ nav.main-nav ul li.current-menu-item a{
 .dft-news-details-social-icon ul li a:hover svg{
 	fill: #FF5C26;
 }
-.hdr-search button:hover{
+.hdr-search button:hover,
+.hdr-search.hdr-search-field-show button{
 	border-color: #FF5C26;
 	background: #FF5C26;
 }
-.hdr-search button:hover em svg{
+.hdr-search button:hover em svg,
+.hdr-search.hdr-search-field-show button em svg{
 	fill: #fff;
 }

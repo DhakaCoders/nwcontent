@@ -9,11 +9,12 @@ header.header{
 
 .hdr-lft{
 	float: left;
-	width: 20%;
+	width: 30%;
 }
 .hdr-rgt{
 	float: right;
-	width: 80%;
+	width: 70%;
+	padding-left: 20px;
 }
 .logo{
 	padding-top: 10px;
@@ -21,7 +22,7 @@ header.header{
 .logo a{
 	display: inline-block;
 	vertical-align: baseline;
-	max-width: 340px;
+	max-width: 345px;
 }
 .logo a img{
 	width: 100%;
@@ -109,10 +110,13 @@ nav.main-nav ul li:after,
 .hdr-btm-nav{
 	padding-top: 10px;
 }
+.hdr-btm-nav ul{
+	padding-right: 25px;
+}
 .hdr-btm-nav ul li{
 	display: inline-block;
 	vertical-align: baseline;
-	padding-right: 50px;
+	padding: 0 25px;
 	font-size: 20px;
 	line-height: 23px;
 }
@@ -124,10 +128,9 @@ nav.main-nav ul li:after,
 .hdr-search{
 	display: inline-block;
 	vertical-align: baseline;
+	position: relative;
 }
-.hdr-search input{
-	display: none;
-}
+
 .hdr-search button{
 	background: transparent;
 	border: 2px solid #43587B;
@@ -136,6 +139,18 @@ nav.main-nav ul li:after,
 	width: 44px;
 	height: 44px;
 	position: relative;
+}
+.hdr-search input {
+    padding: 10px 10px 10px 15px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 0;
+    opacity: 0;
+}
+.hdr-search.hdr-search-field-show input {
+	width: 375px;
+	opacity: 1;
 }
 .hdr-search button em{
 	line-height: 6px;
@@ -164,4 +179,83 @@ nav.main-nav ul li:after,
 	width: 100%;
 	height: 100%;
 }
-.hdr-cart-btn
+
+
+
+
+@media(max-width: 1199px){
+	.hide-md{
+		display: none!important;
+	}
+	.show-md{
+		display: block!important;
+	}
+	.logo a {
+	    max-width: 260px;
+	}
+} 
+
+
+@media(max-width: 991px){
+	.hide-sm{
+		display: none!important;
+	}
+	.show-sm{
+		display: block!important;
+	}
+	header.header{
+		padding-top: 10px;
+	}
+	nav.main-nav > ul > li {
+	    padding: 0 5px 10px;
+	}
+	.hdr-topbar{
+		font-size: 14px;
+	}
+	.hdr-btm-nav ul li {
+	    padding: 0 15px;
+	    font-size: 17px;
+	    line-height: 23px;
+	}
+}
+
+
+@media(max-width: 767px){
+	.hide-xs{
+		display: none!important;
+	}
+	.show-xs{
+		display: block!important;
+	}
+	.hdr-lft {
+	    width: 100%;
+	    text-align: center;
+	}
+	
+
+}
+ 
+
+
+@media(max-width: 639px){
+
+}
+
+
+
+@media(max-width: 575px){
+
+
+}
+
+
+@media(max-width: 479px){
+
+
+}
+
+
+
+@media(max-width: 359px){
+
+}
