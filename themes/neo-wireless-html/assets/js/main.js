@@ -405,6 +405,10 @@ if (windowWidth > 768) {
   };
 }
 
+if($('.matchHeightCol-search-grd').length){
+  $('.matchHeightCol-search-grd').matchHeight();
+}
+
 /*if( $('.dftPromoModuleSlider').length ){
     $('.dftPromoModuleSlider').slick({
       dots: true,

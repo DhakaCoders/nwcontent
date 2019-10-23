@@ -127,44 +127,47 @@
                 </div>
               </form>             
             </div>
-            <div class="radio-box-wrp">
-              <h2>Search Results</h2>
-              <div class="radio-box-block"> 
-                <form action="#">
-                  <p>
-                    <input type="radio" id="test1" name="radio-group" checked="">
-                    <label for="test1">All</label>
-                  </p>
-                  <p>
-                    <input type="radio" id="test2" name="radio-group">
-                    <label for="test2">Products</label>
-                  </p>
-                  <p>
-                    <input type="radio" id="test3" name="radio-group">
-                    <label for="test3">Articles</label>
-                  </p>                  
-                </form>
-              </div>             
+            <div class="radio-check-box-wrapper clearfix"> 
+              <div class="radio-box-wrp">
+                <h2>Search Results</h2>
+                <div class="radio-box-block"> 
+                  <form action="#">
+                    <p>
+                      <input type="radio" id="test1" name="radio-group" checked="">
+                      <label for="test1">All</label>
+                    </p>
+                    <p>
+                      <input type="radio" id="test2" name="radio-group">
+                      <label for="test2">Products</label>
+                    </p>
+                    <p>
+                      <input type="radio" id="test3" name="radio-group">
+                      <label for="test3">Articles</label>
+                    </p>                  
+                  </form>
+                </div>             
+              </div>
+              <div class="check-box-wrp">
+                <h2>Search Filters</h2>         
+                <div class="check-box-block"> 
+                  <form>
+                    <div class="form-group">
+                      <input type="checkbox" name="percent" id="30%">
+                      <label for="30%">Lorem Ipsum </label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" name="percent" id="40%">
+                      <label for="40%">Dolor sit amet </label>
+                    </div>
+                    <div class="form-group">
+                      <input type="checkbox" name="percent" id="50%">
+                      <label for="50%">maecenas edibus</label>
+                    </div>
+                  </form>
+                </div> 
+              </div>
             </div>
-            <div class="check-box-wrp">
-              <h2>Search Filters</h2>         
-              <div class="check-box-block"> 
-                <form>
-                  <div class="form-group">
-                    <input type="checkbox" name="percent" id="30%">
-                    <label for="30%">Lorem Ipsum </label>
-                  </div>
-                  <div class="form-group">
-                    <input type="checkbox" name="percent" id="40%">
-                    <label for="40%">Dolor sit amet </label>
-                  </div>
-                  <div class="form-group">
-                    <input type="checkbox" name="percent" id="50%">
-                    <label for="50%">maecenas edibus</label>
-                  </div>
-                </form>
-              </div> 
-            </div>
+
           </div>
           <div class="search-result-rgt-main matchHeightCol"> 
             <div class="search-result-rgt-head"> 
@@ -200,10 +203,10 @@
                 <ul class="ulc"> 
                   <li>
                     <div class="product-search-result clearfix "> 
-                      <div class="product-search-result-lft matchHeightCol" style="background: url(assets/images/product-search-result-001.jpg);">
+                      <div class="product-search-result-lft matchHeightCol-search-grd" style="background: url(assets/images/product-search-result-001.jpg);">
                         
                       </div>
-                      <div class="product-search-result-rgt matchHeightCol">
+                      <div class="product-search-result-rgt matchHeightCol-search-grd">
                         <span>Mounting Accessories</span>
                         <h4>Skymount-air-Uplate-Patch</h4>
                         <p>Universal MNT ACC - Airborne, designed for directional antennas, indoor</p>
@@ -213,10 +216,10 @@
                   </li> 
                   <li>
                     <div class="product-search-result clearfix "> 
-                      <div class="product-search-result-lft matchHeightCol" style="background: url(assets/images/product-search-result-002.jpg);">
+                      <div class="product-search-result-lft matchHeightCol-search-grd" style="background: url(assets/images/product-search-result-002.jpg);">
                         
                       </div>
-                      <div class="product-search-result-rgt matchHeightCol">
+                      <div class="product-search-result-rgt matchHeightCol-search-grd">
                         <span>Mounting Accessories</span>
                         <h4>Skymount-air-Uplate-Patch</h4>
                         <p>Universal MNT ACC - Airborne, designed for directional antennas, indoor</p>
@@ -233,11 +236,13 @@
                 <ul class="ulc"> 
                   <li>
                     <div class="article-search-result clearfix "> 
-                      <div class="article-search-result-lft matchHeightCol" style="background: url(assets/images/article-search-result-001.jpg);">                        
+                      <div class="article-search-result-lft matchHeightCol-search-grd" style="background: url(assets/images/article-search-result-001.jpg);">                        
                       </div>
-                      <div class="article-search-result-rgt matchHeightCol">
-                        <span>CATEGORY</span>
-                        <h4>Praesent laoreet justo eget diam <br/>volutpat, quis tincidun</h4>
+                      <div class="article-search-result-rgt matchHeightCol-search-grd">
+                        <div class="article-search-result-head">
+                          <span>CATEGORY</span>
+                          <h4>Praesent laoreet justo eget diam volutpat, quis tincidun</h4>                          
+                        </div>
                         <p>Donec tincidunt libero odio, et luctus odio pulvinar eget. Maecenas eleifend odio libero, eget blandit enim accumsan scelerisque.</p>
                         <a href="#">More Info</a>
                         <div class="date"> 
@@ -249,11 +254,13 @@
                   </li> 
                   <li>
                     <div class="article-search-result clearfix "> 
-                      <div class="article-search-result-lft matchHeightCol" style="background: url(assets/images/article-search-result-002.jpg);">                        
+                      <div class="article-search-result-lft matchHeightCol-search-grd" style="background: url(assets/images/article-search-result-002.jpg);">                        
                       </div>
-                      <div class="article-search-result-rgt matchHeightCol">
-                        <span>CATEGORY</span>
-                        <h4>Praesent laoreet justo eget diam <br/>volutpat, quis tincidun</h4>
+                      <div class="article-search-result-rgt matchHeightCol-search-grd">
+                        <div class="article-search-result-head">
+                          <span>CATEGORY</span>
+                          <h4>Praesent laoreet justo eget diam volutpat, quis tincidun</h4>                          
+                        </div>
                         <p>Donec tincidunt libero odio, et luctus odio pulvinar eget. Maecenas eleifend odio libero, eget blandit enim accumsan scelerisque.</p>
                         <a href="#">More Info</a>
                         <div class="date"> 
@@ -265,11 +272,13 @@
                   </li> 
                   <li>
                     <div class="article-search-result clearfix "> 
-                      <div class="article-search-result-lft matchHeightCol" style="background: url(assets/images/article-search-result-002.jpg);">                        
+                      <div class="article-search-result-lft matchHeightCol-search-grd" style="background: url(assets/images/article-search-result-002.jpg);">                        
                       </div>
-                      <div class="article-search-result-rgt matchHeightCol">
-                        <span>CATEGORY</span>
-                        <h4>Praesent laoreet justo eget diam <br/>volutpat, quis tincidun</h4>
+                      <div class="article-search-result-rgt matchHeightCol-search-grd">
+                        <div class="article-search-result-head">
+                          <span>CATEGORY</span>
+                          <h4>Praesent laoreet justo eget diam volutpat, quis tincidun</h4>                          
+                        </div>
                         <p>Donec tincidunt libero odio, et luctus odio pulvinar eget. Maecenas eleifend odio libero, eget blandit enim accumsan scelerisque.</p>
                         <a href="#">More Info</a>
                         <div class="date"> 
