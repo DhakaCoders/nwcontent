@@ -1,0 +1,45 @@
+/*
+----------------------
+checkout-info-sec-wrp
+----------------------
+*/
+.checkout-info-sec-wrp{
+	padding-bottom: 50px;
+}
+.shopping-cart-lft{
+	float: left;
+	width: 40%;
+}
+.checkout-form-rgt{
+	float: right;
+	width: 60%;
+	padding-left: 135px;
+	padding-top: 80px;
+}
+.checkout-form-wrp{
+	padding-bottom: 35px;
+}
+.checkout-form-dsc h1{
+	margin: 0;
+	font-weight: 600;
+	line-height: 32px;
+	color: #43587B;
+	margin-bottom: 20px;
+}
+.checkout-form-dsc span{
+	background:url(../images/dotted-icon.svg);
+	background-repeat: no-repeat;
+	background-size: 52px 9px;
+	width: 52px;
+	height: 9px;
+	display: inline-block;
+	vertical-align: baseline;
+	padding-bottom: 25px;
+}
+.checkout-form-wrp .wpforms-submit-container input.wpforms-submit{
+	margin-top: 50px;
+}
+.checkout-form-wrp .wpforms-form .wpforms-field-container .wpforms-field {
+    width: 100%;
+    margin-bottom: 20px;
+}

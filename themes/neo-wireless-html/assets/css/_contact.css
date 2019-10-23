@@ -4,11 +4,18 @@ contact-form-sec-wrp
 ----------------------
 */
 .contact-form-sec-wrp{
-	background: url(../images/contact-sec-bg.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
 	padding-top: 60px;
+	position: relative;
+	height: 910px;
+}
+.contact-form-bg {
+    position: absolute;
+    background-color: #f4f7f9;
+    clip-path: polygon( 0 0, 100% 0, 100% 100%, 0 calc(100% - 20vw) );
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
 }
 .contac-form-lft{
 	float: left;
@@ -85,7 +92,7 @@ label.wpforms-field-label{
 	font-weight: 600;
 	font-size: 16px;
 	line-height: 18px;/* identical to box height */
-	text-transform: uppercase;
+	text-transform: capitalize;
 	color: #43587B;
 	margin: 0;
 	margin-bottom: 14px;
@@ -106,6 +113,9 @@ label.wpforms-field-label{
 	border: 2px solid #7B8CA8;
 	box-sizing: border-box;
 	border-radius: 8px;
+}
+.wpforms-submit-container input.wpforms-submit:hover{
+	background-color: #43587b;
 }
 
 
@@ -159,6 +169,13 @@ label.wpforms-field-label{
 #googlemap{
 	height: 965px;
 }
+
+
+
+
+
+
+
 
 
 
