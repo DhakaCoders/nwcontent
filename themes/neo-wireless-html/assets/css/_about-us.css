@@ -1,6 +1,8 @@
 
 .nw-neo-wireless-sec{
 	padding: 100px 0 70px;
+	padding: 100px 0 0;
+
 }
 
 .nw-neo-wireless-sec{
@@ -71,45 +73,111 @@
 
 /*nw-content-sec-wrp*/
 
-#nw-content-about-page{
-    /*padding-top: 330px;*/
+
+.nw-about-content-sec{
+	background-image: url(../images/who-we-are-bg.png), url(../images/who-we-are-bg-2.png);
+	/*background-size: cover;
+	background-size: contain;*/
+	background-size: auto;
+	background-repeat: no-repeat, no-repeat;
+	background-position: left top, right bottom;
+	padding-bottom: 240px;
+    padding-top: 530px;
 }
-#nw-content-about-page .nw-content-wrp {
-    border-top: 0;
+.nw-about-content-lft{
+	background: #FFFFFF;
+	box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
+	float: left;
+	width: 50%;
+	padding: 70px 60px 60px 58px;
 }
-#nw-content-about-page{
-    background-image: url(../images/nw-content-bg.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    padding-bottom: 240px;
+.nw-about-content-rgt {
+    float: right;
+    width: 50%;
+    padding-left: 90px;
+    padding-top: 155px;
+    padding-right: 10px;
+}
+
+.nw-about-content-lft h2{
+	margin: 0;
+	font-weight: 600;
+	color: #43587B;
+	line-height: 24px;
+	margin-bottom: 25px;
+}
+
+.nw-about-content-lft strong{
+	display: inline-block;
+	vertical-align: baseline;
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 300;
+	color: #7B8CA8;
+	margin-bottom: 20px;
+}
+
+.nw-about-content-lft span{
+	display: inline-block;
+	vertical-align: baseline;
+	margin-bottom: 15px;
+}
+
+.nw-about-content-lft p{
+	margin-bottom: 25px;
+}
+
+.nw-about-content-lft a{
+	display: inline-block;
+	vertical-align: baseline;
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 700;
+	color: #7B8CA8;
+	text-align: center;
+	text-transform: uppercase;
+	border: 2px solid #7B8CA8;
+	border-radius: 8px;
+	padding: 18px 52px;
+	margin-top: 15px;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.nw-about-content-lft a:hover{
+	background-color: #43587b;
 }
 
 
-.nw-content-rgt.nw-content-features{
+
+
+
+
+.nw-about-content-rgt{
     float: right;
     width: 50%;
     padding-left: 90px;
     padding-top: 185px;
     padding-right: 10px;
 }
-.nw-content-features ul li{
+.nw-about-content-rgt ul li{
 	padding: 0
 }
-.nw-content-features ul li::after{
+.nw-about-content-rgt ul li::after{
 	content: none;
 }
-.nw-content-features-innr {
+.nw-content-features {
     border-bottom: 2px solid #E1E7F0;
     position: relative;
     padding-left: 90px;
     padding-bottom: 10px;
     padding-top: 35px;
 }
-.nw-content-features ul li:last-child .nw-content-features-innr {
+.nw-about-content-rgt ul li:last-child .nw-content-features {
 	border-bottom: 0
 }
-.nw-content-features-innr i{
+.nw-content-features i{
 	display: inline-block;
 	vertical-align: baseline;
 	position: absolute;
@@ -117,7 +185,7 @@
 	top:35px;
 }
 
-.nw-content-features-innr h3{
+.nw-content-features h3{
 	font-weight: 600;
 	color:#43587B;
 }
@@ -137,6 +205,14 @@
 	text-align: center;
 	max-width: 910px;
 	margin: 0 auto;
+	padding-bottom: 12px;
+}
+.nw-team-sec-head h3{
+	font-weight: 600;
+	font-size: 36px;
+	text-align: center;
+	color: #43587B;
+	text-transform: capitalize;
 }
 .nw-team-member-des h3 {
     font-weight: 600;
@@ -279,6 +355,16 @@
 	    line-height: 24px;
 	    margin-top: 25px;
 	}
+	.nw-about-content-rgt {
+	    float: right;
+	    width: 50%;
+	    padding-left: 50px;
+	    padding-top: 125px;
+	    padding-right: 10px;
+	}
+	.nw-about-content-lft {
+	    padding: 40px;
+	}	
 }
 
 @media(max-width: 991px){
@@ -289,18 +375,32 @@
 	    padding: 60px 0;
 	}
 
-.nw-team-grd-con > ul > li {
-    width: 33.333%;
-}
-.nw-team-grd-con > ul > li:nth-child(4n+1){
-	clear: initial;
-}
-.nw-team-grd-con > ul > li:nth-child(3n+1){
-	clear: left;
-}
-.nw-team-member {
-	min-height: 285px;
-}
+	.nw-team-grd-con > ul > li {
+	    width: 33.333%;
+	}
+	.nw-team-grd-con > ul > li:nth-child(4n+1){
+		clear: initial;
+	}
+	.nw-team-grd-con > ul > li:nth-child(3n+1){
+		clear: left;
+	}
+	.nw-team-member {
+		min-height: 285px;
+	}
+	.nw-about-content-lft {
+	    padding: 40px 20px;
+	}
+	.nw-about-content-lft strong {
+	    font-size: 23px;
+	    line-height: 30px;
+	    margin-bottom: 15px;
+	}
+	.nw-about-content-lft strong br{
+	    display:none;
+	}
+	.nw-about-content-rgt {
+	    padding-left: 30px;
+	}
 
 }
 @media(max-width: 767px){
@@ -310,27 +410,54 @@
 	.nw-neo-wireless-bg-wrp img{
 		margin:auto;
 	}
-.nw-team-grd-con > ul > li {
-    width: 50%;
-}
-.nw-team-grd-con > ul > li:nth-child(3n+1){
-	clear: initial;
-}
-.nw-team-grd-con > ul > li:nth-child(2n+1){
-	clear: left;
-}
-
+	.nw-team-sec-wrp {
+	    padding-top: 40px;
+	    margin-bottom: 30px;
+	}
+	.nw-team-grd-con {
+	    padding-bottom: 20px;
+	}
+	.nw-team-grd-con > ul > li {
+	    width: 50%;
+	}
+	.nw-team-grd-con > ul > li:nth-child(3n+1){
+		clear: initial;
+	}
+	.nw-team-grd-con > ul > li:nth-child(2n+1){
+		clear: left;
+	}
+	.nw-about-content-lft {
+	    width: 100%;
+	}
+	.nw-about-content-rgt {
+	    width: 100%;
+	}
+	.nw-about-content-rgt {
+	    padding-left: 0;
+	    padding-right: 0;
+	    padding-top: 25px;
+	}
+	.nw-about-content-lft h2 {
+	    margin-bottom: 20px;
+	}
+	.nw-about-content-sec {
+	    padding-top: 250px;
+	    padding-bottom: 100px;
+	}
+	.nw-about-content-lft strong {
+	    font-size: 20px;
+	    line-height: 25px;
+	    margin-bottom: 15px;
+	}
 }
 
 @media(max-width: 639px){
-
-.nw-team-member {
-	min-height: 260px;
-}
+	.nw-team-member {
+		min-height: 260px;
+	}
 }
 
 @media(max-width: 575px){
-
 	.nw-neo-wireless-dsc strong {
 	    font-size: 25px;
 	    line-height: 30px;
@@ -344,22 +471,19 @@
 	    line-height: 25px;
 	    margin-bottom: 10px;
 	}
-.nw-team-grd-con > ul > li {
-    width: 100%;
-}
-.nw-team-grd-con > ul > li:nth-child(2n+1){
-	clear: initial;
-}
-/*.nw-team-member {
-	min-height: 280px;
-}*/
-.nw-team-grd-con > ul > li .nw-team-grd{
-	margin: 0 auto;	
-	max-width: 320px;
-}
-.nw-team-member-wrp {
-    margin-bottom: 12px;
-}
+	.nw-team-grd-con > ul > li {
+	    width: 100%;
+	}
+	.nw-team-grd-con > ul > li:nth-child(2n+1){
+		clear: initial;
+	}
+	.nw-team-grd-con > ul > li .nw-team-grd{
+		margin: 0 auto;	
+		max-width: 320px;
+	}
+	.nw-team-member-wrp {
+	    margin-bottom: 12px;
+	}
 
 }
 
