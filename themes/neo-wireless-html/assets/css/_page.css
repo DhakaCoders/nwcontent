@@ -114,6 +114,87 @@ h1.banner-page-title,
 }
 
 
+/*
+---------------------
+ Cookie Css
+---------------------
+*/
+.cookie-policy-wrp{
+	position: fixed;
+	bottom: 0;
+	right: 25px;
+	top: 30%;
+	z-index: 2;
+}
+.cookie-policy-dsc{
+	background: #66D6FF;
+	padding: 30px 30px;
+	color: #fff;
+	max-width: 345px;
+	width: 100%;
+	font-size: 16px;
+	text-align: center;
+}
+.cookie-policy-dsc h4{
+	margin: 0;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+	font-size: 24px;
+	line-height: 26px;
+	font-weight: 800;
+}
+.cookie-policy-dsc > a {
+	display: inline-block;
+	vertical-align: baseline;
+	text-decoration: none;
+	color: #fff;
+	font-weight: 600;
+	padding-right: 30px;
+	font-size: 18px;
+	line-height: 20px;
+	position: relative;
+}
+.cookie-policy-dsc > a:after{
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 3px;
+	background-image: url(../images/cookie-ary-icon.svg);
+	background-repeat: no-repeat;
+	width: 14px;
+	height: 14px;
+	background-size: 14px 14px;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.cookie-policy-dsc > a:hover:after{
+	right: -5px;
+}
+.cookie-btn {
+	margin-top: 20px;
+}
+.cookie-btn a{
+	display: inline-block;
+	vertical-align: baseline;
+	text-decoration: none;
+	color: #fff;
+	font-weight: 600;
+	border:2px solid #fff;
+	padding: 12px 35px;
+	font-size: 16px;
+	line-height: 18px;
+	text-transform: uppercase;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.cookie-btn a:hover{
+	background-color: #ff5c26;
+	border-color: #ff5c26;
+}
+
+
 
 @media(max-width: 1199px){
 

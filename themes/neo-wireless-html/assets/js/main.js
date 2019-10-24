@@ -24,6 +24,17 @@ if (windowWidth <= 767) {
   });
 }
 
+/*
+=======================
+  cookise-close-btn js
+=======================
+*/
+if ($('.cookie-btn').length) {
+  $('.cookie-btn').on('click', function(){
+    $('.cookie-policy-wrp').hide('slow');
+  });
+}
+
 
 // }
 

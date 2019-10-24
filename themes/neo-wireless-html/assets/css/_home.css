@@ -166,6 +166,9 @@ profile-info-sec-wrp
     width: 46px;
     height: 46px;
     background-size: 46px 46px;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
 }
 .nwsliderarrows .leftArrow:hover{
     background: url(../images/leftArrow-hover.svg);
@@ -186,6 +189,9 @@ profile-info-sec-wrp
     width: 46px;
     height: 46px;
     background-size: 46px 46px;
+    -ms-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
 }
 .nwsliderarrows .rightArrow:hover{
     background: url(../images/rightArrow-hover.svg);
@@ -395,6 +401,7 @@ nw-post-grid-sec-wrp
 }
 .nw-post-gird-controller{
 	overflow: hidden;
+	position: relative;
 }
 .nw-post-gird-img{
 	background-size: cover !important;
@@ -996,6 +1003,15 @@ Responsive css
 	.profile-info h4 {
 	    line-height: 21px;
 	    font-size: 19px;
+	}
+	.nw-product-slide-item-dsc p {
+	    font-size: 14px;
+	    line-height: 20px;
+	}
+	.nw-content-rgt p,
+	.nw-content-lft p {
+	    font-size: 14px;
+	    line-height: 20px;
 	}
 	
 

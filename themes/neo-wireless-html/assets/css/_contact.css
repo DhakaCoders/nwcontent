@@ -277,6 +277,15 @@ label.wpforms-field-label{
 	.show-xs{
 		display: block!important;
 	}
+	.contac-form-dsc span{
+	    width: 52px;
+	    height: 8px;
+	    background: #DFE7ED;
+	    border-radius: 50px;
+	}
+	.contac-form-dsc span i{
+		display: none;
+	}
 
 	
 
@@ -325,6 +334,7 @@ label.wpforms-field-label{
 	.wpforms-form .wpforms-field-container .wpforms-field textarea {
 	    height: 140px;
 	}
+
 
 }
 
