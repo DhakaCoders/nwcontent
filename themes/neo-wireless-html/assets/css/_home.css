@@ -998,11 +998,11 @@ Responsive css
 	}
 	.profile-info h4 i {
 	    width: 48px;
-	    height: 48px;
 	}
 	.profile-info h4 {
 	    line-height: 21px;
 	    font-size: 19px;
+	    height: 60px;
 	}
 	.nw-product-slide-item-dsc p {
 	    font-size: 14px;
@@ -1012,6 +1012,13 @@ Responsive css
 	.nw-content-lft p {
 	    font-size: 14px;
 	    line-height: 20px;
+	}
+	.profile-info:nth-child(2){
+		margin-bottom: 25px;
+	}
+	.nw-post-gird-dsc p{
+		font-size: 14px;
+		line-height: 20px;
 	}
 	
 
@@ -1024,6 +1031,18 @@ Responsive css
 	}
 	.nwsliderarrows .rightArrow {
 	    top: 14%;
+	}
+	.nw-product-slide-item-img{
+		height: 208px !important;
+	}
+	.nw-post-gird-img{
+		height: 240px !important;
+	}
+	.nwpostsliderarrows .leftArrow{
+		top: 24%;
+	}
+	.nwpostsliderarrows .rightArrow{
+		top: 24%;
 	}
 }
 
