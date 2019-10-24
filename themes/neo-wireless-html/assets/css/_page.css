@@ -20,6 +20,7 @@
 .page-banner-des-innr{
     padding: 170px 0 60px;
     position: relative;
+	z-index: 5;
 }
 strong.banner-page-title, 
 h1.banner-page-title,
@@ -545,21 +546,10 @@ h1.banner-page-title,
 	    -o-transform: rotate(-15deg);
 	    top: 10px;
 	}
-	strong.banner-page-title,
-	h1.banner-page-title, 
-	.page-banner-des-inner h1, 
-	.page-banner-des-inner strong {
-	    font-size: 55px;
-	    line-height: 60px;
-	}
 
-}
 
-@media(max-width: 639px){
+	/* page-banner */
 
-}
-
-@media(max-width: 575px){
 	.page-banner-des-innr {
 	    padding: 170px 0 60px;
 	    position: relative;
@@ -569,51 +559,28 @@ h1.banner-page-title,
 	h1.banner-page-title, 
 	.page-banner-des-inner h1, 
 	.page-banner-des-inner strong {
-	    font-size: 42px;
-	    line-height: 45px;
+	    font-size: 50px;
+	    line-height: 55px;
 	}
 
 	.breadcrumbs ul {
 	    display: table;
 	    margin: 0 auto;
 	}
-    .breadcrumbs ul li{
-        display: none!important;
-	}
 
-    .breadcrumbs ul li:first-child,
-    .breadcrumbs ul li:last-child{
-        display: inline-block!important;
-        vertical-align: baseline!important;
-    }
-    .breadcrumbs ul li:first-child {
-	    margin-right: 12px;
-	}
-    .breadcrumbs ul li:last-child{
-    	padding-left: 56px;
-    }
-	.breadcrumbs ul li:last-child::after {
-		content: "";
-		height: 14px;
-		width: 13px;
-		background: url(../images/breadcrumbs-array.svg);
-		background-size: 100% auto;
-		background-repeat: no-repeat;
-		position: absolute;
-		left: 32px;
-		top: 64%;
-		transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-		-webkit-transform: translateY(-50%);
-	}
-	.breadcrumbs ul li:last-child::before {
-		content: "...";
-		font-size: 22px;
-		position: absolute;
-		left: 5px;
-		top:0;
-		color:#fff;
-	}
+
+
+
+
+}
+
+@media(max-width: 639px){
+
+}
+
+@media(max-width: 575px){
+
+
 
 }
 
@@ -648,6 +615,34 @@ h1.banner-page-title,
 	    font-size: 32px;
 	    line-height: 26px;
 	    margin-bottom: 15px;
+	}
+
+	.breadcrumbs ul li {
+	    font-size: 14px;
+	    line-height: 20px;
+	}
+	.breadcrumbs ul li:first-child::before {
+	    height: 20px;
+	    width: 20px;
+	    left: 3px;
+	}
+}
+
+@media(max-width: 399px){
+	.breadcrumbs ul li {
+	    padding: 0 13px;
+	    font-size: 12px;
+	}
+	.breadcrumbs ul li::after {
+	    height: 12px;
+	    width: 11px;
+	}
+	strong.banner-page-title, 
+	h1.banner-page-title, 
+	.page-banner-des-inner h1, 
+	.page-banner-des-inner strong {
+	    font-size: 30px;
+	    line-height: 35px;
 	}
 }
 

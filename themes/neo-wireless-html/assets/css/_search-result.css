@@ -380,7 +380,7 @@ a.search-next-link:hover{
   background-repeat: no-repeat !important;
   background-position: center center !important;
   min-height: 195px;
-
+  position: relative;
 }
 .article-search-result-rgt,
 .product-search-result-rgt{
@@ -410,13 +410,21 @@ a.search-next-link:hover{
   margin-bottom: 10px;
   font-size: 24px;
 }
+.article-search-result-rgt h4 a,
+.product-search-result-rgt h4 a{
+  color: inherit;
+}
+.article-search-result-rgt h4 a:hover,
+.product-search-result-rgt h4 a:hover{
+  color: #FF5C26;
+}
 .article-search-result-rgt p,
 .product-search-result-rgt p{
   font-weight: 600;
   line-height: 24px;
 }
-.article-search-result-rgt a,
-.product-search-result-rgt a{
+.article-search-result-rgt > a,
+.product-search-result-rgt > a{
   display: inline-block;
   vertical-align: baseline;
   font-weight: 600;
@@ -428,8 +436,8 @@ a.search-next-link:hover{
   margin-top: 6px;
   text-transform: uppercase;
 }
-.article-search-result-rgt a:after,
-.product-search-result-rgt a:after{
+.article-search-result-rgt > a:after,
+.product-search-result-rgt > a:after{
   content: "";
   position: absolute;
   background:url(../images/search-more-inc.svg); 
@@ -445,8 +453,8 @@ a.search-next-link:hover{
   transition: all .3s ease;
 }
 
-.article-search-result-rgt a:hover:after,
-.product-search-result-rgt a:hover:after{
+.article-search-result-rgt > a:hover:after,
+.product-search-result-rgt > a:hover:after{
   right: -8px;
 }
 
@@ -576,7 +584,9 @@ a.search-next-link:hover{
 
 }
 
-@media(max-width: 767px){}
+@media(max-width: 767px){
+
+}
 
 
 @media(max-width: 639px){
