@@ -642,9 +642,17 @@ a.search-next-link:hover svg{
 @media(max-width: 575px){
   .article-search-result-lft, 
   .product-search-result-lft {
-      width: 100%;
-      min-height: 220px;
-      max-width: initial;
+    width: 100%;
+    min-height: 220px;
+    max-width: initial;
+  }
+  .article-search-result-rgt h4, 
+  .product-search-result-rgt h4 {
+    font-weight: 600;
+    line-height: 24px;
+    color: #43587B;
+    margin-bottom: 10px;
+    font-size: 21px;
   }
 
 }
