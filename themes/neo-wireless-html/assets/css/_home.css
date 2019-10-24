@@ -430,12 +430,24 @@ nw-post-grid-sec-wrp
 	background-color: #394a67;
 }
 .main-banner{
-	background-size: cover!important;
-	background-position: center center!important;
 	padding: 200px 0 60px;
 	min-height: 840px;
+	position: relative;
 }
-
+.main-bnr-bg{
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-size: cover!important;
+	background-position: center center!important;
+	z-index: 1;
+}
+.main-bnr-des-controller{
+	position: relative;
+	z-index: 2;
+}
 .main-bnr-des{
 	padding: 140px 0 0;
 	max-width: 530px;
