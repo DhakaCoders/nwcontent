@@ -46,7 +46,7 @@
                 <a href="#"><img src="assets/images/logo.svg"></a>
               </div>
             </div>
-            <div class="hdr-rgt clearfix">
+            <div class="hdr-rgt clearfix hide-xs">
               <div class="hdr-topbar clearfix">
                 <div class="nw-lang">
                   <ul class="ulc">
@@ -68,14 +68,23 @@
                 <div class="hdr-btmbar-bts">
                   <div class="hdr-search">
                     <form>
-                      <input type="search" name="">
-                      <button>
-                        <em><img src="assets/images/search-icon.svg"></em>
-                      </button>
+                      <input type="search" name="" placeholder="Search">
                     </form>
+                    <button>
+                      <em> 
+                        <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#8798B6">
+                          <use xlink:href="#search-icon-svg"></use>
+                        </svg> 
+                      </em>
+                    </button>
+                    
                   </div>
                   <div class="hdr-cart-btn">
-                    <em><img src="assets/images/cart-icon-white.svg"></em>
+                    <em> 
+                      <svg class="cart-icon-white-svg" width="20" height="20" viewBox="0 0 20 20" fill="#fff">
+                        <use xlink:href="#cart-icon-white-svg"></use>
+                      </svg> 
+                    </em>
                   </div>
                 </div>
                 <div class="hdr-btm-nav">
@@ -148,12 +157,12 @@
 </section><!-- end of nw-neo-wireless-sec -->
 
 
-<section class="nw-content-sec-wrp" id="nw-content-about-page">
+<section class="nw-about-content-sec">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-        <div class="nw-content-wrp clearfix">
-          <div class="nw-content-lft">
+        <div class="nw-about-content-wrp clearfix">
+          <div class="nw-about-content-lft">
             <h2>Who we are</h2>
             <strong>Proin est risus, convallis nec magna sed, <br> semper consequat est.</strong>
             <span><i><img src="assets/images/dotted-icon.svg"></i></span>
@@ -162,10 +171,10 @@
             <p>Ut tempor nisl vel odio tincidunt maximus. Mauris in orci vitae dui dignissim elementum. Vestibulum in ligula ante. Nulla eget nisl fringilla, ultrices metus vitae, mollis odio.</p>
             <a href="#">About Us</a>
           </div>
-          <div class="nw-content-rgt nw-content-features">
+          <div class="nw-about-content-rgt">
             <ul class="ulc">
               <li> 
-                <div class="nw-content-features-innr">
+                <div class="nw-content-features">
                   <i>
                     <img src="assets/images/star-nw-content.svg" alt="">
                   </i>
@@ -173,8 +182,8 @@
                   <p>Ut tempor nisl vel odio tincidunt maximus. Mauris in orci vitae dui dignissim elementum.</p>
                 </div>
               </li>
-              <li> 
-                <div class="nw-content-features-innr">
+              <li>  
+                <div class="nw-content-features">
                   <i>
                     <img src="assets/images/lamp-nw-content.svg" alt="">
                   </i>
@@ -183,7 +192,7 @@
                 </div>
               </li>
               <li> 
-                <div class="nw-content-features-innr">
+                <div class="nw-content-features">
                   <i>
                     <img src="assets/images/radio-nw-content.svg" alt="">
                   </i>
@@ -206,7 +215,7 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="nw-team-sec-head"> 
-          <h3>our team</h3>
+          <h3>Our Team</h3>
           <p>Ut tempor nisl vel odio tincidunt maximus. Mauris in orci vitae dui dignissim elementum. Vestibulum in ligula ante. Nulla eget nisl fringilla, ultrices metus vitae, mollis odio.</p>
         </div>
         <div class="nw-team-grd-con"> 
@@ -471,6 +480,76 @@
     </div>
   </div> 
 </footer><!--end of footer-wrap -->
+
+<div class="home-bnr-xs-nav-bar-controller show-xs">
+  <div class="xs-menu-btn-bar clearfix">
+      <div class="xs-menu-btn-contact">
+        <a href="#">
+          <i><img src="assets/images/cart-xs-icon.svg"></i>
+        </a>
+      </div>
+      <div class="nav-opener">
+       <div class="nav-opener-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <strong>MENU</strong>
+     </div>
+  </div>
+</div>
+
+<div class="xs-popup-main-menu-controller">
+    <div class="xs-popup-logo">
+      <a href="#"><img src="assets/images/logo.svg"></a>
+    </div>
+    <div class="hdr-btm-nav">
+      <ul class="clearfix ulc">
+        <li><a href="#">products</a></li>
+        <li><a href="#">Wi-Fi / LAN</a></li>
+      </ul>
+    </div>
+    <nav class="xs-popup-main-nav clearfix">
+      <ul class="clearfix ulc">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us </a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hdr-search">
+      <form>
+        <input type="search" name="" placeholder="Search">
+        <button>
+          <em><img src="assets/images/search-icon.svg"></em>
+        </button>
+      </form>
+    </div>
+    <div class="hdr-cart-btn">
+      <em><img src="assets/images/cart-icon-white.svg">Shopping Cart</em>
+    </div>
+    <div class="nw-lang">
+      <ul class="ulc">
+        <li class="lag-active"><a href="#">EN </a></li>
+        <li><a href="#">ES</a></li>
+      </ul>
+    </div>
+    <div class="xs-menu-btn-bar-popup">
+      <div class="xs-menu-btn-bar clearfix">
+        <div class="xs-menu-btn-contact">
+          <a href="#">
+            <i><img src="assets/images/cart-xs-icon.svg"></i>
+          </a>
+        </div>
+        <div class="nav-opener">
+         <div class="nav-opener-btn">
+            <img src="assets/images/close-icon.svg">
+          </div>
+          <strong>CLOSE</strong>
+       </div>
+      </div>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.0.0.js"></script>
 <script src="https://code.jquery.com/jquery-migrate-3.0.0.js"></script>

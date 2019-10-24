@@ -7,6 +7,7 @@
 .blog-page-con-grd-controller ul li{
 	padding-bottom: 60px;
 	line-height: 24px;
+	padding-left: 0;
 }
 .blog-page-con-grd-controller ul li:after,
 .blog-page-con-grd-controller ul li:before{
@@ -170,4 +171,124 @@
 	width: 16px;
 	height: 5px;
 	background: #FF5C26;
+}
+
+
+
+
+@media(max-width: 1199px){
+	
+
+} 
+
+
+@media(max-width: 991px){
+	.blog-post-grd-des h3 {
+	    font-size: 25px;
+	    line-height: 28px;
+	    margin-bottom: 20px;
+	}
+	.blog-post-grd-des h3 a br{
+		display: none;
+	}
+	.blog-post-grd-des{
+		padding-right: 35px;
+	}
+	.blog-post-grd-des{
+		padding-top: 30px;
+	}
+	.blog-post-grd-des p {
+	    margin-bottom: 30px;
+	}
+}
+
+
+@media(max-width: 767px){
+	
+	.blog-page-con-wrap{
+		padding-bottom: 50px;
+	}
+	.page-pagination ul{
+		padding-top: 35px;
+	}
+	.page-pagination span, .page-pagination a{
+		padding-bottom: 35px;
+	}
+	.blog-post-grd-img,
+	.blog-post-grd-des {
+	    width: 100%;
+	    float: none;
+	}
+	.blog-post-con-grd-row{
+		max-width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.blog-post-grd-des{
+		padding-left: 0!important;
+		padding-top: 20px;
+		padding-right: 20px!important;
+	}
+	.blog-post-grd-des h3 {
+    	font-size: 23px;
+	    line-height: 25px;
+	    margin-bottom: 15px;
+	}
+	.blog-page-con-grd-controller ul li{
+		padding-bottom: 55px;
+	}
+	.blog-page-con-grd-controller ul {
+	    padding-bottom: 0;
+	}
+	.blog-post-grd-des p {
+	    margin-bottom: 25px;
+	}
+	.page-pagination ul{
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.blog-post-date {
+	    width: 90px;
+	    height: 86px;
+	    top: 65px;
+	    right: 0;
+	    padding: 16px 5px 5px 13px;
+	}
+	.blog-post-date-bdr {
+	    width: 58px;
+	    height: 58px;
+	    font-size: 26px;
+	    line-height: 22px;
+	    padding-top: 7px;
+	}
+	.blog-post-date-bdr span {
+	    font-size: 15px;
+	}
+	.blog-post-grd-des strong{
+		margin-bottom: 10px;
+	}
+
+}
+ 
+
+@media(max-width: 639px){
+
+}
+
+
+@media(max-width: 575px){
+
+
+}
+
+
+@media(max-width: 479px){
+
+
+}
+
+
+
+@media(max-width: 359px){
+
 }
