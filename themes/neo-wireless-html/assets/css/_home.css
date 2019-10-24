@@ -711,12 +711,14 @@ Responsive css
 	    top: 17%;
 	    width: 34px;
 	    height: 34px;
+	    background-size: 34px 34px;
 	}
 	.nwsliderarrows .rightArrow {
 	    right: -10px;
 	    top: 17%;
 	    width: 34px;
 	    height: 34px;
+	    background-size: 34px 34px;
 	}
 	.profile-info{
 		width: 100%;
@@ -924,10 +926,10 @@ Responsive css
 	    padding: 15px 50px;
 	}
 	.nwsliderarrows .leftArrow {
-	    top: 14%;
+	    top: 19%;
 	}
 	.nwsliderarrows .rightArrow {
-	    top: 14%;
+	    top: 19%;
 	}
 	
 
@@ -936,10 +938,10 @@ Responsive css
 
 @media(max-width: 479px){
 	.nwsliderarrows .leftArrow {
-	    top: 13%;
+	    top: 14%;
 	}
 	.nwsliderarrows .rightArrow {
-	    top: 13%;
+	    top: 14%;
 	}
 }
 
