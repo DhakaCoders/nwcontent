@@ -109,7 +109,9 @@ h1.banner-page-title,
 
 
 
-
+.xs-popup-main-menu-controller{
+	display: none;
+}
 
 
 

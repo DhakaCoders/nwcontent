@@ -575,16 +575,18 @@ if( $('.dft2grdImgConSlider').length ){
 $('.hdr-search button').on('click', function(){
     $(this).parent().toggleClass('hdr-search-field-show');
 });
-if (windowWidth > 767) {
-  if( $('#sidebar').length ){
-      $('#sidebar').stickySidebar({
-          topSpacing: 100,
-          bottomSpacing: 60
-      });
+$(window).resize(function() { 
+    if (windowWidth > 991) {
+      if( $('#sidebar').length ){
+          $('#sidebar').stickySidebar({
+              topSpacing: 100,
+              bottomSpacing: 60
+          });
+        }
     }
-    
+});    
    
-}
+
     $('.home-bnr-xs-nav-bar-controller .nav-opener').on('click', function(){
         $('.xs-popup-main-menu-controller').fadeIn(300);
     });
