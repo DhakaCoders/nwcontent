@@ -144,6 +144,8 @@ h1.banner-page-title,
 	}
 	.main-bnr-box-imgs-xs .main-bnr-box-imgs{
 		margin-top: -120px;
+		position: relative;
+		z-index: 20;
 	}
 	.main-bnr-box-imgs {
 	    float: none;
