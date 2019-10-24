@@ -139,6 +139,7 @@
   vertical-align: middle;
   cursor: pointer;
   margin-right: 10px;
+  margin-top:-2px;
 }
 .check-box-block .form-group input:checked + label:after {
     content: '';
@@ -343,16 +344,9 @@ a.search-next-link{
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-
-a.search-prev-link svg,
-a.search-next-link svg{
-  -ms-transition: all .3s ease;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-}
-a.search-prev-link:hover i svg,
-a.search-next-link:hover i svg{
-  fill: #FF5C26!important;
+a.search-prev-link:hover,
+a.search-next-link:hover{
+  opacity: .5
 }
 
 
