@@ -19,7 +19,6 @@
   position: relative;
   z-index: 3
 }
-
 .search-result-left-sidebar{
 	width:29%;
 	float: left;
@@ -27,56 +26,63 @@
 	padding-right: 30px;
 }
 .search-result-rgt-main {
-    width: 71%;
-    float: left;
-    padding-bottom: 90px;
-    background: #fff;
+  width: 71%;
+  float: left;
+  padding-bottom: 90px;
+  background: #fff;
 }
 .search-box{
 	position: relative;
 }
 .search-box input[type=text] {
-    background: #fff;
-    width: 100%;
-    padding: 23px 85px 23px 22px;
-    color: #7B8CA8;
-    -ms-box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
-    -webkit-box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
-    box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
+  background: #fff;
+  width: 100%;
+  padding: 23px 85px 23px 22px;
+  color: #7B8CA8;
+  -ms-box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
+  -webkit-box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
+  box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
 }
 .search-box input[type=text]:focus {
-    background: #ddd;
+  background: #ddd;
 }
 .search-box button {
-    border: 2px solid #8798B6;
-    border-radius: 8px;
-    width: 44px;
-    height: 44px;
-    position: absolute;
-    right: 22px;
-    top: 13px;
-    background: #fff;
+  border: 2px solid #8798B6;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  right: 22px;
+  top: 13px;
+  background: #fff;
 }
 .search-box button:hover {
-    background: #02BEE8;
-    -ms-transition: all .3s ease;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
+  background: #02BEE8;
+  border: 2px solid #43587B;
+  -ms-transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
 .search-box button i{
-    position: relative;
-    height: 100%;
-    width:100%;
-    display: block;
+  position: relative;
+  height: 100%;
+  width:100%;
+  display: block;
+  -ms-transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
-.search-box button i img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 18px;
-    transform: translate(-50%, -50%);
+.search-box button i svg {
+  fill: #8798B6!important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  transform: translate(-50%, -50%);
 }
-
+.search-box button:hover i svg {
+  fill: #43587B!important;
+}
 .search-box input[type=text]::placeholder {
   color: #7B8CA8;
   opacity: 1;
@@ -110,7 +116,7 @@
   cursor: pointer;
   font-size: 16px;
   line-height: 29px;
-  color:#7d7d7d;
+  color: #43587B;
   font-weight: 600;
   margin-bottom: 7px;
   text-transform: uppercase;
@@ -134,9 +140,6 @@
   cursor: pointer;
   margin-right: 10px;
 }
-.check-box-block .form-group input:checked + label:before{
-  border: 1px solid #02BEE8;	
-}
 .check-box-block .form-group input:checked + label:after {
     content: '';
     display: block;
@@ -146,7 +149,7 @@
     width: 5px;
     height: 11px;
     border: 1px solid #02BEE8;
-    border-width: 0 1px 1px 0;
+    border-width: 0 2px 2px 0;
     transform: rotate(45deg);
 }
 
@@ -222,6 +225,7 @@
     font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
+    color: #43587B;
 
 }
 .radio-box-block input[type="radio"]:checked + label,
@@ -308,21 +312,6 @@
 .search-pagi-controller .search-pagi-main li > span.active{
 	color: #FF5C26;
 }
-.search-pagi-main li > a:after{
-	-ms-transition: all .5s ease;
-	-webkit-transition: all .5s ease;
-	transition: all .5s ease;
-}
-.search-pagi-main li > a:hover:after{
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left:0;
-  right: 0;
-  height: 4px;
-  width:100%;
-  background: #FF5C26; 
-}
 .search-pagi-main li span.active:after{
 	content: "";
 	position: absolute;
@@ -347,7 +336,6 @@ a.search-prev-link{
 a.search-next-link{
   display: inline-block;
   vertical-align: baseline;
-  max-width: 35px;
   position: absolute;
   top:50%;
   right: 0;
@@ -355,16 +343,17 @@ a.search-next-link{
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-a.search-prev-link img,
-a.search-next-link img{
-  width: 100%;
+
+a.search-prev-link svg,
+a.search-next-link svg{
+
   -ms-transition: all .3s ease;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
-a.search-prev-link:hover img,
-a.search-next-link:hover img{
-  opacity: .6
+a.search-prev-link:hover svg,
+a.search-next-link:hover svg{
+  fill: #FF5C26!important;
 }
 
 
@@ -410,7 +399,7 @@ a.search-next-link:hover img{
 .article-search-result-rgt{
     padding: 8px 20px 20px 25px;
 }
-.article-search-result-rgt > span,
+.article-search-result-head > span,
 .product-search-result-rgt > span{
   display: block;
   font-weight: 600;
@@ -444,6 +433,7 @@ a.search-next-link:hover img{
   position: relative;
   padding-right: 22px;
   margin-top: 6px;
+  text-transform: uppercase;
 }
 .article-search-result-rgt a:after,
 .product-search-result-rgt a:after{
@@ -511,7 +501,9 @@ a.search-next-link:hover img{
 
 
 
-
+/*===================
+      Responsive
+====================*/
 
 
 @media(max-width: 1199px){
@@ -543,9 +535,6 @@ a.search-next-link:hover img{
 
 @media(max-width: 991px){
 
-}
-
-@media(max-width: 767px){
   .search-result-con{
     margin-right: -15px;
     margin-left: -15px;
@@ -569,8 +558,6 @@ a.search-next-link:hover img{
   .search-result-sec-wrp:after {
     content: none;
   } 
-
-
   .search-result-left-sidebar {
     width: 100%;
     padding-right: 15px;
@@ -590,11 +577,14 @@ a.search-next-link:hover img{
     padding:0 15px ;
     margin-bottom: 30px;
   }
-.search-result-rgt-head h1 {
-  line-height: 32px;
-}  
+  .search-result-rgt-head h1 {
+    line-height: 32px;
+  }  
 
 }
+
+@media(max-width: 767px){}
+
 
 @media(max-width: 639px){
   .article-search-result-lft, 
@@ -625,7 +615,6 @@ a.search-next-link:hover img{
     font-size: 28px;
     line-height: 31px;
   }
-
   .article-search-result-lft, 
   .product-search-result-lft {
     min-height: 220px;
@@ -651,7 +640,12 @@ a.search-next-link:hover img{
 }
 
 @media(max-width: 575px){
-
+  .article-search-result-lft, 
+  .product-search-result-lft {
+      width: 100%;
+      min-height: 220px;
+      max-width: initial;
+  }
 
 }
 

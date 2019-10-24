@@ -23,6 +23,25 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->	
 
+  <svg style="display: none;">
+  <symbol id="search-icon-svg" width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+  <path d="M17.6203 16.0762L12.2304 10.6554C13.0106 9.55235 13.4741 8.20689 13.4741 6.75C13.4741 3.02232 10.4692 0 6.76295 0C3.05662 0 0.0517578 3.02232 0.0517578 6.75C0.0517578 10.4777 3.05662 13.5 6.76295 13.5C8.21138 13.5 9.54901 13.0337 10.6459 12.249L16.0358 17.6698C16.2546 17.8898 16.5415 18 16.8283 18C17.1153 18 17.4021 17.8898 17.6203 17.6698C18.0579 17.23 18.0579 16.5161 17.6203 16.0762ZM10.4079 9.35101L9.96804 9.97311L9.34931 10.4158C8.58655 10.9614 7.69216 11.25 6.76295 11.25C4.29582 11.25 2.28883 9.23117 2.28883 6.75C2.28883 4.2688 4.29582 2.25 6.76295 2.25C9.23008 2.25 11.2371 4.2688 11.2371 6.75C11.2376 7.6843 10.9507 8.58375 10.4079 9.35101Z" />
+  </symbol>
+
+  <symbol id="search-prev-link-svg" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle r="15" transform="matrix(-1 0 0 1 17 17)"/>
+  <path d="M28.1805 27C30.5557 24.3462 32 20.8418 32 17C32 8.71573 25.2843 2 17 2C8.71573 2 2 8.71573 2 17C2 25.2843 8.71573 32 17 32C19.4056 31.9432 21.0414 31.6836 22.8696 30.8527" stroke="#43587B" stroke-width="3" stroke-linecap="round"/>
+  <path d="M24.8262 17H9.174M9.174 17L14.0653 11.7826M9.174 17L14.0653 22.2174" stroke="#43587B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol id="search-next-link-svg" width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="17" cy="17" r="15" />
+  <path d="M5.81947 27C3.44427 24.3462 2 20.8418 2 17C2 8.71573 8.71573 2 17 2C25.2843 2 32 8.71573 32 17C32 25.2843 25.2843 32 17 32C14.5944 31.9432 12.9586 31.6836 11.1304 30.8527" stroke="#43587B" stroke-width="3" stroke-linecap="round"/>
+  <path d="M9.17383 17H24.826M24.826 17L19.9347 11.7826M24.826 17L19.9347 22.2174" stroke="#43587B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  </svg>
+
 </head>
 <body>
 <header class="header">
@@ -130,8 +149,10 @@
                   <input placeholder="Search Here" type="text" name="">
                   <button>
                     <i>
-                      <img src="assets/images/search-inc.svg" alt="" />
-                    </i>
+                      <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#8798B6;">
+                        <use xlink:href="#search-icon-svg"></use>
+                      </svg> 
+                    </i> 
                   </button>
                 </div>
               </form>             
@@ -176,7 +197,6 @@
                 </div> 
               </div>
             </div>
-
           </div>
           <div class="search-result-rgt-main matchHeightCol"> 
             <div class="search-result-rgt-head"> 
@@ -198,17 +218,25 @@
                     <a href="#">4</a>
                   </li>
                 </ul>
-                <a class="search-prev-link" href="#">
-                  <img src="assets/images/prev-link.svg" alt="">
+                <a class="search-prev-link" href="#">   
+                  <i>
+                    <svg width="18" height="18" viewBox="0 0 34 34" fill="#8798B6;">
+                      <use xlink:href="#search-prev-link-svg"></use>
+                    </svg>                  
+                  </i>
                 </a>
                 <a class="search-next-link" href="#">
-                  <img src="assets/images/next-link.svg" alt="">
+                  <i>
+                    <svg width="18" height="18" viewBox="0 0 34 34" fill="#8798B6;">
+                      <use xlink:href="#search-next-link-svg"></use>
+                    </svg>                    
+                  </i>
                 </a>
               </div>
             </div>
             <div class="search-result-controller"> 
               <div class="product-search-result-wrp">
-                <h2>Product</h2>
+                <h2>Products</h2>
                 <ul class="ulc"> 
                   <li>
                     <div class="product-search-result clearfix "> 
@@ -238,8 +266,6 @@
                   </li>
                 </ul>
               </div>
-
-
               <div class="article-search-result-wrp">
                 <h2>Articles</h2>
                 <ul class="ulc"> 
@@ -253,7 +279,7 @@
                           <h4>Praesent laoreet justo eget diam volutpat, quis tincidun</h4>                          
                         </div>
                         <p>Donec tincidunt libero odio, et luctus odio pulvinar eget. Maecenas eleifend odio libero, eget blandit enim accumsan scelerisque.</p>
-                        <a href="#">More Info</a>
+                        <a href="#">Read More</a>
                         <div class="date"> 
                           <strong>26</strong>
                           <span>OCT</span>
@@ -271,7 +297,7 @@
                           <h4>Praesent laoreet justo eget diam volutpat, quis tincidun</h4>                          
                         </div>
                         <p>Donec tincidunt libero odio, et luctus odio pulvinar eget. Maecenas eleifend odio libero, eget blandit enim accumsan scelerisque.</p>
-                        <a href="#">More Info</a>
+                        <a href="#">Read More</a>
                         <div class="date"> 
                           <strong>26</strong>
                           <span>OCT</span>
@@ -289,7 +315,7 @@
                           <h4>Praesent laoreet justo eget diam volutpat, quis tincidun</h4>                          
                         </div>
                         <p>Donec tincidunt libero odio, et luctus odio pulvinar eget. Maecenas eleifend odio libero, eget blandit enim accumsan scelerisque.</p>
-                        <a href="#">More Info</a>
+                        <a href="#">Read More</a>
                         <div class="date"> 
                           <strong>26</strong>
                           <span>OCT</span>
@@ -300,7 +326,6 @@
                 </ul>
               </div>
             </div>
-
             <div class="search-pagi-controller"> 
               <div class="search-pagi-main"> 
                 <ul class="ulc clearfix">
@@ -316,12 +341,20 @@
                   <li>
                     <a href="#">4</a>
                   </li>
-                </ul>
-                <a class="search-prev-link" href="#">
-                  <img src="assets/images/prev-link.svg" alt="">
+                </ul>                
+                <a class="search-prev-link" href="#">   
+                  <i>
+                    <svg width="18" height="18" viewBox="0 0 34 34" fill="#8798B6;">
+                      <use xlink:href="#search-prev-link-svg"></use>
+                    </svg>                  
+                  </i>
                 </a>
                 <a class="search-next-link" href="#">
-                  <img src="assets/images/next-link.svg" alt="">
+                  <i>
+                    <svg width="18" height="18" viewBox="0 0 34 34" fill="#8798B6;">
+                      <use xlink:href="#search-next-link-svg"></use>
+                    </svg>                    
+                  </i>
                 </a>
               </div>
             </div>
