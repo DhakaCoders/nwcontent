@@ -13,3 +13,6 @@ Text Domain: neowireless
 
 @import url('assets/css/main.css');
 
+.home-bnr-xs-nav-bar-controller.show-xs{
+	display: none!important;
+}

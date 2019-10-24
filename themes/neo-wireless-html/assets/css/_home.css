@@ -505,6 +505,11 @@ nw-post-grid-sec-wrp
 	background-position: center center!important;
 	z-index: 1;
 }
+#particles-js{
+	background: radial-gradient(71.73% 71.73% at 50% 0%, #374863 0%, #202B3D 100%);
+	-ms-background: radial-gradient(71.73% 71.73% at 50% 0%, #374863 0%, #202B3D 100%);
+	-webkit-background: radial-gradient(71.73% 71.73% at 50% 0%, #374863 0%, #202B3D 100%);
+}
 .main-bnr-des-controller{
 	position: relative;
 	z-index: 2;
