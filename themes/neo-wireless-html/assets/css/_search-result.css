@@ -57,8 +57,8 @@
   background: #fff;
 }
 .search-box button:hover {
-  background: #02BEE8;
-  border: 2px solid #43587B;
+  background: #FF5C26;
+  border: 2px solid #FF5C26;
   -ms-transition: all .3s ease;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
@@ -81,7 +81,7 @@
   transform: translate(-50%, -50%);
 }
 .search-box button:hover i svg {
-  fill: #43587B!important;
+  fill: #fff!important;
 }
 .search-box input[type=text]::placeholder {
   color: #7B8CA8;
@@ -327,7 +327,7 @@ a.search-prev-link{
   vertical-align: baseline;
   max-width: 35px;
   position: absolute;
-  top:50%;
+  top:55%;
   left: 0;
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
@@ -337,7 +337,7 @@ a.search-next-link{
   display: inline-block;
   vertical-align: baseline;
   position: absolute;
-  top:50%;
+  top:55%;
   right: 0;
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
@@ -346,13 +346,12 @@ a.search-next-link{
 
 a.search-prev-link svg,
 a.search-next-link svg{
-
   -ms-transition: all .3s ease;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
-a.search-prev-link:hover svg,
-a.search-next-link:hover svg{
+a.search-prev-link:hover i svg,
+a.search-next-link:hover i svg{
   fill: #FF5C26!important;
 }
 
