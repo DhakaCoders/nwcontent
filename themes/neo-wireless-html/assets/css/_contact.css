@@ -9,14 +9,34 @@ contact-form-sec-wrp
     overflow: hidden;
     z-index: 2;
 }
-.contact-form-bg {
+.contact-form-bg{
+	background: #F4F7F9;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 70%;
+	z-index: 1;
+}
+.contact-form-bg-skw {
     position: absolute;
-    background-color: #f4f7f9;
-    transform: skew(-10deg, -10deg);
     left: 0;
     right: 0;
     bottom: 0;
-    top: 0;
+    height: 30%
+}
+.contact-form-bg-skw:after {
+    content: "";
+    background-color: #f4f7f9;
+    -webkit-transform: skew(-22deg) rotate(6deg);
+    -moz-transform: skew(-22deg) rotate(6deg);
+    transform: skew(22deg) rotate(6deg);
+    left: -100px;
+    right: -100px;
+    bottom: 101px;
+    top: -172px;
+    position: absolute;
+    z-index: 1;
 }
 .contac-form-lft{
 	float: left;
@@ -25,8 +45,14 @@ contact-form-sec-wrp
 	box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
 	padding: 60px 60px;
 	position: relative;
-	z-index: 1;
+	z-index: 5;
 }
+
+
+
+
+
+
 .contac-form-dsc{
 	padding-bottom: 20px;
 }
@@ -126,6 +152,8 @@ label.wpforms-field-label{
 	width: 50%;
 	padding-top: 100px;
 	padding-left: 85px;
+	position: relative;
+	z-index: 5;
 }
 .contact-info h2{
 	margin: 0;
@@ -179,7 +207,7 @@ label.wpforms-field-label{
 .google-map-sec-wrp{
 	position: relative;
 	z-index: 1;
-	margin-top: -100px;
+	margin-top: -203px;
 }
 #googlemap{
 	height: 965px;

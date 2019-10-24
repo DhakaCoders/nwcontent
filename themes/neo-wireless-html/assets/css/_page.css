@@ -75,7 +75,7 @@ h1.banner-page-title,
 	background-repeat: no-repeat;
 	position: absolute;
 	right: -6px;
-	top: 50%;
+	top: 64%;
 	left:auto;
 	transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
@@ -144,6 +144,8 @@ h1.banner-page-title,
 	}
 	.main-bnr-box-imgs-xs .main-bnr-box-imgs{
 		margin-top: -120px;
+		position: relative;
+		z-index: 20;
 	}
 	.main-bnr-box-imgs {
 	    float: none;
@@ -462,7 +464,13 @@ h1.banner-page-title,
 	    -o-transform: rotate(-15deg);
 	    top: 10px;
 	}
-
+	strong.banner-page-title,
+	h1.banner-page-title, 
+	.page-banner-des-inner h1, 
+	.page-banner-des-inner strong {
+	    font-size: 55px;
+	    line-height: 60px;
+	}
 
 }
 
@@ -501,7 +509,7 @@ h1.banner-page-title,
 	    margin-right: 12px;
 	}
     .breadcrumbs ul li:last-child{
-    	padding-left: 48px;
+    	padding-left: 56px;
     }
 	.breadcrumbs ul li:last-child::after {
 		content: "";
@@ -511,8 +519,8 @@ h1.banner-page-title,
 		background-size: 100% auto;
 		background-repeat: no-repeat;
 		position: absolute;
-		left: 25px;
-		top: 50%;
+		left: 32px;
+		top: 64%;
 		transform: translateY(-50%);
 		-ms-transform: translateY(-50%);
 		-webkit-transform: translateY(-50%);
@@ -521,7 +529,7 @@ h1.banner-page-title,
 		content: "...";
 		font-size: 22px;
 		position: absolute;
-		left: 0;
+		left: 5px;
 		top:0;
 		color:#fff;
 	}

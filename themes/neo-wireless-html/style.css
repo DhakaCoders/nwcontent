@@ -13,3 +13,73 @@ Text Domain: neowireless
 
 @import url('assets/css/main.css');
 
+.home-bnr-xs-nav-bar-controller.show-xs{
+	display: none!important;
+}
+
+.nw-about-content-sec{
+	background: transparent!important;
+	position: relative;
+	overflow: hidden;
+}
+.nw-about-con-sec-bg-skw{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.nw-about-bg-img{
+	position: absolute;
+	height: 50%;
+	left: 0;
+	right: 0;
+	top: 0;
+	background-size: cover!important;
+	background-position: center center!important;
+}
+.nw-about-bg-solid{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 50%;
+	background: #F4F7F9;
+	-webkit-transform: skew(-22deg) rotate(6deg);
+    -moz-transform: skew(-22deg) rotate(6deg);
+    transform: skew(22deg) rotate(6deg);
+}
+.nw-about-bg-sec-bg-skw-white {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -102px;
+    -webkit-transform: skew(-22deg) rotate(6deg);
+    -moz-transform: skew(-22deg) rotate(6deg);
+    transform: skew(22deg) rotate(6deg);
+    z-index: 2;
+    background: #fff;
+    height: 237px;
+}
+
+
+
+
+/*contact*/
+.google-map-sec-wrp{
+	margin-top: -60px;
+}
+.google-map-sec-wrp{
+	overflow: hidden;
+}
+.map-skew-01{
+	-webkit-transform:  rotate(9deg);
+    -moz-transform:  rotate(9deg);
+    transform:  rotate(9deg);
+    overflow: hidden;
+}
+.map-skew-02{
+	-webkit-transform:  rotate(-9deg);
+    -moz-transform:  rotate(-9deg);
+    transform:  rotate(-9deg);
+}
