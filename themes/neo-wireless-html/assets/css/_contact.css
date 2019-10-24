@@ -3,15 +3,16 @@
 contact-form-sec-wrp
 ----------------------
 */
-.contact-form-sec-wrp{
-	padding-top: 60px;
-	position: relative;
-	height: 910px;
+.contact-form-sec-wrp {
+    padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
 }
 .contact-form-bg {
     position: absolute;
     background-color: #f4f7f9;
-    clip-path: polygon( 0 0, 100% 0, 100% 100%, 0 calc(100% - 20vw) );
+    transform: skew(-10deg, -10deg);
     left: 0;
     right: 0;
     bottom: 0;
@@ -115,7 +116,8 @@ label.wpforms-field-label{
 	border-radius: 8px;
 }
 .wpforms-submit-container input.wpforms-submit:hover{
-	background-color: #43587b;
+	background-color: #7B8CA8;
+	color: #fff;
 }
 
 
@@ -150,6 +152,15 @@ label.wpforms-field-label{
 	left: 0;
 	top: 0;
 }
+.contact-info a i svg{
+	fill: #43587B !important;
+}
+.contact-info a:hover i svg{
+	fill: #ff5c26 !important;
+}
+.contact-info a:hover{
+	color: #ff5c26;
+}
 .contact-info a:first-of-type i{
 	top: 5px;
 }
@@ -165,7 +176,11 @@ label.wpforms-field-label{
 .contac-info-rgt .ftr-mid-socail a{
 	padding-top: 0;
 }
-
+.google-map-sec-wrp{
+	position: relative;
+	z-index: 1;
+	margin-top: -100px;
+}
 #googlemap{
 	height: 965px;
 }

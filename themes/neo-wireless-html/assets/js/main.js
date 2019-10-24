@@ -48,8 +48,8 @@ if( $('.nw-product-slider').length ){
       slidesToShow: 1,
       slidesToScroll: 1,
       fade: true,
-      prevArrow: $('.spsliderarrows .leftArrow'),
-      nextArrow: $('.spsliderarrows .rightArrow'),
+      prevArrow: $('.nwsliderarrows .leftArrow'),
+      nextArrow: $('.nwsliderarrows .rightArrow'),
     });
 }
 
