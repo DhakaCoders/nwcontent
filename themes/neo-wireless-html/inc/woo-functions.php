@@ -89,6 +89,8 @@ if (!function_exists('add_shorttext_below_title_loop')) {
 if (!function_exists('get_woocommerce_custom_sideber')) {
 	function get_woocommerce_custom_sideber(){
 		?>
+
+		<div class="nw-pro-left-sidebar"></div>
 		
 		<?php
 	}
