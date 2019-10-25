@@ -88,9 +88,13 @@ if (!function_exists('add_shorttext_below_title_loop')) {
  */
 if (!function_exists('get_woocommerce_custom_sideber')) {
 	function get_woocommerce_custom_sideber(){
-		echo '<img src="'.THEME_URI.'/assets/images/woosidebar.png" alt="sidebar">';
+		?>
+		
+		<?php
 	}
+
 }
+
 
 
 /**
