@@ -69,6 +69,7 @@ Includes->>
 */
 include_once(THEME_DIR .'/inc/cbv-functions.php');
 include_once(THEME_DIR .'/inc/breadcrumbs.php');
+include_once(THEME_DIR .'/inc/woo-functions.php');
 
 /**
 ACF Option pages->>
