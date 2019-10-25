@@ -233,10 +233,6 @@
     </div>
 </div>
 
-<script src="assets/js/jquery.sticky-sidebar.js"></script>
-<script src="assets/js/jquery.matchHeight-min.js"></script>
-<script src="assets/js/particles.min.js"></script>
-
 <?php wp_footer(); ?>
 </body>
 </html>

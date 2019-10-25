@@ -1,2 +1,10 @@
 2019-10-25T09:30:45+00:00 CRITICAL syntax error, unexpected end of file in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 8
 
+2019-10-25T11:17:23+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 53
+
+2019-10-25T11:17:23+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 53
+
+2019-10-25T11:18:21+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 53
+
+2019-10-25T11:24:55+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 52
+

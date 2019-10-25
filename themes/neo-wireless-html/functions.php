@@ -58,6 +58,8 @@ function cbv_theme_scripts(){
 	include_once( THEME_DIR . '/enq-scripts/animate.php' );
 	include_once( THEME_DIR . '/enq-scripts/slick.php' );
 	include_once( THEME_DIR . '/enq-scripts/fancybox.php' );
+	include_once( THEME_DIR . '/enq-scripts/sticky.sidebar.php' );
+	include_once( THEME_DIR . '/enq-scripts/particles.php' );
 	include_once( THEME_DIR . '/enq-scripts/matchheight.php' );
 	include_once( THEME_DIR . '/enq-scripts/theme.default.php' );
 }
