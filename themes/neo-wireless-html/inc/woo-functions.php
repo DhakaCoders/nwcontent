@@ -101,12 +101,34 @@ if (!function_exists('get_woocommerce_search_catalog')) {
 		echo '<div class="wcsearch">';
 		get_product_search_form();
 		echo '</div><div class="wccatalog">';
+		_e( '<span>Sort By: </span>', 'woocommerce' ).
 		woocommerce_catalog_ordering();
 		echo '</div>';
 	}
 }
 
 
+/**
+* @snippet     Rename a Default Sorting Option @ WooCommerce Shop
+*/
+ 
+add_filter( 'woocommerce_catalog_orderby', 'bbloomer_rename_sorting_option_woocommerce_shop' );
+ 
+function bbloomer_rename_sorting_option_woocommerce_shop( $options ) {
+   $options['price'] = __( 'Price: Ascending', 'woocommerce' );   
+   $options['price-desc'] = __( 'Price: Descending', 'woocommerce' );   
+   return $options;
+}
+
+add_filter( 'woocommerce_catalog_orderby', 'bbloomer_remove_sorting_option_woocommerce_shop' );
+ 
+function bbloomer_remove_sorting_option_woocommerce_shop( $options ) {
+   unset( $options['menu_order'] );   
+   unset( $options['popularity'] );   
+   unset( $options['rating'] );   
+   unset( $options['date'] );   
+   return $options;
+}
 
 /*Remove Single page Woocommerce Hooks & Filters are below*/
 
