@@ -49,4 +49,5 @@ $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_cl
 		do_action( 'woocommerce_product_thumbnails' );
 		?>
 	</figure>
+	<div class="view-gallery"><a href="#" onClick="gotoViewGallery(); return false;">View Gallery</a></div>
 </div>

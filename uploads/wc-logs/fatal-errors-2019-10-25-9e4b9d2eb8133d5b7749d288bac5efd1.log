@@ -8,3 +8,11 @@
 
 2019-10-25T11:24:55+00:00 CRITICAL syntax error, unexpected 'echo' (T_ECHO) in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 52
 
+2019-10-25T13:35:51+00:00 CRITICAL Cannot redeclare get_custom_wc_output_content_wrapper() (previously declared in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php:31) in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 36
+
+2019-10-25T14:41:39+00:00 CRITICAL syntax error, unexpected ';', expecting ',' or ')' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 119
+
+2019-10-25T16:15:17+00:00 CRITICAL Cannot redeclare get_product_gallery_video() (previously declared in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php:156) in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 192
+
+2019-10-25T16:35:58+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\Requests\Transport\cURL.php on line 163
+

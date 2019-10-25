@@ -17,31 +17,9 @@
 
 defined( 'ABSPATH' ) || exit;
 
-get_header( 'shop' );?>
-<section class="page-banner">
-  <div class="page-banner-con">
-    <div class="page-banner-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/page-banner-bg.jpg);"></div>
-    <div class="page-banner-des">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="page-banner-des-innr">
-              <strong class="banner-page-title">PRODUCTS</strong>
-              <div class="breadcrumbs">
-                <ul>           
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Binnenpagina</a></li>
-                  <li><a href="#">Binnenpagina</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<?php
+get_header( 'shop' );
+
+get_template_part( 'templates/page', 'banner' );
 
 /**
  * Hook: woocommerce_before_main_content.
@@ -53,12 +31,6 @@ get_header( 'shop' );?>
 do_action( 'woocommerce_before_main_content' );
 
 ?>
-<section class="wooarchive">
-<div class="container">
-<div class="row">
-<div class="col-sm-12">
-<div class="wooarchive-inner clearfix">
-
 
 <header class="woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
@@ -144,11 +116,6 @@ if ( woocommerce_product_loop() ) {
 ?>
 </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</section>
 <?php
 /**
  * Hook: woocommerce_after_main_content.

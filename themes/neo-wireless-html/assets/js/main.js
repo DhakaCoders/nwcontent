@@ -736,4 +736,8 @@ if( $('#particles-js').length ){
 
 
 
-
+function gotoViewGallery() {
+  jQuery('html, body').animate({
+    scrollTop: jQuery("#galleryToScroll").offset().top
+  }, 1000);
+};
