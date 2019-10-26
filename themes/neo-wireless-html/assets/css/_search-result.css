@@ -252,6 +252,7 @@
 	line-height: 36px;
 	color: #7B8CA8;
 	margin-bottom: 25px;
+  text-transform: capitalize;
 }
 
 
@@ -691,3 +692,101 @@ a.search-next-link:hover{
       font-size: 25PX
   }
 }
+
+
+
+
+
+
+#nw-pro-left-sidebar .search-result-left-sidebar {
+  width: 100%!important;
+  float: left;
+  background: #fff!important;
+  padding-right: 30px;
+}
+#nw-pro-left-sidebar .nw-pro-categories{
+  margin-bottom: 20px;
+}
+.nw-pro-categories h2 {
+  font-weight: 300;
+  line-height: 36px;
+  color: #7B8CA8;
+  margin-bottom: 25px;
+}
+.nw-pro-categories-innr > ul > li {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  padding: 0 0 15px 26px;
+  color:#43587B;
+}
+.nw-pro-categories-innr > ul > li > a{
+  color:#43587B;;
+} 
+.nw-pro-categories-innr > ul > li.active > a,
+.nw-pro-categories-innr > ul > li > a:hover{
+  color: #02BEE8; 
+}
+.nw-pro-categories-innr li:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  background: url(../images/pro-list-icon.svg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  width: 16px;
+  height: 16px;
+  -ms-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.nw-pro-categories-innr li:hover:after {
+  background: url(../images/pro-list-icon-blue.svg);
+  background-repeat: no-repeat;
+}
+
+
+ 
+
+
+
+.nw-pro-categories-innr ul.subcategorie{
+  margin-left: -18px;
+  padding-left: 17px;
+  border-left: 1px solid #E3E8F1;
+  padding-top: 10px;
+}
+
+.nw-pro-categories-innr ul.subcategorie > li{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0 0 5px 22px;
+  text-transform: uppercase;
+}
+.nw-pro-categories-innr ul.subcategorie > li:last-of-type{
+  padding-bottom: 4px;
+}
+.nw-pro-categories-innr ul.subcategorie > li > a{
+  color: #7187AA;
+}
+.nw-pro-categories-innr ul.subcategorie > li > a:hover{
+  color: #02BEE8;
+}
+
+.nw-pro-categories-innr ul.subcategorie > li:after {
+  background: url(../images/pro-list-icon-sub.svg);
+  background-repeat: no-repeat;
+  -ms-transition: all .5s;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+.nw-pro-categories-innr ul.subcategorie > li:hover:after {
+  background: url(../images/pro-list-icon-blue.svg);
+  background-repeat: no-repeat;
+}
+
+
