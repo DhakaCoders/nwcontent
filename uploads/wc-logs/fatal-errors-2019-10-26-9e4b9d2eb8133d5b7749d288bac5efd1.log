@@ -1,0 +1,13 @@
+2019-10-26T08:18:11+00:00 CRITICAL Uncaught Error: Using $this when not in object context in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\class-wc-cart.php:611
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php(235): WC_Cart::get_cart()
+#1 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\checkout\form-checkout.php(43): get_woocommerce_custom_cart()
+#2 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(285): wc_get_template('checkout/form-c...', Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\shortcodes\class-wc-shortcode-checkout.php(67): WC_Shortcode_Checkout::checkout()
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\inclu in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\class-wc-cart.php on line 611
+
+2019-10-26T09:13:55+00:00 CRITICAL syntax error, unexpected '}', expecting ',' or ';' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 240
+
+2019-10-26T09:45:17+00:00 CRITICAL syntax error, unexpected 'foreach' (T_FOREACH), expecting ',' or ';' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 236
+

@@ -194,8 +194,16 @@ h1.banner-page-title,
 	background-color: #ff5c26;
 	border-color: #ff5c26;
 }
-
-
+h3#order_review_heading {
+    display: none;
+}
+.woocommerce-cart-form__cart-item.wccartform{
+    padding-bottom: 10px;
+}
+.product-thumbnail.checkoutimg {
+    width: 150px;
+    float: left;
+}
 
 @media(max-width: 1199px){
 
