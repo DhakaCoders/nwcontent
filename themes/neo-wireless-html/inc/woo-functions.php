@@ -87,7 +87,7 @@ if (!function_exists('add_shorttext_below_title_loop')) {
 /**
  * Archive sidebar tag start
  */
-//add_action( 'woocommerce_before_shop_loop', 'put_woocommerce_search_sidebar_tag_start', 10);
+add_action( 'woocommerce_before_shop_loop', 'put_woocommerce_search_sidebar_tag_start', 10);
 if (!function_exists('put_woocommerce_search_sidebar_tag_start')) {
 	function put_woocommerce_search_sidebar_tag_start(){
 		?>
@@ -120,7 +120,7 @@ if (!function_exists('put_woocommerce_search_sidebar_tag_start')) {
 /**
  *  Archive sidebar tag end
  */
-//add_action( 'woocommerce_no_products_found', 'put_woocommerce_search_sidebar_tag_end', 10 );
+add_action( 'woocommerce_after_shop_loop', 'put_woocommerce_search_sidebar_tag_end', 10 );
 if (!function_exists('put_woocommerce_search_sidebar_tag_end')) {
 	function put_woocommerce_search_sidebar_tag_end(){
 		echo '</div></div>';
