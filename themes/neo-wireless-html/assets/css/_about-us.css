@@ -48,10 +48,15 @@
     vertical-align: baseline;
     margin-bottom: 15px;
 }
-.nw-neo-wireless-dsc span i{
+.nw-neo-wireless-dsc span i:nth-child(1){
     display: inline-block;
     vertical-align: baseline;
 }
+.nw-neo-wireless-dsc span i:nth-child(2){
+    display: none;
+    vertical-align: baseline;
+}
+
 .nw-neo-wireless-dsc p{
 	margin-bottom: 15px;
 }
@@ -147,7 +152,8 @@
 	transition: all 0.5s;
 }
 .nw-about-content-lft a:hover{
-	background-color: #43587b;
+	background-color: #7B8CA8;
+	color: #fff
 }
 
 
@@ -414,6 +420,13 @@
 	.nw-neo-wireless-bg-wrp img{
 		margin:auto;
 	}
+	.nw-neo-wireless-dsc span i:nth-child(1){
+	    display: none;
+	}
+	.nw-neo-wireless-dsc span i:nth-child(2){
+	    display: inline-block;
+	}
+
 	.nw-team-sec-wrp {
 	    padding-top: 40px;
 	    margin-bottom: 30px;

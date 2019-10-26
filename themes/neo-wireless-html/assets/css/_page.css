@@ -20,6 +20,7 @@
 .page-banner-des-innr{
     padding: 170px 0 60px;
     position: relative;
+	z-index: 5;
 }
 strong.banner-page-title, 
 h1.banner-page-title,
@@ -114,6 +115,95 @@ h1.banner-page-title,
 }
 
 
+/*
+---------------------
+ Cookie Css
+---------------------
+*/
+.cookie-policy-wrp{
+	position: fixed;
+	bottom: 0;
+	right: 25px;
+	top: 30%;
+	z-index: 2;
+}
+.cookie-policy-dsc{
+	background: #66D6FF;
+	padding: 30px 30px;
+	color: #fff;
+	max-width: 345px;
+	width: 100%;
+	font-size: 16px;
+	text-align: center;
+}
+.cookie-policy-dsc h4{
+	margin: 0;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+	font-size: 24px;
+	line-height: 26px;
+	font-weight: 800;
+}
+.cookie-policy-dsc > a {
+	display: inline-block;
+	vertical-align: baseline;
+	text-decoration: none;
+	color: #fff;
+	font-weight: 600;
+	padding-right: 30px;
+	font-size: 18px;
+	line-height: 20px;
+	position: relative;
+}
+.cookie-policy-dsc > a:after{
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 3px;
+	background-image: url(../images/cookie-ary-icon.svg);
+	background-repeat: no-repeat;
+	width: 14px;
+	height: 14px;
+	background-size: 14px 14px;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.cookie-policy-dsc > a:hover:after{
+	right: -5px;
+}
+.cookie-btn {
+	margin-top: 20px;
+}
+.cookie-btn a{
+	display: inline-block;
+	vertical-align: baseline;
+	text-decoration: none;
+	color: #fff;
+	font-weight: 600;
+	border:2px solid #fff;
+	padding: 12px 35px;
+	font-size: 16px;
+	line-height: 18px;
+	text-transform: uppercase;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.cookie-btn a:hover{
+	background-color: #ff5c26;
+	border-color: #ff5c26;
+}
+h3#order_review_heading {
+    display: none;
+}
+.woocommerce-cart-form__cart-item.wccartform{
+    padding-bottom: 10px;
+}
+.product-thumbnail.checkoutimg {
+    width: 150px;
+    float: left;
+}
 
 @media(max-width: 1199px){
 
@@ -464,21 +554,10 @@ h1.banner-page-title,
 	    -o-transform: rotate(-15deg);
 	    top: 10px;
 	}
-	strong.banner-page-title,
-	h1.banner-page-title, 
-	.page-banner-des-inner h1, 
-	.page-banner-des-inner strong {
-	    font-size: 55px;
-	    line-height: 60px;
-	}
 
-}
 
-@media(max-width: 639px){
+	/* page-banner */
 
-}
-
-@media(max-width: 575px){
 	.page-banner-des-innr {
 	    padding: 170px 0 60px;
 	    position: relative;
@@ -488,51 +567,28 @@ h1.banner-page-title,
 	h1.banner-page-title, 
 	.page-banner-des-inner h1, 
 	.page-banner-des-inner strong {
-	    font-size: 42px;
-	    line-height: 45px;
+	    font-size: 50px;
+	    line-height: 55px;
 	}
 
 	.breadcrumbs ul {
 	    display: table;
 	    margin: 0 auto;
 	}
-    .breadcrumbs ul li{
-        display: none!important;
-	}
 
-    .breadcrumbs ul li:first-child,
-    .breadcrumbs ul li:last-child{
-        display: inline-block!important;
-        vertical-align: baseline!important;
-    }
-    .breadcrumbs ul li:first-child {
-	    margin-right: 12px;
-	}
-    .breadcrumbs ul li:last-child{
-    	padding-left: 56px;
-    }
-	.breadcrumbs ul li:last-child::after {
-		content: "";
-		height: 14px;
-		width: 13px;
-		background: url(../images/breadcrumbs-array.svg);
-		background-size: 100% auto;
-		background-repeat: no-repeat;
-		position: absolute;
-		left: 32px;
-		top: 64%;
-		transform: translateY(-50%);
-		-ms-transform: translateY(-50%);
-		-webkit-transform: translateY(-50%);
-	}
-	.breadcrumbs ul li:last-child::before {
-		content: "...";
-		font-size: 22px;
-		position: absolute;
-		left: 5px;
-		top:0;
-		color:#fff;
-	}
+
+
+
+
+}
+
+@media(max-width: 639px){
+
+}
+
+@media(max-width: 575px){
+
+
 
 }
 
@@ -567,6 +623,34 @@ h1.banner-page-title,
 	    font-size: 32px;
 	    line-height: 26px;
 	    margin-bottom: 15px;
+	}
+
+	.breadcrumbs ul li {
+	    font-size: 14px;
+	    line-height: 20px;
+	}
+	.breadcrumbs ul li:first-child::before {
+	    height: 20px;
+	    width: 20px;
+	    left: 3px;
+	}
+}
+
+@media(max-width: 399px){
+	.breadcrumbs ul li {
+	    padding: 0 13px;
+	    font-size: 12px;
+	}
+	.breadcrumbs ul li::after {
+	    height: 12px;
+	    width: 11px;
+	}
+	strong.banner-page-title, 
+	h1.banner-page-title, 
+	.page-banner-des-inner h1, 
+	.page-banner-des-inner strong {
+	    font-size: 30px;
+	    line-height: 35px;
 	}
 }
 

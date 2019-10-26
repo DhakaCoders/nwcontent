@@ -32,7 +32,9 @@
   <path d="M17.3546 0H6.6462C5.84899 0 5.2002 0.648797 5.2002 1.446V22.554C5.2002 23.3512 5.84899 24 6.6462 24H17.3542C18.1514 24 18.8002 23.3512 18.8002 22.5544V1.446C18.8002 0.648797 18.1514 0 17.3546 0ZM18.0002 22.554C18.0002 22.91 17.7106 23.2 17.3546 23.2H6.6462C6.28981 23.2 6.00021 22.91 6.00021 22.5544V1.446C6.00021 1.08998 6.28981 0.800016 6.6462 0.800016H17.3542C17.7106 0.800016 18.0002 1.09003 18.0002 1.446V22.554H18.0002Z" />
   <path d="M18.4001 2.40002H5.60018C5.3794 2.40002 5.2002 2.57923 5.2002 2.80001V19.6C5.2002 19.8208 5.3794 20 5.60018 20H18.4002C18.621 20 18.8002 19.8208 18.8002 19.6V2.80001C18.8002 2.57923 18.621 2.40002 18.4001 2.40002ZM18.0002 19.2H6.00016V3.20004H18.0002V19.2Z" />
   </symbol>
+  
   </svg>
+
 
 </head>
 <body>
@@ -106,7 +108,8 @@
 
 <section class="page-banner">
   <div class="page-banner-con">
-    <div class="page-banner-bg" style="background-image: url(assets/images/page-banner-bg.jpg);"></div>
+    <!-- <div class="page-banner-bg" style="background-image: url(assets/images/page-banner-bg.jpg);"></div> -->
+    <div class="main-bnr-bg" id="particles-js"></div>
     <div class="page-banner-des">
       <div class="container">
         <div class="row">
@@ -283,18 +286,22 @@
 
 
 <section class="footer-top-sec-wrp clearfix">
-   <div class="footer-top-lft" style="background: url(assets/images/footer-top-lft-bg.jpg);">
-     <div class="footer-top-dsc">
-       <h1>Mounting Accesories</h1>
-       <p>Phasellus euismod convallis sem et viverra. Duis accumsan pulvinar turpis, at rutrum lectus tincidunt et. Nam facilisis est a imperdiet commodo. Phasellus luctus interdum condimentum. </p>
-       <a href="#">Discover our mounting accesories</a>
+   <div class="footer-top-lft">
+     <div class="footer-top-lft-bg" style="background: url(assets/images/footer-top-lft-bg.jpg);">
+       <div class="footer-top-dsc">
+         <h2>Mounting Accesories</h2>
+         <p>Phasellus euismod convallis sem et viverra. Duis accumsan pulvinar turpis, at rutrum lectus tincidunt et. Nam facilisis est a imperdiet commodo. Phasellus luctus interdum condimentum. </p>
+         <a href="#">Discover our mounting accesories</a>
+       </div>
      </div>
    </div>
-   <div class="footer-top-rgt" style="background: url(assets/images/footer-top-rgt-bg.jpg);">
-     <div class="footer-top-dsc">
-       <h1>Wi-Fi & LAN Projects</h1>
-       <p>Phasellus euismod convallis sem et viverra. Duis accumsan pulvinar turpis, at rutrum lectus tincidunt et. Nam facilisis est a imperdiet commodo. Phasellus luctus interdum condimentum. </p>
-       <a href="#">Discover our Wi-Fi & Lan Projects</a>
+   <div class="footer-top-rgt">
+     <div class="footer-top-rgt-bg" style="background: url(assets/images/footer-top-rgt-bg.jpg);">
+       <div class="footer-top-dsc">
+         <h2>Wi-Fi & LAN Projects</h2>
+         <p>Phasellus euismod convallis sem et viverra. Duis accumsan pulvinar turpis, at rutrum lectus tincidunt et. Nam facilisis est a imperdiet commodo. Phasellus luctus interdum condimentum. </p>
+         <a href="#">Discover our Wi-Fi & Lan Projects</a>
+       </div>
      </div>
    </div>
 </section><!--end of footer-top-sec-wrp -->
@@ -310,10 +317,68 @@
                   <img src="assets/images/ftr-logo.png">
                 </a>
               </div>
+              <div class="ftr-mid-socail show-xs">
+                 <a href="#">
+                    <i>
+                      <svg class="ftr-fb-icon" width="14" height="24" viewBox="0 0 14 24" fill="#43587B;">
+                        <use xlink:href="#ftr-fb-icon-svg"></use>
+                      </svg> 
+                    </i>
+                  </a>
+                  <a href="#">
+                    <i>
+                      <svg class="ftr-twi-icon" width="24" height="22" viewBox="0 0 24 22" fill="#43587B;">
+                        <use xlink:href="#ftr-twi-icon-svg"></use>
+                      </svg> 
+                    </i>
+                  </a>
+                  <a href="#">
+                    <i>
+                      <svg class="ftr-ins-icon" width="24" height="24" viewBox="0 0 24 24" fill="#43587B;">
+                        <use xlink:href="#ftr-ins-icon-svg"></use>
+                      </svg> 
+                    </i>
+                  </a>
+              </div>
               <div class="ftr-tp-info">
                 <a href="#">Burgemeester De Cocklaan 10 <br> bus 11 9320 Erembodegem</a>
                 <a href="mailto:info@neowireless.eu">info@neowireless.eu</a>
                 <span>BE0848 529 769</span>
+              </div>
+              <div class="ftr-mid-innr show-xs clearfix">
+                <div class="ftr-mid-contact">
+                  <a href="tel:+32 53 86 00 88">
+                    <i>
+                      <svg class="ftr-phone-icon" width="38" height="38" viewBox="0 0 38 38" fill="#43587B;">
+                        <use xlink:href="#ftr-phone-icon-svg"></use>
+                      </svg> 
+                    </i>
+                   Call us: +32 53 86 00 88
+                  </a>
+                </div>
+                <div class="ftr-mid-socail hide-xs">
+                  <a href="#">
+                    <i>
+                      <svg class="ftr-fb-icon" width="14" height="24" viewBox="0 0 14 24" fill="#43587B;">
+                        <use xlink:href="#ftr-fb-icon-svg"></use>
+                      </svg> 
+                    </i>
+                  </a>
+                  <a href="#">
+                    <i>
+                      <svg class="ftr-twi-icon" width="24" height="22" viewBox="0 0 24 22" fill="#43587B;">
+                        <use xlink:href="#ftr-twi-icon-svg"></use>
+                      </svg> 
+                    </i>
+                  </a>
+                  <a href="#">
+                    <i>
+                      <svg class="ftr-ins-icon" width="24" height="24" viewBox="0 0 24 24" fill="#43587B;">
+                        <use xlink:href="#ftr-ins-icon-svg"></use>
+                      </svg> 
+                    </i>
+                  </a>
+                </div>
               </div>
             </div>
             <div class="ftr-tp-menus">
@@ -335,7 +400,7 @@
                 </ul>
               </div>
               <div class="footer-menu-itm">
-                <h5>Navigation</h5>
+                <h5>Product Categories</h5>
                 <ul>
                   <li><a href="#">Product Categories</a></li>
                   <li><a href="#">Product Category</a></li>
@@ -349,14 +414,39 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="ftr-mid-innr clearfix">
+        <div class="ftr-mid-innr hide-xs clearfix">
           <div class="ftr-mid-contact">
-            <a href="#"><i><img src="assets/images/phone-icon.svg"></i> Call us: +32 53 86 00 88</a>
+            <a href="tel:+32 53 86 00 88">
+              <i>
+                <svg class="ftr-phone-icon" width="38" height="38" viewBox="0 0 38 38" fill="#43587B;">
+                  <use xlink:href="#ftr-phone-icon-svg"></use>
+                </svg> 
+              </i>
+             Call us: +32 53 86 00 88
+            </a>
           </div>
-          <div class="ftr-mid-socail">
-            <a href="#"><i><img src="assets/images/ftr-fb-icon.svg"></i></a>
-            <a href="#"><i><img src="assets/images/ftr-twi-icon.svg"></i></a>
-            <a href="#"><i><img src="assets/images/ftr-instagram-icon.svg"></i></a>
+          <div class="ftr-mid-socail hide-xs">
+            <a href="#">
+              <i>
+                <svg class="ftr-fb-icon" width="14" height="24" viewBox="0 0 14 24" fill="#43587B;">
+                  <use xlink:href="#ftr-fb-icon-svg"></use>
+                </svg> 
+              </i>
+            </a>
+            <a href="#">
+              <i>
+                <svg class="ftr-twi-icon" width="24" height="22" viewBox="0 0 24 22" fill="#43587B;">
+                  <use xlink:href="#ftr-twi-icon-svg"></use>
+                </svg> 
+              </i>
+            </a>
+            <a href="#">
+              <i>
+                <svg class="ftr-ins-icon" width="24" height="24" viewBox="0 0 24 24" fill="#43587B;">
+                  <use xlink:href="#ftr-ins-icon-svg"></use>
+                </svg> 
+              </i>
+            </a>
           </div>
         </div>
       </div>
@@ -365,7 +455,7 @@
       <div class="col-sm-12">
         <div class="ftr-btm-innr clearfix">
           <div class="ftr-btm-menu">
-            <p>© 2019 Neo Wireless. All Rights Reserved.</p>
+            <p>&copy; 2019 Neo Wireless. All Rights Reserved.</p>
             <ul class="clearfix">
               <li><a href="#">Sitemap</a></li>
               <li><a href="#">Privacy Policy</a></li>
@@ -458,8 +548,10 @@
 <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
 <script src="assets/fancybox3/dist/jquery.fancybox.min.js"></script>
 <script src="assets/slick.slider/slick.js"></script>
+<script src="assets/js/jquery.sticky-sidebar.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBo2-QJ7RdCkLw3NFZEu71mEKJ_8LczG-c"></script>
 <script src="assets/js/jquery.matchHeight-min.js"></script>
+<script src="assets/js/particles.min.js"></script>
 <script src="assets/js/wow.min.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/main.js"></script>

@@ -24,8 +24,28 @@ if (windowWidth <= 767) {
   });
 }
 
+/*
+=======================
+  cookise-close-btn js
+=======================
+*/
+if ($('.cookie-btn').length) {
+  $('.cookie-btn').on('click', function(){
+    $('.cookie-policy-wrp').hide('slow');
+  });
+}
+
 
 // }
+
+//nw-subcategorie
+if ($('li.subcategorie-wrp').length) {
+  $( "li.subcategorie-wrp > a" ).click(function(e) {
+    e.preventDefault();
+    $(this).parent().find('ul').slideToggle();
+  });
+}
+
 
 
 // http://codepen.io/norman_pixelkings/pen/NNbqgG
@@ -725,4 +745,8 @@ if( $('#particles-js').length ){
 
 
 
-
+function gotoViewGallery() {
+  jQuery('html, body').animate({
+    scrollTop: jQuery("#galleryToScroll").offset().top
+  }, 1000);
+};
