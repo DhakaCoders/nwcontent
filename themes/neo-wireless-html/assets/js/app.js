@@ -126,13 +126,23 @@ hasGaps();
 hasMargins();
 hasPaddings();
 
+$('.googleMapTringle').css('border-left', windowWidth);
+$('.top-skip').css('border-left', windowWidth);
+$('.bottom-skip').css('border-left', windowWidth);
+
 /**
 On Resize
 */
 $(window).resize(function(){
+  var windowWidth = $(window).width();
   hasGaps();
   hasMargins();
   hasPaddings();
+  $('.googleMapTringle').css('border-left', windowWidth);
+  $('.top-skip').css('border-left', windowWidth);
+  $('.bottom-skip').css('border-left', windowWidth);
 });
+
+
 
 })(jQuery);

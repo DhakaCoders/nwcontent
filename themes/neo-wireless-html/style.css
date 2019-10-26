@@ -67,19 +67,72 @@ Text Domain: neowireless
 
 /*contact*/
 .google-map-sec-wrp{
-	margin-top: -60px;
+	margin-top: 0;
 }
-.google-map-sec-wrp{
+/*.google-map-sec-wrp{
 	overflow: hidden;
 }
 .map-skew-01{
 	-webkit-transform:  rotate(9deg);
     -moz-transform:  rotate(9deg);
     transform:  rotate(9deg);
-    overflow: hidden;
 }
 .map-skew-02{
 	-webkit-transform:  rotate(-9deg);
     -moz-transform:  rotate(-9deg);
     transform:  rotate(-9deg);
+}*/
+.google-map-sec-wrp{
+	max-width: 100%;
+	overflow: hidden;
+}
+.googleMapTringle{
+	width: 0;
+    height: 0;
+    border-top: 272px solid #fff!important;
+    border-left-color: transparent!important;
+    border-left-style: solid!important;
+    border-left: 1920px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.poligon{
+	height: 400px;
+	width: 100%;
+	background-image: url(assets/images/page-banner-bg.jpg);
+	background-position: center;
+	background-size: cover;
+	clip-path: polygon(0 0, 0 100%, 100% 50%);
+}
+.poligon2{
+	height: 725px;
+	width: 100%;
+	background-image: url(assets/images/page-banner-bg.jpg);
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+.top-skip{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+    border-top: 200px solid #fff!important;
+    border-left-color: transparent!important;
+    border-left-style: solid!important;
+    border-left: 1920px;
+    z-index: 1;
+}
+.bottom-skip{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+    border-bottom: 380px solid #fff!important;
+    border-left-color: transparent!important;
+    border-left-style: solid!important;
+    border-left: 1920px;
+    z-index: 1;
 }
