@@ -225,6 +225,9 @@ ul.products{
 	font-size: 14px;
 	line-height: 40px;
 }
+.xoo-cp-container {
+    padding: 0 !important;
+}
 .xoo-cp-content{
 	background: #F4F7F9;
 	box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
@@ -247,6 +250,7 @@ ul.products{
 	padding-bottom: 20px;
 	border-radius: 0;
 	margin-bottom: 25px;
+	width: 100%;
 }
 .xoo-cp-atcn span{
 	display: none;
@@ -257,6 +261,63 @@ td.xoo-cp-remove .xoo-cp-remove-pd{
 .xoo-cp-pdetails td.xoo-cp-remove {
     display: none;
 }
-td.xoo-cp-pimg {
-    width: 25%;
+.xoo-cp-pdetails td.xoo-cp-pimg {
+    width: 25% !important;
+}
+.xoo-cp-btns{
+	max-width: 440px;
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.xoo-cp-btns a:nth-child(1){
+	float: right;
+}
+.xoo-cp-close{
+	padding: 13px 16px 13px 42px !important;
+	background: #FF5C26;
+}
+.xoo-cp-close:after{
+	content: "";
+	position: absolute;
+	left: 19px;
+	top: 14px;
+	background: url(../images/list-arry-icon-w.svg);
+	background-repeat: no-repeat;
+	background-size: 14px 14px;
+	width: 14px;
+	height: 14px;
+}
+a.xoo-cp-btn-vc{
+	padding-left: 72px !important;
+	padding-right: 48px !important;
+	border: 2px solid #43587B !important;
+	background: transparent;
+	color: #43587B !important;
+}
+.xoo-cp-btn-vc:after{
+	content: "";
+	position: absolute;
+	left: 45px;
+	top: 14px;
+	background: url(../images/cart-icon.svg);
+	background-repeat: no-repeat;
+	background-size: 14px 14px;
+	width: 14px;
+	height: 14px;
+}
+a.xcp-btn{
+	max-width: 210px;
+	width: 100%;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 700;
+	color: #fff;
+	padding: 13px 0;
+	position: relative;
+}
+.xcp-btn{
+	border-radius: 8px;
+	border: 0 !important;
 }
