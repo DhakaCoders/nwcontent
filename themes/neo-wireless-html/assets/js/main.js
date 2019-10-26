@@ -38,6 +38,15 @@ if ($('.cookie-btn').length) {
 
 // }
 
+//nw-subcategorie
+if ($('li.subcategorie-wrp').length) {
+  $( "li.subcategorie-wrp > a" ).click(function(e) {
+    e.preventDefault();
+    $(this).parent().find('ul').slideToggle();
+  });
+}
+
+
 
 // http://codepen.io/norman_pixelkings/pen/NNbqgG
 // https://stackoverflow.com/questions/38686650/slick-slides-on-pagination-hover

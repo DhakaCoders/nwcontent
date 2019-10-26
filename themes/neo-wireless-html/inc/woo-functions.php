@@ -90,7 +90,131 @@ if (!function_exists('get_woocommerce_custom_sideber')) {
 	function get_woocommerce_custom_sideber(){
 		?>
 
-		<div class="nw-pro-left-sidebar"></div>
+		<div id="nw-pro-left-sidebar">
+		  <div class="nw-pro-categories"> 
+		    <h2>Categories</h2>
+		    <div class="nw-pro-categories-innr"> 
+		      <ul class="ulc">
+		        <li class="active">
+		          <a href="#">ALL</a>
+		        </li>
+		        <li class="subcategorie-wrp">
+		          <a href="#">Mounting Accesories</a>
+		          <ul class="ulc subcategorie">
+		            <li>
+		              <a href="#">Subcategorie</a>
+		            </li>
+		            <li>
+		              <a href="#">Subcategorie</a>
+		            </li>
+		            <li>
+		              <a href="#">Subcategorie</a>
+		            </li>
+		          </ul>
+		        </li>
+		        <li>
+		          <a href="#">Network Hardware</a>
+		        </li>
+		      </ul>
+		    </div>
+		  </div>
+		  <div class="radio-check-box-wrapper clearfix"> 
+		    <div class="radio-box-wrp">
+		      <h2>Search Results</h2>
+		      <div class="radio-box-block"> 
+		        <form action="#">
+		          <p>
+		            <input type="radio" id="test01" name="radio-group" checked="">
+		            <label for="test01">All</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test02" name="radio-group">
+		            <label for="test02">Indoor</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test03" name="radio-group">
+		            <label for="test03">Outdoor</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test04" name="radio-group">
+		            <label for="test04">Universal</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test05" name="radio-group">
+		            <label for="test05">Cisco</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test06" name="radio-group">
+		            <label for="test06">Meraki</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test07" name="radio-group">
+		            <label for="test07">HP/Aruba</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test08" name="radio-group">
+		            <label for="test08">Mist</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test09" name="radio-group">
+		            <label for="test09">Aerohive</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test10" name="radio-group">
+		            <label for="test10">Ruckus</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test11" name="radio-group">
+		            <label for="test11">Ubiquiti</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test12" name="radio-group">
+		            <label for="test12">Fortinet</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test13" name="radio-group">
+		            <label for="test13">Airborne</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test14" name="radio-group">
+		            <label for="test14">Wall</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test15" name="radio-group">
+		            <label for="test15">Pole</label>
+		          </p>
+		          <p>
+		            <input type="radio" id="test16" name="radio-group">
+		            <label for="test16">Directional</label>
+		          </p>  
+		          <p>
+		            <input type="radio" id="test17" name="radio-group">
+		            <label for="test17">Omnidirectional</label>
+		          </p>                  
+		        </form>
+		      </div>             
+		    </div>
+		    <div class="check-box-wrp">
+		      <h2>Search Filters</h2>         
+		      <div class="check-box-block"> 
+		        <form>
+		          <div class="form-group">
+		            <input type="checkbox" name="percent" id="30%">
+		            <label for="30%">Lorem Ipsum </label>
+		          </div>
+		          <div class="form-group">
+		            <input type="checkbox" name="percent" id="40%">
+		            <label for="40%">Dolor sit amet </label>
+		          </div>
+		          <div class="form-group">
+		            <input type="checkbox" name="percent" id="50%">
+		            <label for="50%">maecenas edibus</label>
+		          </div>
+		        </form>
+		      </div> 
+		    </div>
+		  </div>
+		</div>
 		
 		<?php
 	}
