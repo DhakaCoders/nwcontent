@@ -132,8 +132,8 @@ if (!function_exists('put_woocommerce_search_sidebar_tag_end')) {
  */
 if (!function_exists('get_woocommerce_custom_sideber')) {
 	function get_woocommerce_custom_sideber(){
-		dynamic_sidebar('sidebar-widget-one');
-		//echo do_shortcode( '[searchandfilter id="wpf_5db43e8874bec"]');
+		//dynamic_sidebar('sidebar-widget-one');
+		echo do_shortcode( '[searchandfilter id="wpf_5db43e8874bec"]');
 	}
 
 }

@@ -225,9 +225,9 @@ if($show_hide_howwhat){
             echo '<span><i><img src="'.THEME_URI.'/assets/images/dotted-icon.svg"></i></span>';
             if( !empty( $whatwe['content'] ) ) echo wpautop($whatwe['content']);
 
-            $link5 = $whatwe['link'];
-            if( is_array( $link5 ) &&  !empty( $link5['url'] ) ){
-              printf('<a href="%s" target="%s">%s</a>', $link5['url'], $link5['target'], $link5['title']); 
+            $link6 = $whatwe['link'];
+            if( is_array( $link6 ) &&  !empty( $link6['url'] ) ){
+              printf('<a href="%s" target="%s">%s</a>', $link6['url'], $link6['target'], $link6['title']); 
             }
           ?> 
           </div>
@@ -236,100 +236,43 @@ if($show_hide_howwhat){
     </div>
   </div>
 </section><!-- end of nw-content-sec-wrp -->
-<?php } ?>
-<section class="nw-post-grid-sec-wrp">
-  <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="nw-post-headding">
-            <h1>Realizations</h1>
-          </div>
-          <div class="nw-post-gird-wrp">
-            <div class="nwpostsliderarrows show-xs">
-                <span class="leftArrow slick-arrow" aria-disabled="false" style="">
-                </span>
-                <span class="rightArrow slick-arrow slick-disabled" style="" aria-disabled="true">
-                </span>
-              </div>
-            <ul id="NwPostSlider" class="clearfix">
-              <li>
-                <div class="nw-post-gird-innr">
-                  <div class="nw-post-gird-controller">
-                    <div class="nw-post-gird-img" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/nw-post-img-01.png);">
-                      <a class="overlay-link" href="#"></a>
-                    </div>
-                  </div>
-                  <div class="nw-post-gird-dsc">
-                    <span>Category</span>
-                    <h4><a href="#">WiFi installatie ter Conversal BVBA</a></h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-                    <a href="#">More Info</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="nw-post-gird-innr">
-                  <div class="nw-post-gird-controller">
-                    <div class="nw-post-gird-img" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/nw-post-img-02.png);">
-                      <a class="overlay-link" href="#"></a>
-                    </div>
-                  </div>
-                  <div class="nw-post-gird-dsc">
-                    <span>Category</span>
-                    <h4><a href="#">WiFi installatie ter Conversal BVBA</a></h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-                    <a href="#">More Info</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="nw-post-gird-innr">
-                  <div class="nw-post-gird-controller">
-                    <div class="nw-post-gird-img" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/nw-post-img-03.png);">
-                      <a class="overlay-link" href="#"></a>
-                    </div>
-                  </div>
-                  <div class="nw-post-gird-dsc">
-                    <span>Category</span>
-                    <h4><a href="#">WiFi installatie ter Conversal BVBA</a></h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-                    <a href="#">More Info</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="nw-post-btn">
-            <a href="#">View our realizations</a>
-          </div>
-        </div>
-      </div>
-  </div>    
-</section><!--end of nw-post-grid-sec-wrp -->
+<?php } 
 
-
+$mounting = get_field('mounting', HOMEID);
+$wifi = get_field('wifi_sec', HOMEID);
+$show__hidemwifi = get_field('show__hidemwifi', HOMEID);
+if($show__hidemwifi){ 
+?>
 <section class="footer-top-sec-wrp clearfix">
    <div class="footer-top-lft">
-     <div class="footer-top-lft-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/footer-top-lft-bg.jpg);">
+     <div class="footer-top-lft-bg" style="background: url(<?php echo $mounting['image']; ?>);">
        <div class="footer-top-dsc">
-         <h2>Mounting Accesories</h2>
-         <p>Phasellus euismod convallis sem et viverra. Duis accumsan pulvinar turpis, at rutrum lectus tincidunt et. Nam facilisis est a imperdiet commodo. Phasellus luctus interdum condimentum. </p>
-         <a href="#">Discover our mounting accesories</a>
+        <?php 
+          if( !empty( $mounting['title'] ) ) printf( '<h2>%s</h2>', $mounting['title']); 
+          if( !empty( $mounting['content'] ) ) echo wpautop($mounting['content']);
+
+          $link7 = $mounting['link'];
+          if( is_array( $link7 ) &&  !empty( $link7['url'] ) ){
+            printf('<a href="%s" target="%s">%s</a>', $link7['url'], $link7['target'], $link7['title']); 
+          }
+        ?> 
        </div>
      </div>
    </div>
    <div class="footer-top-rgt">
-     <div class="footer-top-rgt-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/footer-top-rgt-bg.jpg);">
+     <div class="footer-top-rgt-bg" style="background: url(<?php echo $wifi['image']; ?>);">
        <div class="footer-top-dsc">
-         <h2>Wi-Fi & LAN Projects</h2>
-         <p>Phasellus euismod convallis sem et viverra. Duis accumsan pulvinar turpis, at rutrum lectus tincidunt et. Nam facilisis est a imperdiet commodo. Phasellus luctus interdum condimentum. </p>
-         <a href="#">Discover our Wi-Fi & Lan Projects</a>
+        <?php 
+          if( !empty( $wifi['title'] ) ) printf( '<h2>%s</h2>', $wifi['title']); 
+          if( !empty( $wifi['content'] ) ) echo wpautop($wifi['content']);
+
+          $link8 = $wifi['link'];
+          if( is_array( $link8 ) &&  !empty( $link8['url'] ) ){
+            printf('<a href="%s" target="%s">%s</a>', $link8['url'], $link8['target'], $link8['title']); 
+          }
+        ?> 
        </div>
      </div>
    </div>
 </section><!--end of footer-top-sec-wrp -->
-<?php get_footer(); ?>
+<?php } get_footer(); ?>
