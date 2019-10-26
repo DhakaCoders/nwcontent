@@ -47,6 +47,28 @@ do_action( 'woocommerce_before_main_content' );
 	do_action( 'woocommerce_archive_description' );
 	?>
 </header>
+<div class="row">
+	<div class="col-sm-12">
+		<div class="search-catalog clearfix">
+		<?php 
+			if (function_exists('get_woocommerce_search_catalog')){
+				get_woocommerce_search_catalog();
+			}
+		?>
+		</div>
+	</div>
+</div>
+<div class="row">
+<div class="col-sm-3">
+	<div class="woosidebar-left">
+		<?php 
+			if (function_exists('get_woocommerce_custom_sideber')){
+				get_woocommerce_custom_sideber();
+			}
+		?>
+	</div>
+</div>
+<div class="col-sm-9">
 		
 <?php
 if ( woocommerce_product_loop() ) {
@@ -92,7 +114,8 @@ if ( woocommerce_product_loop() ) {
 	do_action( 'woocommerce_no_products_found' );
 }
 ?>
-
+</div>
+</div>
 <?php
 /**
  * Hook: woocommerce_after_main_content.
