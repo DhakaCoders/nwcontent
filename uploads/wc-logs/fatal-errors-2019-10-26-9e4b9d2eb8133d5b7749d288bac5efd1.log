@@ -15,3 +15,27 @@ Stack trace:
 
 2019-10-26T18:08:29+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\front-page.php on line 119
 
+2019-10-26T19:23:30+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\themes\neo-wireless-html\header.php:104
+Stack trace:
+#0 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\template.php(722): require_once()
+#1 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\template.php(671): load_template('F:\\xampp\\htdocs...', true)
+#2 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\general-template.php(41): locate_template(Array, true)
+#3 F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\themes\neo-wireless-html\woocommerce\archive-product.php(20): get_header('shop')
+#4 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\template-loader.php(78): include('F:\\xampp\\htdocs...')
+#5 F:\xampp\htdocs\2019\neo-wireless-wp\wp-blog-header.php(19): require_once('F:\\xampp\\htdocs...')
+#6 F:\xampp\htdocs\2019\neo-wireless-wp\index.php(17): require('F:\\xampp\\htdocs...')
+#7 {main}
+  thrown in F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\themes\neo-wireless-html\header.php on line 104
+
+2019-10-26T19:25:54+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\themes\neo-wireless-html\header.php:104
+Stack trace:
+#0 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\template.php(722): require_once()
+#1 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\template.php(671): load_template('F:\\xampp\\htdocs...', true)
+#2 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\general-template.php(41): locate_template(Array, true)
+#3 F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\themes\neo-wireless-html\front-page.php(2): get_header()
+#4 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\template-loader.php(78): include('F:\\xampp\\htdocs...')
+#5 F:\xampp\htdocs\2019\neo-wireless-wp\wp-blog-header.php(19): require_once('F:\\xampp\\htdocs...')
+#6 F:\xampp\htdocs\2019\neo-wireless-wp\index.php(17): require('F:\\xampp\\htdocs...')
+#7 {main}
+  thrown in F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\themes\neo-wireless-html\header.php on line 104
+
