@@ -83,3 +83,13 @@ Text Domain: neowireless
     -moz-transform:  rotate(-9deg);
     transform:  rotate(-9deg);
 }
+
+
+/*
+----------------------
+ Product Css
+----------------------
+*/
+.search-catalog .wcsearch{
+	float: left;
+}
