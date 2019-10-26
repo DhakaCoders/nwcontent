@@ -225,3 +225,38 @@ ul.products{
 	font-size: 14px;
 	line-height: 40px;
 }
+.xoo-cp-content{
+	background: #F4F7F9;
+	box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
+	padding: 30px 115px;
+}
+.xoo-cp-success{
+	color: initial;
+	background: transparent;
+}
+.xoo-cp-atcn{
+	display: inline-block;
+	vertical-align: baseline;
+	font-size: 30px;
+	line-height: 32px;
+	font-weight: 600;
+	color: #43587B;
+	text-align: center;
+	padding: 0;
+	border-bottom: 1px solid #7B8CA8;
+	padding-bottom: 20px;
+	border-radius: 0;
+	margin-bottom: 25px;
+}
+.xoo-cp-atcn span{
+	display: none;
+}
+td.xoo-cp-remove .xoo-cp-remove-pd{
+	display: none;
+}
+.xoo-cp-pdetails td.xoo-cp-remove {
+    display: none;
+}
+td.xoo-cp-pimg {
+    width: 25%;
+}
