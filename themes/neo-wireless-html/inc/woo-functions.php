@@ -83,141 +83,56 @@ if (!function_exists('add_shorttext_below_title_loop')) {
 }
 
 
+
+/**
+ * Archive sidebar tag start
+ */
+add_action( 'woocommerce_before_shop_loop', 'put_woocommerce_search_sidebar_tag_start', 10, 1 );
+if (!function_exists('put_woocommerce_search_sidebar_tag_start')) {
+	function put_woocommerce_search_sidebar_tag_start(){
+		?>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="search-catalog clearfix">
+				<?php 
+					if (function_exists('get_woocommerce_search_catalog')){
+						get_woocommerce_search_catalog();
+					}
+				?>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+		<div class="col-sm-3">
+			<div class="woosidebar-left">
+				<?php 
+					if (function_exists('get_woocommerce_custom_sideber')){
+						get_woocommerce_custom_sideber();
+					}
+				?>
+			</div>
+		</div>
+		<div class="col-sm-9">
+		<?php
+	}
+}
+
+/**
+ *  Archive sidebar tag end
+ */
+add_action( 'woocommerce_no_products_found', 'put_woocommerce_search_sidebar_tag_end', 10, 1 );
+if (!function_exists('put_woocommerce_search_sidebar_tag_end')) {
+	function put_woocommerce_search_sidebar_tag_end(){
+		echo '</div></div>';
+	}
+}
+
 /**
  * Manage woocommerce sidebar here
  */
 if (!function_exists('get_woocommerce_custom_sideber')) {
 	function get_woocommerce_custom_sideber(){
-		dynamic_sidebar( 'sidebar-widget-one' )
-		?>
-
-		<!-- <div id="nw-pro-left-sidebar">
-		  <div class="nw-pro-categories"> 
-		    <h2>Categories</h2>
-		    <div class="nw-pro-categories-innr"> 
-		      <ul class="ulc">
-		        <li class="active">
-		          <a href="#">ALL</a>
-		        </li>
-		        <li class="subcategorie-wrp">
-		          <a href="#">Mounting Accesories</a>
-		          <ul class="ulc subcategorie">
-		            <li>
-		              <a href="#">Subcategorie</a>
-		            </li>
-		            <li>
-		              <a href="#">Subcategorie</a>
-		            </li>
-		            <li>
-		              <a href="#">Subcategorie</a>
-		            </li>
-		          </ul>
-		        </li>
-		        <li>
-		          <a href="#">Network Hardware</a>
-		        </li>
-		      </ul>
-		    </div>
-		  </div>
-		  <div class="radio-check-box-wrapper clearfix"> 
-		    <div class="radio-box-wrp">
-		      <h2>Search Results</h2>
-		      <div class="radio-box-block"> 
-		        <form action="#">
-		          <p>
-		            <input type="radio" id="test01" name="radio-group" checked="">
-		            <label for="test01">All</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test02" name="radio-group">
-		            <label for="test02">Indoor</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test03" name="radio-group">
-		            <label for="test03">Outdoor</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test04" name="radio-group">
-		            <label for="test04">Universal</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test05" name="radio-group">
-		            <label for="test05">Cisco</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test06" name="radio-group">
-		            <label for="test06">Meraki</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test07" name="radio-group">
-		            <label for="test07">HP/Aruba</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test08" name="radio-group">
-		            <label for="test08">Mist</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test09" name="radio-group">
-		            <label for="test09">Aerohive</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test10" name="radio-group">
-		            <label for="test10">Ruckus</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test11" name="radio-group">
-		            <label for="test11">Ubiquiti</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test12" name="radio-group">
-		            <label for="test12">Fortinet</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test13" name="radio-group">
-		            <label for="test13">Airborne</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test14" name="radio-group">
-		            <label for="test14">Wall</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test15" name="radio-group">
-		            <label for="test15">Pole</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test16" name="radio-group">
-		            <label for="test16">Directional</label>
-		          </p>  
-		          <p>
-		            <input type="radio" id="test17" name="radio-group">
-		            <label for="test17">Omnidirectional</label>
-		          </p>                  
-		        </form>
-		      </div>             
-		    </div>
-		    <div class="check-box-wrp">
-		      <h2>Search Filters</h2>         
-		      <div class="check-box-block"> 
-		        <form>
-		          <div class="form-group">
-		            <input type="checkbox" name="percent" id="30%">
-		            <label for="30%">Lorem Ipsum </label>
-		          </div>
-		          <div class="form-group">
-		            <input type="checkbox" name="percent" id="40%">
-		            <label for="40%">Dolor sit amet </label>
-		          </div>
-		          <div class="form-group">
-		            <input type="checkbox" name="percent" id="50%">
-		            <label for="50%">maecenas edibus</label>
-		          </div>
-		        </form>
-		      </div> 
-		    </div>
-		  </div>
-		</div> -->
-		
-		<?php
+		echo do_shortcode( '[searchandfilter id="wpf_5db43e8874bec"]', false );
 	}
 
 }
@@ -358,88 +273,8 @@ remove_action( 'woocommerce_proceed_to_checkout','woocommerce_button_proceed_to_
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 ); 
 
 function get_woocommerce_custom_cart(){
-	echo '<div class=""clearfix>';
-	echo __( '<h3>Shopping Cart</h3>', 'woocommerce' );
-	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-		$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-		$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
-
-		if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-			$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
-			?>
-			<div class="woocommerce-cart-form__cart-item wccartform clearfix <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-
-				<div class="product-thumbnail checkoutimg">
-				<?php
-				$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-
-				if ( ! $product_permalink ) {
-					echo $thumbnail; // PHPCS: XSS ok.
-				} else {
-					printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
-				}
-				?>
-				</div>
-				<div class="cartdetails">
-				<div class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
-				<?php
-				if ( ! $product_permalink ) {
-					echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
-				} else {
-					echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
-				}
-
-				do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
-
-				// Meta data.
-				echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
-
-				// Backorder notification.
-				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-					echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
-				}
-				?>
-				</div>
-				<div class="wrapper-quantity">
-					<div class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>">
-						<?php
-							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-						?>
-					</div>
-					<div class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
-					<?php
-					if ( $_product->is_sold_individually() ) {
-						$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-					} else {
-						$product_quantity = woocommerce_quantity_input(
-							array(
-								'input_name'   => "cart[{$cart_item_key}][qty]",
-								'input_value'  => $cart_item['quantity'],
-								'max_value'    => $_product->get_max_purchase_quantity(),
-								'min_value'    => '0',
-								'product_name' => $_product->get_name(),
-							),
-							$_product,
-							false
-						);
-					}
-
-					echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
-					?>
-					</div>
-				</div>
-			</div>
-			</div>
-			<?php
-		}
-	}
-	get_template_part( 'woocommerce/cart/cart-totals', null );
-	echo '</div>';
-
+	get_template_part( 'templates/checkout', 'cart' );
 }
-
-
-
 
 //add_filter( 'woocommerce_checkout_fields' , 'custom_remove_woo_checkout_fields' );
  
