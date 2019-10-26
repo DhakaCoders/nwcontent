@@ -29,14 +29,16 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_ad
  * Add wc custom content wrapper
  */
 add_action('woocommerce_before_main_content', 'get_custom_wc_output_content_wrapper', 10);
-add_action('woocommerce_after_main_content', 'get_custom_wc_output_content_wrapper_end', 10);
+add_action('woocommerce_after_main_content', 'get_custom_wc_output_content_wrapper_end', 10, 1);
 
 function get_custom_wc_output_content_wrapper(){
 	if(is_shop()){ $customClass = ' wcarchive';}elseif(is_product()){$customClass = ' wcsingle';}else{ $customClass = '';}
 	echo '<section class="wccontent-wrapper'.$customClass.'"><div class="container"><div class="row"><div class="col-sm-12"><div class="wccontent-inner clearfix">';
+    if(!is_product()) put_woocommerce_search_sidebar_tag_start();
 }
 
 function get_custom_wc_output_content_wrapper_end(){
+    if(!is_product()) put_woocommerce_search_sidebar_tag_end();
 	echo '</div></div></div></div></section>';
 }
 
@@ -87,7 +89,7 @@ if (!function_exists('add_shorttext_below_title_loop')) {
 /**
  * Archive sidebar tag start
  */
-add_action( 'woocommerce_before_shop_loop', 'put_woocommerce_search_sidebar_tag_start', 10);
+//add_action( 'woocommerce_before_main_content', 'put_woocommerce_search_sidebar_tag_start', 10, 1);
 if (!function_exists('put_woocommerce_search_sidebar_tag_start')) {
 	function put_woocommerce_search_sidebar_tag_start(){
 		?>
@@ -120,7 +122,7 @@ if (!function_exists('put_woocommerce_search_sidebar_tag_start')) {
 /**
  *  Archive sidebar tag end
  */
-add_action( 'woocommerce_after_shop_loop', 'put_woocommerce_search_sidebar_tag_end', 10 );
+//add_action( 'woocommerce_after_main_content', 'put_woocommerce_search_sidebar_tag_end', 10 );
 if (!function_exists('put_woocommerce_search_sidebar_tag_end')) {
 	function put_woocommerce_search_sidebar_tag_end(){
 		echo '</div></div>';
