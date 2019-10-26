@@ -88,9 +88,10 @@ if (!function_exists('add_shorttext_below_title_loop')) {
  */
 if (!function_exists('get_woocommerce_custom_sideber')) {
 	function get_woocommerce_custom_sideber(){
+		dynamic_sidebar( 'sidebar-widget-one' )
 		?>
 
-		<div id="nw-pro-left-sidebar">
+		<!-- <div id="nw-pro-left-sidebar">
 		  <div class="nw-pro-categories"> 
 		    <h2>Categories</h2>
 		    <div class="nw-pro-categories-innr"> 
@@ -214,7 +215,7 @@ if (!function_exists('get_woocommerce_custom_sideber')) {
 		      </div> 
 		    </div>
 		  </div>
-		</div>
+		</div> -->
 		
 		<?php
 	}
@@ -354,6 +355,7 @@ function get_product_request_offer(){
 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
 remove_action( 'woocommerce_proceed_to_checkout','woocommerce_button_proceed_to_checkout', 20);
+remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 ); 
 
 function get_woocommerce_custom_cart(){
 	echo '<div class=""clearfix>';
@@ -435,3 +437,48 @@ function get_woocommerce_custom_cart(){
 	echo '</div>';
 
 }
+
+
+
+
+//add_filter( 'woocommerce_checkout_fields' , 'custom_remove_woo_checkout_fields' );
+ 
+function custom_remove_woo_checkout_fields( $fields ) {
+
+    // remove billing fields
+    unset($fields['billing']['billing_last_name']);
+    unset($fields['billing']['billing_company']);
+    unset($fields['billing']['billing_address_2']);
+
+   
+    // remove shipping fields    
+    unset($fields['shipping']['shipping_last_name']);  
+    unset($fields['shipping']['shipping_company']);
+    unset($fields['shipping']['shipping_address_2']);
+
+    
+    // remove order comment fields
+    unset($fields['order']['order_comments']);
+    
+    return $fields;
+}
+
+
+
+function ship_to_different_address_translation( $translated_text, $text, $domain ) {
+	switch ( $translated_text ) {
+	case 'Ship to a different address?' :
+		$translated_text = __( 'Where is the equipment installed?', 'woocommerce' );
+	break;
+	case 'Billing details' :
+		$translated_text = __( 'Personal Info', 'woocommerce' );
+	break;
+	case 'Cart totals' :
+		$translated_text = __( '', 'woocommerce' );
+	break;
+	}
+
+	return $translated_text;
+}
+
+add_filter('gettext', 'ship_to_different_address_translation', 20, 3);

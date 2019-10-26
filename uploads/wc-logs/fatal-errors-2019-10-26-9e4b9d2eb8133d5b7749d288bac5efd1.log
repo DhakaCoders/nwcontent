@@ -11,3 +11,5 @@ Stack trace:
 
 2019-10-26T09:45:17+00:00 CRITICAL syntax error, unexpected 'foreach' (T_FOREACH), expecting ',' or ';' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 236
 
+2019-10-26T12:16:37+00:00 CRITICAL syntax error, unexpected 'case' (T_CASE) in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 476
+
