@@ -20,9 +20,9 @@ if(!defined('ABSPATH')){
 			
 		<?php do_action('xoo_cp_before_btns'); ?>	
 		<div class="xoo-cp-btns">
-			<a class="xoo-cp-btn-vc xcp-btn" href="<?php echo wc_get_cart_url(); ?>"><?php _e('View Cart','added-to-cart-popup-woocommerce'); ?></a>
 			<a class="xoo-cp-btn-ch xcp-btn" href="<?php echo wc_get_checkout_url(); ?>"><?php _e('Checkout','added-to-cart-popup-woocommerce'); ?></a>
 			<a class="xoo-cp-close xcp-btn"><?php _e('Continue Shopping','added-to-cart-popup-woocommerce'); ?></a>
+			<a class="xoo-cp-btn-vc xcp-btn" href="<?php echo wc_get_cart_url(); ?>"><?php _e('go to cart','added-to-cart-popup-woocommerce'); ?></a>
 		</div>
 		<?php do_action('xoo_cp_after_btns'); ?>
 	</div>

@@ -89,7 +89,6 @@ if (!function_exists('add_shorttext_below_title_loop')) {
 /**
  * Archive sidebar tag start
  */
-//add_action( 'woocommerce_before_main_content', 'put_woocommerce_search_sidebar_tag_start', 10, 1);
 if (!function_exists('put_woocommerce_search_sidebar_tag_start')) {
 	function put_woocommerce_search_sidebar_tag_start(){
 		?>
@@ -122,7 +121,6 @@ if (!function_exists('put_woocommerce_search_sidebar_tag_start')) {
 /**
  *  Archive sidebar tag end
  */
-//add_action( 'woocommerce_after_main_content', 'put_woocommerce_search_sidebar_tag_end', 10 );
 if (!function_exists('put_woocommerce_search_sidebar_tag_end')) {
 	function put_woocommerce_search_sidebar_tag_end(){
 		echo '</div></div>';
@@ -490,6 +488,9 @@ function ship_to_different_address_translation( $translated_text, $text, $domain
 	case 'Cart totals' :
 		$translated_text = __( '', 'woocommerce' );
 	break;
+    case 'Product successfully added to your cart' :
+        $translated_text = __( 'Added to cart.', 'woocommerce' );
+    break;
 	}
 
 	return $translated_text;
