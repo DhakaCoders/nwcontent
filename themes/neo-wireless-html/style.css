@@ -125,6 +125,16 @@ Text Domain: neowireless
     border-left: 1920px;
     z-index: 1;
 }
+
+
+/*
+----------------------
+ Product Css
+----------------------
+*/
+.search-catalog .wcsearch{
+	float: left;
+}
 .bottom-skip{
 	content: '';
 	position: absolute;
