@@ -39,9 +39,11 @@ if( !function_exists('cbv_theme_setup') ){
 		) );
 
 		register_nav_menus( array(
-			'cbv_main_menu' => __( 'Hoofdmenu', THEME_NAME ),
-			'cbv_top_menu' => __( 'Top Menu', THEME_NAME ),
-			'cbv_ftr_menu' => __( 'Footer Menu', THEME_NAME )
+			'cbv_main_menu' => __( 'Header Menu', THEME_NAME ),
+			'cbv_ftr_menu' => __( 'Footer Menu', THEME_NAME ),
+			'cbv_sp_menu' => __( 'Services & Products Menu', THEME_NAME ),
+			'cbv_pc_menu' => __( 'Product Categories Menu', THEME_NAME ),
+			'cbv_ftb_menu' => __( 'Footer Bottom Menu', THEME_NAME ),
 		) );
 
 	}
@@ -82,8 +84,8 @@ if( function_exists('acf_add_options_page') ) {
 	//parent tab
 	//acf_add_options_page( 'Opties' );
     acf_add_options_page(array(
-        'page_title' 	=> __('Opties', THEME_NAME),
-        'menu_title' 	=> __('Opties', THEME_NAME),
+        'page_title' 	=> __('Options', THEME_NAME),
+        'menu_title' 	=> __('Options', THEME_NAME),
         'menu_slug' 	=> 'cbv_options',
         'capability' 	=> 'edit_posts',
         //'redirect' 	    => false

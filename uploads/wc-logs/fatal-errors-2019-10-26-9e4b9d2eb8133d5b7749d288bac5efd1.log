@@ -13,3 +13,5 @@ Stack trace:
 
 2019-10-26T12:16:37+00:00 CRITICAL syntax error, unexpected 'case' (T_CASE) in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 476
 
+2019-10-26T18:08:29+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\front-page.php on line 119
+

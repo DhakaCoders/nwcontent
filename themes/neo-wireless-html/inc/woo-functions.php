@@ -83,141 +83,57 @@ if (!function_exists('add_shorttext_below_title_loop')) {
 }
 
 
+
+/**
+ * Archive sidebar tag start
+ */
+add_action( 'woocommerce_before_shop_loop', 'put_woocommerce_search_sidebar_tag_start', 10);
+if (!function_exists('put_woocommerce_search_sidebar_tag_start')) {
+	function put_woocommerce_search_sidebar_tag_start(){
+		?>
+<div class="row">
+	<div class="col-sm-12">
+		<div class="search-catalog clearfix">
+		<?php 
+			if (function_exists('get_woocommerce_search_catalog')){
+				get_woocommerce_search_catalog();
+			}
+		?>
+		</div>
+	</div>
+</div>
+<div class="row">
+<div class="col-sm-3">
+	<div class="woosidebar-left">
+		<?php 
+			if (function_exists('get_woocommerce_custom_sideber')){
+				get_woocommerce_custom_sideber();
+			}
+		?>
+	</div>
+</div>
+<div class="col-sm-9">
+<?php
+}
+}
+
+/**
+ *  Archive sidebar tag end
+ */
+add_action( 'woocommerce_after_shop_loop', 'put_woocommerce_search_sidebar_tag_end', 10 );
+if (!function_exists('put_woocommerce_search_sidebar_tag_end')) {
+	function put_woocommerce_search_sidebar_tag_end(){
+		echo '</div></div>';
+	}
+}
+
 /**
  * Manage woocommerce sidebar here
  */
 if (!function_exists('get_woocommerce_custom_sideber')) {
 	function get_woocommerce_custom_sideber(){
-		dynamic_sidebar( 'sidebar-widget-one' )
-		?>
-
-		<!-- <div id="nw-pro-left-sidebar">
-		  <div class="nw-pro-categories"> 
-		    <h2>Categories</h2>
-		    <div class="nw-pro-categories-innr"> 
-		      <ul class="ulc">
-		        <li class="active">
-		          <a href="#">ALL</a>
-		        </li>
-		        <li class="subcategorie-wrp">
-		          <a href="#">Mounting Accesories</a>
-		          <ul class="ulc subcategorie">
-		            <li>
-		              <a href="#">Subcategorie</a>
-		            </li>
-		            <li>
-		              <a href="#">Subcategorie</a>
-		            </li>
-		            <li>
-		              <a href="#">Subcategorie</a>
-		            </li>
-		          </ul>
-		        </li>
-		        <li>
-		          <a href="#">Network Hardware</a>
-		        </li>
-		      </ul>
-		    </div>
-		  </div>
-		  <div class="radio-check-box-wrapper clearfix"> 
-		    <div class="radio-box-wrp">
-		      <h2>Search Results</h2>
-		      <div class="radio-box-block"> 
-		        <form action="#">
-		          <p>
-		            <input type="radio" id="test01" name="radio-group" checked="">
-		            <label for="test01">All</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test02" name="radio-group">
-		            <label for="test02">Indoor</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test03" name="radio-group">
-		            <label for="test03">Outdoor</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test04" name="radio-group">
-		            <label for="test04">Universal</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test05" name="radio-group">
-		            <label for="test05">Cisco</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test06" name="radio-group">
-		            <label for="test06">Meraki</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test07" name="radio-group">
-		            <label for="test07">HP/Aruba</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test08" name="radio-group">
-		            <label for="test08">Mist</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test09" name="radio-group">
-		            <label for="test09">Aerohive</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test10" name="radio-group">
-		            <label for="test10">Ruckus</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test11" name="radio-group">
-		            <label for="test11">Ubiquiti</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test12" name="radio-group">
-		            <label for="test12">Fortinet</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test13" name="radio-group">
-		            <label for="test13">Airborne</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test14" name="radio-group">
-		            <label for="test14">Wall</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test15" name="radio-group">
-		            <label for="test15">Pole</label>
-		          </p>
-		          <p>
-		            <input type="radio" id="test16" name="radio-group">
-		            <label for="test16">Directional</label>
-		          </p>  
-		          <p>
-		            <input type="radio" id="test17" name="radio-group">
-		            <label for="test17">Omnidirectional</label>
-		          </p>                  
-		        </form>
-		      </div>             
-		    </div>
-		    <div class="check-box-wrp">
-		      <h2>Search Filters</h2>         
-		      <div class="check-box-block"> 
-		        <form>
-		          <div class="form-group">
-		            <input type="checkbox" name="percent" id="30%">
-		            <label for="30%">Lorem Ipsum </label>
-		          </div>
-		          <div class="form-group">
-		            <input type="checkbox" name="percent" id="40%">
-		            <label for="40%">Dolor sit amet </label>
-		          </div>
-		          <div class="form-group">
-		            <input type="checkbox" name="percent" id="50%">
-		            <label for="50%">maecenas edibus</label>
-		          </div>
-		        </form>
-		      </div> 
-		    </div>
-		  </div>
-		</div> -->
-		
-		<?php
+		dynamic_sidebar('sidebar-widget-one');
+		//echo do_shortcode( '[searchandfilter id="wpf_5db43e8874bec"]');
 	}
 
 }
@@ -278,7 +194,7 @@ function get_wc_product_desctiption(){
 	$short_description = apply_filters( 'woocommerce_description', wpautop( $post->post_content, true ));
 	$output = '';
 	$output .= '<div class="wcprice">';
-	$output .= __( '<span class="price-prefix">Starting at </span>', 'woocommerce' ). $product->get_price_html();
+	$output .= __( '<span class="price-prefix">Starting at </span>', 'woocommerce' ).'<span class="price">'. $product->get_price_html().'</span>';
 	$output .= '</div>';
 	$output .= '<div class="wcdetails">';
 	$output .= __( '<h2>Description</h2>', 'woocommerce' );
@@ -351,6 +267,182 @@ function get_product_request_offer(){
 
 
 
+add_action( 'woocommerce_admin_process_product_object', 'save_product_custom_meta_data', 100, 1 );
+function save_product_custom_meta_data( $product ){
+    if ( isset( $_POST['_repair_price'] ) )
+        $product->update_meta_data( '_repair_price', sanitize_text_field($_POST['_repair_price']) );
+}
+
+// Front: Add a text input field inside the add to cart form on single product page
+add_action('woocommerce_single_product_summary','add_repair_price_option_to_single_product', 20 );
+function add_repair_price_option_to_single_product(){
+    global $product;
+
+    //if( $product->is_type('variable') || ! $product->get_meta( '_repair_price' ) ) return;
+
+    add_action('woocommerce_before_add_to_cart_button', 'product_option_custom_field', 30 );
+}
+
+function product_option_custom_field(){
+    global $product;
+
+    $active_price = (float) $product->get_price();
+    $repair_price = 99.00; //(float) $product->get_meta( '_repair_price' );
+    $repair_price1 = 149.00; //(float) $product->get_meta( '_repair_price' );
+    $repair_price2 = 349.00; //(float) $product->get_meta( '_repair_price' );
+
+    $repair_price_html   = strip_tags( wc_price( wc_get_price_to_display( $product, array('price' => $repair_price ) ) ) );
+
+    $repair_price_html1   = strip_tags( wc_price( wc_get_price_to_display( $product, array('price' => $repair_price1 ) ) ) );
+
+    $repair_price_html2   = strip_tags( wc_price( wc_get_price_to_display( $product, array('price' => $repair_price2 ) ) ) );
+
+    $active_price_html   = wc_price( wc_get_price_to_display( $product ) );
+
+    $disp_price_sum_html = wc_price( wc_get_price_to_display( $product, array('price' => $active_price + $repair_price ) ) );
+
+    $disp_price_sum_html1 = wc_price( wc_get_price_to_display( $product, array('price' => $active_price + $repair_price1 ) ) );
+    $disp_price_sum_html2 = wc_price( wc_get_price_to_display( $product, array('price' => $active_price + $repair_price2 ) ) );
+
+
+    echo '<div class="hidden-field">
+    <span class="wcoptioanl">Optional</label>
+    <p class="form-row form-row-wide" id="repair_option_field" data-priority="">
+    <span class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Skymount-air-Uplate-C-2566D", "Woocommerce") .
+    ' <input type="radio" class="input-checkbox " name="repair_option" value="1" checked> + ' . $repair_price_html .
+    '</label></span>
+     <span class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Airborne Mounting Kit", "Woocommerce") .
+    ' <input type="radio" class="input-checkbox " name="repair_option" value="2"> + ' . $repair_price_html1 .
+    '</label></span>
+    <span class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Skymount-art-arm-C-2566D", "Woocommerce") .
+    ' <input type="radio" class="input-checkbox " name="repair_option" value="3"> + ' . $repair_price_html2 .
+    '</label></span>
+    </p>
+    <input type="hidden" name="repair_price" value="' . $repair_price . '">
+    <input type="hidden" name="active_price" value="' . $active_price . '">
+    </div>';
+
+    // Jquery: Update displayed price
+    ?>
+    <script type="text/javascript">
+    jQuery(function($) {
+        var cb = 'input[name="repair_option"]';
+        var pp = 'span.price';
+           
+		if( $(cb).prop('checked') === true )
+            $(pp).html('<?php echo $disp_price_sum_html; ?>');
+        else
+            $(pp).html('<?php echo $active_price_html; ?>');
+
+        // On change / select a variation
+       $(':radio[name="repair_option"]').change(function() {
+            if( $(this).prop('checked') === true ){
+            	
+            	if($(this).val() == 1){
+            		//console.log($(cb).val());
+            		$('input[name="repair_price"]').val('<?php echo $repair_price; ?>');
+					$(pp).html('<?php echo $disp_price_sum_html; ?>');
+            	}else if($(this).val() == 2){
+            		console.log($(this).val());
+            		$('input[name="repair_price"]').val('<?php echo $repair_price1; ?>');
+            		$(pp).html('<?php echo $disp_price_sum_html1; ?>');
+            	}else if($(this).val() == 3){
+            		$('input[name="repair_price"]').val('<?php echo $repair_price2; ?>');
+            		$(pp).html('<?php echo $disp_price_sum_html2; ?>');
+            	}
+                
+            }else{
+                $(pp).html('<?php echo $active_price_html; ?>');
+            }
+        })
+
+    });
+    </script>
+    <?php
+}
+
+// Front: Calculate new item price and add it as custom cart item data
+add_filter('woocommerce_add_cart_item_data', 'add_custom_product_data', 10, 3);
+function add_custom_product_data( $cart_item_data, $product_id, $variation_id ) {
+    if (isset($_POST['repair_option']) && !empty($_POST['repair_option'])) {
+    	$repaireOption = $_POST['repair_option'];
+
+        $cart_item_data['new_price'] = (float) ($_POST['active_price'] + $_POST['repair_price']);
+        $cart_item_data['repair_price'] = (float) $_POST['repair_price'];
+        $cart_item_data['active_price'] = (float) $_POST['active_price'];
+
+        if($repaireOption == 1){
+        	$cart_item_data['repair_lebel'] = 'Skymount-air-Uplate-C-2566D';
+        }elseif($repaireOption == 2){
+			$cart_item_data['repair_lebel'] = 'Airborne Mounting Kit';
+        }elseif($repaireOption == 3){
+			$cart_item_data['repair_lebel'] = 'Skymount-art-arm-C-2566D';
+        }
+
+        $cart_item_data['unique_key'] = md5(microtime().rand());
+    }
+
+    return $cart_item_data;
+}
+
+// Front: Set the new calculated cart item price
+add_action('woocommerce_before_calculate_totals', 'extra_price_add_custom_price', 20, 1);
+
+function extra_price_add_custom_price($cart) {
+    if (is_admin() && !defined('DOING_AJAX'))
+        return;
+
+    if ( did_action( 'woocommerce_before_calculate_totals' ) >= 2 )
+        return;
+
+    foreach($cart->get_cart() as $cart_item) {
+        if (isset($cart_item['new_price']))
+            $cart_item['data']->set_price((float) $cart_item['new_price']);
+    }
+}
+
+// Front: Display option in cart item
+add_filter('woocommerce_get_item_data', 'display_custom_item_data', 10, 2);
+
+function display_custom_item_data($cart_item_data, $cart_item) {
+    if (isset($cart_item['repair_price'])) {
+        $cart_item_data[] = array(
+            'name' => __("Optional: ".$cart_item['repair_lebel'], "woocommerce"),
+            'value' => strip_tags( '+ ' . wc_price( wc_get_price_to_display( $cart_item['data'], array('price' => $cart_item['repair_price'] ) ) ) )
+        );
+    }
+
+    return $cart_item_data;
+}
+
+
+
+
+//add_action('woocommerce_order_item_meta_start', 'add_custom_order_item_meta_data', 1, 3 );
+function add_custom_order_item_meta_data( $item_id, $values, $cart_item ) {
+
+    global $order;
+
+    echo wc_get_order_item_meta( $item_id, 'optional', $single = true );
+
+}
+
+
+// Save and display custom fields in order item meta
+add_action( 'woocommerce_add_order_item_meta', 'add_custom_fields_order_item_meta', 20, 3 );
+function add_custom_fields_order_item_meta( $item_id, $cart_item, $cart_item_key ) {
+	$wo_currency = get_option('woocommerce_currency');
+        $user_custom_values = $cart_item['repair_lebel'].': +'.$wo_currency.$cart_item['repair_price'];
+        if(!empty($user_custom_values))
+        {
+            wc_add_order_item_meta($item_id,'Optional',$user_custom_values);  
+        }
+
+}
+
+
+
+
 /*Checkout Woocommerce Hooks*/
 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
@@ -358,88 +450,8 @@ remove_action( 'woocommerce_proceed_to_checkout','woocommerce_button_proceed_to_
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 ); 
 
 function get_woocommerce_custom_cart(){
-	echo '<div class=""clearfix>';
-	echo __( '<h3>Shopping Cart</h3>', 'woocommerce' );
-	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-		$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-		$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
-
-		if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
-			$product_permalink = apply_filters( 'woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink( $cart_item ) : '', $cart_item, $cart_item_key );
-			?>
-			<div class="woocommerce-cart-form__cart-item wccartform clearfix <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
-
-				<div class="product-thumbnail checkoutimg">
-				<?php
-				$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-
-				if ( ! $product_permalink ) {
-					echo $thumbnail; // PHPCS: XSS ok.
-				} else {
-					printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
-				}
-				?>
-				</div>
-				<div class="cartdetails">
-				<div class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
-				<?php
-				if ( ! $product_permalink ) {
-					echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
-				} else {
-					echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
-				}
-
-				do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
-
-				// Meta data.
-				echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
-
-				// Backorder notification.
-				if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-					echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
-				}
-				?>
-				</div>
-				<div class="wrapper-quantity">
-					<div class="product-subtotal" data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>">
-						<?php
-							echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-						?>
-					</div>
-					<div class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
-					<?php
-					if ( $_product->is_sold_individually() ) {
-						$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
-					} else {
-						$product_quantity = woocommerce_quantity_input(
-							array(
-								'input_name'   => "cart[{$cart_item_key}][qty]",
-								'input_value'  => $cart_item['quantity'],
-								'max_value'    => $_product->get_max_purchase_quantity(),
-								'min_value'    => '0',
-								'product_name' => $_product->get_name(),
-							),
-							$_product,
-							false
-						);
-					}
-
-					echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
-					?>
-					</div>
-				</div>
-			</div>
-			</div>
-			<?php
-		}
-	}
-	get_template_part( 'woocommerce/cart/cart-totals', null );
-	echo '</div>';
-
+	get_template_part( 'templates/checkout', 'cart' );
 }
-
-
-
 
 //add_filter( 'woocommerce_checkout_fields' , 'custom_remove_woo_checkout_fields' );
  

@@ -733,7 +733,6 @@ if( $('#particles-js').length ){
 
 
 }
-
     new WOW().init();
 
 })(jQuery);
