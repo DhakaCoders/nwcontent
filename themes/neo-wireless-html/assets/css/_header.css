@@ -171,7 +171,7 @@ nav.main-nav ul li:after,
 	display: inline-block;
 	vertical-align: top;
 	width: 44px;
-	height: 44px;
+	min-height: 44px;
 	padding-top: 13px;
 }
 .hdr-cart-btn em{
@@ -179,7 +179,16 @@ nav.main-nav ul li:after,
 	width: 100%;
 	height: 100%;
 }
+.hdr-cart-btn a {
+    display: inline-block;
+}
 
+.hdr-cart-btn a span {
+    position: relative;
+    top: -4px;
+    color: #fff;
+    font-weight: 600;
+}
 
 
 

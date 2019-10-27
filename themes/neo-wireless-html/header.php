@@ -162,8 +162,9 @@
                       <svg class="cart-icon-white-svg" width="20" height="20" viewBox="0 0 20 20" fill="#fff">
                         <use xlink:href="#cart-icon-white-svg"></use>
                       </svg> 
+
                     </em>
-                    <?php echo sprintf ( '<span>%d</span>', WC()->cart->get_cart_contents_count() ); ?>
+                    <?php if(WC()->cart->get_cart_contents_count() > 0) echo sprintf ( '<span>%d</span>', WC()->cart->get_cart_contents_count() ); ?>
                     </a>
                   </div>
                 </div>
