@@ -1,5 +1,5 @@
 <?php
-echo '<div class="wccheckout-cartclearfix">';
+echo '<div class="wccheckout-cart clearfix">';
 echo __( '<h3>Shopping Cart</h3>', 'woocommerce' );
 foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 	$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
