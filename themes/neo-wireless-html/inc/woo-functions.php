@@ -134,6 +134,11 @@ if (!function_exists('get_woocommerce_custom_sideber')) {
 	function get_woocommerce_custom_sideber(){
 		//dynamic_sidebar('sidebar-widget-one');
 		echo do_shortcode( '[searchandfilter id="wpf_5db43e8874bec"]');
+
+        echo '<div class="wccatalog sidebarcatalog show-xs">';
+        _e( '<span>Sort By: </span>', 'woocommerce' ).
+        woocommerce_catalog_ordering();
+        echo '</div>';
 	}
 
 }
@@ -150,7 +155,7 @@ if (!function_exists('get_woocommerce_search_catalog')) {
         <input type="search" class="search-field" placeholder="'. esc_attr__( 'Search products&hellip;', 'woocommerce' ).'" value="'. get_search_query() .'" name="s" />
         <button type="submit" value="'. esc_attr_x( 'Search', 'submit button', 'woocommerce' ).'">'. esc_html_x( 'Search', 'submit button', 'woocommerce' ).'</button>
         </form>';
-		echo '</div><div class="wccatalog">';
+		echo '</div><div class="wccatalog hide-xs">';
 		_e( '<span>Sort By: </span>', 'woocommerce' ).
 		woocommerce_catalog_ordering();
 		echo '</div>';
