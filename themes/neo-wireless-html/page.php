@@ -5,15 +5,18 @@ get_template_part( 'templates/page', 'banner' );
 while ( have_posts() ) :
 	the_post();
 ?>
-<section class="pagecontent-wrapper">
+<section class="innerpage-con-wrap">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
-      	<div class="pagecontent-inner">
+        <article class="default-page-con">
       		<?php the_content(); ?>
-      	</div>
+        </article>
       </div>
     </div>
   </div>
-</section><!-- end of contact-form-sec-wrp -->
-<?php endwhile; get_footer(); ?>
+</section>
+<?php 
+get_template_part('templates/footer', 'top');
+
+endwhile; get_footer(); ?>

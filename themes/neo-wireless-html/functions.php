@@ -156,6 +156,18 @@ function custom_body_classes($classes){
 add_filter('body_class', 'custom_body_classes');
 
 
+function get_custom_excerpt($limit = 12) {
+  $excerpt = explode(' ', get_the_content(), $limit);
+  if (count($excerpt)>=$limit) {
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt);
+  } else {
+    $excerpt = implode(" ",$excerpt);
+  }	
+  //$excerpt = preg_replace('`\[[^\]]*\]`',$dot,$excerpt);
+  return $excerpt;
+}
+
 /**
 Debug->>
 */
