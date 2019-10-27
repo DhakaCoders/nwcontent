@@ -144,9 +144,9 @@
               <div class="hdr-btmbar">
                 <div class="hdr-btmbar-bts">
                   <div class="hdr-search">
-                    <form>
-                      <input type="search" name="" placeholder="Search">
-                    </form>
+                  <form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <input type="search" placeholder="<?php echo esc_attr__( 'Search', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+                  </form>
                     <button>
                       <em> 
                         <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#8798B6">

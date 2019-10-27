@@ -146,7 +146,10 @@ if (!function_exists('get_woocommerce_custom_sideber')) {
 if (!function_exists('get_woocommerce_search_catalog')) {
 	function get_woocommerce_search_catalog(){
 		echo '<div class="wcsearch">';
-		get_product_search_form();
+		echo '<form role="search" method="get" class="woocommerce-product-search" action="'. esc_url( home_url( '/' ) ).'">
+        <input type="search" class="search-field" placeholder="'. esc_attr__( 'Search products&hellip;', 'woocommerce' ).'" value="'. get_search_query() .'" name="s" />
+        <button type="submit" value="'. esc_attr_x( 'Search', 'submit button', 'woocommerce' ).'">'. esc_html_x( 'Search', 'submit button', 'woocommerce' ).'</button>
+        </form>';
 		echo '</div><div class="wccatalog">';
 		_e( '<span>Sort By: </span>', 'woocommerce' ).
 		woocommerce_catalog_ordering();

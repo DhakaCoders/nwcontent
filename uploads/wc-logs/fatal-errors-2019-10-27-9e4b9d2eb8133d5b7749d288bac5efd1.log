@@ -34,3 +34,15 @@ Stack trace:
 #7 {main}
   thrown in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\themes\neo-wireless-html\header.php on line 104
 
+2019-10-27T15:03:59+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\search.php:92
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\template-loader.php(78): include()
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-blog-header.php(19): require_once('E:\\XamppServer\\...')
+#2 E:\XamppServer\htdocs\2019\10\neowireless\index.php(17): require('E:\\XamppServer\\...')
+#3 {main}
+  thrown in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\search.php on line 92
+
+2019-10-27T15:17:36+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF), expecting ',' or ';' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\search.php on line 250
+
+2019-10-27T17:14:53+00:00 CRITICAL syntax error, unexpected ')' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\search.php on line 114
+
