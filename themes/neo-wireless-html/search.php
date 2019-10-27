@@ -149,7 +149,7 @@ if($searchResult == 'products'){
               if(!empty($productCount) OR !empty($postCount)){
                 $totalCount = $productCount + $postCount;
               }
-              echo $maxnum_pages = $proQuery->max_num_pages + $artQuery->max_num_pages;
+              $maxnum_pages = $proQuery->max_num_pages + $artQuery->max_num_pages;
 
             ?>
             <div class="search-result-rgt-head" id="<?php echo $scrollId; ?>"> 

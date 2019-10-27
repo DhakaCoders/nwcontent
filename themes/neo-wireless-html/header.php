@@ -157,11 +157,14 @@
                     
                   </div>
                   <div class="hdr-cart-btn">
+                    <a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'cart' ); ?>">
                     <em> 
                       <svg class="cart-icon-white-svg" width="20" height="20" viewBox="0 0 20 20" fill="#fff">
                         <use xlink:href="#cart-icon-white-svg"></use>
                       </svg> 
                     </em>
+                    <?php echo sprintf ( '<span>%d</span>', WC()->cart->get_cart_contents_count() ); ?>
+                    </a>
                   </div>
                 </div>
                 <div class="hdr-btm-nav">
