@@ -454,33 +454,11 @@ function add_custom_fields_order_item_meta( $item_id, $cart_item, $cart_item_key
 /*Checkout Woocommerce Hooks*/
 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
-remove_action( 'woocommerce_proceed_to_checkout','woocommerce_button_proceed_to_checkout', 20);
+//remove_action( 'woocommerce_proceed_to_checkout','woocommerce_button_proceed_to_checkout', 20);
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 ); 
 
 function get_woocommerce_custom_cart(){
 	get_template_part( 'templates/checkout', 'cart' );
-}
-
-//add_filter( 'woocommerce_checkout_fields' , 'custom_remove_woo_checkout_fields' );
- 
-function custom_remove_woo_checkout_fields( $fields ) {
-
-    // remove billing fields
-    unset($fields['billing']['billing_last_name']);
-    unset($fields['billing']['billing_company']);
-    unset($fields['billing']['billing_address_2']);
-
-   
-    // remove shipping fields    
-    unset($fields['shipping']['shipping_last_name']);  
-    unset($fields['shipping']['shipping_company']);
-    unset($fields['shipping']['shipping_address_2']);
-
-    
-    // remove order comment fields
-    unset($fields['order']['order_comments']);
-    
-    return $fields;
 }
 
 
