@@ -204,12 +204,12 @@ h3#order_review_heading {
     width: 150px;
     float: left;
 }
+.checkout-cart .wc-proceed-to-checkout,
+span.optional,
 input#ship-to-different-address-checkbox {
     display: none;
 }
-span.optional {
-    display: none;
-}
+
 @media(max-width: 1199px){
 
 

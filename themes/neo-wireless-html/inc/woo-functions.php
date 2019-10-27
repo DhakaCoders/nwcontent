@@ -134,6 +134,11 @@ if (!function_exists('get_woocommerce_custom_sideber')) {
 	function get_woocommerce_custom_sideber(){
 		//dynamic_sidebar('sidebar-widget-one');
 		echo do_shortcode( '[searchandfilter id="wpf_5db43e8874bec"]');
+
+        echo '<div class="wccatalog sidebarcatalog show-xs">';
+        _e( '<span>Sort By: </span>', 'woocommerce' ).
+        woocommerce_catalog_ordering();
+        echo '</div>';
 	}
 
 }
@@ -146,8 +151,11 @@ if (!function_exists('get_woocommerce_custom_sideber')) {
 if (!function_exists('get_woocommerce_search_catalog')) {
 	function get_woocommerce_search_catalog(){
 		echo '<div class="wcsearch">';
-		get_product_search_form();
-		echo '</div><div class="wccatalog">';
+		echo '<form role="search" method="get" class="woocommerce-product-search" action="'. esc_url( home_url( '/' ) ).'">
+        <input type="search" class="search-field" placeholder="'. esc_attr__( 'Search products&hellip;', 'woocommerce' ).'" value="'. get_search_query() .'" name="s" />
+        <button type="submit" value="'. esc_attr_x( 'Search', 'submit button', 'woocommerce' ).'">'. esc_html_x( 'Search', 'submit button', 'woocommerce' ).'</button>
+        </form>';
+		echo '</div><div class="wccatalog hide-xs">';
 		_e( '<span>Sort By: </span>', 'woocommerce' ).
 		woocommerce_catalog_ordering();
 		echo '</div>';
@@ -446,33 +454,11 @@ function add_custom_fields_order_item_meta( $item_id, $cart_item, $cart_item_key
 /*Checkout Woocommerce Hooks*/
 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
-remove_action( 'woocommerce_proceed_to_checkout','woocommerce_button_proceed_to_checkout', 20);
+//remove_action( 'woocommerce_proceed_to_checkout','woocommerce_button_proceed_to_checkout', 20);
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 ); 
 
 function get_woocommerce_custom_cart(){
 	get_template_part( 'templates/checkout', 'cart' );
-}
-
-//add_filter( 'woocommerce_checkout_fields' , 'custom_remove_woo_checkout_fields' );
- 
-function custom_remove_woo_checkout_fields( $fields ) {
-
-    // remove billing fields
-    unset($fields['billing']['billing_last_name']);
-    unset($fields['billing']['billing_company']);
-    unset($fields['billing']['billing_address_2']);
-
-   
-    // remove shipping fields    
-    unset($fields['shipping']['shipping_last_name']);  
-    unset($fields['shipping']['shipping_company']);
-    unset($fields['shipping']['shipping_address_2']);
-
-    
-    // remove order comment fields
-    unset($fields['order']['order_comments']);
-    
-    return $fields;
 }
 
 

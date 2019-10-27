@@ -108,8 +108,8 @@ add_filter('use_block_editor_for_post', '__return_false');
 
 
 function searchfilter($query) {
-    if ($query->is_search && !is_admin() ) {
-        $query->set('post_type',array('faq'));
+    if ($query->is_search && is_admin() ) {
+        $query->set('post_type',array('post, product'));
     }
 return $query;
 }

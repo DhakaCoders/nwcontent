@@ -34,6 +34,19 @@ Stack trace:
 #7 {main}
   thrown in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\themes\neo-wireless-html\header.php on line 104
 
+<<<<<<< HEAD
+2019-10-27T15:03:59+00:00 CRITICAL Uncaught Error: Call to a member function get() on null in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\search.php:92
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\template-loader.php(78): include()
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-blog-header.php(19): require_once('E:\\XamppServer\\...')
+#2 E:\XamppServer\htdocs\2019\10\neowireless\index.php(17): require('E:\\XamppServer\\...')
+#3 {main}
+  thrown in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\search.php on line 92
+
+2019-10-27T15:17:36+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF), expecting ',' or ';' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\search.php on line 250
+
+2019-10-27T17:14:53+00:00 CRITICAL syntax error, unexpected ')' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\search.php on line 114
+=======
 2019-10-27T11:18:09+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\themes\neo-wireless-html\header.php:104
 Stack trace:
 #0 F:\xampp\htdocs\projects\2019\neo-wireless\wp-includes\template.php(722): require_once()
@@ -69,4 +82,15 @@ Stack trace:
 #6 F:\xampp\htdocs\projects\2019\neo-wireless\index.php(17): require('F:\\xampp\\htdocs...')
 #7 {main}
   thrown in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\themes\neo-wireless-html\header.php on line 104
+>>>>>>> cb0c13afc5b5ccbbc5b5004cfc5b4f687ab74f8b
+
+2019-10-27T18:44:28+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function _n(), 2 passed in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\header.php on line 166 and at least 3 expected in E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\l10n.php:410
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\header.php(166): _n('<span>%d</span>', 1)
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\template.php(722): require_once('E:\\XamppServer\\...')
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\template.php(671): load_template('E:\\XamppServer\\...', true)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\general-template.php(41): locate_template(Array, true)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\search.php(1): get_header()
+#5 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\template-loader.php(78): include('E:\\XamppServer\\...')
+#6 E:\XamppServer\htdocs\2019\10\neowireless\wp-blo in E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\l10n.php on line 410
 

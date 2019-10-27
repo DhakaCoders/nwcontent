@@ -144,9 +144,9 @@
               <div class="hdr-btmbar">
                 <div class="hdr-btmbar-bts">
                   <div class="hdr-search">
-                    <form>
-                      <input type="search" name="" placeholder="Search">
-                    </form>
+                  <form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <input type="search" placeholder="<?php echo esc_attr__( 'Search', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+                  </form>
                     <button>
                       <em> 
                         <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#8798B6">
@@ -157,11 +157,15 @@
                     
                   </div>
                   <div class="hdr-cart-btn">
+                    <a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'cart' ); ?>">
                     <em> 
                       <svg class="cart-icon-white-svg" width="20" height="20" viewBox="0 0 20 20" fill="#fff">
                         <use xlink:href="#cart-icon-white-svg"></use>
                       </svg> 
+
                     </em>
+                    <?php if(WC()->cart->get_cart_contents_count() > 0) echo sprintf ( '<span>%d</span>', WC()->cart->get_cart_contents_count() ); ?>
+                    </a>
                   </div>
                 </div>
                 <div class="hdr-btm-nav">

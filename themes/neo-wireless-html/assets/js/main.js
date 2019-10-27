@@ -733,7 +733,27 @@ if( $('#particles-js').length ){
 
 
 }
-    new WOW().init();
+
+var $filterCheckboxes = $( '#allproductartical input[type="radio"]' );
+$filterCheckboxes.change(
+  function(){
+    if( $(this).length > 0)
+    {
+        
+    $("#allproductartical").submit();
+      
+    }
+  }
+);
+$(window).load(function(){
+  if( $('#filterSearch').length ){
+      $('html, body').animate({
+          scrollTop: $("#filterSearch").offset().top
+      }, 100);
+  }
+});
+
+new WOW().init();
 
 // product counter
 
