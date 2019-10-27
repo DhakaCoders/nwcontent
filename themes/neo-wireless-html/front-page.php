@@ -65,7 +65,7 @@ if($banner):
    </div>
  </div>
 </section><!-- end of main-slider-sec-wrp -->
-<?php if($posters){ ?>
+<?php if($banner): if($posters){ ?>
 <section class="show-xs main-bnr-box-imgs-xs">
   <div class="container">
     <div class="row">
@@ -86,7 +86,7 @@ if($banner):
   </div>
 </section>
 <?php 
-} 
+} endif;
 
 $intros = get_field('introsec', HOMEID);
 $show_hideintro = get_field('show_hideintro', HOMEID);
