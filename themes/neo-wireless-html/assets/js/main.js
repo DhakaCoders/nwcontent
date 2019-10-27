@@ -746,13 +746,6 @@ $filterCheckboxes.change(
   }
 );
 
-$(window).load(function(){
-  if( $('#filterSearch').length ){
-      $('html, body').animate({
-          scrollTop: $("#filterSearch").offset().top
-      }, 100);
-  }
-});
 
 new WOW().init();
 
