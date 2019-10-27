@@ -157,10 +157,10 @@
     color: #FF5C26;
 }
 .page-pagination li:hover a,
-.page-pagination li.active span{
+.page-pagination li span.current{
     color: #FF5C26;
 }
-.page-pagination li.active span:after{
+.page-pagination li span.current:after{
 	content: "";
 	position: absolute;
 	bottom: 0;
