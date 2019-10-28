@@ -10,6 +10,7 @@ checkout-info-sec-wrp
 .checkout-cart{
 	background-color: #F4F7F9;
 	padding: 70px 50px 40px 50px;
+	margin-right: 60px;
 }
 .checkout-cart h3{
 	margin: 0;
@@ -114,7 +115,7 @@ checkout-info-sec-wrp
 }
 .woocommerce-shipping-fields,
 .woocommerce-billing-fields{
-	padding-left: 90px;
+	padding-left: 30px;
 	padding-top: 80px;
 }
 .innerpage-con-wrap .woocommerce-shipping-fields h3,
@@ -139,10 +140,10 @@ checkout-info-sec-wrp
 	width: 52px;
 	height: 9px;
 }
-.woocommerce-shipping-fields .woocommerce form .form-row label,
-.woocommerce-billing-fields .woocommerce form .form-row label{
-	font-size: 16px;
-	line-height: 18px;
+.woocommerce-shipping-fields .woocommerce-billing-fields__field-wrapper p label,
+.woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper p label{
+	font-size: 16px !important;
+	line-height: 18px !important;
 	font-weight: 600;
 	color: #43587B;
 	margin-bottom: 10px;
@@ -155,4 +156,37 @@ checkout-info-sec-wrp
 	box-sizing: border-box;
 	border-radius: 4px;
 	padding: 10px 10px;
+}
+.woocommerce-shipping-fields p#shipping_postcode_field,
+.woocommerce-shipping-fields p#shipping_city_field,
+.woocommerce-shipping-fields p#shipping_address_1_field,
+.woocommerce-billing-fields p#billing_postcode_field,
+.woocommerce-billing-fields p#billing_city_field, 
+.woocommerce-billing-fields p.form-row-first,
+.woocommerce-billing-fields p.validate-phone{
+	width: 50%;
+}
+.woocommerce-shipping-fields p#shipping_city_field,
+.woocommerce-billing-fields p#billing_city_field,
+.woocommerce-billing-fields p.form-row-first{
+	float: left !important;
+}
+.woocommerce-shipping-fields p#shipping_postcode_field,
+.woocommerce-shipping-fields p#shipping_address_1_field,
+.woocommerce-billing-fields p.validate-postcode,
+.woocommerce-billing-fields p.validate-phone{
+	float: right !important;
+}
+.woocommerce form .form-row-wide,
+.woocommerce-page form .form-row-wide{
+	clear: none;
+}
+.woocommerce-shipping-fields__field-wrapper,
+.woocommerce-billing-fields__field-wrapper{
+	margin: 0 -12px;
+}
+.woocommerce form .form-row {
+    padding: 0 12px;
+    margin: 0;
+    margin-bottom: 12px;
 }
