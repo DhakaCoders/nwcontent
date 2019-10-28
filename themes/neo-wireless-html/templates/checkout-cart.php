@@ -74,5 +74,5 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 		<?php
 	}
 }
-get_template_part( 'woocommerce/cart/cart-totals', null );
+get_template_part( 'templates/checkout-cart-total', null );
 echo '</div>';

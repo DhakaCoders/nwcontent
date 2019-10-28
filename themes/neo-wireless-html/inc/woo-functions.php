@@ -39,7 +39,7 @@ function get_custom_wc_output_content_wrapper(){
 
 function get_custom_wc_output_content_wrapper_end(){
     if(!is_product()) put_woocommerce_search_sidebar_tag_end();
-    
+
     get_template_part('templates/footer', 'top');
 	echo '</div></div></div></div></section>';
 }
@@ -215,11 +215,11 @@ function get_wc_product_desctiption(){
 }
 
 
-add_action( 'woocommerce_after_single_product_summary', 'get_wc_gellary_video_proposle_content', 10, 1 );
+add_action( 'woocommerce_single_product_summary', 'get_wc_gellary_video_proposle_content', 40, 1 );
 function get_wc_gellary_video_proposle_content(){
 	global $product, $post;
 	$output = '';
-	$output .= '<div class="row"><div class="col-sm-offset-6 col-sm-6"><div class="gellery-wrapper">';
+	$output .= '<div class="gellery-wrapper clearfix">';
 	$output .= '<div class="video-inner">';
 	$output .= get_product_gallery_video();
 	$output .= '</div>';
@@ -227,7 +227,7 @@ function get_wc_gellary_video_proposle_content(){
 	$output .= get_product_thumbnail_images();
 	$output .= '</div>';
 	$output .= get_product_request_offer();
-	$output .= '</div></div></div>';
+	$output .= '</div>';
 	echo $output;
 }
 
@@ -324,11 +324,11 @@ function product_option_custom_field(){
     echo '<div class="hidden-field">
     <span class="wcoptioanl">Optional</label>
     <p class="form-row form-row-wide" id="repair_option_field" data-priority="">
-    <div class="woocommerce-input-wrapper"><input type="radio" class="input-checkbox " name="repair_option" value="1" checked><label class="checkbox"> ' . __("Skymount-air-Uplate-C-2566D", "Woocommerce") .
+    <div class="woocommerce-input-wrapper"><input id="optioanl-1" type="radio" class="input-checkbox " name="repair_option" value="1" checked><label for="optioanl-1" class="checkbox"> ' . __("Skymount-air-Uplate-C-2566D", "Woocommerce") .
     '</label><span> + ' . $repair_price_html .'</span></div>
-     <div class="woocommerce-input-wrapper"> <input type="radio" class="input-checkbox " name="repair_option" value="2"><label class="checkbox"> ' . __("Airborne Mounting Kit", "Woocommerce") .
+     <div class="woocommerce-input-wrapper"> <input id="optioanl-2" type="radio" class="input-checkbox " name="repair_option" value="2"><label for="optioanl-2" class="checkbox"> ' . __("Airborne Mounting Kit", "Woocommerce") .
     '</label><span> + ' . $repair_price_html1 .'</span></div>
-    <div class="woocommerce-input-wrapper"><input type="radio" class="input-checkbox " name="repair_option" value="3"><label class="checkbox"> ' . __("Skymount-art-arm-C-2566D", "Woocommerce") .
+    <div class="woocommerce-input-wrapper"><input id="optioanl-3" type="radio" class="input-checkbox " name="repair_option" value="3"><label for="optioanl-3" class="checkbox"> ' . __("Skymount-art-arm-C-2566D", "Woocommerce") .
     '</label><span> + ' . $repair_price_html2 .'</span></div>
     </p>
     <input type="hidden" name="repair_price" value="' . $repair_price . '">
@@ -481,6 +481,9 @@ function ship_to_different_address_translation( $translated_text, $text, $domain
 	break;
     case 'Product successfully added to your cart' :
         $translated_text = __( 'Added to cart.', 'woocommerce' );
+    break;
+    case 'Place order' :
+        $translated_text = __( 'CHECKOUT', 'woocommerce' );
     break;
 	}
 
