@@ -213,12 +213,13 @@ checkout-info-sec-wrp
     border: 1px solid #EDF2F5;
 }
 .innerpage-con-wrap .select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: #000;
+    color: #43587B;
     line-height: 28px;
+    text-align: left;
 }
-.innerpage-con-wrap .select2-container--default .select2-selection--single .select2-selection__arrow{
+.select2-container--default .select2-selection--single .select2-selection__arrow{
 	display: none;
 }
-.innerpage-con-wrap .select2-results ul li:after{
+.select2-results ul li:after{
 	content: none;
 }
