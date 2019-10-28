@@ -145,6 +145,9 @@
 	line-height: 19px;
 	background: #F4F7F9;
 	border-radius: 2px;
+	-ms-transition: all .5s;
+	-webkit-transition: all .5s;
+	transition: all .5s;
 }
 .quantity-wrapper .plus {
     right: 16px;
@@ -153,6 +156,10 @@
 .quantity-wrapper .minus {
     right: 16px;
     bottom: 2px;
+}
+.quantity-wrapper .plus:hover,
+.quantity-wrapper .minus:hover {
+    color:#FF5C26;
 }
 .quantity input[type="number"]{  
 	width: 12px;
