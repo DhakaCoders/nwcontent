@@ -38,11 +38,20 @@ if ($('.cookie-btn').length) {
 
 // }
 
+
+
+//nw
+if ($('.wpf_item_name').length) {
+  $('.wpf_item .wpf_item_name').on('click', function(){
+    //$('.wpf_item > ul').slideToggle();
+    //$(this).parent().find('.wpf_item > ul').slideToggle(500);
+  });
+}
+
 //nw-subcategorie
-if ($('li.subcategorie-wrp').length) {
-  $( "li.subcategorie-wrp > a" ).click(function(e) {
-    e.preventDefault();
-    $(this).parent().find('ul').slideTwcdetails-expand();
+if ($('.wpf_links').length) {
+  $('.wpf_links li > span').on('click', function(){
+    $('.wpf_submenu').slideToggle();
   });
 }
 
