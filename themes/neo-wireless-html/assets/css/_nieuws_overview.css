@@ -172,7 +172,9 @@
 	height: 5px;
 	background: #FF5C26;
 }
-
+.dfp-promo-module.dateblog {
+    padding-bottom: 0;
+}
 
 
 

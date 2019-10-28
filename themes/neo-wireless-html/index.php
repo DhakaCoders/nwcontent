@@ -62,9 +62,7 @@ else
                   </div>
                   <div class="blog-post-grd-des">
                     <strong>
-                    	<?php 
-                    		the_category(', ');
-                    	?>
+                    	<?php the_category(', '); ?>
                     </strong>
                     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                     <?php echo wpautop( get_custom_excerpt(33), true );; ?>

@@ -38,11 +38,28 @@ if ($('.cookie-btn').length) {
 
 // }
 
+
+
+//nw
+if ($('.wpf_item_name').length) {
+  $('.wpf_item .wpf_item_name').on('click', function(){
+    //$('.wpf_item > ul').slideToggle();
+    //$(this).parent().find('.wpf_item > ul').slideToggle(500);
+  });
+}
+
 //nw-subcategorie
-if ($('li.subcategorie-wrp').length) {
-  $( "li.subcategorie-wrp > a" ).click(function(e) {
+if ($('.wpf_links').length) {
+  $('.wpf_links li > span').on('click', function(){
+    $('.wpf_submenu').slideToggle();
+  });
+}
+
+//nw-subcategorie
+if ($('.wcdetailsbtn').length) {
+  $( ".wcdetailsbtn > a" ).click(function(e) {
     e.preventDefault();
-    $(this).parent().find('ul').slideToggle();
+    $(this).parents(".wcdetailsbtn").parent().toggleClass("wcdetails-expand");
   });
 }
 
@@ -733,7 +750,66 @@ if( $('#particles-js').length ){
 
 
 }
-    new WOW().init();
+
+var $filterCheckboxes = $( '#allproductartical input[type="radio"]' );
+$filterCheckboxes.change(
+  function(){
+    if( $(this).length > 0)
+    {
+        
+    $("#allproductartical").submit();
+      
+    }
+  }
+);
+$(window).load(function(){
+  if( $('#filterSearch').length ){
+      $('html, body').animate({
+          scrollTop: $("#filterSearch").offset().top
+      }, 100);
+  }
+});
+
+new WOW().init();
+
+// product counter
+
+if( $('.quantity-wrapper').length ){
+  $('.quantity-wrapper').each(function() {
+    var spinner = $(this),
+      input = spinner.find('input[type="number"]'),
+      btnUp = spinner.find('.plus'),
+      btnDown = spinner.find('.minus'),
+      min = 1,
+      max = input.attr('max');
+
+    btnUp.click(function() {
+      var oldValue = parseFloat(input.val());
+      if (oldValue <= max) {
+        var newVal = oldValue;
+      } else {
+        var newVal = oldValue + 1;
+      }
+      spinner.find("input").val(newVal);
+      spinner.find("input").trigger("change");
+    });
+
+    btnDown.click(function() {
+      var oldValue = parseFloat(input.val());
+      if (oldValue <= min) {
+        var newVal = oldValue;
+      } else {
+        var newVal = oldValue - 1;
+      }
+      spinner.find("input").val(newVal);
+      spinner.find("input").trigger("change");
+    });
+
+  });
+
+}
+
+
 
 })(jQuery);
 

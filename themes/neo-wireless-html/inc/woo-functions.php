@@ -39,6 +39,8 @@ function get_custom_wc_output_content_wrapper(){
 
 function get_custom_wc_output_content_wrapper_end(){
     if(!is_product()) put_woocommerce_search_sidebar_tag_end();
+
+    get_template_part('templates/footer', 'top');
 	echo '</div></div></div></div></section>';
 }
 
@@ -134,6 +136,11 @@ if (!function_exists('get_woocommerce_custom_sideber')) {
 	function get_woocommerce_custom_sideber(){
 		//dynamic_sidebar('sidebar-widget-one');
 		echo do_shortcode( '[searchandfilter id="wpf_5db43e8874bec"]');
+
+        echo '<div class="wccatalog sidebarcatalog show-xs">';
+        _e( '<span>Sort By: </span>', 'woocommerce' ).
+        woocommerce_catalog_ordering();
+        echo '</div>';
 	}
 
 }
@@ -146,8 +153,11 @@ if (!function_exists('get_woocommerce_custom_sideber')) {
 if (!function_exists('get_woocommerce_search_catalog')) {
 	function get_woocommerce_search_catalog(){
 		echo '<div class="wcsearch">';
-		get_product_search_form();
-		echo '</div><div class="wccatalog">';
+		echo '<form role="search" method="get" class="woocommerce-product-search" action="'. esc_url( home_url( '/' ) ).'">
+        <input type="search" class="search-field" placeholder="'. esc_attr__( 'Search products&hellip;', 'woocommerce' ).'" value="'. get_search_query() .'" name="s" />
+        <button type="submit" value="'. esc_attr_x( 'Search', 'submit button', 'woocommerce' ).'">'. esc_html_x( 'Search', 'submit button', 'woocommerce' ).'</button>
+        </form>';
+		echo '</div><div class="wccatalog hide-xs">';
 		_e( '<span>Sort By: </span>', 'woocommerce' ).
 		woocommerce_catalog_ordering();
 		echo '</div>';
@@ -198,17 +208,18 @@ function get_wc_product_desctiption(){
 	$output .= '</div>';
 	$output .= '<div class="wcdetails">';
 	$output .= __( '<h2>Description</h2>', 'woocommerce' );
-	$output .= $short_description;
+    $output .= $short_description;
+	$output .= '<div class="wcdetailsbtn"><a href="#">More Info</a><a href="#">Less Info</a></div>';
 	$output .= '</div>';
 	echo $output;
 }
 
 
-add_action( 'woocommerce_after_single_product_summary', 'get_wc_gellary_video_proposle_content', 10, 1 );
+add_action( 'woocommerce_single_product_summary', 'get_wc_gellary_video_proposle_content', 40, 1 );
 function get_wc_gellary_video_proposle_content(){
 	global $product, $post;
 	$output = '';
-	$output .= '<div class="row"><div class="col-sm-offset-6 col-sm-6"><div class="gellery-wrapper">';
+	$output .= '<div class="gellery-wrapper clearfix">';
 	$output .= '<div class="video-inner">';
 	$output .= get_product_gallery_video();
 	$output .= '</div>';
@@ -216,7 +227,7 @@ function get_wc_gellary_video_proposle_content(){
 	$output .= get_product_thumbnail_images();
 	$output .= '</div>';
 	$output .= get_product_request_offer();
-	$output .= '</div></div></div>';
+	$output .= '</div>';
 	echo $output;
 }
 
@@ -224,7 +235,12 @@ function get_wc_gellary_video_proposle_content(){
 function get_product_gallery_video(){
 	global $product;
 	$output = '';
-	$output .= '<img src="'.THEME_URI.'/assets/images/video-g.png" alt="sidebar">';
+	$output .= '<div class="singlePage-vdo-wrp art-video"><div class="video-play-wrap"><div class="video-play-main">';
+    $output .= '<a class="img-zoom" data-fancybox="article" href="https://www.youtube.com/watch?v=b4Yx9eHfsuc">
+                <i><img src="'.THEME_URI.'/assets/images/vplay.svg"></i>
+                <img alt="" src="'.THEME_URI.'/assets/images/video-g.png">
+                </a>';
+     $output .= '</div></div></div>';
 	
 	return $output;
 }
@@ -241,8 +257,8 @@ function get_product_thumbnail_images(){
 
 	$attachment_ids = $product->get_gallery_image_ids();
 	$output = '';
-	$output .= __( '<h2>Gallery</h2>', 'woocommerce' );
 	if ( $attachment_ids && $product->get_image_id() ) {
+        $output .= __( '<h2>Gallery</h2>', 'woocommerce' );
 		$output .= '<ul>';
 		foreach ( $attachment_ids as $attachment_id ) {
 			$thumb_tag = cbv_get_image_tag($attachment_id, 'woocommerce_gallery_thumbnail');
@@ -337,15 +353,12 @@ foreach ( $onlyAttrK as $onlyAttrKS ) {
     echo '<div class="hidden-field hide">
     <span class="wcoptioanl">Optional</span>
     <p class="form-row form-row-wide" id="repair_option_field" data-priority="">
-    <span class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Skymount-air-Uplate-C-2566D", "Woocommerce") .
-    ' <input type="radio" class="input-checkbox " name="repair_option" value="1" checked> + ' . $repair_price_html .
-    '</label></span>
-     <span class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Airborne Mounting Kit", "Woocommerce") .
-    ' <input type="radio" class="input-checkbox " name="repair_option" value="2"> + ' . $repair_price_html1 .
-    '</label></span>
-    <span class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Skymount-art-arm-C-2566D", "Woocommerce") .
-    ' <input type="radio" class="input-checkbox " name="repair_option" value="3"> + ' . $repair_price_html2 .
-    '</label></span>
+    <div class="woocommerce-input-wrapper"><input id="optioanl-1" type="radio" class="input-checkbox " name="repair_option" value="1" checked><label for="optioanl-1" class="checkbox"> ' . __("Skymount-air-Uplate-C-2566D", "Woocommerce") .
+    '</label><span> + ' . $repair_price_html .'</span></div>
+     <div class="woocommerce-input-wrapper"> <input id="optioanl-2" type="radio" class="input-checkbox " name="repair_option" value="2"><label for="optioanl-2" class="checkbox"> ' . __("Airborne Mounting Kit", "Woocommerce") .
+    '</label><span> + ' . $repair_price_html1 .'</span></div>
+    <div class="woocommerce-input-wrapper"><input id="optioanl-3" type="radio" class="input-checkbox " name="repair_option" value="3"><label for="optioanl-3" class="checkbox"> ' . __("Skymount-art-arm-C-2566D", "Woocommerce") .
+    '</label><span> + ' . $repair_price_html2 .'</span></div>
     </p>
     <input type="hidden" name="repair_price" value="' . $repair_price . '">
     <input type="hidden" name="active_price" value="' . $active_price . '">
@@ -475,33 +488,11 @@ function add_custom_fields_order_item_meta( $item_id, $cart_item, $cart_item_key
 /*Checkout Woocommerce Hooks*/
 
 remove_action( 'woocommerce_checkout_order_review', 'woocommerce_order_review', 10 );
-remove_action( 'woocommerce_proceed_to_checkout','woocommerce_button_proceed_to_checkout', 20);
+//remove_action( 'woocommerce_proceed_to_checkout','woocommerce_button_proceed_to_checkout', 20);
 remove_action( 'woocommerce_before_checkout_form', 'woocommerce_checkout_coupon_form', 10 ); 
 
 function get_woocommerce_custom_cart(){
 	get_template_part( 'templates/checkout', 'cart' );
-}
-
-//add_filter( 'woocommerce_checkout_fields' , 'custom_remove_woo_checkout_fields' );
- 
-function custom_remove_woo_checkout_fields( $fields ) {
-
-    // remove billing fields
-    unset($fields['billing']['billing_last_name']);
-    unset($fields['billing']['billing_company']);
-    unset($fields['billing']['billing_address_2']);
-
-   
-    // remove shipping fields    
-    unset($fields['shipping']['shipping_last_name']);  
-    unset($fields['shipping']['shipping_company']);
-    unset($fields['shipping']['shipping_address_2']);
-
-    
-    // remove order comment fields
-    unset($fields['order']['order_comments']);
-    
-    return $fields;
 }
 
 
@@ -519,6 +510,9 @@ function ship_to_different_address_translation( $translated_text, $text, $domain
 	break;
     case 'Product successfully added to your cart' :
         $translated_text = __( 'Added to cart.', 'woocommerce' );
+    break;
+    case 'Place order' :
+        $translated_text = __( 'CHECKOUT', 'woocommerce' );
     break;
 	}
 

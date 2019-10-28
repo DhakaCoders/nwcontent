@@ -1,5 +1,5 @@
 <?php
-echo '<div class=""clearfix>';
+echo '<div class="wccheckout-cart clearfix">';
 echo __( '<h3>Shopping Cart</h3>', 'woocommerce' );
 foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 	$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
@@ -74,5 +74,5 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 		<?php
 	}
 }
-get_template_part( 'woocommerce/cart/cart-totals', null );
+get_template_part( 'templates/checkout-cart-total', null );
 echo '</div>';

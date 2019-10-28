@@ -1,5 +1,5 @@
 <?php
-$thisID = get_the_ID();
+$thisID = get_option( 'woocommerce_shop_page_id' );
 $pageTitle = get_the_title($thisID);
 $bannerafbeelding = wp_get_attachment_image_src( get_post_thumbnail_id( $thisID ), 'full' );
 $standaardbanner = get_field('standaardbanner', 'options');
@@ -17,7 +17,7 @@ else
         <div class="row">
           <div class="col-sm-12">
             <div class="page-banner-des-innr">
-              <strong class="banner-page-title"><?php echo $pageTitle; ?></strong>
+              <strong class="banner-page-title"><?php _e( 'Products', 'woocommerce' );; ?></strong>
               <div class="breadcrumbs">
                <?php cbv_breadcrumbs(); ?>
               </div>
