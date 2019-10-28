@@ -580,15 +580,15 @@
 .singlePage-vdo-wrp{
 	overflow: hidden;
 }
-.singlePage-vdo-wrp .img-zoom img{
+.singlePage-vdo-wrp .img-zoom > img{
 	-ms-transition: all .5s;
 	-webkit-transition: all .5s;
 	transition: all .5s;
 }
-.singlePage-vdo-wrp:hover .img-zoom img{
+.singlePage-vdo-wrp:hover .img-zoom > img{
 	-ms-transform: scale(1.03);
 	-webkit-transform: scale(1.03);
-	transform: scale(1.03);
+	transform: scale(1.1);
 }
 
 
