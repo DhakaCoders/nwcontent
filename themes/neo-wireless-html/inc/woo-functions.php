@@ -215,11 +215,11 @@ function get_wc_product_desctiption(){
 }
 
 
-add_action( 'woocommerce_after_single_product_summary', 'get_wc_gellary_video_proposle_content', 10, 1 );
+add_action( 'woocommerce_single_product_summary', 'get_wc_gellary_video_proposle_content', 40, 1 );
 function get_wc_gellary_video_proposle_content(){
 	global $product, $post;
 	$output = '';
-	$output .= '<div class="row"><div class="col-sm-offset-6 col-sm-6"><div class="gellery-wrapper">';
+	$output .= '<div class="gellery-wrapper clearfix">';
 	$output .= '<div class="video-inner">';
 	$output .= get_product_gallery_video();
 	$output .= '</div>';
@@ -227,7 +227,7 @@ function get_wc_gellary_video_proposle_content(){
 	$output .= get_product_thumbnail_images();
 	$output .= '</div>';
 	$output .= get_product_request_offer();
-	$output .= '</div></div></div>';
+	$output .= '</div>';
 	echo $output;
 }
 
