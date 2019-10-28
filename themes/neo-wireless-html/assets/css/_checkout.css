@@ -118,6 +118,9 @@ checkout-info-sec-wrp
 	padding-left: 30px;
 	padding-top: 80px;
 }
+.woocommerce-shipping-fields{
+	padding-top: 45px;
+}
 .innerpage-con-wrap .woocommerce-shipping-fields h3,
 .innerpage-con-wrap .default-page-con h3{
 	margin: 0;
@@ -146,7 +149,9 @@ checkout-info-sec-wrp
 	line-height: 18px !important;
 	font-weight: 600;
 	color: #43587B;
-	margin-bottom: 10px;
+	margin-bottom: 8px;
+	display: inline-block;
+	vertical-align: baseline;
 }
 .woocommerce form .form-row input.input-text,
 .woocommerce form .form-row textarea{
@@ -156,6 +161,12 @@ checkout-info-sec-wrp
 	box-sizing: border-box;
 	border-radius: 4px;
 	padding: 10px 10px;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.woocommerce form .form-row input.input-text:focus{
+	border-color: #000;
 }
 .woocommerce-shipping-fields p#shipping_postcode_field,
 .woocommerce-shipping-fields p#shipping_city_field,
@@ -188,5 +199,28 @@ checkout-info-sec-wrp
 .woocommerce form .form-row {
     padding: 0 12px;
     margin: 0;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
+}
+.select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 50px;
+    margin: 0;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    padding: 10px 10px;
+    border: 1px solid #EDF2F5;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #000;
+    line-height: 28px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+	display: none;
+}
+.select2-results ul li:after{
+	content: none;
 }
