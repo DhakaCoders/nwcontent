@@ -223,3 +223,24 @@ checkout-info-sec-wrp
 .select2-results ul li:after{
 	content: none;
 }
+
+.cartpopup-quantity span.xcp-minus {
+    border: none;
+}
+.quantity input[type="number"]{
+    background: transparent;
+    -moz-appearance: textfield;
+    appearance: none;
+    margin-top: -2px;
+    font-size: 20px;
+    line-height: 22px;
+    color: #7B8CA8;
+}
+span.xcp-plus {
+    border: none !important;
+}
+.xoo-cp-qtybox span {
+    background: #fff;
+    border-radius: 2px;
+    margin-top: -2px;
+}
