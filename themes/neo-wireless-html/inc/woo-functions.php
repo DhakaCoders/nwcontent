@@ -206,7 +206,8 @@ function get_wc_product_desctiption(){
 	$output .= '</div>';
 	$output .= '<div class="wcdetails">';
 	$output .= __( '<h2>Description</h2>', 'woocommerce' );
-	$output .= $short_description;
+    $output .= $short_description;
+	$output .= '<div class="wcdetailsbtn"><a href="#">More Info</a></div>';
 	$output .= '</div>';
 	echo $output;
 }
@@ -316,15 +317,12 @@ function product_option_custom_field(){
     echo '<div class="hidden-field">
     <span class="wcoptioanl">Optional</label>
     <p class="form-row form-row-wide" id="repair_option_field" data-priority="">
-    <span class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Skymount-air-Uplate-C-2566D", "Woocommerce") .
-    ' <input type="radio" class="input-checkbox " name="repair_option" value="1" checked> + ' . $repair_price_html .
-    '</label></span>
-     <span class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Airborne Mounting Kit", "Woocommerce") .
-    ' <input type="radio" class="input-checkbox " name="repair_option" value="2"> + ' . $repair_price_html1 .
-    '</label></span>
-    <span class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Skymount-art-arm-C-2566D", "Woocommerce") .
-    ' <input type="radio" class="input-checkbox " name="repair_option" value="3"> + ' . $repair_price_html2 .
-    '</label></span>
+    <div class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Skymount-air-Uplate-C-2566D", "Woocommerce") .
+    '</label><input type="radio" class="input-checkbox " name="repair_option" value="1" checked><span> + ' . $repair_price_html .'</span></div>
+     <div class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Airborne Mounting Kit", "Woocommerce") .
+    '</label> <input type="radio" class="input-checkbox " name="repair_option" value="2"><span> + ' . $repair_price_html1 .'</span></div>
+    <div class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Skymount-art-arm-C-2566D", "Woocommerce") .
+    '</label><input type="radio" class="input-checkbox " name="repair_option" value="3"><span> + ' . $repair_price_html2 .'</span></div>
     </p>
     <input type="hidden" name="repair_price" value="' . $repair_price . '">
     <input type="hidden" name="active_price" value="' . $active_price . '">
