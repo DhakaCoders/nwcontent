@@ -69,8 +69,8 @@ if (windowWidth <= 767) {
   if ($('.wpf_item').length){
     $('.wpf_item .wpf_item_name').on('click', function(){
       $(this).parent().siblings().removeClass('active');
-      $(this).next('.pro-accordion-des').slideToggle();
-      $(this).parent().siblings().find('.pro-accordion-des').slideUp();
+      $(this).next('.wpf_links').slideToggle();
+      $(this).parent().siblings().find('.wpf_links').slideUp();
       $(this).parent().toggleClass('active');
     });
   }

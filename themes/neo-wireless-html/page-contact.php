@@ -35,7 +35,7 @@ get_template_part('templates/page', 'banner');
               <span><i><img src="<?php echo THEME_URI; ?>/assets/images/dotted-icon.svg"></i></span>
             </div>
             <div class="contact-form">
-              <?php echo do_shortcode('[wpforms id="322"]'); ?>
+              <?php echo do_shortcode('[wpforms id="193"]'); ?>
             </div>
           </div>
           <div class="contac-info-rgt">
