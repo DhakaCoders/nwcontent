@@ -304,9 +304,38 @@ function product_option_custom_field(){
     $disp_price_sum_html1 = wc_price( wc_get_price_to_display( $product, array('price' => $active_price + $repair_price1 ) ) );
     $disp_price_sum_html2 = wc_price( wc_get_price_to_display( $product, array('price' => $active_price + $repair_price2 ) ) );
 
+$attributes = $product->get_attributes(); //get all attributes
+$attrVariation = $product->get_variation_attributes(); //get variation attributes
+$pa_capacity = get_the_terms( $product->id, 'pa_capacity');
+$onlyAttr = array_diff_key($attributes, $attrVariation); //get attribues that are not used for variation
+$onlyAttrK = array_keys($onlyAttr); //keys
 
-    echo '<div class="hidden-field">
-    <span class="wcoptioanl">Optional</label>
+foreach ( $onlyAttrK as $onlyAttrKS ) {
+    echo '<div class="hidden-field">';
+    $terms = get_taxonomy( $onlyAttrKS ); //get this texonomy data
+    $onlyAttrKSterms = get_the_terms( $product->id, $onlyAttrKS); // get all the child terms
+    echo '<span class="wcoptioanl">'.$terms->labels->singular_name.'</span>';
+    echo '<p class="form-row form-row-wide" id="repair_option_field" data-priority="">';
+    $i = 1;
+    foreach ( $onlyAttrKSterms as $term ) {
+    //printr($term);
+      $term_id = $term->term_id;
+      $name = $term->name;
+      $acf = 'term_' . $term_id;
+      $markup = get_field('price', $acf);
+        echo '<span class="woocommerce-input-wrapper"><label class="checkbox">'.$name;
+        echo '<input type="radio" class="input-checkbox " name="repair_option" value="'.$i.'" checked> +'.$markup;
+        echo '<label></span>';
+    $i ++; 
+    }
+    echo '</p>';
+    echo '<input type="hidden" name="repair_price" value="' . $repair_price . '">
+    <input type="hidden" name="active_price" value="' . $active_price . '">';
+    echo '</div>';
+}
+
+    echo '<div class="hidden-field hide">
+    <span class="wcoptioanl">Optional</span>
     <p class="form-row form-row-wide" id="repair_option_field" data-priority="">
     <span class="woocommerce-input-wrapper"><label class="checkbox"> ' . __("Skymount-air-Uplate-C-2566D", "Woocommerce") .
     ' <input type="radio" class="input-checkbox " name="repair_option" value="1" checked> + ' . $repair_price_html .
