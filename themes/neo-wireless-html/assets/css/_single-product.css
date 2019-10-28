@@ -363,7 +363,7 @@
 	width:33.333%;
 	float: left;
 }
-.woocommerce-input-wrapper > span{
+.wccontent-wrapper.wcsingle .woocommerce-input-wrapper > span{
 	display: block;
 	margin:0 auto;
 	font-size: 14px;
@@ -401,7 +401,6 @@
 	letter-spacing: normal;
 
 }
-
 .woocommerce-variation-add-to-cart:first-child input[type=radio] + label{
 	border-right: 1px solid #DEE7ED!important;
 	border-radius: 4px 0 0 4px;
