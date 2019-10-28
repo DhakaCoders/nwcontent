@@ -113,10 +113,13 @@ checkout-info-sec-wrp
 .woocommerce-checkout .wc-proceed-to-checkout{
 	display: none;
 }
-.woocommerce-shipping-fields,
-.woocommerce-billing-fields{
+.innerpage-con-wrap .woocommerce-shipping-fields,
+.innerpage-con-wrap .woocommerce-billing-fields{
 	padding-left: 30px;
 	padding-top: 80px;
+}
+.innerpage-con-wrap .woocommerce-shipping-fields{
+	padding-top: 45px;
 }
 .innerpage-con-wrap .woocommerce-shipping-fields h3,
 .innerpage-con-wrap .default-page-con h3{
@@ -140,53 +143,82 @@ checkout-info-sec-wrp
 	width: 52px;
 	height: 9px;
 }
-.woocommerce-shipping-fields .woocommerce-billing-fields__field-wrapper p label,
-.woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper p label{
+.innerpage-con-wrap .woocommerce-shipping-fields .woocommerce-billing-fields__field-wrapper p label,
+.innerpage-con-wrap .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper p label{
 	font-size: 16px !important;
 	line-height: 18px !important;
 	font-weight: 600;
 	color: #43587B;
-	margin-bottom: 10px;
+	margin-bottom: 8px;
 }
-.woocommerce form .form-row input.input-text,
-.woocommerce form .form-row textarea{
+.innerpage-con-wrap .woocommerce form .form-row input.input-text,
+.innerpage-con-wrap .woocommerce form .form-row textarea{
 	width: 100%;
 	height: 50px;
 	border: 1px solid #EDF2F5;
 	box-sizing: border-box;
 	border-radius: 4px;
 	padding: 10px 10px;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
 }
-.woocommerce-shipping-fields p#shipping_postcode_field,
-.woocommerce-shipping-fields p#shipping_city_field,
-.woocommerce-shipping-fields p#shipping_address_1_field,
-.woocommerce-billing-fields p#billing_postcode_field,
-.woocommerce-billing-fields p#billing_city_field, 
-.woocommerce-billing-fields p.form-row-first,
-.woocommerce-billing-fields p.validate-phone{
+.innerpage-con-wrap .woocommerce form .form-row input.input-text:focus{
+	border-color: #000;
+}
+.innerpage-con-wrap .woocommerce-shipping-fields p#shipping_postcode_field,
+.innerpage-con-wrap .woocommerce-shipping-fields p#shipping_city_field,
+.innerpage-con-wrap .woocommerce-shipping-fields p#shipping_address_1_field,
+.innerpage-con-wrap .woocommerce-billing-fields p#billing_postcode_field,
+.innerpage-con-wrap .woocommerce-billing-fields p#billing_city_field, 
+.innerpage-con-wrap .woocommerce-billing-fields p.form-row-first,
+.innerpage-con-wrap .woocommerce-billing-fields p.validate-phone{
 	width: 50%;
 }
-.woocommerce-shipping-fields p#shipping_city_field,
-.woocommerce-billing-fields p#billing_city_field,
-.woocommerce-billing-fields p.form-row-first{
+.innerpage-con-wrap .woocommerce-shipping-fields p#shipping_city_field,
+.innerpage-con-wrap .woocommerce-billing-fields p#billing_city_field,
+.innerpage-con-wrap .woocommerce-billing-fields p.form-row-first{
 	float: left !important;
 }
-.woocommerce-shipping-fields p#shipping_postcode_field,
-.woocommerce-shipping-fields p#shipping_address_1_field,
-.woocommerce-billing-fields p.validate-postcode,
-.woocommerce-billing-fields p.validate-phone{
+.innerpage-con-wrap .woocommerce-shipping-fields p#shipping_postcode_field,
+.innerpage-con-wrap .woocommerce-shipping-fields p#shipping_address_1_field,
+.innerpage-con-wrap .woocommerce-billing-fields p.validate-postcode,
+.innerpage-con-wrap .woocommerce-billing-fields p.validate-phone{
 	float: right !important;
 }
-.woocommerce form .form-row-wide,
-.woocommerce-page form .form-row-wide{
+.innerpage-con-wrap .woocommerce form .form-row-wide,
+.innerpage-con-wrap .woocommerce-page form .form-row-wide{
 	clear: none;
 }
-.woocommerce-shipping-fields__field-wrapper,
-.woocommerce-billing-fields__field-wrapper{
+.innerpage-con-wrap .woocommerce-shipping-fields__field-wrapper,
+.innerpage-con-wrap .woocommerce-billing-fields__field-wrapper{
 	margin: 0 -12px;
 }
-.woocommerce form .form-row {
+.innerpage-con-wrap .woocommerce form .form-row {
     padding: 0 12px;
     margin: 0;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
+}
+.innerpage-con-wrap .select2-container .select2-selection--single {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    height: 50px;
+    margin: 0;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    padding: 10px 10px;
+    border: 1px solid #EDF2F5;
+}
+.innerpage-con-wrap .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #000;
+    line-height: 28px;
+}
+.innerpage-con-wrap .select2-container--default .select2-selection--single .select2-selection__arrow{
+	display: none;
+}
+.innerpage-con-wrap .select2-results ul li:after{
+	content: none;
 }
