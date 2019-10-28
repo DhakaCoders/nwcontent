@@ -75,7 +75,7 @@
 	padding: 50px 0 10px;
 }
 .wccontent-wrapper.wcsingle .wcdetails.wcdetails-expand .wcdetailsbtn{
-	display: none
+	/*display: none*/
 }
 .wccontent-wrapper.wcsingle .wcdetails .wcdetailsbtn a{
 	display: inline-block;
@@ -110,7 +110,9 @@
     margin-bottom: 18px;
     margin-top: 5px;
 }
-
+.woocommerce-variation-price{
+	display: none;
+}
 
 
 
@@ -267,13 +269,15 @@
 	margin-top: 0
 }
 
-
-
-.woocommerce-input-wrapper input[type=radio]{
+/*
+.woocommerce-input-wrapper{
+	display: inline-block!important;
+}*/
+/*.woocommerce-input-wrapper input[type=radio]{
 	display:none!important;
 }
 
-.woocommerce-input-wrapper input[type=radio] + label.checkbox{
+.woocommerce-input-wrapper input[type=radio] + label{
 	display:inline-block!important;
 	margin:-2px!important;
 	margin-bottom: 0!important;
@@ -296,7 +300,7 @@
 	box-sizing: border-box!important;
 	border-radius: 4px!important;
 }
-.woocommerce-input-wrapper input[type=radio]:checked + label.checkbox{
+.woocommerce-input-wrapper input[type=radio]:checked + label{
 	outline: 0!important;
 	background: #6B7BB3!important;
 	color: #fff!important;
@@ -306,6 +310,62 @@
 .woocommerce-input-wrapper span{
 
 }
+*/
+
+
+
+.woocommerce-variation-add-to-cart input[type=radio]{
+  display:none!important;
+}
+.woocommerce-variation-add-to-cart input[type=radio] + label{
+  display:inline-block!important;
+  margin:-2px!important;
+  margin-bottom: 0!important;
+  color: #000!important;
+  text-align: center!important;
+  vertical-align: middle!important;
+  cursor: pointer!important;
+  background-color: #fff!important;
+  text-transform: uppercase!important;
+  font-size: 15px!important;
+  font-weight: 500!important;
+  letter-spacing: 4.5px!important;
+  border-radius: 0!important;
+  border: 1px solid #000!important;
+  line-height: 40px!important;
+  padding: 4px 12px!important;
+  width: 44px!important;
+  height: 50px!important;
+}
+.woocommerce-variation-add-to-cart input[type=radio]:checked + label{
+  outline: 0!important;
+  background-color:#b3b3b3!important;
+  color: #fff!important;
+  border: none!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
