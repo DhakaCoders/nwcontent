@@ -359,11 +359,11 @@
 	display: table;
 	clear: both;
 }
-.woocommerce-input-wrapper{
+.wccontent-wrapper.wcsingle .woocommerce-input-wrapper{
 	width:33.333%;
 	float: left;
 }
-.woocommerce-input-wrapper > span{
+.wccontent-wrapper.wcsingle .woocommerce-input-wrapper > span{
 	display: block;
 	margin:0 auto;
 	font-size: 14px;
@@ -401,7 +401,6 @@
 	letter-spacing: normal;
 
 }
-
 .woocommerce-variation-add-to-cart:first-child input[type=radio] + label{
 	border-right: 1px solid #DEE7ED!important;
 	border-radius: 4px 0 0 4px;
@@ -449,20 +448,16 @@
     background: #6B7BB3!important;
     color:#fff;
 }
-
-
 .woocommerce div.product form.cart .variations tr{
 	position: relative;
 	padding-top: 40px;
 }
-
 .woocommerce div.product form.cart .variations td.label {
     color: #6B7BB3!important;
 	position: absolute;
 	top:0;
 	left:0;
 }
-
 .woocommerce div.product form.cart .variations tbody:after,
 .woocommerce div.product form.cart .variations tbody:before{
 	content: "";
@@ -539,14 +534,12 @@
 .wccontent-wrapper.wcsingle .gellery-wrapper ul li:after{
 	content: none;
 }
-
 .wccontent-wrapper.wcsingle .gellery-wrapper .requestoffer-inner{
 	background: #FF5C26;
 	box-shadow: 0px 0px 26px rgba(67, 88, 123, 0.07);
 	color:#fff;
 	padding: 40px 62px
 }
-
 .wccontent-wrapper.wcsingle .gellery-wrapper .requestoffer-inner h3{
 	font-weight: 600;
 	font-size: 36px;
