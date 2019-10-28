@@ -3,8 +3,10 @@ $mounting = get_field('mounting', HOMEID);
 $wifi = get_field('wifi_sec', HOMEID);
 $show__hidemwifi = get_field('show__hidemwifi', HOMEID);
 if($show__hidemwifi){ 
+  $customClass = '';
+  if(is_shop() OR is_product()) $customClass = ' wcftmargin';
 ?>
-<section class="footer-top-sec-wrp clearfix">
+<section class="footer-top-sec-wrp<?php echo $customClass; ?> clearfix">
    <div class="footer-top-lft">
      <div class="footer-top-lft-bg" style="background: url(<?php echo $mounting['image']; ?>);">
        <div class="footer-top-dsc">

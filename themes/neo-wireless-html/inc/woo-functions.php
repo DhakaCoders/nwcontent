@@ -39,6 +39,8 @@ function get_custom_wc_output_content_wrapper(){
 
 function get_custom_wc_output_content_wrapper_end(){
     if(!is_product()) put_woocommerce_search_sidebar_tag_end();
+    
+    get_template_part('templates/footer', 'top');
 	echo '</div></div></div></div></section>';
 }
 
@@ -233,7 +235,12 @@ function get_wc_gellary_video_proposle_content(){
 function get_product_gallery_video(){
 	global $product;
 	$output = '';
-	$output .= '<img src="'.THEME_URI.'/assets/images/video-g.png" alt="sidebar">';
+	$output .= '<div class="singlePage-vdo-wrp art-video"><div class="video-play-wrap"><div class="video-play-main">';
+    $output .= '<a class="img-zoom" data-fancybox="article" href="https://www.youtube.com/watch?v=b4Yx9eHfsuc">
+                <i><img src="'.THEME_URI.'/assets/images/vplay.svg"></i>
+                <img alt="" src="'.THEME_URI.'/assets/images/video-g.png">
+                </a>';
+     $output .= '</div></div></div>';
 	
 	return $output;
 }
@@ -250,8 +257,8 @@ function get_product_thumbnail_images(){
 
 	$attachment_ids = $product->get_gallery_image_ids();
 	$output = '';
-	$output .= __( '<h2>Gallery</h2>', 'woocommerce' );
 	if ( $attachment_ids && $product->get_image_id() ) {
+        $output .= __( '<h2>Gallery</h2>', 'woocommerce' );
 		$output .= '<ul>';
 		foreach ( $attachment_ids as $attachment_id ) {
 			$thumb_tag = cbv_get_image_tag($attachment_id, 'woocommerce_gallery_thumbnail');

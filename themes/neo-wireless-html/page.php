@@ -104,12 +104,20 @@ while ( have_posts() ) :
                           $pimgScr = '';
                         }  
                         echo '<div class="dft-2grd-img-con-item-col">';
-
+                        echo '<div class="dft-img-col-hover-scale">
+                          <a class="overlay-link" href="'.get_the_permalink().'"></a>';
+                        echo '<div class="dft-2grd-img-con-item-img" style="background-image: url('.$pimgScr.');"></div></div>';
+                        echo '<div class="dft-2grd-img-con-item-des">';
+                        printf('<strong>%s</strong>', 'Mounting Accessories');
+                        printf('<h4><a href="%s">%s</a></h4>', get_the_permalink(), get_the_title());
+                        echo wpautop( get_the_excerpt(), true );;
+                        echo '<a href="'.get_the_permalink().'">More Info <em><img src="'.THEME_URI.'/assets/images/list-icon.svg"></em></a>';
+                        echo '</div>';
                         echo '</div>';
                     endwhile;
 
-                echo '</div></div>';
-              endif;
+                echo '</div><div class="dft-2grd-img-content-separetor"></div></div>';
+              endif; wp_reset_postdata();
             }elseif( get_row_layout() == 'afbeelding' ){
               $fc_afbeelding = get_sub_field('fc_afbeelding');
               if( !empty( $fc_afbeelding ) ){
