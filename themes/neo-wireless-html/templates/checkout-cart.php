@@ -65,8 +65,8 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 					);
 				}
 				?>
-					<span class="plus"><i class="qnt-plus"></i> </span>
-					<span class="minus"><i class="qnt-minus"></i> </span>
+					<span class="plus">+</span>
+					<span class="minus">-</span>
 				<?php
 				echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 				?>
