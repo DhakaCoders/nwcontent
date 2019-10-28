@@ -59,38 +59,20 @@ while ( have_posts() ) :
               endif;      
             }elseif( get_row_layout() == 'usps' ){
               $fc_usps = get_sub_field('fc_usps');
-              echo "<div class='dft-services-controller'><div class='dft-services-cols clearfix dftServicesColsSlider bullet-xspagi'>";
+              echo "<div class='dft-img-title-grd-controller clearfix'>";
                 foreach( $fc_usps as $usp ):
-                  echo "<div class='dft-services-col'><div class='dft-services-col-item'>";
+                  echo "<div class='dft-img-title-grd-col'><div class='dft-img-title-grd-col-inner'>";
                     echo "<span>";
                     echo wp_get_attachment_image( $usp['icon'] );
                     echo "</span>";
-                    printf('<strong>%s</strong>', $usp['titel']);
+                    printf('<h4>%s</h4>', $usp['titel']);
                   echo "</div></div>";
                 endforeach;
-              echo "</div></div>";
-            }elseif( get_row_layout() == 'diensten' ){
-              $fc_diensten = get_sub_field('fc_diensten');
-              echo "<div class='dft-2grd-img-content clearfix'>";
-                foreach( $fc_diensten as $service ):
-                  $titel = $service['titel'];
-                  $beschrijving = $service['beschrijving'];
-                  $afbeelding = $service['afbeelding'];
-                  $imgSrc = cbv_get_image_src($afbeelding, 'member2');
-                  $kleur = $service['kleur'];
-                  $knop = $service['knop'];
-                  $isknop = !empty( $knop ) ? "href='{$knop['url']}'" : '';
-                  $rgba = hex2RGB($kleur, 0.8);
-                  echo "<div class='dft-2grd-img-con-item-col dft-2grd-img-con-item-col-active'>";
-                    echo "<div class='dft-2grd-img-con-item' style='background-image: url({$imgSrc});'>";
-                    echo '<a style="background-color: rgba('.$rgba.')" class="overlay-link" '.$isknop.'></a>';
-                      echo "<div>";
-                      printf('<h3><a %s>%s</a></h3>', $isknop, $titel);
-                      echo wpautop( $beschrijving );
-                      echo "</div>";
-                    echo "</div>";
-                  echo "</div>";
-                endforeach;
+              echo "</div>";
+            }elseif( get_row_layout() == 'quote' ){
+              $fc_diensten = get_sub_field('fc_quote');
+              echo "<div class='dft-blockquote'>";
+              printf('<blockquote>%s</blockquote>', $fc_diensten);
               echo "</div>";
             }elseif( get_row_layout() == 'promo' ){
               $fc_title = get_sub_field('fc_title');
@@ -105,15 +87,15 @@ while ( have_posts() ) :
             }elseif( get_row_layout() == 'tabel' ){
               $fc_table = get_sub_field('fc_table');
               cbv_table($fc_table);
-            }elseif( get_row_layout() == 'team' ){
-              $fc_team = get_sub_field('fc_team');
+            }elseif( get_row_layout() == 'product' ){
+              $fc_product = get_sub_field('fc_product');
               $memQuery = new WP_Query(array(
-                'post_type' => 'team',
+                'post_type' => 'product',
                 'posts_per_page'=> -1,
-                'post__in' => $fc_team
+                'post__in' => $fc_product
               ));
               if( $memQuery->have_posts() ):
-                echo '<div class="dft-teamleider-con"><div class="teamleider-sec-innr"><ul class="ulc clearfix dftTeamleiderGridSlider bullet-xspagi">';
+                echo '<div class="dft-2grd-img-content clearfix"><div class="dft2grdImgConSlider">';
                         while($memQuery->have_posts()): $memQuery->the_post();
                         $gridImage = get_post_thumbnail_id(get_the_ID());
                         if(!empty($gridImage)){
@@ -121,33 +103,12 @@ while ( have_posts() ) :
                         }else{
                           $pimgScr = '';
                         }  
-                        $positie = get_field('positie', get_the_ID());
-                        $emailadres = get_field('e-mailadres', get_the_ID());
-                        $telefoon = get_field('telefoon', get_the_ID());
-                        echo '<li class="teamleideSlider-item"><div class="teamleider-grid">';
-                        echo '<div class="teamleider-bg-wrp">';
-                        echo '<div class="teamleider-bg" style="background: url('.$pimgScr.');"></div>
-                        <a href="'.get_the_permalink().'" class="overlay-link"></a>';
+                        echo '<div class="dft-2grd-img-con-item-col">';
+
                         echo '</div>';
-                        echo '<div class="teamleider-des"><div class="teamleider-des-innr"> ';
-                          printf('<h6><a href="%s">%s</a></h6>', get_the_permalink(), get_the_title());
-                          printf('<span>%s</span>', $positie);
-                          echo '<ul class="ulc">';
-                            echo '<li>';
-                            printf('<a href="mailto:%s"><i><svg class="envelope-inc-svg" width="16" height="16" viewBox="0 0 16 16" fill="#FFA200"><use xlink:href="#envelope-inc-svg"></use></svg></i><span>%s</span></a>', 
-                              $emailadres, $emailadres);
-                            echo '</li>';
-                            echo '<li>';
-                            printf('<a href="tel:+32478767600"><i><svg class="phone-call-inc-svg" width="18" height="18" viewBox="0 0 18 18" fill="#FFA200"><use xlink:href="#phone-call-inc-svg"></use></svg></i><span>%s</span></a>', 
-                              trim(str_replace(' ', '', $telefoon)), $telefoon);
-                            echo '</li>';
-                          echo '</ul>';
-                          printf('<a class="teamleider-lnc" href="%s"><i><svg class="black-left-angle-svg" width="16" height="12" viewBox="0 0 16 12" fill="#000"><use xlink:href="#black-left-angle-svg"></use></svg></i><span>Lees meer</span></a>', get_the_permalink());
-                        echo '</div></div>';
-                        echo '</div></li>';
                     endwhile;
 
-                echo '</ul></div></div>';
+                echo '</div></div>';
               endif;
             }elseif( get_row_layout() == 'afbeelding' ){
               $fc_afbeelding = get_sub_field('fc_afbeelding');
