@@ -52,8 +52,31 @@ if($searchResult == 'products'){
       'paged' => $paged
     ));
 }
-get_template_part( 'templates/page', 'banner' );
+
+$standaardbanner = get_field('standaardbanner', 'options');
 ?>
+<section class="page-banner">
+  <div class="page-banner-con">
+    <div class="page-banner-bg" style="background-image: url(<?php echo $standaardbanner; ?>);"></div>
+    <div class="page-banner-des">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="page-banner-des-innr">
+              <strong class="banner-page-title">Search Result</strong>
+              <div class="breadcrumbs">
+                <ul>           
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Search Results for "<?php echo get_search_query(); ?>"</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <section class="search-result-sec-wrp">
