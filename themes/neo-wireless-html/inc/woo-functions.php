@@ -302,29 +302,14 @@ function add_repair_price_option_to_single_product(){
 function product_option_custom_field(){
     global $product;
 
-    $active_price = (float) $product->get_price();
-    $repair_price = 99.00; //(float) $product->get_meta( '_repair_price' );
-    $repair_price1 = 149.00; //(float) $product->get_meta( '_repair_price' );
-    $repair_price2 = 349.00; //(float) $product->get_meta( '_repair_price' );
-
-    $repair_price_html   = strip_tags( wc_price( wc_get_price_to_display( $product, array('price' => $repair_price ) ) ) );
-
-    $repair_price_html1   = strip_tags( wc_price( wc_get_price_to_display( $product, array('price' => $repair_price1 ) ) ) );
-
-    $repair_price_html2   = strip_tags( wc_price( wc_get_price_to_display( $product, array('price' => $repair_price2 ) ) ) );
-
-    $active_price_html   = wc_price( wc_get_price_to_display( $product ) );
-
-    $disp_price_sum_html = wc_price( wc_get_price_to_display( $product, array('price' => $active_price + $repair_price ) ) );
-
-    $disp_price_sum_html1 = wc_price( wc_get_price_to_display( $product, array('price' => $active_price + $repair_price1 ) ) );
-    $disp_price_sum_html2 = wc_price( wc_get_price_to_display( $product, array('price' => $active_price + $repair_price2 ) ) );
+$active_price = (float) $product->get_price();
 
 $attributes = $product->get_attributes(); //get all attributes
 $attrVariation = $product->get_variation_attributes(); //get variation attributes
-$pa_capacity = get_the_terms( $product->id, 'pa_capacity');
+$pa_capacity = get_the_terms( $product->get_id(), 'pa_capacity');
 $onlyAttr = array_diff_key($attributes, $attrVariation); //get attribues that are not used for variation
 $onlyAttrK = array_keys($onlyAttr); //keys -> pa_capacity, pa_color
+
 
 echo '<div class="custom_attribues_wrapper">';
 foreach ( $onlyAttrK as $onlyAttrKS ) {
@@ -370,35 +355,6 @@ echo '</div>';
             $('#additionalPrice').val(addTotal);
             $(pp).html('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>'+prTotal+'</span>');
         });
-/*        var cb = 'input[name="repair_option"]';
-        var pp = 'span.price';
-           
-		if( $(cb).prop('checked') === true )
-            $(pp).html('<?php echo $disp_price_sum_html; ?>');
-        else
-            $(pp).html('<?php echo $active_price_html; ?>');
-
-        // On change / select a variation
-       $(':radio[name="repair_option"]').change(function() {
-            if( $(this).prop('checked') === true ){
-            	
-            	if($(this).val() == 1){
-            		//console.log($(cb).val());
-            		$('input[name="repair_price"]').val('<?php echo $repair_price; ?>');
-					$(pp).html('<?php echo $disp_price_sum_html; ?>');
-            	}else if($(this).val() == 2){
-            		console.log($(this).val());
-            		$('input[name="repair_price"]').val('<?php echo $repair_price1; ?>');
-            		$(pp).html('<?php echo $disp_price_sum_html1; ?>');
-            	}else if($(this).val() == 3){
-            		$('input[name="repair_price"]').val('<?php echo $repair_price2; ?>');
-            		$(pp).html('<?php echo $disp_price_sum_html2; ?>');
-            	}
-                
-            }else{
-                $(pp).html('<?php echo $active_price_html; ?>');
-            }
-        })*/
 
     });
     </script>
@@ -408,11 +364,11 @@ echo '</div>';
 // Front: Calculate new item price and add it as custom cart item data
 add_filter('woocommerce_add_cart_item_data', 'add_custom_product_data', 10, 3);
 function add_custom_product_data( $cart_item_data, $product_id, $variation_id ) {
-    if (isset($_POST['repair_option']) && !empty($_POST['repair_option'])) {
-    	$repaireOption = $_POST['repair_option'];
+    if (isset($_POST['additionalPrice']) && !empty($_POST['additionalPrice'])) {
+    	$repaireOption = $_POST['additionalPrice'];
 
-        $cart_item_data['new_price'] = (float) ($_POST['active_price'] + $_POST['repair_price']);
-        $cart_item_data['repair_price'] = (float) $_POST['repair_price'];
+        $cart_item_data['new_price'] = (float) ($_POST['active_price'] + $_POST['additionalPrice']);
+        $cart_item_data['additionalPrice'] = (float) $_POST['additionalPrice'];
         $cart_item_data['active_price'] = (float) $_POST['active_price'];
 
         if($repaireOption == 1){

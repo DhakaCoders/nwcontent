@@ -1,5 +1,26 @@
 2019-10-28T15:28:09+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\class-wc-product-attribute.php on line 18
 
+<<<<<<< HEAD
+2019-10-28T20:47:12+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::get_variation_attributes() in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php:308
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): product_option_custom_field('')
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\single-product\add-to-cart\simple.php(33): do_action('woocommerce_bef...')
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(1581): wc_get_template('single-product/...')
+#6 E:\XamppServer\htdocs in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 308
+
+2019-10-28T20:47:16+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::get_variation_attributes() in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php:308
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): product_option_custom_field('')
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\single-product\add-to-cart\simple.php(33): do_action('woocommerce_bef...')
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(1581): wc_get_template('single-product/...')
+#6 E:\XamppServer\htdocs in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 308
+=======
 2019-10-28T20:45:47+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::get_variation_attributes() in F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\themes\neo-wireless-html\inc\woo-functions.php:324
 Stack trace:
 #0 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\class-wp-hook.php(286): product_option_custom_field('')
@@ -29,4 +50,5 @@ Stack trace:
 #4 F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('F:\\xampp\\htdocs...')
 #5 F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(1581): wc_get_template('single-product/...')
 #6 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\class-w in F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 324
+>>>>>>> 8da9f96d5497763d8fc440bfa08c56d679edf412
 

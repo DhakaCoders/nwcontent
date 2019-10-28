@@ -858,23 +858,65 @@ a.search-next-link:hover{
 }
 
 @media(max-width: 767px){
+
+.search-catalog .wcsearch {
+  max-width: 500px !important;
+  width: 100% !important;
+  margin: 0 auto;
+  float: none;
+}
+
+
+
   /* Product page sidebar */
 
-
+  .wpf_form {
+      margin: 0 0 35px!important;
+  }
   .wpf_item.wpf_item_wpf_cat,
   .wpf_item.wpf_item_pa_color,
   .wpf_item.wpf_item_pa_size {
-    padding-top: 20px!important;
+    padding-top: 15px!important;
     padding-bottom: 0!important;
     max-width: 500px;
     margin: 0 auto;
     border-bottom: 2px solid #F4F7F9;
   }
-  .wpf_item .wpf_links{
+  .wpf_item.active:first-child > ul{
+    display: block;
+  }  
+  .wpf_item.active > ul{
+    display: block;
+  }
+
+  .wpf_item > ul{
     display: none;
   }
-  .wpf_item.active .wpf_links{
-    display: block;
+.wpf_item .wpf_item_name {
+    font-size: 24px !important;
+    margin-bottom: 15px !important;
+    cursor: pointer !important;
+}
+  .wpf_item .wpf_item_name:after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background:url(../images/wpf-item-name-down.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width:22px; 
+    height:22px;
+    -ms-transition: all .5s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  .wpf_item.active .wpf_item_name:after{
+    background:url(../images/wpf-item-name-up.svg);
+    background-repeat: no-repeat;
   }
 
 
@@ -949,19 +991,7 @@ a.search-next-link:hover{
     margin-bottom: 10px;
     font-size: 21px;
   }
-  .wpf_item .wpf_item_name {
-    font-weight: 300 !important;
-    font-size: 27px !important;
-    display: block !important;
-    cursor: auto !important;
-    border-bottom: 0 !important;
-    padding-bottom: 0 !important;
-    color: 
-    #7B8CA8 !important;
-    margin-top: 0 !important;
-    margin-bottom: 20px !important;
-    text-transform: capitalize !important;
-  }
+
 
 }
 
@@ -990,24 +1020,7 @@ a.search-next-link:hover{
   }
 
 
-  /* Product page sidebar */
 
-  .wpf_items_wrapper.wpf_layout_vertical:after,
-  .wpf_items_wrapper.wpf_layout_vertical:before{
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  .wpf_item.wpf_item_wpf_cat,
-  .wpf_item.wpf_item_pa_color,
-  .wpf_item.wpf_item_pa_size {
-    padding-bottom: 20px!important;
-    width:100%;
-  }
-  .wpf_item:nth-child(2n+1){
-    clear: initial;
-  }
 
 
 }
