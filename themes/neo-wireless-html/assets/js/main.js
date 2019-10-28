@@ -42,7 +42,15 @@ if ($('.cookie-btn').length) {
 if ($('li.subcategorie-wrp').length) {
   $( "li.subcategorie-wrp > a" ).click(function(e) {
     e.preventDefault();
-    $(this).parent().find('ul').slideToggle();
+    $(this).parent().find('ul').slideTwcdetails-expand();
+  });
+}
+
+//nw-subcategorie
+if ($('.wcdetailsbtn').length) {
+  $( ".wcdetailsbtn > a" ).click(function(e) {
+    e.preventDefault();
+    $(this).parents(".wcdetailsbtn").parent().addClass("wcdetails-expand");
   });
 }
 
@@ -791,6 +799,7 @@ if( $('.quantity-wrapper').length ){
   });
 
 }
+
 
 
 })(jQuery);
