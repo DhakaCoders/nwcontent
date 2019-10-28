@@ -59,7 +59,7 @@ if ($('.wpf_links').length) {
 if ($('.wcdetailsbtn').length) {
   $( ".wcdetailsbtn > a" ).click(function(e) {
     e.preventDefault();
-    $(this).parents(".wcdetailsbtn").parent().addClass("wcdetails-expand");
+    $(this).parents(".wcdetailsbtn").parent().toggleClass("wcdetails-expand");
   });
 }
 

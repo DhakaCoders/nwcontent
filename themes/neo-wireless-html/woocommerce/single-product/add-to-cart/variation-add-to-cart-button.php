@@ -28,8 +28,8 @@ global $product;
 
 	?>
 
-	<span class="plus"><i class="fa fa-plus"></i> </span>
-	<span class="minus"><i class="fa fa-minus"></i> </span>
+	<span class="plus"><i class="qnt-plus"></i> </span>
+	<span class="minus"><i class="qnt-minus"></i> </span>
 </div>
 	<?php
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
