@@ -512,13 +512,14 @@ a.search-next-link:hover{
 .wpf_item .wpf_item_name {
   font-weight: 300!important;
   font-size: 36px!important;
+  line-height: 30px!important;
   display: block!important;
   cursor: auto!important;
   border-bottom: 0!important;
   padding-bottom: 0!important;
   color: #7B8CA8!important;
   margin-top: 0!important;
-  margin-bottom: 25px!important;
+  margin-bottom: 30px!important;
   text-transform: capitalize!important;
 }
 .wpf_items_wrapper .wpf_item ul li{
@@ -535,6 +536,11 @@ a.search-next-link:hover{
 }
 .wpf_items_wrapper .wpf_item ul li a:hover{
   color: #02BEE8!important;
+}
+.wpf_items_wrapper .wpf_item ul li span{
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: baseline;
 }
 .wpf_items_wrapper .wpf_item ul li:after {
   content: "";
@@ -854,23 +860,24 @@ a.search-next-link:hover{
 @media(max-width: 767px){
   /* Product page sidebar */
 
-  .wpf_items_wrapper.wpf_layout_vertical:after,
-  .wpf_items_wrapper.wpf_layout_vertical:before{
-    content: "";
-    display: table;
-    clear: both;
-  }
 
   .wpf_item.wpf_item_wpf_cat,
   .wpf_item.wpf_item_pa_color,
   .wpf_item.wpf_item_pa_size {
-    padding-bottom: 20px!important;
-    width:50%;
-    float: left;
+    padding-top: 20px!important;
+    padding-bottom: 0!important;
+    max-width: 500px;
+    margin: 0 auto;
+    border-bottom: 2px solid #F4F7F9;
   }
-  .wpf_item:nth-child(2n+1){
-    clear: left;
+  .wpf_item .wpf_links{
+    display: none;
   }
+  .wpf_item.active .wpf_links{
+    display: block;
+  }
+
+
 }
 
 

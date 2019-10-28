@@ -63,8 +63,18 @@ if ($('.wcdetailsbtn').length) {
   });
 }
 
+//accordion
 
-
+if (windowWidth <= 767) {
+  if ($('.wpf_item').length){
+    $('.wpf_item .wpf_item_name').on('click', function(){
+      $(this).parent().siblings().removeClass('active');
+      $(this).next('.pro-accordion-des').slideToggle();
+      $(this).parent().siblings().find('.pro-accordion-des').slideUp();
+      $(this).parent().toggleClass('active');
+    });
+  }
+}
 // http://codepen.io/norman_pixelkings/pen/NNbqgG
 // https://stackoverflow.com/questions/38686650/slick-slides-on-pagination-hover
 
