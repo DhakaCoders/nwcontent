@@ -5,6 +5,21 @@ Template Name: Contact
 
 get_header();
 get_template_part('templates/page', 'banner');
+
+  $spacialArry = array(".", "/", "+", " ");$replaceArray = '';
+  $adres = get_field('address', 'options');
+  $gmapsurl = get_field('google_maps', 'options');
+  $e_mailadres = get_field('emailaddress', 'options');
+  $show_telefoon = get_field('telephone', 'options');
+  $telefoon = trim(str_replace($spacialArry, $replaceArray, $show_telefoon));
+  $copyright_text = get_field('copyright_text', 'options');
+  $gmaplink = !empty($gmapsurl)?$gmapsurl: 'javascript:void()';
+  $bwt = get_field('bwt', 'options');
+
+  $fburl = get_field('facebook_url', 'options');
+  $twturl = get_field('twitter_url', 'options');
+  $insturl = get_field('instagram_url', 'options');
+
 ?>
 <section class="contact-form-sec-wrp">
   <!-- <div class="contact-form-bg"></div>
@@ -20,98 +35,65 @@ get_template_part('templates/page', 'banner');
               <span><i><img src="<?php echo THEME_URI; ?>/assets/images/dotted-icon.svg"></i></span>
             </div>
             <div class="contact-form">
-              <form class="wpforms-form">
-                <div class="wpforms-field-container">
-                  <div class="wpforms-field">
-                    <div class="wpforms-field-row">
-                      <div class="wpforms-one-half">
-                        <label class="wpforms-field-label">Name</label>
-                        <input type="text" name="" class="wpforms-field-required">
-                      </div>
-                      <div class="wpforms-one-half">
-                        <label class="wpforms-field-label">Phone</label>
-                        <input type="text" name="" class="wpforms-field-required">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="wpforms-field">
-                    <div class="wpforms-field-row">
-                      <div class="fullwidth">
-                        <label class="wpforms-field-label">E-mail</label>
-                        <input type="email" name="" class="wpforms-field-required">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="wpforms-field">
-                    <div class="wpforms-field-row">
-                      <div class="fullwidth">
-                        <label class="wpforms-field-label">Subject</label>
-                        <input type="email" name="" class="wpforms-field-required">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="wpforms-field">
-                    <div class="wpforms-one-half">
-                      <label class="wpforms-field-label">Message</label>
-                      <textarea></textarea>
-                    </div>
-                  </div>
-                </div>
-                <div class="wpforms-submit-container">
-                  <input type="submit" name="" class="wpforms-submit" value="SEND">
-                </div>
-              </form>
+              <?php echo do_shortcode('[wpforms id="322"]'); ?>
             </div>
           </div>
           <div class="contac-info-rgt">
             <div class="contact-info">
-              <h2>Contact Info</h2>
-              <a href="#">
+              <?php  _e( '<h2>Contact Info</h2>', 'neowireless' ); ?>
+              <a href="<?php echo $gmaplink; ?>">
                 <i>
                   <svg class="contact-map-icon" width="40" height="40" viewBox="0 0 40 40" fill="#43587B;">
                     <use xlink:href="#contact-map-icon-svg"></use>
                   </svg> 
                 </i>
-                Burgemeester De Cocklaan 10 <br> bus 11 9320 <br> Erembodegem
+                <?php if( !empty( $adres ) ) printf('%s', $adres);  ?>
                </a>
-                <a class="phone" href="#"><i>
+               <?php if( !empty( $show_telefoon ) ): ?>
+                <a class="phone" href="tel:<?php echo $telefoon; ?>"><i>
                     <svg class="contact-smartphone-icon" width="38" height="38" viewBox="0 0 38 38" fill="#43587B;">
                       <use xlink:href="#contact-smartphone-icon-svg"></use>
                     </svg> 
                   </i>
-                Call us: +32 53 86 00 88
+                <?php printf( __('Call us: ', 'neowireless').'%s', $show_telefoon ); ?>
                </a>
-              <a href="#">
+               <?php endif; if( !empty( $e_mailadres ) ): ?>
+              <a href="mailto:<?php echo $e_mailadres; ?>">
                 <i>
                   <svg class="contact-mail-icon" width="34" height="34" viewBox="0 0 34 34" fill="#43587B;">
                     <use xlink:href="#contact-mail-icon-svg"></use>
                   </svg> 
                 </i>
-                E-mail Us: info@neowireless.be
+                <?php printf( __('E-mail Us: ', 'neowireless').'%s', $e_mailadres );  ?>
               </a>
+              <?php endif; ?>
             </div>
              <div class="ftr-mid-socail">
-               <a href="#">
+              <?php if(!empty($fburl)): ?>
+                <a href="<?php echo esc_url($fburl); ?>">
                 <i>
                   <svg class="ftr-fb-icon" width="14" height="24" viewBox="0 0 14 24" fill="#43587B;">
                     <use xlink:href="#ftr-fb-icon-svg"></use>
                   </svg> 
                 </i>
               </a>
-              <a href="#">
+              <?php endif; if(!empty($twturl)): ?>
+                <a href="<?php echo esc_url($twturl); ?>">
                 <i>
                   <svg class="ftr-twi-icon" width="24" height="22" viewBox="0 0 24 22" fill="#43587B;">
                     <use xlink:href="#ftr-twi-icon-svg"></use>
                   </svg> 
                 </i>
               </a>
-              <a href="#">
+              <?php endif; if(!empty($insturl)): ?>
+                <a href="<?php echo esc_url($insturl); ?>">
                 <i>
                   <svg class="ftr-ins-icon" width="24" height="24" viewBox="0 0 24 24" fill="#43587B;">
                     <use xlink:href="#ftr-ins-icon-svg"></use>
                   </svg> 
                 </i>
               </a>
+              <?php endif; ?>
             </div>
           </div>
         </div>
@@ -130,5 +112,6 @@ get_template_part('templates/page', 'banner');
   <div class="top-skip"></div>
   <div class="bottom-skip"></div>
 </section>
+
 <?php get_footer(); ?>
 
