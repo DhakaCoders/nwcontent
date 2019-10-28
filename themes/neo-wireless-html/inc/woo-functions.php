@@ -207,7 +207,7 @@ function get_wc_product_desctiption(){
 	$output .= '<div class="wcdetails">';
 	$output .= __( '<h2>Description</h2>', 'woocommerce' );
     $output .= $short_description;
-	$output .= '<div class="wcdetailsbtn"><a href="#">More Info</a></div>';
+	$output .= '<div class="wcdetailsbtn"><a href="#">More Info</a><a href="#">Less Info</a></div>';
 	$output .= '</div>';
 	echo $output;
 }
