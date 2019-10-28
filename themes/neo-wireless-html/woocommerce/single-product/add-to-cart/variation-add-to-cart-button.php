@@ -16,7 +16,10 @@ global $product;
 	<button type="submit" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 	<?php
 	do_action( 'woocommerce_before_add_to_cart_quantity' );
-
+	?>
+	
+<div class="quantity-wrapper">
+<?php
 	woocommerce_quantity_input( array(
 		'min_value'   => apply_filters( 'woocommerce_quantity_input_min', $product->get_min_purchase_quantity(), $product ),
 		'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->get_max_purchase_quantity(), $product ),
@@ -24,10 +27,9 @@ global $product;
 	) );
 
 	?>
-<div class="qty">
-	<input min="1" type="number" class="count" name="qty" value="1">
-	<span class="minus"> <i class="fa fa-plus"></i> </span>
-	<span class="plus"><i class="fa fa-minus"></i> </span>
+
+	<span class="plus"><i class="fa fa-plus"></i> </span>
+	<span class="minus"><i class="fa fa-minus"></i> </span>
 </div>
 	<?php
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
