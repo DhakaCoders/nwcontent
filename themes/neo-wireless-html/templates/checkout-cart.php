@@ -47,7 +47,7 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 						echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
 					?>
 				</div>
-				<div class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
+				<div class="product-quantity custom-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
 				<?php
 				if ( $_product->is_sold_individually() ) {
 					$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -64,7 +64,10 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 						false
 					);
 				}
-
+				?>
+					<span class="plus"><i class="qnt-plus"></i> </span>
+					<span class="minus"><i class="qnt-minus"></i> </span>
+				<?php
 				echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 				?>
 				</div>
