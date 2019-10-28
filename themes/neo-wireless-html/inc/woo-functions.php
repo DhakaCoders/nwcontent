@@ -324,14 +324,15 @@ $attributes = $product->get_attributes(); //get all attributes
 $attrVariation = $product->get_variation_attributes(); //get variation attributes
 $pa_capacity = get_the_terms( $product->id, 'pa_capacity');
 $onlyAttr = array_diff_key($attributes, $attrVariation); //get attribues that are not used for variation
-$onlyAttrK = array_keys($onlyAttr); //keys
+$onlyAttrK = array_keys($onlyAttr); //keys -> pa_capacity, pa_color
 
+echo '<div class="custom_attribues_wrapper">';
 foreach ( $onlyAttrK as $onlyAttrKS ) {
-    echo '<div class="hidden-field">';
+    echo '<div class="hidden-field additionalPriceWrap">';
     $terms = get_taxonomy( $onlyAttrKS ); //get this texonomy data
     $onlyAttrKSterms = get_the_terms( $product->id, $onlyAttrKS); // get all the child terms
     echo '<span class="wcoptioanl">'.$terms->labels->singular_name.'</span>';
-    echo '<p class="form-row form-row-wide" id="repair_option_field" data-priority="">';
+    echo '<p class="form-row form-row-wide" data-priority="">';
     $i = 1;
     foreach ( $onlyAttrKSterms as $term ) {
     //printr($term);
@@ -339,36 +340,37 @@ foreach ( $onlyAttrK as $onlyAttrKS ) {
       $name = $term->name;
       $acf = 'term_' . $term_id;
       $markup = get_field('price', $acf);
-        echo '<span class="woocommerce-input-wrapper"><label class="checkbox">'.$name;
-        echo '<input type="radio" class="input-checkbox " name="repair_option" value="'.$i.'" checked> +'.$markup;
+        echo '<span class="woocommerce-input-wrapper"><label class="checkbox customCheckbox">'.$name;
+        echo '<input type="radio" class="input-checkbox " name="'.$onlyAttrKS.'" value="'.$markup.'"> +'.$markup;
         echo '<label></span>';
     $i ++; 
     }
     echo '</p>';
-    echo '<input type="hidden" name="repair_price" value="' . $repair_price . '">
-    <input type="hidden" name="active_price" value="' . $active_price . '">';
     echo '</div>';
 }
-
-    echo '<div class="hidden-field hide">
-    <span class="wcoptioanl">Optional</span>
-    <p class="form-row form-row-wide" id="repair_option_field" data-priority="">
-    <div class="woocommerce-input-wrapper"><input id="optioanl-1" type="radio" class="input-checkbox " name="repair_option" value="1" checked><label for="optioanl-1" class="checkbox"> ' . __("Skymount-air-Uplate-C-2566D", "Woocommerce") .
-    '</label><span> + ' . $repair_price_html .'</span></div>
-     <div class="woocommerce-input-wrapper"> <input id="optioanl-2" type="radio" class="input-checkbox " name="repair_option" value="2"><label for="optioanl-2" class="checkbox"> ' . __("Airborne Mounting Kit", "Woocommerce") .
-    '</label><span> + ' . $repair_price_html1 .'</span></div>
-    <div class="woocommerce-input-wrapper"><input id="optioanl-3" type="radio" class="input-checkbox " name="repair_option" value="3"><label for="optioanl-3" class="checkbox"> ' . __("Skymount-art-arm-C-2566D", "Woocommerce") .
-    '</label><span> + ' . $repair_price_html2 .'</span></div>
-    </p>
-    <input type="hidden" name="repair_price" value="' . $repair_price . '">
-    <input type="hidden" name="active_price" value="' . $active_price . '">
-    </div>';
+echo '<input id="additionalPrice" type="hidden" name="additionalPrice" value="0">';
+echo '<input id="prPrice" type="hidden" name="active_price" value="' . $active_price . '">';
+echo '</div>';
 
     // Jquery: Update displayed price
     ?>
     <script type="text/javascript">
     jQuery(function($) {
-        var cb = 'input[name="repair_option"]';
+        $('.additionalPriceWrap input').on('change', function(){
+            var pp = 'span.price';
+            var addTotal = 0;
+            $('.additionalPriceWrap input').each(function(){
+                if( $(this).prop('checked') === true ){
+                    addTotal += parseInt($(this).val());
+                }
+            });
+            var prRegPrice = parseInt($('#prPrice').val());
+            var prTotal = prRegPrice + addTotal;
+
+            $('#additionalPrice').val(addTotal);
+            $(pp).html('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>'+prTotal+'</span>');
+        });
+/*        var cb = 'input[name="repair_option"]';
         var pp = 'span.price';
            
 		if( $(cb).prop('checked') === true )
@@ -396,7 +398,7 @@ foreach ( $onlyAttrK as $onlyAttrKS ) {
             }else{
                 $(pp).html('<?php echo $active_price_html; ?>');
             }
-        })
+        })*/
 
     });
     </script>
