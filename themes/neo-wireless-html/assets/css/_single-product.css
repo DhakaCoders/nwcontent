@@ -297,7 +297,7 @@
     position: relative;
     padding-top: 40px;
     width: 60% !important;
-    float: right;
+    float: left;
 }
 .woocommerce div.product form.cart .variations tr:last-child {
     position: relative;
