@@ -110,11 +110,24 @@ add_filter('use_block_editor_for_post', '__return_false');
 function searchfilter($query) {
     if ($query->is_search && is_admin() ) {
         $query->set('post_type',array('post, product'));
+        $query->set( 'posts_per_page', '4' );
     }
 return $query;
 }
  
 add_filter('pre_get_posts','searchfilter');
+
+
+function get_custom_post_type_single_template($single_template) {
+     global $post;
+     if (is_search() && ! empty ( $_GET['s']) ) {
+          $single_template = get_template_part( 'search-template', null );
+     }
+     return $single_template;
+}
+
+add_filter( "template_redirect", "get_custom_post_type_single_template" );
+
 
 function defer_parsing_of_js ( $url ) {
     if ( FALSE === strpos( $url, '.js' ) ) return $url;

@@ -1,0 +1,17 @@
+2019-10-29T08:39:28+00:00 CRITICAL syntax error, unexpected '$query' (T_VARIABLE), expecting '(' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php on line 121
+
+2019-10-29T08:39:39+00:00 CRITICAL syntax error, unexpected '$query' (T_VARIABLE), expecting '(' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php on line 121
+
+2019-10-29T08:40:23+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function get_custom_post_type_single_template(), 1 passed in E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php on line 288 and exactly 2 expected in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php:119
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(288): get_custom_post_type_single_template('E:\\XamppServer\\...')
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(208): WP_Hook->apply_filters('E:\\XamppServer\\...', Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\template.php(63): apply_filters('single_template', 'E:\\XamppServer\\...', 'single', Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\template.php(526): get_query_template('single', Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\template-loader.php(59): get_single_template()
+#5 E:\XamppServer\htdocs\2019\10\neowireless\wp-blog-header. in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php on line 119
+
+2019-10-29T08:41:25+00:00 CRITICAL syntax error, unexpected '{' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php on line 121
+
+2019-10-29T08:41:33+00:00 CRITICAL syntax error, unexpected '{' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php on line 121
+
