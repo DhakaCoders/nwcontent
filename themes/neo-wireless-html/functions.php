@@ -39,9 +39,11 @@ if( !function_exists('cbv_theme_setup') ){
 		) );
 
 		register_nav_menus( array(
-			'cbv_main_menu' => __( 'Hoofdmenu', THEME_NAME ),
-			'cbv_top_menu' => __( 'Top Menu', THEME_NAME ),
-			'cbv_ftr_menu' => __( 'Footer Menu', THEME_NAME )
+			'cbv_main_menu' => __( 'Header Menu', THEME_NAME ),
+			'cbv_ftr_menu' => __( 'Footer Menu', THEME_NAME ),
+			'cbv_sp_menu' => __( 'Services & Products Menu', THEME_NAME ),
+			'cbv_pc_menu' => __( 'Product Categories Menu', THEME_NAME ),
+			'cbv_ftb_menu' => __( 'Footer Bottom Menu', THEME_NAME ),
 		) );
 
 	}
@@ -106,8 +108,8 @@ add_filter('use_block_editor_for_post', '__return_false');
 
 
 function searchfilter($query) {
-    if ($query->is_search && !is_admin() ) {
-        $query->set('post_type',array('faq'));
+    if ($query->is_search && is_admin() ) {
+        $query->set('post_type',array('post, product'));
     }
 return $query;
 }
@@ -153,6 +155,48 @@ function custom_body_classes($classes){
 // call the filter for the body class
 add_filter('body_class', 'custom_body_classes');
 
+
+function get_custom_excerpt($limit = 12) {
+  $excerpt = explode(' ', get_the_content(), $limit);
+  if (count($excerpt)>=$limit) {
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt);
+  } else {
+    $excerpt = implode(" ",$excerpt);
+  }	
+  //$excerpt = preg_replace('`\[[^\]]*\]`',$dot,$excerpt);
+  return $excerpt;
+}
+
+/**
+ACF - Custom rule for WOO attribues
+*/
+// Adds a custom rule type.
+add_filter( 'acf/location/rule_types', function( $choices ){
+    $choices[ __("Other",'acf') ]['wc_prod_attr'] = 'WC Product Attribute';
+    return $choices;
+} );
+
+// Adds custom rule values.
+add_filter( 'acf/location/rule_values/wc_prod_attr', function( $choices ){
+    foreach ( wc_get_attribute_taxonomies() as $attr ) {
+        $pa_name = wc_attribute_taxonomy_name( $attr->attribute_name );
+        $choices[ $pa_name ] = $attr->attribute_label;
+    }
+    return $choices;
+} );
+
+// Matching the custom rule.
+add_filter( 'acf/location/rule_match/wc_prod_attr', function( $match, $rule, $options ){
+    if ( isset( $options['taxonomy'] ) ) {
+        if ( '==' === $rule['operator'] ) {
+            $match = $rule['value'] === $options['taxonomy'];
+        } elseif ( '!=' === $rule['operator'] ) {
+            $match = $rule['value'] !== $options['taxonomy'];
+        }
+    }
+    return $match;
+}, 10, 3 );
 
 /**
 Debug->>

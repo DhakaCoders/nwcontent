@@ -1,7 +1,12 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+
+$banner = get_field('bannergroup', HOMEID);
+if($banner):
+  $posters = $banner['poster'];
+?>
 
 <section class="main-banner">
-  <!-- <div class="main-bnr-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/home-bnr-bg.jpg);"></div> -->
   <div class="main-bnr-bg" id="particles-js"></div>
   
   <div class="main-bnr-des-controller">
@@ -9,31 +14,46 @@
       <div class="row">
         <div class="col-sm-6">
           <div class="main-bnr-des">
-            <span>LOREM IPSUM</span>
-            <strong>Neo Wireless </strong>
-            <p>Pellentesque nec dolor quis odio ornare interdum nec id felis. Mauris leo magna, sodales nec eros ut, tincidunt consequat ipsum. Suspendisse imperdiet porttitor nisl sit amet cursus.</p>
+           <?php 
+            if( !empty( $banner['title'] ) ) printf( '<span>%s</span>', $banner['title']); 
+            if( !empty( $banner['bold_title'] ) ) printf( '<strong>%s</strong>', $banner['bold_title']); 
+            if( !empty( $banner['content'] ) ) echo wpautop($banner['content']);
+          ?>
             <div class="main-bnr-des-btns">
-              <a href="#">About Us</a>
-              <a href="#">Our Products</a>
+              <?php 
+                $link1 = $banner['link_1'];
+                $link2 = $banner['link_2'];
+                if( is_array( $link1 ) &&  !empty( $link1['url'] ) ){
+                    printf('<a href="%s" target="%s">%s</a>', $link1['url'], $link1['target'], $link1['title']); 
+                }
+                if( is_array( $link2 ) &&  !empty( $link2['url'] ) ){
+                    printf('<a href="%s" target="%s">%s</a>', $link2['url'], $link2['target'], $link2['title']); 
+                }
+              ?>
             </div>
           </div>
         </div>
+        <?php if($posters): ?>
         <div class="col-sm-6 hide-xs">
           <div class="main-bnr-box-imgs">
-            <div class="main-bnr-img-bx" style="background: url(<?php echo THEME_URI; ?>/assets/images/main-bnr-box-img-01.jpg);">
-              <a href="#">Products <em><img src="<?php echo THEME_URI; ?>/assets/images/white-link-arrow.svg"></em></a>
+            <?php foreach($posters as $poster): $link3 = $poster['link'];?>
+            <div class="main-bnr-img-bx" style="background: url(<?php echo $poster['image']; ?>);">
+              <?php 
+                if( is_array( $link3 ) &&  !empty( $link3['url'] ) ){
+                  printf('<a href="%s" target="%s">%s<em><img src="'.THEME_URI.'/assets/images/white-link-arrow.svg"></em></a>', $link3['url'], $link3['target'], $link3['title']); 
+                }
+              ?>
             </div>
-            <div class="main-bnr-img-bx" style="background: url(<?php echo THEME_URI; ?>/assets/images/main-bnr-box-img-02.jpg);">
-              <a href="#">Wi-Fi & LAN Projects <em><img src="<?php echo THEME_URI; ?>/assets/images/white-link-arrow.svg"></em></a>
-            </div>
+            <?php endforeach; ?>
           </div>
             
         </div>
+        <?php endif; ?>
       </div>
     </div>
   </div>    
 </section>
-
+<?php endif; ?>
 <div class="cookie-policy-wrp">
    <div class="cookie-policy-dsc">
      <h4>Cookie Policy</h4>
@@ -45,51 +65,86 @@
    </div>
  </div>
 </section><!-- end of main-slider-sec-wrp -->
-
+<?php if($banner): if($posters){ ?>
 <section class="show-xs main-bnr-box-imgs-xs">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="main-bnr-box-imgs">
-          <div class="main-bnr-img-bx" style="background: url(<?php echo THEME_URI; ?>/assets/images/main-bnr-box-img-01.jpg);">
-            <a href="#">Products <em><img src="<?php echo THEME_URI; ?>/assets/images/white-link-arrow.svg"></em></a>
+          <?php foreach($posters as $poster): $link3 = $poster['link'];?>
+          <div class="main-bnr-img-bx" style="background: url(<?php echo $poster['image']; ?>);">
+            <?php 
+              if( is_array( $link3 ) &&  !empty( $link3['url'] ) ){
+                printf('<a href="%s" target="%s">%s<em><img src="'.THEME_URI.'/assets/images/white-link-arrow.svg"></em></a>', $link3['url'], $link3['target'], $link3['title']); 
+              }
+            ?>
           </div>
-          <div class="main-bnr-img-bx" style="background: url(<?php echo THEME_URI; ?>/assets/images/main-bnr-box-img-02.jpg);">
-            <a href="#">Wi-Fi & LAN Projects <em><img src="<?php echo THEME_URI; ?>/assets/images/white-link-arrow.svg"></em></a>
-          </div>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>
   </div>
 </section>
+<?php 
+} endif;
 
+$intros = get_field('introsec', HOMEID);
+$show_hideintro = get_field('show_hideintro', HOMEID);
+if($show_hideintro){ 
+  if($intros){
+?>
 <section class="profile-info-sec-wrp">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="profile-info-wrp clearfix">
+          <?php 
+            foreach($intros as $intro):
+              if(!empty($intro['icon'])){
+                $icontag = cbv_get_image_tag($intro['icon']); 
+              }else{
+                $icontag = '';
+              }
+            
+          ?>
           <div class="profile-info">
-            <h4><i><img src="<?php echo THEME_URI; ?>/assets/images/profile-man-icon.svg"></i>Broad inhouse know-how</h4>
+            <h4><i><?php echo $icontag; ?></i><?php if( !empty( $intro['title'] ) ) printf( '%s', $intro['title']); ?></h4>
           </div>
-          <div class="profile-info">
-            <h4><i><img src="<?php echo THEME_URI; ?>/assets/images/profile-java-icon.svg"></i>Long history of experience in enterprise.</h4>
-          </div>
-          <div class="profile-info">
-            <h4><i><img src="<?php echo THEME_URI; ?>/assets/images/wifi.svg"></i>WiFi and LAN projects perfectly tailored to your company.</h4>
-          </div>
+          <?php endforeach; ?>
         </div>
       </div>
     </div>
   </div>
 </section><!--end of profile-info-sec-wrp -->
+<?php } } 
 
-
+$prossec = get_field('productssec', HOMEID);
+$show_hideppsec = get_field('show_hideppsec', HOMEID);
+if($show_hideppsec){ 
+$link4 = $prossec['link'];
+$proids = $prossec['products'];
+if( is_array( $proids ) ){
+  $proQuery = new WP_Query(array(
+    'post_type' => 'product',
+    'posts_per_page'=> count($proids),
+    'order'=> 'ASC',
+    'post__in' => $proids
+  ));
+}else{
+  $proQuery = new WP_Query(array(
+    'post_type' => 'product',
+    'posts_per_page'=> 3,
+    'order'=> 'DESC',
+  ));
+}
+if( $proQuery->have_posts() ){
+?>
 <section class="nw-product-slider-sec-wrp">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         <div class="nw-product-title">
-          <h1>most popular products</h1>
+        <?php if( !empty( $prossec['titel'] ) ) printf( '<h1>%s</h1>', $prossec['titel']); ?>
         </div>
         <div class="nw-product-slider-wrp">
           <div class="nwsliderarrows">
@@ -99,58 +154,49 @@
           </span>
           </div>
           <div class="nw-product-slider">
+          <?php $i = 1;
+                          
+            while($proQuery->have_posts()): $proQuery->the_post(); 
+            $gridImage = get_post_thumbnail_id(get_the_ID());
+            if(!empty($gridImage)){
+              $refImgsrc = cbv_get_image_src($gridImage, 'full');
+            }else{
+              $refImgsrc = '';
+            }         
+          ?>
             <div class="nw-product-slide-item">
               <div class="nw-product-slide-item-inr clearfix">
-                <div class="nw-product-slide-item-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/product-slide-img.png);">
+                <div class="nw-product-slide-item-img" style="background: url(<?php echo $refImgsrc; ?>);">
                 </div>
                 <div class="nw-product-slide-item-dsc">
                   <span>Mounting Accessories</span>
-                  <h4>Skymount-air-Uplate-Patch</h4>
-                  <p>Can be used with all types of access points (external antennas) that support ceiling grid clips or wall mount brackets.</p>
-                  <p>This mounting accessory can be usefull in a warehouse, production or high ceiling area. It will hang by chains from the ceiling, beam or other structures so that the access point and the patch antenna can be installed and directed in an optimal location (free from obstructions) which will improve overall signal quality.</p>
-                  <p>Some additional holes may need to be drilled when different types...</p>
-                  <a href="#">More Info</a>
+                  <h4><?php the_title(); ?></h4>
+                  <?php the_content(); ?>
+                  <a href="<?php the_permalink(); ?>">More Info</a>
                 </div>
               </div>
             </div>
-            <div class="nw-product-slide-item">
-              <div class="nw-product-slide-item-inr clearfix">
-                <div class="nw-product-slide-item-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/product-slide-img.png);">
-                </div>
-                <div class="nw-product-slide-item-dsc">
-                  <span>Mounting Accessories</span>
-                  <h4>Skymount-air-Uplate-Patch</h4>
-                  <p>Can be used with all types of access points (external antennas) that support ceiling grid clips or wall mount brackets.</p>
-                  <p>This mounting accessory can be usefull in a warehouse, production or high ceiling area. It will hang by chains from the ceiling, beam or other structures so that the access point and the patch antenna can be installed and directed in an optimal location (free from obstructions) which will improve overall signal quality.</p>
-                  <p>Some additional holes may need to be drilled when different types...</p>
-                  <a href="#">More Info</a>
-                </div>
-              </div>
-            </div>
-            <div class="nw-product-slide-item">
-              <div class="nw-product-slide-item-inr clearfix">
-                <div class="nw-product-slide-item-img" style="background: url(<?php echo THEME_URI; ?>/assets/images/product-slide-img.png);">
-                </div>
-                <div class="nw-product-slide-item-dsc">
-                  <span>Mounting Accessories</span>
-                  <h4>Skymount-air-Uplate-Patch</h4>
-                  <p>Can be used with all types of access points (external antennas) that support ceiling grid clips or wall mount brackets.</p>
-                  <p>This mounting accessory can be usefull in a warehouse, production or high ceiling area. It will hang by chains from the ceiling, beam or other structures so that the access point and the patch antenna can be installed and directed in an optimal location (free from obstructions) which will improve overall signal quality.</p>
-                  <p>Some additional holes may need to be drilled when different types...</p>
-                  <a href="#">More Info</a>
-                </div>
-              </div>
-            </div>
+            <?php endwhile; ?>
           </div>
         </div>
         <div class="nw-post-btn hide-xs">
-          <a href="#">Discover all our products</a>
+          <?php 
+            if( is_array( $link4 ) &&  !empty( $link4['url'] ) ){
+              printf('<a href="%s" target="%s">%s</a>', $link4['url'], $link4['target'], $link4['title']); 
+            }
+          ?>
         </div>
       </div>
     </div>
   </div>
 </section><!-- end of nw-product-slider-sec-wrp -->
+<?php } wp_reset_postdata(); } 
 
+$whowe = get_field('who_we', HOMEID);
+$whatwe = get_field('what_we', HOMEID);
+$show_hide_howwhat = get_field('show_hide_howwhat', HOMEID);
+if($show_hide_howwhat){ 
+?>
 
 <section class="nw-content-sec-wrp">
   <div class="nw-content-tp-white-bg"></div>
@@ -160,121 +206,36 @@
       <div class="col-sm-12">
         <div class="nw-content-wrp clearfix">
           <div class="nw-content-lft">
-            <h2>Who we are</h2>
-            <strong>Proin est risus, convallis nec magna sed, <br> semper consequat est.</strong>
-            <span><i><img src="<?php echo THEME_URI; ?>/assets/images/dotted-icon.svg"></i></span>
-            <p>Cras egestas tortor non accumsan placerat. Proin est risus, convallis nec magna sed, semper consequat est. Proin consectetur viverra lectus non posuere. Vivamus sagittis aliquam sollicitudin. Suspendisse ut sapien dui. Nullam eget sem venenatis, ullamcorper nunc eu, fringilla massa. </p>
+          <?php 
+            if( !empty( $whowe['title'] ) ) printf( '<h2>%s</h2>', $whowe['title']); 
+            if( !empty( $whowe['subtitle'] ) ) printf( '<strong>%s</strong>', $whowe['subtitle']); 
+            echo '<span><i><img src="'.THEME_URI.'/assets/images/dotted-icon.svg"></i></span>';
+            if( !empty( $whowe['content'] ) ) echo wpautop($whowe['content']);
 
-            <p>Ut tempor nisl vel odio tincidunt maximus. Mauris in orci vitae dui dignissim elementum. Vestibulum in ligula ante. Nulla eget nisl fringilla, ultrices metus vitae, mollis odio.</p>
-            <a href="#">About Us</a>
+            $link5 = $whowe['link'];
+            if( is_array( $link5 ) &&  !empty( $link5['url'] ) ){
+              printf('<a href="%s" target="%s">%s</a>', $link5['url'], $link5['target'], $link5['title']); 
+            }
+          ?> 
           </div>
           <div class="nw-content-rgt">
-            <h2>What we do</h2>
-            <strong>Morbi eget consectetur turpis, quis euismod dolor. In sed purus ex. </strong>
-            <span><i><img src="<?php echo THEME_URI; ?>/assets/images/dotted-icon.svg"></i></span>
-            <p>Phasellus euismod convallis sem et viverra. Duis accumsan pulvinar turpis, at rutrum lectus tincidunt et. Nam facilisis est a imperdiet commodo. Phasellus luctus interdum condimentum. </p>
-            <p>Phasellus lacinia dui quam, sed consectetur leo molestie id. Nulla faucibus egestas magna, ut dapibus enim accumsan eget. Quisque rutrum, augue et lobortis porta, justo massa mollis ante, vel tempus massa magna sed neque. Proin tincidunt at erat lobortis interdum. Maecenas vitae tincidunt justo.</p>
-            <a href="#">Our Realizations</a>
+          <?php 
+            if( !empty( $whatwe['title'] ) ) printf( '<h2>%s</h2>', $whatwe['title']); 
+            if( !empty( $whatwe['subtitle'] ) ) printf( '<strong>%s</strong>', $whatwe['subtitle']); 
+            echo '<span><i><img src="'.THEME_URI.'/assets/images/dotted-icon.svg"></i></span>';
+            if( !empty( $whatwe['content'] ) ) echo wpautop($whatwe['content']);
+
+            $link6 = $whatwe['link'];
+            if( is_array( $link6 ) &&  !empty( $link6['url'] ) ){
+              printf('<a href="%s" target="%s">%s</a>', $link6['url'], $link6['target'], $link6['title']); 
+            }
+          ?> 
           </div>
         </div>
       </div>
     </div>
   </div>
 </section><!-- end of nw-content-sec-wrp -->
-
-<section class="nw-post-grid-sec-wrp">
-  <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="nw-post-headding">
-            <h1>Realizations</h1>
-          </div>
-          <div class="nw-post-gird-wrp">
-            <div class="nwpostsliderarrows show-xs">
-                <span class="leftArrow slick-arrow" aria-disabled="false" style="">
-                </span>
-                <span class="rightArrow slick-arrow slick-disabled" style="" aria-disabled="true">
-                </span>
-              </div>
-            <ul id="NwPostSlider" class="clearfix">
-              <li>
-                <div class="nw-post-gird-innr">
-                  <div class="nw-post-gird-controller">
-                    <div class="nw-post-gird-img" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/nw-post-img-01.png);">
-                      <a class="overlay-link" href="#"></a>
-                    </div>
-                  </div>
-                  <div class="nw-post-gird-dsc">
-                    <span>Category</span>
-                    <h4><a href="#">WiFi installatie ter Conversal BVBA</a></h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-                    <a href="#">More Info</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="nw-post-gird-innr">
-                  <div class="nw-post-gird-controller">
-                    <div class="nw-post-gird-img" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/nw-post-img-02.png);">
-                      <a class="overlay-link" href="#"></a>
-                    </div>
-                  </div>
-                  <div class="nw-post-gird-dsc">
-                    <span>Category</span>
-                    <h4><a href="#">WiFi installatie ter Conversal BVBA</a></h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-                    <a href="#">More Info</a>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div class="nw-post-gird-innr">
-                  <div class="nw-post-gird-controller">
-                    <div class="nw-post-gird-img" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/nw-post-img-03.png);">
-                      <a class="overlay-link" href="#"></a>
-                    </div>
-                  </div>
-                  <div class="nw-post-gird-dsc">
-                    <span>Category</span>
-                    <h4><a href="#">WiFi installatie ter Conversal BVBA</a></h4>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
-                    <a href="#">More Info</a>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="nw-post-btn">
-            <a href="#">View our realizations</a>
-          </div>
-        </div>
-      </div>
-  </div>    
-</section><!--end of nw-post-grid-sec-wrp -->
-
-
-<section class="footer-top-sec-wrp clearfix">
-   <div class="footer-top-lft">
-     <div class="footer-top-lft-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/footer-top-lft-bg.jpg);">
-       <div class="footer-top-dsc">
-         <h2>Mounting Accesories</h2>
-         <p>Phasellus euismod convallis sem et viverra. Duis accumsan pulvinar turpis, at rutrum lectus tincidunt et. Nam facilisis est a imperdiet commodo. Phasellus luctus interdum condimentum. </p>
-         <a href="#">Discover our mounting accesories</a>
-       </div>
-     </div>
-   </div>
-   <div class="footer-top-rgt">
-     <div class="footer-top-rgt-bg" style="background: url(<?php echo THEME_URI; ?>/assets/images/footer-top-rgt-bg.jpg);">
-       <div class="footer-top-dsc">
-         <h2>Wi-Fi & LAN Projects</h2>
-         <p>Phasellus euismod convallis sem et viverra. Duis accumsan pulvinar turpis, at rutrum lectus tincidunt et. Nam facilisis est a imperdiet commodo. Phasellus luctus interdum condimentum. </p>
-         <a href="#">Discover our Wi-Fi & Lan Projects</a>
-       </div>
-     </div>
-   </div>
-</section><!--end of footer-top-sec-wrp -->
-<?php get_footer(); ?>
+<?php } 
+get_template_part('templates/footer', 'top');
+get_footer(); ?>

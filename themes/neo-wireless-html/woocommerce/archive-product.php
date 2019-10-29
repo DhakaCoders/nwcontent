@@ -19,8 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
-get_template_part( 'templates/page', 'banner' );
-
+get_template_part( 'templates/shop', 'banner' );
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -31,13 +30,13 @@ get_template_part( 'templates/page', 'banner' );
 do_action( 'woocommerce_before_main_content' );
 
 ?>
-
+	
 <header class="woocommerce-products-header">
 	<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
 	<?php endif; ?>
 
-	<?php
+	<?php 
 	/**
 	 * Hook: woocommerce_archive_description.
 	 *
@@ -47,29 +46,7 @@ do_action( 'woocommerce_before_main_content' );
 	do_action( 'woocommerce_archive_description' );
 	?>
 </header>
-<div class="row">
-	<div class="col-sm-12">
-		<div class="search-catalog clearfix">
-		<?php 
-			if (function_exists('get_woocommerce_search_catalog')){
-				get_woocommerce_search_catalog();
-			}
-		?>
-		</div>
-	</div>
-</div>
-<div class="row">
-<div class="col-sm-3">
-	<div class="woosidebar-left">
-		<?php 
-			if (function_exists('get_woocommerce_custom_sideber')){
-				get_woocommerce_custom_sideber();
-			}
-		?>
-	</div>
-</div>
-<div class="col-sm-9">
-		
+	
 <?php
 if ( woocommerce_product_loop() ) {
 
@@ -114,8 +91,7 @@ if ( woocommerce_product_loop() ) {
 	do_action( 'woocommerce_no_products_found' );
 }
 ?>
-</div>
-</div>
+
 <?php
 /**
  * Hook: woocommerce_after_main_content.

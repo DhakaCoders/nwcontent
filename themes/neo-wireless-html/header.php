@@ -100,6 +100,14 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php 
+  $logoObj = get_field('logo_header', 'options');
+  if( is_array($logoObj) ){
+    $logo_tag = '<img src="'.$logoObj['url'].'" alt="'.$logoObj['alt'].'" title="'.$logoObj['title'].'">';
+  }else{
+    $logo_tag = '';
+  }
+?>
 <header class="header">
   <div class="container">
       <div class="row">
@@ -107,7 +115,9 @@
           <div class="header-inr clearfix">
             <div class="hdr-lft">
               <div class="logo">
-                <a href="#"><img src="<?php echo THEME_URI; ?>/assets/images/logo.svg"></a>
+                <a href="<?php echo esc_url(home_url('/')); ?>">
+                  <?php echo $logo_tag; ?>
+                </a>
               </div>
             </div>
             <div class="hdr-rgt clearfix hide-xs">
@@ -119,21 +129,24 @@
                   </ul>
                 </div>
                 <nav class="main-nav">
-                  <ul class="clearfix ulc">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us </a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                  </ul>
+                  <?php 
+                    $cmenuOptions = array( 
+                        'theme_location' => 'cbv_main_menu', 
+                        'menu_class' => 'clearfix ulc',
+                        'container' => 'cmnav',
+                        'container_class' => 'cmainnav'
+                      );
+                    wp_nav_menu( $cmenuOptions ); 
+                  ?>
                 </nav>
                 
               </div>
               <div class="hdr-btmbar">
                 <div class="hdr-btmbar-bts">
                   <div class="hdr-search">
-                    <form>
-                      <input type="search" name="" placeholder="Search">
-                    </form>
+                  <form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <input type="search" placeholder="<?php echo esc_attr__( 'Search', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+                  </form>
                     <button>
                       <em> 
                         <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 18 18" fill="#8798B6">
@@ -144,11 +157,15 @@
                     
                   </div>
                   <div class="hdr-cart-btn">
+                    <a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'cart' ); ?>">
                     <em> 
                       <svg class="cart-icon-white-svg" width="20" height="20" viewBox="0 0 20 20" fill="#fff">
                         <use xlink:href="#cart-icon-white-svg"></use>
                       </svg> 
+
                     </em>
+                    <?php if(WC()->cart->get_cart_contents_count() > 0) echo sprintf ( '<span>%d</span>', WC()->cart->get_cart_contents_count() ); ?>
+                    </a>
                   </div>
                 </div>
                 <div class="hdr-btm-nav">

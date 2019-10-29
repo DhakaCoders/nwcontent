@@ -204,11 +204,22 @@ h3#order_review_heading {
     width: 150px;
     float: left;
 }
+.checkout-cart .wc-proceed-to-checkout,
+span.optional,
 input#ship-to-different-address-checkbox {
     display: none;
 }
-span.optional {
-    display: none;
+.video-play-main {
+    position: relative;
+}
+
+.video-inner .video-play-main i img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+  	transform: translate(-50%, -50%);
+  	z-index: 2
 }
 @media(max-width: 1199px){
 
