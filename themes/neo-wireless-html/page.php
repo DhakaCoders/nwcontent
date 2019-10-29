@@ -6,6 +6,7 @@ while ( have_posts() ) :
 	the_post();
   $addClass = '';
   if( is_cart() ) $addId = 'wccart-wrapper'; 
+  if( is_checkout() ) $addId = 'wccheckout-wrapper'; 
 ?>
 <section class="innerpage-con-wrap">
 

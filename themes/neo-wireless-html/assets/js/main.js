@@ -839,7 +839,9 @@ new WOW().init();
 
 
 function gotoViewGallery() {
+  var toCount = jQuery("#galleryToScroll").offset().top;
+  var toCountTop = toCount - 50;
   jQuery('html, body').animate({
-    scrollTop: jQuery("#galleryToScroll").offset().top
-  }, 1000);
+    scrollTop: toCountTop
+  }, 700);
 };
