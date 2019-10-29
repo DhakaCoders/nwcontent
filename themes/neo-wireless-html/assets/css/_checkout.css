@@ -3,10 +3,12 @@
 checkout-info-sec-wrp
 ----------------------
 */
+.wccontent-wrapper{
+	padding-bottom: 120px;
+}
 #wccheckout-wrapper .default-page-con{
 	padding-top: 0;
 }
-
 #wccheckout-wrapper .checkout-cart{
 	background-color: #F4F7F9;
 	padding: 70px 50px 40px 50px;
