@@ -109,7 +109,6 @@ checkout-info-sec-wrp
 	color:#FF5C26;
 }
 #add_payment_method .wc-proceed-to-checkout,
-.woocommerce-cart .wc-proceed-to-checkout,
 .woocommerce-checkout .wc-proceed-to-checkout{
 	display: none;
 }

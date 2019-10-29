@@ -166,12 +166,15 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
 		                        }else{
 		                          $pimgScr = '';
 		                        }  
+		                        $term_obj_list = get_the_terms( get_the_ID(), 'product_cat' );
 		                        echo '<div class="dft-2grd-img-con-item-col">';
 		                        echo '<div class="dft-img-col-hover-scale">
 		                          <a class="overlay-link" href="'.get_the_permalink().'"></a>';
 		                        echo '<div class="dft-2grd-img-con-item-img" style="background-image: url('.$pimgScr.');"></div></div>';
 		                        echo '<div class="dft-2grd-img-con-item-des">';
-		                        printf('<strong>%s</strong>', 'Mounting Accessories');
+				                  if ( $term_obj_list && ! is_wp_error( $term_obj_list ) ) : 
+				                    printf('<strong>%s</strong>', join(', ', wp_list_pluck($term_obj_list, 'name')));
+				                  endif;
 		                        printf('<h4><a href="%s">%s</a></h4>', get_the_permalink(), get_the_title());
 		                        echo wpautop( get_the_excerpt(), true );;
 		                        echo '<a href="'.get_the_permalink().'">More Info <em><img src="'.THEME_URI.'/assets/images/list-icon.svg"></em></a>';

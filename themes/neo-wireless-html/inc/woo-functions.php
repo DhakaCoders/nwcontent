@@ -77,9 +77,12 @@ add_action('woocommerce_shop_loop_item_title', 'add_shorttext_below_title_loop',
 if (!function_exists('add_shorttext_below_title_loop')) {
 	function add_shorttext_below_title_loop() {
 		global $product, $woocommerce, $post;
+        $term_obj_list = get_the_terms( $product->get_id(), 'product_cat' );
   		$short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
 		echo '<div class="catalogue-image"><a href="'.get_permalink( $product->get_id() ).'">'.woocommerce_get_product_thumbnail().'</a></div>';
-		echo '<h5>Mounting Accessories</h5>';
+        if ( $term_obj_list && ! is_wp_error( $term_obj_list ) ) : 
+          printf('<h5>%s</h5>', join(', ', wp_list_pluck($term_obj_list, 'name')));
+        endif;
 		echo '<h4>'.get_the_title().'</h4>';
 		echo '<div class="shorttext-loop">'.$short_description.'</div>';
 		echo '<div class="moreproduct"><a href="'.get_permalink( $product->get_id() ).'">More Info</a></div>';
