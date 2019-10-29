@@ -235,23 +235,43 @@ checkout-info-sec-wrp
 #wccheckout-wrapper .product-quantity span.plus{
 	right: 0 !important;
 	left: initial;
-	top: 2px;
+	top: 3px;
 }
 #wccheckout-wrapper .product-quantity span.minus{
 	left: 0;
-	top: 2px;
+	top: 3px;
 }
 #wccheckout-wrapper .product-quantity input[type="number"]{
-    background: transparent;
-    -moz-appearance: textfield;
-    appearance: none;
-    margin-top: -2px;
+    background: transparent !important;
+    -moz-appearance: textfield !important;
+    appearance: none !important;
+    margin-top: -2px !important;
     font-size: 20px;
     line-height: 22px;
     color: #7B8CA8;
     -ms-transition: all 0.5s;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
+    width: 100% !important;
+    border: none;
+    opacity: 1;
+    margin-top: 0 !important;
+    text-align: center !important;
+}
+#wccheckout-wrapper .quantity-wrapper .qty{
+	padding-right: 0 !important;
+}
+#wccheckout-wrapper .quantity-wrapper {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    background-color: transparent;
+    position: relative;
+    color: #333;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin-left: 0;
 }
 #wccheckout-wrapper .product-quantity {
     float: right;
@@ -259,10 +279,11 @@ checkout-info-sec-wrp
     margin-top: 7px;
     position: relative !important;
 }
+
 #wccheckout-wrapper .quantity-wrapper i.qnt-minus:after {
     content: "";
     position: absolute;
-    left: 5px;
+    left: 0px;
     top: 9px;
     background: url(../images/qnt-minus.svg);
     background-repeat: no-repeat;
@@ -273,7 +294,7 @@ checkout-info-sec-wrp
 #wccheckout-wrapper .quantity-wrapper i.qnt-plus:after {
     content: "";
     position: absolute;
-    left: 5px;
+    left: 1px;
     top: 5px;
     background: url(../images/checkout-plus.svg);
     background-repeat: no-repeat;
