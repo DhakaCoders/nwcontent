@@ -382,10 +382,7 @@ function add_custom_product_data( $cart_item_data, $product_id, $variation_id ) 
         $cart_item_data['additionalPrice'] = (float) $_POST['additionalPrice'];
         $cart_item_data['active_price'] = (float) $_POST['active_price'];
 
-        $labelexpArray = explode(', ', $_POST['additionalLabel']);
-        $labelfilter = array_filter($labelexpArray, 'strlen');
-        $labelImplode = implode('<br/>', $labelfilter);
-        $cart_item_data['repair_lebel'] = $labelImplode;
+        $cart_item_data['repair_lebel'] = $_POST['additionalLabel'];
 
         $cart_item_data['unique_key'] = md5(microtime().rand());
     }
@@ -414,10 +411,23 @@ add_filter('woocommerce_get_item_data', 'display_custom_item_data', 10, 2);
 
 function display_custom_item_data($cart_item_data, $cart_item) {
     if (isset($cart_item['additionalPrice'])) {
-        $cart_item_data[] = array(
-            'name' => __("Optional", "woocommerce"),
-            'value' => $cart_item['repair_lebel'] 
-        );
+        $labelexpArray = explode(', ', $cart_item['repair_lebel']);
+        $labelfilter = array_filter($labelexpArray, 'strlen');
+
+        if(is_array($labelfilter) && !empty($labelfilter)){
+            $i = 1;
+            foreach ($labelfilter as $key => $value) {
+                $cart_item_data[] = array(
+                    'name' => __("Optional ".$i, "woocommerce"),
+                    'value' => strip_tags($value)
+                );
+
+                $i++;
+            }
+
+        }
+
+        
     }
 
     return $cart_item_data;
@@ -445,6 +455,28 @@ function add_custom_fields_order_item_meta( $item_id, $cart_item, $cart_item_key
         {
             wc_add_order_item_meta($item_id,'Optional',$user_custom_values);  
         }
+
+
+    if (isset($cart_item['repair_lebel'])) {
+        $labelexpArray = explode(', ', $cart_item['repair_lebel']);
+        $labelfilter = array_filter($labelexpArray, 'strlen');
+
+        if(is_array($labelfilter) && !empty($labelfilter)){
+            $i = 1;
+            foreach ($labelfilter as $key => $value) {
+                $cart_item_data[] = array(
+                    'name' => __("Optional ".$i, "woocommerce"),
+                    'value' => strip_tags($value)
+                );
+                 wc_add_order_item_meta($item_id,"Optional ".$i, strip_tags($value));  
+
+                $i++;
+            }
+
+        }
+
+        
+    }
 
 }
 
