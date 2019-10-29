@@ -665,9 +665,6 @@
 	    float: left;
 	    width: 100%;
 	}
-	.woocommerce-page div.product div.summary {
-		border:1px solid #F4F7F9;;
-	}
 	.woocommerce div.product div.images {
 	    margin-bottom: 12px;
 	}
@@ -692,11 +689,11 @@
 	}
 	.quantity-wrapper .plus {
 		right: -4px;
-		top: 17px;
+		top: 0;
 	}
 	.quantity-wrapper .minus {
 	    right: -45px;
-	    bottom: 3px;
+	    bottom: 0;
 	}
 	.quantity-wrapper i.qnt-plus::after {
 	    background: url(../images/qnt-plus-xs.svg);
@@ -736,22 +733,32 @@
 	}
 }
 
-
-
 @media(max-width: 575px){
 	.wccontent-wrapper.wcsingle {
 	    padding-top: 50px;
 	}
-
 }
-
 
 @media(max-width: 479px){
 
 
 }
 
-
+@media(max-width: 369px){
+	.quantity-wrapper .minus {
+	    right: auto;
+	    bottom: 0;
+	    left: 105px;
+	}
+	.quantity-wrapper .plus {
+	    right: auto;
+	    top: 0;
+	    left: 64px;
+	}
+	.quantity-wrapper {
+	    margin-top: 20px;
+	}
+}
 
 @media(max-width: 359px){
 
