@@ -83,7 +83,7 @@ if (!function_exists('add_shorttext_below_title_loop')) {
         if ( $term_obj_list && ! is_wp_error( $term_obj_list ) ) : 
           printf('<h5>%s</h5>', join(', ', wp_list_pluck($term_obj_list, 'name')));
         endif;
-		echo '<h4>'.get_the_title().'</h4>';
+		echo '<h4><a href="'.get_permalink( $product->get_id() ).'">'.get_the_title().'</a></h4>';
 		echo '<div class="shorttext-loop">'.$short_description.'</div>';
 		echo '<div class="moreproduct"><a href="'.get_permalink( $product->get_id() ).'">More Info</a></div>';
 	}

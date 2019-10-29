@@ -162,7 +162,8 @@ if( $proQuery->have_posts() ){
               $refImgsrc = cbv_get_image_src($gridImage, 'full');
             }else{
               $refImgsrc = '';
-            }         
+            }  
+            $short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );       
           ?>
             <div class="nw-product-slide-item">
               <div class="nw-product-slide-item-inr clearfix">
@@ -176,7 +177,7 @@ if( $proQuery->have_posts() ){
                   endif;
                   ?></span>
                   <h4><?php the_title(); ?></h4>
-                  <?php the_content(); ?>
+                  <?php echo $short_description; ?>
                   <a href="<?php the_permalink(); ?>">More Info</a>
                 </div>
               </div>
