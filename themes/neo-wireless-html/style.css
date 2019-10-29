@@ -23,35 +23,14 @@ Text Domain: neowireless
 	position: relative;
 	overflow: hidden;
 }
-.nw-about-con-sec-bg-skw{
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-.nw-about-bg-img{
-	position: absolute;
-	height: 50%;
-	left: 0;
-	right: 0;
-	top: 0;
+
+.about-poligon-img{
+	min-height: 740px;
 	background-size: cover!important;
 	background-position: center center!important;
+	position: relative;
 }
 
-.nw-about-bg-sec-bg-skw-white {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -102px;
-    -webkit-transform: skew(-22deg) rotate(6deg);
-    -moz-transform: skew(-22deg) rotate(6deg);
-    transform: skew(22deg) rotate(6deg);
-    z-index: 2;
-    background: #fff;
-    height: 237px;
-}
 
 
 
@@ -89,15 +68,10 @@ Text Domain: neowireless
     z-index: 1;
 }
 
-.about-poligon-img{
-	height: 725px;
-	width: 100%;
-	background-repeat: no-repeat!important;
-	background-position: center!important;
-	background-size: cover!important;
-	position: relative;
-	overflow: hidden;
+.nw-team-sec-wrp .googleMapTringle{
+	border-top: 272px solid #F4F7F9!important;
 }
+
 .top-skip{
 	content: '';
 	position: absolute;
@@ -135,4 +109,4 @@ Text Domain: neowireless
 }
 
 
-header.header{display: none}
+

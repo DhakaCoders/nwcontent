@@ -1,0 +1,72 @@
+
+#wccart-wrapper{
+	padding: 110px 0 0;
+}
+#wccart-wrapper table.shop_table thead tr {
+	border-bottom: 3px solid #E1E7F0;
+}
+#wccart-wrapper table.shop_table thead tr th{
+	font-size: 20px;
+	line-height: 20px;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: left;
+}
+#wccart-wrapper .product-thumbnail a{
+	display: block;
+}
+
+#wccart-wrapper .product-thumbnail a img{
+	width: 100%;
+}
+
+#wccart-wrapper table.shop_table thead tr td.product-remove,
+#wccart-wrapper table.shop_table tbody tr td.product-remove{
+	width: 7%!important;
+}
+#wccart-wrapper table.shop_table thead tr td.product-thumbnail,
+#wccart-wrapper table.shop_table tbody tr td.product-thumbnail{
+	width: 20%!important;
+}
+#wccart-wrapper table.shop_table thead tr td.product-name,
+#wccart-wrapper table.shop_table tbody tr td.product-name{
+	width: 20%!important;
+}
+#wccart-wrapper table.shop_table thead tr td.product-quantity,
+#wccart-wrapper table.shop_table tbody tr td.product-quantity{
+	width: 15%!important;
+}
+#wccart-wrapper table.shop_table thead tr td.product-price,
+#wccart-wrapper table.shop_table tbody tr td.product-price{
+	width: 15%!important;
+}
+#wccart-wrapper table.shop_table thead tr td.product-subtotal,
+#wccart-wrapper table.shop_table tbody tr td.product-subtotal{
+	width: 15%!important;
+}
+
+#wccart-wrapper table.shop_table tbody tr td.product-name{
+	padding-top: 0;
+	text-align: left;
+}
+#wccart-wrapper table.shop_table tbody tr td.product-quantity{
+	text-align: center;
+}
+
+#wccart-wrapper table.shop_table tbody tr td.product-name{
+	font-size: 18px;
+}
+#wccart-wrapper table.shop_table tbody tr td.product-thumbnail{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#wccart-wrapper .product-quantity{
+	position: relative;
+	width: 80px;
+
+}
+
+#wccart-wrapper  ul#shipping_method li{
+	padding-left: 0;
+}
