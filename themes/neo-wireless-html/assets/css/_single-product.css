@@ -152,13 +152,6 @@
 .woocommerce-variation-price{
 	display: none;
 }
-
-
-
-
-
-
-
 .woocommerce div.product form.cart {
     margin-bottom: 47px!important;
 }
@@ -345,7 +338,6 @@
 	width:24px; 
 	height:21px;
 }
-
 .wcoptioanl{
 	display: block;
 	font-weight: 600;
@@ -416,9 +408,6 @@
   background: #6B7BB3!important;
   color: #fff!important;
 }
-
-
-
 .woo-variation-items-wrapper ul li:after{
 	content: none;
 }
