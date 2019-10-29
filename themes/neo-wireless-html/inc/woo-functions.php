@@ -294,7 +294,7 @@ add_action('woocommerce_single_product_summary','add_repair_price_option_to_sing
 function add_repair_price_option_to_single_product(){
     global $product;
 
-    //if( $product->is_type('variable') || ! $product->get_meta( '_repair_price' ) ) return;
+    if( !$product->is_type('variable') ) return;
 
     add_action('woocommerce_before_add_to_cart_button', 'product_option_custom_field', 30 );
 }
@@ -311,11 +311,11 @@ $onlyAttr = array_diff_key($attributes, $attrVariation); //get attribues that ar
 $onlyAttrK = array_keys($onlyAttr); //keys -> pa_capacity, pa_color
 
 
-echo '<div class="custom_attribues_wrapper">';
+echo '<div class="custom_attribues_wrapper clearfix">';
 foreach ( $onlyAttrK as $onlyAttrKS ) {
     echo '<div class="hidden-field additionalPriceWrap">';
     $terms = get_taxonomy( $onlyAttrKS ); //get this texonomy data
-    $onlyAttrKSterms = get_the_terms( $product->id, $onlyAttrKS); // get all the child terms
+    $onlyAttrKSterms = get_the_terms( $product->get_id(), $onlyAttrKS); // get all the child terms
     echo '<span class="wcoptioanl">'.$terms->labels->singular_name.'</span>';
     echo '<p class="form-row form-row-wide" data-priority="">';
     $i = 1;
@@ -325,9 +325,11 @@ foreach ( $onlyAttrK as $onlyAttrKS ) {
       $name = $term->name;
       $acf = 'term_' . $term_id;
       $markup = get_field('price', $acf);
-        echo '<span class="woocommerce-input-wrapper"><label class="checkbox customCheckbox">'.$name;
-        echo '<input type="radio" class="input-checkbox " name="'.$onlyAttrKS.'" value="'.$markup.'"> +'.$markup;
-        echo '<label></span>';
+        echo '<div class="woocommerce-input-wrapper">';
+        echo '<input type="radio" id="optional-'.$i.'" class="input-checkbox " name="'.$onlyAttrKS.'" value="'.$markup.'">';
+        echo '<label for="optional-'.$i.'" class="checkbox customCheckbox">'.$name.'<label>';
+        echo '<span>+'.$markup.'</span>';
+        echo '</div>';
     $i ++; 
     }
     echo '</p>';

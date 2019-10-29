@@ -345,7 +345,6 @@
 }
 
 .wcoptioanl{
-	margin-bottom: 70px;
 	display: block;
 	font-weight: 600;
 	font-size: 14px;
@@ -358,6 +357,9 @@
 	content: "";
 	display: table;
 	clear: both;
+}
+.custom_attribues_wrapper{
+    margin-bottom: 30px;
 }
 .wccontent-wrapper.wcsingle .woocommerce-input-wrapper{
 	width:33.333%;
