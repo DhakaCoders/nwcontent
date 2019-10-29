@@ -125,7 +125,7 @@ h1.banner-page-title,
 	bottom: 0;
 	right: 25px;
 	top: 30%;
-	z-index: 2;
+	z-index: 50;
 }
 .cookie-policy-dsc{
 	background: #66D6FF;

@@ -122,6 +122,17 @@ Text Domain: neowireless
     z-index: 1;
 }
 
+.top-skip-home{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+    border-top: 406px solid #fff!important;
+    border-right-color: transparent!important;
+    border-right-style: solid!important;
+    border-right: 1920px;
+    z-index: 1;	
+}
 
 
 

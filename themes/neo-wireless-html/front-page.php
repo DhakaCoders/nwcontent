@@ -199,8 +199,7 @@ if($show_hide_howwhat){
 ?>
 
 <section class="nw-content-sec-wrp">
-  <div class="nw-content-tp-white-bg"></div>
-  <div class="nw-content-btm-white-bg"></div>
+  <div class="top-skip-home" style="border-left: 1920px;"></div>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
