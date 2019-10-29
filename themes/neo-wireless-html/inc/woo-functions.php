@@ -357,7 +357,7 @@ echo '</div>';
             $('.additionalPriceWrap input').each(function(){
                 if( $(this).prop('checked') === true ){
                     addTotal += parseInt($(this).val());
-                    Labeltext += $(this).data('label');
+                    Labeltext += $(this).data('label')+', ';
                 }
             });
             console.log(Labeltext);
@@ -377,20 +377,15 @@ echo '</div>';
 // Front: Calculate new item price and add it as custom cart item data
 add_filter('woocommerce_add_cart_item_data', 'add_custom_product_data', 10, 3);
 function add_custom_product_data( $cart_item_data, $product_id, $variation_id ) {
-    if (isset($_POST['additionalPrice']) && !empty($_POST['additionalPrice'])) {
-    	$repaireOption = $_POST['additionalPrice'];
-
+    if (isset($_POST['additionalPrice']) && !empty($_POST['additionalPrice']) ) {
         $cart_item_data['new_price'] = (float) ($_POST['active_price'] + $_POST['additionalPrice']);
         $cart_item_data['additionalPrice'] = (float) $_POST['additionalPrice'];
         $cart_item_data['active_price'] = (float) $_POST['active_price'];
 
-        if($repaireOption == 1){
-        	$cart_item_data['repair_lebel'] = 'Skymount-air-Uplate-C-2566D';
-        }elseif($repaireOption == 2){
-			$cart_item_data['repair_lebel'] = 'Airborne Mounting Kit';
-        }elseif($repaireOption == 3){
-			$cart_item_data['repair_lebel'] = 'Skymount-art-arm-C-2566D';
-        }
+        $labelexpArray = explode(', ', $_POST['additionalLabel']);
+        $labelfilter = array_filter($labelexpArray, 'strlen');
+        $labelImplode = implode('<br/>', $labelfilter);
+        $cart_item_data['repair_lebel'] = $labelImplode;
 
         $cart_item_data['unique_key'] = md5(microtime().rand());
     }
@@ -418,10 +413,10 @@ function extra_price_add_custom_price($cart) {
 add_filter('woocommerce_get_item_data', 'display_custom_item_data', 10, 2);
 
 function display_custom_item_data($cart_item_data, $cart_item) {
-    if (isset($cart_item['repair_price'])) {
+    if (isset($cart_item['additionalPrice'])) {
         $cart_item_data[] = array(
-            'name' => __("Optional: ".$cart_item['repair_lebel'], "woocommerce"),
-            'value' => strip_tags( '+ ' . wc_price( wc_get_price_to_display( $cart_item['data'], array('price' => $cart_item['repair_price'] ) ) ) )
+            'name' => __("Optional", "woocommerce"),
+            'value' => $cart_item['repair_lebel'] 
         );
     }
 
