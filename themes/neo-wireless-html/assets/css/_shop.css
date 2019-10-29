@@ -150,6 +150,13 @@ ul.products{
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
+.products h4 a {
+    display: inline-block;
+    color: #43587B;
+}
+.products h4 a:hover {
+    color: #FF5C26;
+}
 .products .moreproduct a:hover:after{
 	right: -5px;
 }

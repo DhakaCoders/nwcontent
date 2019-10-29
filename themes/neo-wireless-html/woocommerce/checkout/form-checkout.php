@@ -28,29 +28,28 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 }
 
 ?>
-
+<div class="col2-set" id="customer_details">
+<div class="col-1">
+	<div class="checkout-cart">
+		<?php 
+			if (function_exists('get_woocommerce_custom_cart')){
+				get_woocommerce_custom_cart();
+			}
+		?>
+	</div>
+</div>
+<div class="col-2">
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
 	<?php if ( $checkout->get_checkout_fields() ) : ?>
 
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 		
-		<div class="col2-set" id="customer_details">
-			<div class="col-1">
-				<div class="checkout-cart">
-					<?php 
-						if (function_exists('get_woocommerce_custom_cart')){
-							get_woocommerce_custom_cart();
-						}
-					?>
-				</div>
-			</div>
-			<div class="col-2">
+			
+			<div id="customer_details">
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
 				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 			</div>
-		</div>
-
 		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
 	<?php endif; ?>
@@ -68,5 +67,6 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 	<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
 
 </form>
-
+</div>
+</div>
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
