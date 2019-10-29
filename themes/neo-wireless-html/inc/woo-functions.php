@@ -40,8 +40,8 @@ function get_custom_wc_output_content_wrapper(){
 function get_custom_wc_output_content_wrapper_end(){
     if(!is_product()) put_woocommerce_search_sidebar_tag_end();
 
-    get_template_part('templates/footer', 'top');
 	echo '</div></div></div></div></section>';
+    get_template_part('templates/footer', 'top');
 }
 
 
