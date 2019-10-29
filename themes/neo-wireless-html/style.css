@@ -89,15 +89,10 @@ Text Domain: neowireless
     z-index: 1;
 }
 
-.about-poligon-img{
-	height: 725px;
-	width: 100%;
-	background-repeat: no-repeat!important;
-	background-position: center!important;
-	background-size: cover!important;
-	position: relative;
-	overflow: hidden;
+.nw-team-sec-wrp .googleMapTringle{
+	border-top: 272px solid #F4F7F9!important;
 }
+
 .top-skip{
 	content: '';
 	position: absolute;
