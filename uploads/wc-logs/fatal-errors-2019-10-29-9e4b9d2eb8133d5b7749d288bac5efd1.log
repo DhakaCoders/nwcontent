@@ -169,3 +169,5 @@ Stack trace:
 >>>>>>> 257b8e9b58f3a97a04408a78e824b0c1196aa9ba
 >>>>>>> 8293954a9259d35c8acdcf7fe8e32775e40aa5f8
 
+2019-10-29T17:22:21+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php on line 16
+

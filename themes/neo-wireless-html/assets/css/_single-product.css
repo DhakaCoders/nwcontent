@@ -4,13 +4,14 @@
 
 .woocommerce-page div.product div.summary {
     float: right;
-    width: 51%;
+    width: 52%;
     clear: none;
 }
 
  .woocommerce-page div.product div.images{
     float: left;
-    width: 45%;
+    width: 48%;
+    padding-right: 55px;
 }
 
 
@@ -49,7 +50,7 @@
 .wccontent-wrapper.wcsingle .wcdetails {
     padding: 20px 0 30px;
     position: relative;
-    height: 332px;
+    height: 307px;
     overflow: hidden;
     -ms-transition: all .5s ease;
     -webkit-transition: all .5s ease;
@@ -91,11 +92,6 @@
 	background: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 0) -18.59%, rgba(255, 255, 255, 0.94) 16.14%, #FFFFFF 87.82%);
 	background: -ms-linear-gradient(180deg, rgba(255, 255, 255, 0) -18.59%, rgba(255, 255, 255, 0.94) 16.14%, #FFFFFF 87.82%);
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) -18.59%, rgba(255, 255, 255, 0.94) 16.14%, #FFFFFF 87.82%);
-	font-style: normal;
-	font-weight: 600;
-	font-size: 14px;
-	line-height: 28px;
-	color: #6B7BB3;
 	padding: 50px 0 10px;
 }
 .wccontent-wrapper.wcsingle .wcdetails.wcdetails-expand .wcdetailsbtn{
@@ -112,7 +108,7 @@
 	font-style: normal;
 	font-weight: 600;
 	font-size: 14px;
-	line-height: 28px;
+	line-height: 20px;
 	color: #6B7BB3;
 	position: relative;
 	padding-right: 20px;
@@ -134,7 +130,7 @@
 	content: "";
 	position: absolute;
 	right: 0;
-	top: 5px;
+	top: 2px;
 	background:url(../images/wcdetailsbtn-inc.svg);
 	background-repeat: no-repeat;
 	background-size: 100% auto;
@@ -150,10 +146,10 @@
 	transform: rotate(180deg);
 }
 .wccontent-wrapper.wcsingle .wcdetails .wcdetailsbtn a:last-child:hover:after{
-	top: 2px;
+	top: -1px;
 }
 .wccontent-wrapper.wcsingle .wcdetails .wcdetailsbtn a:hover:after{
-	top:8px;
+	top:5px;
 }
 
 .woocommerce div.product div.summary {
@@ -247,15 +243,20 @@
 .wccontent-wrapper.wcsingle .woocommerce span.onsale {
 	display: none!important
 }
+.quantity-wrapper .quantity .qty {
+    width: 100% !important;
+    text-align: center !important;
+    padding-right: 12px !important;
+}
 .quantity-wrapper{
 	position: relative;
 	display: inline-block;
 	padding-left: 10px;
 }
-.quantity{
+.quantity-wrapper .quantity{
 	width: 70px;
 	height: 52px;
-	border-radius: 7px;
+	border-radius: 5px;
 	background-color: #fff;
 	position: relative;
 	color: #333;
@@ -300,7 +301,7 @@
 .quantity-wrapper .minus:hover {
     opacity: .6
 }
-.quantity input[type="number"]{  
+.quantity-wrapper .quantity input[type="number"]{  
 	width: 12px;
 	border: none;
 	background: transparent;
@@ -314,16 +315,16 @@
 	letter-spacing: -0.2px;
 	color: #7B8CA8;
 }         
-.quantity input[type=number]::-webkit-inner-spin-button, 
-.quantity input[type=number]::-webkit-outer-spin-button { 
+.quantity-wrapper .quantity input[type=number]::-webkit-inner-spin-button, 
+.quantity-wrapper .quantity input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     margin: 0;
     opacity: 0;
 }
-.quantity-wrapper i.qnt-plus,
-.quantity-wrapper i.qnt-minus{
+.quantity-wrapper .quantity-wrapper i.qnt-plus,
+.quantity-wrapper .quantity-wrapper i.qnt-minus{
 	position: relative;
 	height: 100%
 }
@@ -492,13 +493,13 @@
 .woocommerce div.product form.cart .variations tr:nth-child(1){
     position: relative;
     padding-top: 37px;
-    width: 50% !important;
+    width: 39% !important;
     float: left;
 }
 .woocommerce div.product form.cart .variations tr:nth-child(2){
     position: relative;
     padding-top: 37px;
-    width: 50% !important;
+    width: 61% !important;
     float: left;
 }
 .woocommerce div.product form.cart .variations tr:first-child {
