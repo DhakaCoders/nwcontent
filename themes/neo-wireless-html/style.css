@@ -40,17 +40,7 @@ Text Domain: neowireless
 	background-size: cover!important;
 	background-position: center center!important;
 }
-.nw-about-bg-solid{
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	height: 50%;
-	background: #F4F7F9;
-	-webkit-transform: skew(-22deg) rotate(6deg);
-    -moz-transform: skew(-22deg) rotate(6deg);
-    transform: skew(22deg) rotate(6deg);
-}
+
 .nw-about-bg-sec-bg-skw-white {
     position: absolute;
     left: 0;
@@ -141,3 +131,24 @@ Text Domain: neowireless
 }
 
 
+
+.nw-about-bg-solid{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.nw-about-bg-solid{
+	height: 1000px;
+}
+.nw-about-bg-solid .top-skip{
+	content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-right: 200px solid #F4F7F9!important;
+    border-top-color: transparent!important;
+    border-left-style: solid!important;
+    border-right: 1920px;
+    z-index: 1;
+}

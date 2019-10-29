@@ -328,7 +328,7 @@ foreach ( $onlyAttrK as $onlyAttrKS ) {
       $markup = get_field('price', $acf);
         echo '<div class="woocommerce-input-wrapper">';
         echo '<input type="radio" id="optional-'.$i.'" class="input-checkbox " name="'.$onlyAttrKS.'" value="'.$markup.'">';
-        echo '<label for="optional-'.$i.'" class="checkbox customCheckbox">'.$name.'<label>';
+        echo '<label for="optional-'.$i.'" class="checkbox customCheckbox">'.$name.'</label>';
         echo '<span>+'.$markup.'</span>';
         echo '</div>';
     $i ++; 

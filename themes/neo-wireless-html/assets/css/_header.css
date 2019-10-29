@@ -182,6 +182,25 @@ nav.main-nav ul li:after,
 .hdr-cart-btn a {
     display: inline-block;
 }
+.hdr-cart-btn{
+	position: relative;
+}
+.hdr-cart-btn a.cart-contents span {
+    position: absolute;
+    top: -15px;
+    right: 0px;
+    z-index: 2;
+    background: #fff;
+    color: #43587B;
+    padding: 0;
+    font-size: 12px;
+    line-height: 100%;
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    padding-top: 7px;
+}
 
 .hdr-cart-btn a span {
     position: relative;

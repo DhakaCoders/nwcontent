@@ -68,7 +68,10 @@ if($showhide_overneo){
   <div class="nw-about-con-sec-bg-skw">
     <div class="nw-about-bg-sec-bg-skw-white"></div>
     <div class="nw-about-bg-img" style="background: url(<?php echo $overposter; ?>);"></div>
-    <div class="nw-about-bg-solid"></div>
+    <div class="nw-about-bg-solid">
+      <div class="nw-about-bg-solid-top"></div>
+      <div class="nw-about-bg-solid-btm"></div>
+    </div>
   </div>
   <div class="container">
     <div class="row">
