@@ -54,6 +54,8 @@ checkout-info-sec-wrp
 }
 #wccheckout-wrapper .variation dd{
 	display: none;
+	float: left;
+    margin-right: 10px;
 }
 #wccheckout-wrapper .product-subtotal{
 	float: left;
