@@ -4,6 +4,8 @@ get_template_part( 'templates/page', 'banner' );
 
 while ( have_posts() ) :
 	the_post();
+  $addClass = '';
+  if( is_cart() ) $addId = 'wccart-wrapper'; 
 ?>
 <section class="innerpage-con-wrap">
 
@@ -137,7 +139,7 @@ while ( have_posts() ) :
         endwhile;
         echo '</article></div></div></div>';
       }else{
-        echo '<div class="container"><div class="row"><div class="col-sm-12"><article class="default-page-con">';
+        echo '<div class="container"><div class="row"><div class="col-sm-12"><article class="wcpage-default-con" id="'.$addId .'">';
         the_content();
         echo '</article></div></div></div>';
       }
