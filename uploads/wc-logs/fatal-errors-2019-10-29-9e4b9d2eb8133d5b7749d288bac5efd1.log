@@ -171,3 +171,9 @@ Stack trace:
 
 2019-10-29T14:03:36+00:00 CRITICAL syntax error, unexpected ')' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\templates\page-banner.php on line 5
 
+2019-10-29T16:16:13+00:00 CRITICAL syntax error, unexpected '=' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 319
+
+2019-10-29T16:16:25+00:00 CRITICAL syntax error, unexpected '.' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 335
+
+2019-10-29T16:16:43+00:00 CRITICAL syntax error, unexpected '.' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 335
+
