@@ -446,6 +446,14 @@ span.xcp-plus{
 	color: #7B8CA8;
 }
 
+.wcpage-default-con #payment{
+	background: #F4F7F9;
+	margin-top: 30px;
+}
+.wcpage-default-con .woocommerce-info{
+	background: #F4F7F9;
+}
+
 
 /*
 ---------------------
@@ -547,6 +555,14 @@ span.xcp-plus{
 	.wccatalog span{
 		padding-top: 0;
 		padding-right: 0;
+	}
+	.wcpage-default-con .woocommerce-info {
+	    background: #F4F7F9;
+	    padding: 10px 0;
+	    text-align: center !important;
+	}
+	.wcpage-default-con .woocommerce-privacy-policy-text p{
+		text-align: center;
 	}
 	
 
