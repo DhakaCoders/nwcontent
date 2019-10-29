@@ -96,7 +96,7 @@ function envy_stock_catalog() {
     if ($product->is_in_stock())//Stock is Available
     {
     if($product->get_stock_quantity() < 1 && $product->backorders_allowed()){ //Product is Out of Stock
-       //echo '<div class="out-of-stock" >' . __( 'Available on backorder', 'woocommerce' ) . '</div>';
+       echo '<div class="out-of-stock" >' . __( 'Available on backorder', 'woocommerce' ) . '</div>';
     }
     }else{ //Product is out of stock AND DO NOT allow backorders
     echo '<div class="out-of-stock" >' . __( 'out of stock', 'woocommerce' ) . '</div>';
@@ -438,7 +438,7 @@ function extra_price_add_custom_price($cart) {
 add_filter('woocommerce_get_item_data', 'display_custom_item_data', 10, 2);
 
 function display_custom_item_data($cart_item_data, $cart_item) {
-    if (isset($cart_item['additionalPrice'])) {
+    if (isset($cart_item['additionalPrice']) && isset($cart_item['repair_lebel'])) {
         $labelexpArray = explode(', ', $cart_item['repair_lebel']);
         $labelfilter = array_filter($labelexpArray, 'strlen');
 
