@@ -99,7 +99,7 @@ checkout-info-sec-wrp
 	color:#FF5C26;
 }
 #wccheckout-wrapper #add_payment_method .wc-proceed-to-checkout,
-#wccheckout-wrapper .woocommerce-checkout .wc-proceed-to-checkout{
+.checkout-cart .wc-proceed-to-checkout{
 	display: none;
 }
 #wccheckout-wrapper .woocommerce-shipping-fields,
