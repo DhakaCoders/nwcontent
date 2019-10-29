@@ -169,7 +169,12 @@ if( $proQuery->have_posts() ){
                 <div class="nw-product-slide-item-img" style="background: url(<?php echo $refImgsrc; ?>);">
                 </div>
                 <div class="nw-product-slide-item-dsc">
-                  <span>Mounting Accessories</span>
+                  <span><?php 
+                  $term_obj_list = get_the_terms( get_the_ID(), 'product_cat' );
+                  if ( $term_obj_list && ! is_wp_error( $term_obj_list ) ) : 
+                    printf('%s', join(', ', wp_list_pluck($term_obj_list, 'name')));
+                  endif;
+                  ?></span>
                   <h4><?php the_title(); ?></h4>
                   <?php the_content(); ?>
                   <a href="<?php the_permalink(); ?>">More Info</a>
