@@ -1,6 +1,7 @@
 /**
 All Transitions
 */
+.woocommerce ul.products li.product:hover .catalogue-image a img,
 .nw-post-gird-innr:hover .nw-post-gird-img,
 a,input,img,textarea,button,
 .main-bnr-img-bx a em,
@@ -12,6 +13,7 @@ a.xcp-btn.xoo-cp-close{
 	-ms-transition: all 0.5s ease;
 	-webkit-transition: all 0.5s ease;
 }
+.woocommerce ul.products li.product:hover .catalogue-image a img,
 .nw-post-gird-innr:hover .nw-post-gird-img,
 .scale,.dft-2grd-img-con-item-col:hover .dft-2grd-img-con-item-img{
 	transform: scale(1.1);
