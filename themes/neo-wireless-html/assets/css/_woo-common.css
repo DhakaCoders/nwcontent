@@ -1,0 +1,50 @@
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt,
+.coupon .button{
+	background: #FF5C26!important;
+	color: #fff!important;
+	text-align: center;
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.coupon button.button{
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+	text-transform: uppercase;	
+}
+#shipping_method li:after{
+	content: none;
+}
+
+#coupon_code{
+	min-height: 52px;
+	width: 180px;
+	margin-right: 20px;
+	border: 2px solid #7B8CA8;
+	text-align: center;
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+	text-transform: uppercase;
+	color: #7B8CA8!important;
+
+}
+
+
+input#coupon_code::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #7B8CA8!important;
+}
+input#coupon_code::-moz-placeholder { /* Firefox 19+ */
+  color: #7B8CA8!important;
+}
+input#coupon_code:-ms-input-placeholder { /* IE 10+ */
+  color: #7B8CA8!important;
+}
+input#coupon_code:-moz-placeholder { /* Firefox 18- */
+  color: #7B8CA8!important;
+}
