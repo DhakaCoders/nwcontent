@@ -51,6 +51,7 @@
 }
 .wccontent-wrapper.wcsingle .wcdetails.wcdetails-expand {
     height: 100%;
+    height: auto;
     overflow: hidden;
 }
 .wccontent-wrapper.wcsingle .wcdetails h2{
@@ -658,6 +659,9 @@ p.stock.available-on-backorder {
 	    -webkit-transform: translateY(-50%);
 	    transform: translateY(-50%);
 	}
+	.woocommerce-variation-add-to-cart input[type="radio"]:checked + span {
+		color:#fff;
+	}
 	.wccontent-wrapper.wcsingle .woocommerce-input-wrapper {
 	    width: 100%;
 	    float: none;
@@ -759,7 +763,8 @@ p.stock.available-on-backorder {
 	.wccontent-wrapper.wcsingle .wcdetails .wcdetailsbtn {
 	    height: 75px;
 	    padding: 20px 0 10px;
-	}	
+	}
+
 }
  
 
