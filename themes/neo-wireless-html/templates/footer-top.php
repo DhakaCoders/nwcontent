@@ -4,7 +4,7 @@ $wifi = get_field('wifi_sec', HOMEID);
 $show__hidemwifi = get_field('show__hidemwifi', HOMEID);
 if($show__hidemwifi){ 
   $customClass = '';
-  if(is_shop() OR is_product()) $customClass = ' wcftmargin';
+  //if(is_shop() OR is_product()) $customClass = ' wcftmargin';
 ?>
 <section class="footer-top-sec-wrp<?php echo $customClass; ?> clearfix">
    <div class="footer-top-lft">

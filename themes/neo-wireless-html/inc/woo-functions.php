@@ -40,8 +40,8 @@ function get_custom_wc_output_content_wrapper(){
 function get_custom_wc_output_content_wrapper_end(){
     if(!is_product()) put_woocommerce_search_sidebar_tag_end();
 
-    get_template_part('templates/footer', 'top');
 	echo '</div></div></div></div></section>';
+    get_template_part('templates/footer', 'top');
 }
 
 
@@ -77,9 +77,12 @@ add_action('woocommerce_shop_loop_item_title', 'add_shorttext_below_title_loop',
 if (!function_exists('add_shorttext_below_title_loop')) {
 	function add_shorttext_below_title_loop() {
 		global $product, $woocommerce, $post;
+        $term_obj_list = get_the_terms( $product->get_id(), 'product_cat' );
   		$short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
 		echo '<div class="catalogue-image"><a href="'.get_permalink( $product->get_id() ).'">'.woocommerce_get_product_thumbnail().'</a></div>';
-		echo '<h5>Mounting Accessories</h5>';
+        if ( $term_obj_list && ! is_wp_error( $term_obj_list ) ) : 
+          printf('<h5>%s</h5>', join(', ', wp_list_pluck($term_obj_list, 'name')));
+        endif;
 		echo '<h4>'.get_the_title().'</h4>';
 		echo '<div class="shorttext-loop">'.$short_description.'</div>';
 		echo '<div class="moreproduct"><a href="'.get_permalink( $product->get_id() ).'">More Info</a></div>';
@@ -313,6 +316,7 @@ $onlyAttrK = array_keys($onlyAttr); //keys -> pa_capacity, pa_color
 
 
 echo '<div class="custom_attribues_wrapper clearfix">';
+$j = 1;
 foreach ( $onlyAttrK as $onlyAttrKS ) {
     echo '<div class="hidden-field additionalPriceWrap">';
     $terms = get_taxonomy( $onlyAttrKS ); //get this texonomy data
@@ -327,16 +331,18 @@ foreach ( $onlyAttrK as $onlyAttrKS ) {
       $acf = 'term_' . $term_id;
       $markup = get_field('price', $acf);
         echo '<div class="woocommerce-input-wrapper">';
-        echo '<input type="radio" id="optional-'.$i.'" class="input-checkbox " name="'.$onlyAttrKS.'" value="'.$markup.'">';
-        echo '<label for="optional-'.$i.'" class="checkbox customCheckbox">'.$name.'</label>';
-        echo '<span>+'.$markup.'</span>';
+        echo '<input type="radio" id="optional-'.$i.$j.'" class="input-checkbox" data-label="'.$name.': +'.$markup.'" name="'.$onlyAttrKS.'" value="'.$markup.'">';
+        echo '<label for="optional-'.$i.$j.'" class="checkbox customCheckbox">'.$name.'</label>';
+        echo '<span>+<span class="woocommerce-Price-currencySymbol"> €</span>'.$markup.'</span>';
         echo '</div>';
     $i ++; 
     }
     echo '</p>';
     echo '</div>';
+    $j ++;
 }
 echo '<input id="additionalPrice" type="hidden" name="additionalPrice" value="0">';
+echo '<input id="additionalLabel" type="hidden" name="additionalLabel" value="">';
 echo '<input id="prPrice" type="hidden" name="active_price" value="' . $active_price . '">';
 echo '</div>';
 
@@ -347,15 +353,19 @@ echo '</div>';
         $('.additionalPriceWrap input').on('change', function(){
             var pp = 'span.price';
             var addTotal = 0;
+            var Labeltext = '';
             $('.additionalPriceWrap input').each(function(){
                 if( $(this).prop('checked') === true ){
                     addTotal += parseInt($(this).val());
+                    Labeltext += $(this).data('label');
                 }
             });
+            console.log(Labeltext);
             var prRegPrice = parseInt($('#prPrice').val());
             var prTotal = prRegPrice + addTotal;
 
             $('#additionalPrice').val(addTotal);
+            $('#additionalLabel').val(Labeltext);
             $(pp).html('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>'+prTotal+'</span>');
         });
 

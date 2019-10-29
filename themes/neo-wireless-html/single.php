@@ -1,21 +1,24 @@
 <?php 
 get_header(); 
+$thisID = get_option('page_for_posts');
+$pageTitle = get_the_title($thisID);
+$standaardbanner = get_field('bannerafbeelding', $thisID);
 ?>
 <section class="page-banner">
   <div class="page-banner-con">
-    <div class="page-banner-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/page-banner-bg.jpg);"></div>
+    <?php if(!empty($standaardbanner)): ?>
+    <div class="page-banner-bg" style="background-image: url(<?php echo $standaardbanner; ?>);"></div>
+    <?php else: ?>
+    <div class="main-bnr-bg" id="particles-js"></div>
+    <?php endif; ?>
     <div class="page-banner-des">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <div class="page-banner-des-innr">
-              <strong class="banner-page-title">BLOG</strong>
+              <strong class="banner-page-title"><?php echo $pageTitle; ?></strong>
               <div class="breadcrumbs">
-                <ul>           
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Binnenpagina</a></li>
-                  <li><a href="#">Binnenpagina</a></li>
-                </ul>
+                <?php cbv_breadcrumbs(); ?>
               </div>
             </div>
           </div>
@@ -163,12 +166,15 @@ get_header();
 		                        }else{
 		                          $pimgScr = '';
 		                        }  
+		                        $term_obj_list = get_the_terms( get_the_ID(), 'product_cat' );
 		                        echo '<div class="dft-2grd-img-con-item-col">';
 		                        echo '<div class="dft-img-col-hover-scale">
 		                          <a class="overlay-link" href="'.get_the_permalink().'"></a>';
 		                        echo '<div class="dft-2grd-img-con-item-img" style="background-image: url('.$pimgScr.');"></div></div>';
 		                        echo '<div class="dft-2grd-img-con-item-des">';
-		                        printf('<strong>%s</strong>', 'Mounting Accessories');
+				                  if ( $term_obj_list && ! is_wp_error( $term_obj_list ) ) : 
+				                    printf('<strong>%s</strong>', join(', ', wp_list_pluck($term_obj_list, 'name')));
+				                  endif;
 		                        printf('<h4><a href="%s">%s</a></h4>', get_the_permalink(), get_the_title());
 		                        echo wpautop( get_the_excerpt(), true );;
 		                        echo '<a href="'.get_the_permalink().'">More Info <em><img src="'.THEME_URI.'/assets/images/list-icon.svg"></em></a>';

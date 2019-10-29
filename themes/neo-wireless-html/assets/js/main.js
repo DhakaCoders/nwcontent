@@ -29,8 +29,9 @@ if (windowWidth <= 767) {
   cookise-close-btn js
 =======================
 */
-if ($('.cookie-btn').length) {
-  $('.cookie-btn').on('click', function(){
+if ($('.cookie-btn a').length) {
+  $('.cookie-btn a').on('click', function(e){
+    e.preventDefault();
     $('.cookie-policy-wrp').hide('slow');
   });
 }

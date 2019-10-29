@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); 
 
-get_template_part( 'templates/shop', 'banner' );
+get_template_part( 'templates/page', 'banner' );
 ?>
 
 	<?php

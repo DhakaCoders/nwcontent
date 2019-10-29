@@ -130,9 +130,7 @@ $('.googleMapTringle').css('border-left', windowWidth);
 $('.top-skip').css('border-left', windowWidth);
 $('.bottom-skip').css('border-left', windowWidth);
 
-$('.nw-about-bg-solid-top').css('border-right', windowWidth);
-$('.bottom-skip').css('border-left', windowWidth);
-
+$('.top-skip-home').css('border-left', windowWidth);
 /**
 On Resize
 */
@@ -144,6 +142,7 @@ $(window).resize(function(){
   $('.googleMapTringle').css('border-left', windowWidth);
   $('.top-skip').css('border-left', windowWidth);
   $('.bottom-skip').css('border-left', windowWidth);
+  $('.top-skip-home').css('border-right', windowWidth);
 });
 
 

@@ -65,13 +65,9 @@ if($showhide_overneo){
 ?>
 
 <section class="nw-about-content-sec">
-  <div class="nw-about-con-sec-bg-skw">
-    <div class="nw-about-bg-sec-bg-skw-white"></div>
-    <div class="nw-about-bg-img" style="background: url(<?php echo $overposter; ?>);"></div>
-    <div class="nw-about-bg-solid">
-      <div class="nw-about-bg-solid-top"></div>
-      <div class="nw-about-bg-solid-btm"></div>
-    </div>
+  <div class="about-poligon-img" style="background: url(<?php echo $overposter; ?>);">
+    <div class="top-skip"></div>
+    <div class="bottom-skip"></div>
   </div>
   <div class="container">
     <div class="row">
@@ -122,6 +118,9 @@ if($showhide_overneo){
     </div>
   </div>
 </section><!-- end of nw-content-sec-wrp -->
+
+
+
 <?php } 
 
 $showhide_team = get_field('showhide_team', $thisID);
@@ -137,6 +136,7 @@ $teamQuery = new WP_Query(array(
 ?>
 
 <section class="nw-team-sec-wrp">
+  <div class="googleMapTringle"></div>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">

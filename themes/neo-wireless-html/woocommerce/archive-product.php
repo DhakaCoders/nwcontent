@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
-get_template_part( 'templates/shop', 'banner' );
+get_template_part( 'templates/page', 'banner' );
 /**
  * Hook: woocommerce_before_main_content.
  *

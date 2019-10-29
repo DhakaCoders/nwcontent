@@ -1,20 +1,13 @@
-
-
-
-
-.woocommerce-page div.product div.summary {
-    float: right;
-    width: 52%;
-    clear: none;
-}
-
- .woocommerce-page div.product div.images{
+.woocommerce-page div.product div.images{
     float: left;
     width: 48%;
     padding-right: 55px;
 }
-
-
+.woocommerce-page div.product div.summary {
+    float: left;
+    width: 52%;
+    clear: none;
+}
 .wccontent-wrapper.wcsingle{
 	padding-top: 112px;
 }

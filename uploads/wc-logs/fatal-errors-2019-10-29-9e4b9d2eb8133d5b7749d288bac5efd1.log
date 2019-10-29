@@ -169,5 +169,15 @@ Stack trace:
 >>>>>>> 257b8e9b58f3a97a04408a78e824b0c1196aa9ba
 >>>>>>> 8293954a9259d35c8acdcf7fe8e32775e40aa5f8
 
+<<<<<<< HEAD
 2019-10-29T17:22:21+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php on line 16
+=======
+2019-10-29T14:03:36+00:00 CRITICAL syntax error, unexpected ')' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\templates\page-banner.php on line 5
+
+2019-10-29T16:16:13+00:00 CRITICAL syntax error, unexpected '=' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 319
+
+2019-10-29T16:16:25+00:00 CRITICAL syntax error, unexpected '.' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 335
+
+2019-10-29T16:16:43+00:00 CRITICAL syntax error, unexpected '.' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 335
+>>>>>>> 23b248f801fd03165aa4b410e466475d379dd31a
 

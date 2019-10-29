@@ -131,10 +131,10 @@
                 <nav class="main-nav">
                   <?php 
                     $cmenuOptions = array( 
-                        'theme_location' => 'cbv_main_menu', 
+                        'theme_location' => 'cbv_top_menu', 
                         'menu_class' => 'clearfix ulc',
-                        'container' => 'cmnav',
-                        'container_class' => 'cmainnav'
+                        'container' => 'topnav',
+                        'container_class' => 'topnav'
                       );
                     wp_nav_menu( $cmenuOptions ); 
                   ?>
@@ -169,10 +169,15 @@
                   </div>
                 </div>
                 <div class="hdr-btm-nav">
-                  <ul class="clearfix ulc">
-                    <li><a href="#">products</a></li>
-                    <li><a href="#">Wi-Fi / LAN</a></li>
-                  </ul>
+                  <?php 
+                    $cmenuOptions = array( 
+                        'theme_location' => 'cbv_main_menu', 
+                        'menu_class' => 'clearfix ulc',
+                        'container' => 'cmnav',
+                        'container_class' => 'cmainnav'
+                      );
+                    wp_nav_menu( $cmenuOptions ); 
+                  ?>
                 </div>
                 
               </div>
