@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2019-10-29T08:39:28+00:00 CRITICAL syntax error, unexpected '$query' (T_VARIABLE), expecting '(' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php on line 121
 
 2019-10-29T08:39:39+00:00 CRITICAL syntax error, unexpected '$query' (T_VARIABLE), expecting '(' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php on line 121
@@ -14,4 +15,29 @@ Stack trace:
 2019-10-29T08:41:25+00:00 CRITICAL syntax error, unexpected '{' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php on line 121
 
 2019-10-29T08:41:33+00:00 CRITICAL syntax error, unexpected '{' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php on line 121
+=======
+2019-10-29T06:37:20+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in D:\xampp\htdocs\projects\2019\neowireless\nwcontent\themes\neo-wireless-html\header.php:104
+Stack trace:
+#0 D:\xampp\htdocs\projects\2019\neowireless\wp-includes\template.php(722): require_once()
+#1 D:\xampp\htdocs\projects\2019\neowireless\wp-includes\template.php(671): load_template('D:\\xampp\\htdocs...', true)
+#2 D:\xampp\htdocs\projects\2019\neowireless\wp-includes\general-template.php(41): locate_template(Array, true)
+#3 D:\xampp\htdocs\projects\2019\neowireless\nwcontent\themes\neo-wireless-html\page.php(2): get_header()
+#4 D:\xampp\htdocs\projects\2019\neowireless\wp-includes\template-loader.php(78): include('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\projects\2019\neowireless\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\projects\2019\neowireless\index.php(17): require('D:\\xampp\\htdocs...')
+#7 {main}
+  thrown in D:\xampp\htdocs\projects\2019\neowireless\nwcontent\themes\neo-wireless-html\header.php on line 104
+
+2019-10-29T06:37:23+00:00 CRITICAL Uncaught Error: Call to undefined function get_field() in D:\xampp\htdocs\projects\2019\neowireless\nwcontent\themes\neo-wireless-html\header.php:104
+Stack trace:
+#0 D:\xampp\htdocs\projects\2019\neowireless\wp-includes\template.php(722): require_once()
+#1 D:\xampp\htdocs\projects\2019\neowireless\wp-includes\template.php(671): load_template('D:\\xampp\\htdocs...', true)
+#2 D:\xampp\htdocs\projects\2019\neowireless\wp-includes\general-template.php(41): locate_template(Array, true)
+#3 D:\xampp\htdocs\projects\2019\neowireless\nwcontent\themes\neo-wireless-html\page.php(2): get_header()
+#4 D:\xampp\htdocs\projects\2019\neowireless\wp-includes\template-loader.php(78): include('D:\\xampp\\htdocs...')
+#5 D:\xampp\htdocs\projects\2019\neowireless\wp-blog-header.php(19): require_once('D:\\xampp\\htdocs...')
+#6 D:\xampp\htdocs\projects\2019\neowireless\index.php(17): require('D:\\xampp\\htdocs...')
+#7 {main}
+  thrown in D:\xampp\htdocs\projects\2019\neowireless\nwcontent\themes\neo-wireless-html\header.php on line 104
+>>>>>>> 257b8e9b58f3a97a04408a78e824b0c1196aa9ba
 
