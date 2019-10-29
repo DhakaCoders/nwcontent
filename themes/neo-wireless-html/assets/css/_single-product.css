@@ -652,6 +652,9 @@
 	    -webkit-transform: translateY(-50%);
 	    transform: translateY(-50%);
 	}
+	.woocommerce-variation-add-to-cart input[type="radio"]:checked + span {
+		color:#fff;
+	}
 	.wccontent-wrapper.wcsingle .woocommerce-input-wrapper {
 	    width: 100%;
 	    float: none;
@@ -753,7 +756,8 @@
 	.wccontent-wrapper.wcsingle .wcdetails .wcdetailsbtn {
 	    height: 75px;
 	    padding: 20px 0 10px;
-	}	
+	}
+
 }
  
 
