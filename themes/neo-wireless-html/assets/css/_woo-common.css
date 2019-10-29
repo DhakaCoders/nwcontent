@@ -1,8 +1,8 @@
-.woocommerce #respond input#submit.alt, 
-.woocommerce a.button.alt, 
-.woocommerce button.button.alt, 
-.woocommerce input.button.alt,
-.coupon .button{
+#wccart-wrapper #respond input#submit.alt, 
+#wccart-wrapper a.button.alt, 
+#wccart-wrapper button.button.alt, 
+#wccart-wrapper input.button.alt,
+#wccart-wrapper .coupon .button{
 	background: #FF5C26!important;
 	color: #fff!important;
 	text-align: center;
@@ -11,11 +11,13 @@
 	text-align: center;
 	text-transform: uppercase;
 }
-.coupon button.button{
+#wccart-wrapper .coupon button.button{
 	font-size: 14px;
 	line-height: 16px;
 	text-align: center;
-	text-transform: uppercase;	
+	text-transform: uppercase;
+	min-height: 52px;
+	min-width: 180px;
 }
 #shipping_method li:after,
 .woo-variation-swatches-stylesheet-enabled .variable-items-wrapper li:after{
@@ -24,7 +26,7 @@
 .xoo-cp-btns a.xoo-cp-btn-ch{
 	display: none!important;
 }
-#coupon_code{
+#wccart-wrapper #coupon_code{
 	min-height: 52px;
 	width: 180px;
 	margin-right: 20px;
