@@ -63,14 +63,16 @@ if ($('.wcdetailsbtn').length) {
   });
 }
 
+
+
 //accordion
 
 if (windowWidth <= 767) {
   if ($('.wpf_item').length){
     $('.wpf_item .wpf_item_name').on('click', function(){
       $(this).parent().siblings().removeClass('active');
-      $(this).next('.wpf_links').slideToggle();
-      $(this).parent().siblings().find('.wpf_links').slideUp();
+      $(this).next('.wpf_item > ul').slideToggle();
+      $(this).parent().siblings().find('.wpf_item > ul').slideUp();
       $(this).parent().toggleClass('active');
     });
   }
@@ -822,9 +824,6 @@ if( $('.quantity-wrapper').length ){
 
 
 })(jQuery);
-
-
-
 
 
 
