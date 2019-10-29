@@ -6,7 +6,8 @@ a,input,img,textarea,button,
 .main-bnr-img-bx a em,
 .blog-post-grd-des a em,
 .dftPromoModuleSlider ul.slick-dots li,em,
-.dft-2grd-img-con-item-img,.blog-post-date-bdr,.hdr-cart-btn,svg{
+.dft-2grd-img-con-item-img,.blog-post-date-bdr,.hdr-cart-btn,svg,
+a.xcp-btn.xoo-cp-close{
 	transition: all 0.5s ease;
 	-ms-transition: all 0.5s ease;
 	-webkit-transition: all 0.5s ease;

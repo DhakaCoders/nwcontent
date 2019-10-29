@@ -261,7 +261,7 @@ profile-info-sec-wrp
     margin-top: 0;
     margin-bottom: -30px;
     position: relative;
-    z-index: 1;
+    z-index: 10;
     padding-left: 55px;
     padding-right: 55px;
     max-width: 480px;
@@ -280,21 +280,12 @@ nw-content-sec-wrp
 	overflow: hidden;
 	background-color: #f4f7f9;
 }
-.nw-content-tp-white-bg{
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	height: 400px;
-	background-color: #fff;
-	-webkit-transform: skew(-22deg) rotate(6deg);
-    -moz-transform: skew(-22deg) rotate(6deg);
-    transform: skew(-22deg) rotate(6deg);
-}
+
 .nw-content-wrp{
 	padding-top: 130px;
 	border-top: 2px solid #F4F7F9;
+	position: relative;
+	z-index: 5;
 }
 .nw-content-lft{
 	background: #FFFFFF;
