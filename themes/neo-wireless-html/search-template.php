@@ -53,23 +53,24 @@ if($searchResult == 'products'){
       'paged' => $paged
     ));
 }
-
-$standaardbanner = get_field('standaardbanner', 'options');
+$thisID = get_option('page_for_posts');
+$standaardbanner = get_field('bannerafbeelding', $thisID);
 ?>
 <section class="page-banner">
   <div class="page-banner-con">
+    <?php if(!empty($standaardbanner)): ?>
     <div class="page-banner-bg" style="background-image: url(<?php echo $standaardbanner; ?>);"></div>
+    <?php else: ?>
+    <div class="main-bnr-bg" id="particles-js"></div>
+    <?php endif; ?>
     <div class="page-banner-des">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <div class="page-banner-des-innr">
-              <strong class="banner-page-title">Search Result</strong>
+              <strong class="banner-page-title"><?php _e( 'Search Result', 'neowireless' ); ?></strong>
               <div class="breadcrumbs">
-                <ul>           
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Search Results for "<?php echo get_search_query(); ?>"</a></li>
-                </ul>
+                <?php cbv_breadcrumbs(); ?>
               </div>
             </div>
           </div>

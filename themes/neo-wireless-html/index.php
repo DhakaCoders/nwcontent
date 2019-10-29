@@ -2,17 +2,15 @@
 get_header();
 $thisID = get_option('page_for_posts');
 $pageTitle = get_the_title($thisID);
-$bannerafbeelding = wp_get_attachment_image_src( get_post_thumbnail_id( $thisID ), 'full' );
-$standaardbanner = get_field('standaardbanner', 'options');
-if( !empty( $bannerafbeelding[0] ) )
-  $pageBanner = $bannerafbeelding[0];
-else
-  $pageBanner = $standaardbanner;
-
+$standaardbanner = get_field('bannerafbeelding', $thisID);
 ?>
 <section class="page-banner">
   <div class="page-banner-con">
-    <div class="page-banner-bg" style="background-image: url(<?php echo $pageBanner; ?>);"></div>
+    <?php if(!empty($standaardbanner)): ?>
+    <div class="page-banner-bg" style="background-image: url(<?php echo $standaardbanner; ?>);"></div>
+    <?php else: ?>
+    <div class="main-bnr-bg" id="particles-js"></div>
+    <?php endif; ?>
     <div class="page-banner-des">
       <div class="container">
         <div class="row">
@@ -20,11 +18,7 @@ else
             <div class="page-banner-des-innr">
               <strong class="banner-page-title"><?php echo $pageTitle; ?></strong>
               <div class="breadcrumbs">
-                <ul>           
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Binnenpagina</a></li>
-                  <li><a href="#">Binnenpagina</a></li>
-                </ul>
+                <?php cbv_breadcrumbs(); ?>
               </div>
             </div>
           </div>

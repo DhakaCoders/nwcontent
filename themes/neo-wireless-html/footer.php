@@ -224,7 +224,7 @@
 <div class="home-bnr-xs-nav-bar-controller show-xs">
   <div class="xs-menu-btn-bar clearfix">
       <div class="xs-menu-btn-contact">
-        <a href="#">
+        <a href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'cart' ); ?>">
           <i><img src="<?php echo THEME_URI; ?>/assets/images/cart-xs-icon.svg"></i>
         </a>
       </div>
@@ -253,32 +253,39 @@
       </a>
     </div>
     <div class="hdr-btm-nav">
-      <ul class="clearfix ulc">
-        <li><a href="#">products</a></li>
-        <li><a href="#">Wi-Fi / LAN</a></li>
-      </ul>
+      <?php 
+        $cmenuOptions = array( 
+            'theme_location' => 'cbv_main_menu', 
+            'menu_class' => 'clearfix ulc',
+            'container' => 'cmnav',
+            'container_class' => 'cmainnav'
+          );
+        wp_nav_menu( $cmenuOptions ); 
+      ?>
     </div>
     <nav class="xs-popup-main-nav clearfix">
     <?php 
-      $cmenuOptions = array( 
-          'theme_location' => 'cbv_main_menu', 
+      $tcmenuOptions = array( 
+          'theme_location' => 'cbv_top_menu', 
           'menu_class' => 'clearfix ulc',
-          'container' => 'cmnav',
-          'container_class' => 'cmainnav'
+          'container' => 'topnav',
+          'container_class' => 'topnav'
         );
-      wp_nav_menu( $cmenuOptions ); 
+      wp_nav_menu( $tcmenuOptions ); 
     ?>
     </nav>
     <div class="hdr-search">
-      <form>
-        <input type="search" name="" placeholder="Search">
+      <form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+        <input type="search" placeholder="<?php echo esc_attr__( 'Search', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
         <button>
           <em><img src="<?php echo THEME_URI; ?>/assets/images/search-icon.svg"></em>
         </button>
       </form>
     </div>
     <div class="hdr-cart-btn">
+      <a href="<?php echo wc_get_cart_url(); ?>"title="<?php _e( 'cart' ); ?>">
       <em><img src="<?php echo THEME_URI; ?>/assets/images/cart-icon-white.svg">Shopping Cart</em>
+    </a>
     </div>
     <div class="nw-lang">
       <ul class="ulc">
@@ -289,7 +296,7 @@
     <div class="xs-menu-btn-bar-popup">
       <div class="xs-menu-btn-bar clearfix">
         <div class="xs-menu-btn-contact">
-          <a href="#">
+          <a href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'cart' ); ?>">
             <i><img src="<?php echo THEME_URI; ?>/assets/images/cart-xs-icon.svg"></i>
           </a>
         </div>

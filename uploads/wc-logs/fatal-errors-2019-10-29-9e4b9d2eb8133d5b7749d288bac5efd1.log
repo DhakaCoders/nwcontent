@@ -41,3 +41,5 @@ Stack trace:
   thrown in D:\xampp\htdocs\projects\2019\neowireless\nwcontent\themes\neo-wireless-html\header.php on line 104
 >>>>>>> 257b8e9b58f3a97a04408a78e824b0c1196aa9ba
 
+2019-10-29T14:03:36+00:00 CRITICAL syntax error, unexpected ')' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\templates\page-banner.php on line 5
+

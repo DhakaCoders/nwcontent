@@ -17,7 +17,7 @@ else
         <div class="row">
           <div class="col-sm-12">
             <div class="page-banner-des-innr">
-              <strong class="banner-page-title"><?php _e( 'Products', 'woocommerce' );; ?></strong>
+              <strong class="banner-page-title"><?php _e( 'Products', 'woocommerce' ); ?></strong>
               <div class="breadcrumbs">
                <?php cbv_breadcrumbs(); ?>
               </div>

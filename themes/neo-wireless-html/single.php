@@ -1,21 +1,24 @@
 <?php 
 get_header(); 
+$thisID = get_option('page_for_posts');
+$pageTitle = get_the_title($thisID);
+$standaardbanner = get_field('bannerafbeelding', $thisID);
 ?>
 <section class="page-banner">
   <div class="page-banner-con">
-    <div class="page-banner-bg" style="background-image: url(<?php echo THEME_URI; ?>/assets/images/page-banner-bg.jpg);"></div>
+    <?php if(!empty($standaardbanner)): ?>
+    <div class="page-banner-bg" style="background-image: url(<?php echo $standaardbanner; ?>);"></div>
+    <?php else: ?>
+    <div class="main-bnr-bg" id="particles-js"></div>
+    <?php endif; ?>
     <div class="page-banner-des">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
             <div class="page-banner-des-innr">
-              <strong class="banner-page-title">BLOG</strong>
+              <strong class="banner-page-title"><?php echo $pageTitle; ?></strong>
               <div class="breadcrumbs">
-                <ul>           
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Binnenpagina</a></li>
-                  <li><a href="#">Binnenpagina</a></li>
-                </ul>
+                <?php cbv_breadcrumbs(); ?>
               </div>
             </div>
           </div>

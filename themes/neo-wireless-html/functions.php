@@ -39,11 +39,12 @@ if( !function_exists('cbv_theme_setup') ){
 		) );
 
 		register_nav_menus( array(
-			'cbv_main_menu' => __( 'Header Menu', THEME_NAME ),
+			'cbv_top_menu' => __( 'Top Menu', THEME_NAME ),
+			'cbv_main_menu' => __( 'Hoofdmenu', THEME_NAME ),
 			'cbv_ftr_menu' => __( 'Footer Menu', THEME_NAME ),
 			'cbv_sp_menu' => __( 'Services & Products Menu', THEME_NAME ),
 			'cbv_pc_menu' => __( 'Product Categories Menu', THEME_NAME ),
-			'cbv_ftb_menu' => __( 'Footer Bottom Menu', THEME_NAME ),
+			'cbv_ftb_menu' => __( 'Copyright Menu', THEME_NAME ),
 		) );
 
 	}
@@ -108,7 +109,7 @@ add_filter('use_block_editor_for_post', '__return_false');
 
 
 function searchfilter($query) {
-    if ($query->is_search && is_admin() ) {
+    if (is_search() && is_admin() && $query->is_main_query() ) {
         $query->set('post_type',array('post, product'));
         $query->set( 'posts_per_page', '4' );
     }
