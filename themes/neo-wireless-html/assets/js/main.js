@@ -775,6 +775,9 @@ $filterCheckboxes.change(
   }
 );
 $(window).load(function(){
+  if($('figure div.woocommerce-product-gallery__image a').length){
+    $('figure div.woocommerce-product-gallery__image a').attr("data-fancybox", "gallery");
+  }
   if( $('#filterSearch').length ){
       $('html, body').animate({
           scrollTop: $("#filterSearch").offset().top
@@ -782,7 +785,11 @@ $(window).load(function(){
   }
 });
 
-new WOW().init();
+if($('[data-fancybox="gallery"]').length){
+  $('[data-fancybox="gallery"]').fancybox({
+    // Options will go here
+  });
+}
 
 // product counter
 
@@ -821,6 +828,7 @@ if( $('.quantity-wrapper').length ){
 
 }
 
+new WOW().init();
 
 
 })(jQuery);
