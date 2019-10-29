@@ -606,9 +606,18 @@
 	-webkit-transform: scale(1.03);
 	transform: scale(1.1);
 }
+<<<<<<< HEAD
 .singlePage-vdo-wrp a.img-zoom > i > img{
 	max-width: 74px;
 	width:100%;
+=======
+
+
+.woocommerce div.product .out-of-stock {
+    color: #ff5c26 !important;
+    font-size: 24px !important;
+    padding-bottom: 30px;
+>>>>>>> 9f65dc66564ca56b7fbcaeb9e33d54b717435a3e
 }
 
 
@@ -756,6 +765,10 @@
 	.singlePage-vdo-wrp a.img-zoom > i > img{
 		max-width: 75px;
 	}
+	.wccontent-wrapper.wcsingle .wcdetails .wcdetailsbtn {
+	    height: 75px;
+	    padding: 20px 0 10px;
+	}	
 }
  
 

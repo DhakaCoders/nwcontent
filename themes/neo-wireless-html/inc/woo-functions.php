@@ -90,6 +90,36 @@ if (!function_exists('add_shorttext_below_title_loop')) {
 }
 
 
+function envy_stock_catalog() {
+    global $product;
+    if ( $product->is_in_stock() ) {
+        echo '<div class="stock" >' . $product->get_stock_quantity() . __( ' in stock', 'woocommerce' ) . '</div>';
+    } else {
+        echo '<div class="out-of-stock" >' . __( 'out of stock', 'woocommerce' ) . '</div>';
+    }
+}
+add_action( 'woocommerce_after_shop_loop_item_title', 'show_stock_single' );
+
+
+//add_action('woocommerce_single_product_summary','show_stock_single',5);
+function show_stock_single() {
+  global $product;
+  $StockQ = $product->get_stock_quantity();
+
+  if ($StockQ >= 1)//Stock is Available
+  {
+
+  }elseif($StockQ < 1){ //Product is Out of Stock
+    if ($product->backorders_allowed())//Product is out of stock AND allow backorders
+    {
+         echo '<div class="out-of-stock" >' . __( 'Available on backorder', 'woocommerce' ) . '</div>';
+    }else{ //Product is out of stock AND DO NOT allow backorders
+        echo '<div class="out-of-stock" >' . __( 'out of stock', 'woocommerce' ) . '</div>';
+    }
+  }
+}
+
+
 
 /**
  * Archive sidebar tag start
