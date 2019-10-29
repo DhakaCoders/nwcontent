@@ -775,6 +775,9 @@ $filterCheckboxes.change(
   }
 );
 $(window).load(function(){
+  if($('figure div.woocommerce-product-gallery__image a').length){
+    $('figure div.woocommerce-product-gallery__image a').attr("data-fancybox", "gallery");
+  }
   if( $('#filterSearch').length ){
       $('html, body').animate({
           scrollTop: $("#filterSearch").offset().top
