@@ -51,9 +51,8 @@ checkout-info-sec-wrp
 	line-height: 18px;
 	color: #7B8CA8;
 	margin-bottom: 15px;
-}
-.checkout-cart .variation dd{
-	display: none;
+	float: left;
+    margin-right: 10px;
 }
 .checkout-cart .product-subtotal{
 	float: left;
@@ -81,35 +80,36 @@ checkout-info-sec-wrp
 .checkout-cart .cart_totals{
 	border-top: 4px solid #FFFFFF;
 }
-.woocommerce table.shop_table {
+.wcpage-default-con .woocommerce table.shop_table {
     border: none;
-    margin:0 !important;
+    margin: 0 !important;
     text-align: right;
     width: 100%;
     border-collapse: separate;
     border-radius: 0;
+    padding-left: 170px;
 }
-.woocommerce table.shop_table td{
+.wcpage-default-con .woocommerce table.shop_table td{
 	border: none;
 	font-size: 18px;
 	line-height: 20px;
 	font-weight: 500;
 	color: #43587B;
 }
-.woocommerce table.shop_table tbody th,
-.woocommerce table.shop_table tfoot td,
-.woocommerce table.shop_table tfoot th {
+.wcpage-default-con .woocommerce table.shop_table tbody th,
+.wcpage-default-con .woocommerce table.shop_table tfoot td,
+.wcpage-default-con .woocommerce table.shop_table tfoot th {
     border: none;
     font-size: 18px;
     line-height: 20px;
     color: #43587B;
     font-weight: 300;
 }
-.woocommerce table.shop_table td strong span{
+.wcpage-default-con .woocommerce table.shop_table td strong span{
 	color:#FF5C26;
 }
-#add_payment_method .wc-proceed-to-checkout,
-.woocommerce-checkout .wc-proceed-to-checkout{
+.wcpage-default-con #add_payment_method .wc-proceed-to-checkout,
+.wcpage-default-con .woocommerce-checkout .wc-proceed-to-checkout{
 	display: none;
 }
 .innerpage-con-wrap .woocommerce-shipping-fields,
@@ -220,10 +220,10 @@ checkout-info-sec-wrp
     line-height: 28px;
     text-align: left;
 }
-.select2-container--default .select2-selection--single .select2-selection__arrow{
+.wcpage-default-con .select2-container--default .select2-selection--single .select2-selection__arrow{
 	display: none;
 }
-.select2-results ul li:after{
+.wcpage-default-con .select2-results ul li:after{
 	content: none;
 }
 
@@ -272,17 +272,17 @@ checkout-info-sec-wrp
     padding: 0 35px;
 }
 
-.woocommerce #respond input#submit.alt,
-.woocommerce a.button.alt, .woocommerce button.button.alt,
-.woocommerce input.button.alt {
+.wcpage-default-con .woocommerce #respond input#submit.alt,
+.wcpage-default-con .woocommerce a.button.alt, .woocommerce button.button.alt,
+.wcpage-default-con .woocommerce input.button.alt {
     background-color: #7B8CA8;
     color: #fff;
     -webkit-font-smoothing: antialiased;
 }
-.woocommerce #respond input#submit,
-.woocommerce a.button,
-.woocommerce button.button,
-.woocommerce input.button {
+.wcpage-default-con .woocommerce #respond input#submit,
+.wcpage-default-con .woocommerce a.button,
+.wcpage-default-con .woocommerce button.button,
+.wcpage-default-con .woocommerce input.button {
     font-size: 14px;
     margin: 0;
     line-height: 16px;
@@ -295,21 +295,21 @@ checkout-info-sec-wrp
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
-.woocommerce #respond input#submit.alt:hover,
-.woocommerce a.button.alt:hover,
-.woocommerce button.button.alt:hover,
-.woocommerce input.button.alt:hover{
-	background-color: #364c70;
+.wcpage-default-con .woocommerce #respond input#submit.alt:hover,
+.wcpage-default-con .woocommerce a.button.alt:hover,
+.wcpage-default-con .woocommerce button.button.alt:hover,
+.wcpage-default-con .woocommerce input.button.alt:hover{
+	background-color: #fb4002 !important;
 }
 
-#add_payment_method #payment ul.payment_methods li:after,
-.woocommerce-cart #payment ul.payment_methods li:after,
-.woocommerce-checkout #payment ul.payment_methods li:after{
+.wcpage-default-con #add_payment_method #payment ul.payment_methods li:after,
+.wcpage-default-con .woocommerce-cart #payment ul.payment_methods li:after,
+.wcpage-default-con .woocommerce-checkout #payment ul.payment_methods li:after{
 	content: none;
 }
-.woocommerce-error::before,
-.woocommerce-info::before,
-.woocommerce-message::before{
+.wcpage-default-con .woocommerce-error::before,
+.wcpage-default-con .woocommerce-info::before,
+.wcpage-default-con .woocommerce-message::before{
 	content: none;
 }
 .innerpage-con-wrap .default-page-con ul li,
@@ -318,7 +318,15 @@ ul li {
     position: relative;
     line-height: 24px !important;
 }
-
+.xoo-cp-variations .variation {
+    display: block !important;
+}
+.xoo-cp-variations .variation dd {
+    display: block !important;
+}
+.xoo-cp-variations .variation:last-of-type {
+    display: block !important;
+}
 /*
 ---------------------
  Responsive css

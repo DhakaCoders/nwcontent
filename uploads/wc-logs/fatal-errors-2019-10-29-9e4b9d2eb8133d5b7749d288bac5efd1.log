@@ -181,3 +181,111 @@ Stack trace:
 2019-10-29T16:16:43+00:00 CRITICAL syntax error, unexpected '.' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 335
 >>>>>>> 23b248f801fd03165aa4b410e466475d379dd31a
 
+2019-10-29T18:11:25+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on float in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php:1050
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php(419): wc_get_price_to_display(90)
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): display_custom_item_data(Array, Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(208): WP_Hook->apply_filters(Array, Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(3566): apply_filters('woocommerce_get...', Array, Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\cart\mini-cart.php(62): wc_get_formatted_cart_item_data(Array)
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+# in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php on line 1050
+
+2019-10-29T18:11:43+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on float in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php:1050
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php(419): wc_get_price_to_display(90)
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): display_custom_item_data(Array, Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(208): WP_Hook->apply_filters(Array, Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(3566): apply_filters('woocommerce_get...', Array, Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\cart\mini-cart.php(62): wc_get_formatted_cart_item_data(Array)
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+# in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php on line 1050
+
+2019-10-29T18:11:47+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on float in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php:1050
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php(419): wc_get_price_to_display(90)
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): display_custom_item_data(Array, Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(208): WP_Hook->apply_filters(Array, Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(3566): apply_filters('woocommerce_get...', Array, Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\cart\mini-cart.php(62): wc_get_formatted_cart_item_data(Array)
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+# in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php on line 1050
+
+2019-10-29T18:12:12+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on float in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php:1050
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php(419): wc_get_price_to_display(90)
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): display_custom_item_data(Array, Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(208): WP_Hook->apply_filters(Array, Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(3566): apply_filters('woocommerce_get...', Array, Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\cart\mini-cart.php(62): wc_get_formatted_cart_item_data(Array)
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+# in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php on line 1050
+
+2019-10-29T18:12:16+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on float in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php:1050
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php(419): wc_get_price_to_display(90)
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): display_custom_item_data(Array, Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(208): WP_Hook->apply_filters(Array, Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(3566): apply_filters('woocommerce_get...', Array, Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\cart\mini-cart.php(62): wc_get_formatted_cart_item_data(Array)
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+# in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php on line 1050
+
+2019-10-29T18:12:43+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on float in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php:1050
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php(419): wc_get_price_to_display(90)
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): display_custom_item_data(Array, Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(208): WP_Hook->apply_filters(Array, Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(3566): apply_filters('woocommerce_get...', Array, Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\cart\mini-cart.php(62): wc_get_formatted_cart_item_data(Array)
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+# in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php on line 1050
+
+2019-10-29T18:12:46+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on float in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php:1050
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php(419): wc_get_price_to_display(90)
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): display_custom_item_data(Array, Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(208): WP_Hook->apply_filters(Array, Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(3566): apply_filters('woocommerce_get...', Array, Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\cart\mini-cart.php(62): wc_get_formatted_cart_item_data(Array)
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+# in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php on line 1050
+
+2019-10-29T18:13:12+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on float in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php:1050
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php(419): wc_get_price_to_display(90)
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): display_custom_item_data(Array, Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(208): WP_Hook->apply_filters(Array, Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(3566): apply_filters('woocommerce_get...', Array, Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\cart\mini-cart.php(62): wc_get_formatted_cart_item_data(Array)
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+# in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php on line 1050
+
+2019-10-29T18:13:17+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on float in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php:1050
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php(419): wc_get_price_to_display(90)
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): display_custom_item_data(Array, Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(208): WP_Hook->apply_filters(Array, Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(3566): apply_filters('woocommerce_get...', Array, Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\cart\mini-cart.php(62): wc_get_formatted_cart_item_data(Array)
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+# in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php on line 1050
+
+2019-10-29T18:13:45+00:00 CRITICAL Uncaught Error: Call to a member function get_price() on float in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php:1050
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php(419): wc_get_price_to_display(90)
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): display_custom_item_data(Array, Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(208): WP_Hook->apply_filters(Array, Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(3566): apply_filters('woocommerce_get...', Array, Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\woocommerce\cart\mini-cart.php(62): wc_get_formatted_cart_item_data(Array)
+#5 E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('E:\\XamppServer\\...')
+# in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\woocommerce\includes\wc-product-functions.php on line 1050
+
+2019-10-29T18:15:36+00:00 CRITICAL syntax error, unexpected ')' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 420
+
+2019-10-29T18:15:40+00:00 CRITICAL syntax error, unexpected ')' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 420
+
+2019-10-29T18:15:52+00:00 CRITICAL syntax error, unexpected ')' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 420
+
+2019-10-29T19:25:05+00:00 CRITICAL syntax error, unexpected ''">'' (T_CONSTANT_ENCAPSED_STRING), expecting ',' or ';' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 318
+

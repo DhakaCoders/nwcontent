@@ -74,7 +74,7 @@
     font-size: 16px;
     line-height: 18px;
     color: #43587B;
-    padding: 15px 20px 18px;
+    padding: 18px 20px 20px;
     position: relative;
     background: url(../images/product-angle-icon.png);
     background-repeat: no-repeat;
@@ -103,13 +103,16 @@ ul.products{
 	content: none;
 	
 }
+.catalogue-image a{
+	display:block;
+}
 .products h5{
 	margin: 0;
 	font-size: 13px;
 	line-height: 15px;
 	font-weight: 600;
 	color: #02BEE8;
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-bottom: 12px;
 	text-transform: uppercase;
 }
@@ -119,8 +122,9 @@ ul.products{
 	font-weight: 600;
 	margin-bottom: 5px; 
 }
-.products .shorttext-loop p{
-	color: #7B8CA8;
+.products .shorttext-loop p {
+    color: #7B8CA8;
+    margin-bottom: 14px;
 }
 .products .moreproduct a{
 	display: inline-block;
@@ -207,17 +211,22 @@ ul.products{
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
-.woocommerce ul.products li.product .onsale{
-	width: 50px !important;
-	height: 50px !important;
-	background-color: #ff5c26 !important;
-	margin:0 !important;
-	right:12px !important;
-	top: 1px !important;
-	font-size: 14px;
-	line-height: 40px;
+.woocommerce ul.products li.product .onsale {
+    width: 50px !important;
+    height: 50px !important;
+    background-color: #ff5c26 !important;
+    margin: 0 !important;
+    right: 22px !important;
+    top: 11px !important;
+    font-size: 14px;
+    line-height: 40px;
 }
-
+.catalogue-image{
+	overflow: hidden;
+}
+.woocommerce ul.products li.product a img{
+	margin: 0;
+}
 .xoo-cp-container {
     padding: 0 !important;
     border-radius: 0;
@@ -437,6 +446,14 @@ span.xcp-plus{
 	color: #7B8CA8;
 }
 
+.wcpage-default-con #payment{
+	background: #F4F7F9;
+	margin-top: 30px;
+}
+.wcpage-default-con .woocommerce-info{
+	background: #F4F7F9;
+}
+
 
 /*
 ---------------------
@@ -538,6 +555,14 @@ span.xcp-plus{
 	.wccatalog span{
 		padding-top: 0;
 		padding-right: 0;
+	}
+	.wcpage-default-con .woocommerce-info {
+	    background: #F4F7F9;
+	    padding: 10px 0;
+	    text-align: center !important;
+	}
+	.wcpage-default-con .woocommerce-privacy-policy-text p{
+		text-align: center;
 	}
 	
 

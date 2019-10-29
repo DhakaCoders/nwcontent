@@ -137,9 +137,9 @@ if (!function_exists('put_woocommerce_search_sidebar_tag_end')) {
  */
 if (!function_exists('get_woocommerce_custom_sideber')) {
 	function get_woocommerce_custom_sideber(){
-		//dynamic_sidebar('sidebar-widget-one');
-		echo do_shortcode( '[searchandfilter id="wpf_5db43e8874bec"]');
-
+        if ( is_active_sidebar( 'shop-widget' ) ) :
+    		dynamic_sidebar('shop-widget');
+        endif;
         echo '<div class="wccatalog sidebarcatalog show-xs">';
         _e( '<span>Sort By: </span>', 'woocommerce' ).
         woocommerce_catalog_ordering();
@@ -304,8 +304,8 @@ function add_repair_price_option_to_single_product(){
 }
 
 function product_option_custom_field(){
-    global $product;
-
+    global $product, $woocommerce;
+$wo_currency = get_woocommerce_currency_symbol();
 $active_price = (float) $product->get_price();
 
 $attributes = $product->get_attributes(); //get all attributes
@@ -315,7 +315,7 @@ $onlyAttr = array_diff_key($attributes, $attrVariation); //get attribues that ar
 $onlyAttrK = array_keys($onlyAttr); //keys -> pa_capacity, pa_color
 
 
-echo '<div class="custom_attribues_wrapper clearfix">';
+echo '<div class="custom_attribues_wrapper clearfix" data-currency="'.$wo_currency.'">';
 $j = 1;
 foreach ( $onlyAttrK as $onlyAttrKS ) {
     echo '<div class="hidden-field additionalPriceWrap">';
@@ -331,9 +331,9 @@ foreach ( $onlyAttrK as $onlyAttrKS ) {
       $acf = 'term_' . $term_id;
       $markup = get_field('price', $acf);
         echo '<div class="woocommerce-input-wrapper">';
-        echo '<input type="radio" id="optional-'.$i.$j.'" class="input-checkbox" data-label="'.$name.': +'.$markup.'" name="'.$onlyAttrKS.'" value="'.$markup.'">';
+        echo '<input type="radio" id="optional-'.$i.$j.'" class="input-checkbox" data-label="'.$name.': + '.$wo_currency.$markup.'" name="'.$onlyAttrKS.'" value="'.$markup.'">';
         echo '<label for="optional-'.$i.$j.'" class="checkbox customCheckbox">'.$name.'</label>';
-        echo '<span>+<span class="woocommerce-Price-currencySymbol"> €</span>'.$markup.'</span>';
+        echo '<span>+ <span class="woocommerce-Price-currencySymbol">'.$wo_currency.'</span>'.$markup.'</span>';
         echo '</div>';
     $i ++; 
     }
@@ -350,6 +350,7 @@ echo '</div>';
     ?>
     <script type="text/javascript">
     jQuery(function($) {
+        var currency = $('.custom_attribues_wrapper').data('currency');
         $('.additionalPriceWrap input').on('change', function(){
             var pp = 'span.price';
             var addTotal = 0;
@@ -357,7 +358,7 @@ echo '</div>';
             $('.additionalPriceWrap input').each(function(){
                 if( $(this).prop('checked') === true ){
                     addTotal += parseInt($(this).val());
-                    Labeltext += $(this).data('label');
+                    Labeltext += $(this).data('label')+', ';
                 }
             });
             console.log(Labeltext);
@@ -366,7 +367,7 @@ echo '</div>';
 
             $('#additionalPrice').val(addTotal);
             $('#additionalLabel').val(Labeltext);
-            $(pp).html('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>'+prTotal+'</span>');
+            $(pp).html('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">'+currency+'</span>'+prTotal+'</span>');
         });
 
     });
@@ -377,20 +378,12 @@ echo '</div>';
 // Front: Calculate new item price and add it as custom cart item data
 add_filter('woocommerce_add_cart_item_data', 'add_custom_product_data', 10, 3);
 function add_custom_product_data( $cart_item_data, $product_id, $variation_id ) {
-    if (isset($_POST['additionalPrice']) && !empty($_POST['additionalPrice'])) {
-    	$repaireOption = $_POST['additionalPrice'];
-
+    if (isset($_POST['additionalPrice']) && !empty($_POST['additionalPrice']) ) {
         $cart_item_data['new_price'] = (float) ($_POST['active_price'] + $_POST['additionalPrice']);
         $cart_item_data['additionalPrice'] = (float) $_POST['additionalPrice'];
         $cart_item_data['active_price'] = (float) $_POST['active_price'];
 
-        if($repaireOption == 1){
-        	$cart_item_data['repair_lebel'] = 'Skymount-air-Uplate-C-2566D';
-        }elseif($repaireOption == 2){
-			$cart_item_data['repair_lebel'] = 'Airborne Mounting Kit';
-        }elseif($repaireOption == 3){
-			$cart_item_data['repair_lebel'] = 'Skymount-art-arm-C-2566D';
-        }
+        $cart_item_data['repair_lebel'] = $_POST['additionalLabel'];
 
         $cart_item_data['unique_key'] = md5(microtime().rand());
     }
@@ -418,11 +411,24 @@ function extra_price_add_custom_price($cart) {
 add_filter('woocommerce_get_item_data', 'display_custom_item_data', 10, 2);
 
 function display_custom_item_data($cart_item_data, $cart_item) {
-    if (isset($cart_item['repair_price'])) {
-        $cart_item_data[] = array(
-            'name' => __("Optional: ".$cart_item['repair_lebel'], "woocommerce"),
-            'value' => strip_tags( '+ ' . wc_price( wc_get_price_to_display( $cart_item['data'], array('price' => $cart_item['repair_price'] ) ) ) )
-        );
+    if (isset($cart_item['additionalPrice'])) {
+        $labelexpArray = explode(', ', $cart_item['repair_lebel']);
+        $labelfilter = array_filter($labelexpArray, 'strlen');
+
+        if(is_array($labelfilter) && !empty($labelfilter)){
+            $i = 1;
+            foreach ($labelfilter as $key => $value) {
+                $cart_item_data[] = array(
+                    'name' => __("Optional ".$i, "woocommerce"),
+                    'value' => strip_tags($value)
+                );
+
+                $i++;
+            }
+
+        }
+
+        
     }
 
     return $cart_item_data;
@@ -446,10 +452,24 @@ add_action( 'woocommerce_add_order_item_meta', 'add_custom_fields_order_item_met
 function add_custom_fields_order_item_meta( $item_id, $cart_item, $cart_item_key ) {
 	$wo_currency = get_option('woocommerce_currency');
         $user_custom_values = $cart_item['repair_lebel'].': +'.$wo_currency.$cart_item['repair_price'];
-        if(!empty($user_custom_values))
-        {
-            wc_add_order_item_meta($item_id,'Optional',$user_custom_values);  
+
+
+    if (isset($cart_item['repair_lebel'])) {
+        $labelexpArray = explode(', ', $cart_item['repair_lebel']);
+        $labelfilter = array_filter($labelexpArray, 'strlen');
+
+        if(is_array($labelfilter) && !empty($labelfilter)){
+            $i = 1;
+            foreach ($labelfilter as $key => $value) {
+                 wc_add_order_item_meta($item_id,"Optional ".$i, strip_tags($value));  
+
+                $i++;
+            }
+
         }
+
+        
+    }
 
 }
 

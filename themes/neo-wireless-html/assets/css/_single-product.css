@@ -201,7 +201,7 @@
 	top:7px;
 }
 .woocommerce div.product form.cart .button {
-	background: #FF5C26;
+	background: #FF5C26!important;
 	border-radius: 8px;
 	font-weight: 700;
 	font-size: 14px;
@@ -217,7 +217,7 @@
 	transition: all .5s;
 }
 .woocommerce div.product form.cart .button:hover {
-	background: #6B7BB3
+	background: #6B7BB3!important
 }
 .woocommerce div.product form.cart .button:after {
 	content: "";
@@ -441,8 +441,13 @@
 	background: #fff!important;
 	color: #43587B;
 	border: 1px solid #DEE7ED!important;
+	-ms-transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	transition: all .5s ease;
 }
-
+.woo-variation-swatches-stylesheet-enabled .variable-items-wrapper .variable-item:not(.radio-variable-item):hover {
+	border: 1px solid #43587B!important;
+}
 
 .woo-variation-swatches-stylesheet-enabled .variable-items-wrapper .variable-item:not(.radio-variable-item).selected, 
 .woo-variation-swatches-stylesheet-enabled .variable-items-wrapper .variable-item:not(.radio-variable-item).selected:hover {
@@ -683,14 +688,14 @@
 	.woocommerce-page div.product div.images {
 	    float: left;
 	    width: 100%;
+	    padding-right: 0;
+	    margin-bottom: 12px!important;
 	}
 	.woocommerce-page div.product div.summary {
 	    float: left;
 	    width: 100%;
 	}
-	.woocommerce div.product div.images {
-	    margin-bottom: 12px;
-	}
+
 	.woocommerce div.product div.summary {
 	    margin-bottom: 70px;
 	    margin-top: 0;
@@ -779,15 +784,24 @@
 	.quantity-wrapper .minus {
 	    right: auto;
 	    bottom: 0;
-	    left: 105px;
+	    left: 117px;
 	}
 	.quantity-wrapper .plus {
 	    right: auto;
-	    top: 0;
-	    left: 64px;
+	    top: 2px;
+	    left: 76px;
 	}
 	.quantity-wrapper {
 	    margin-top: 20px;
+	}
+	.woocommerce-variation-add-to-cart input[type=radio] + label {
+	    font-size: 12px!important;
+	}
+	.wccontent-wrapper.wcsingle .woocommerce-input-wrapper > span {
+	    font-size: 12px;
+	}
+	.woo-variation-swatches-stylesheet-enabled .variable-items-wrapper .variable-item:not(.radio-variable-item) {
+	    padding: 23px 20px !important;
 	}
 }
 
