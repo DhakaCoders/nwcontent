@@ -316,6 +316,7 @@ $onlyAttrK = array_keys($onlyAttr); //keys -> pa_capacity, pa_color
 
 
 echo '<div class="custom_attribues_wrapper clearfix">';
+$j = 1;
 foreach ( $onlyAttrK as $onlyAttrKS ) {
     echo '<div class="hidden-field additionalPriceWrap">';
     $terms = get_taxonomy( $onlyAttrKS ); //get this texonomy data
@@ -330,16 +331,18 @@ foreach ( $onlyAttrK as $onlyAttrKS ) {
       $acf = 'term_' . $term_id;
       $markup = get_field('price', $acf);
         echo '<div class="woocommerce-input-wrapper">';
-        echo '<input type="radio" id="optional-'.$i.'" class="input-checkbox " name="'.$onlyAttrKS.'" value="'.$markup.'">';
-        echo '<label for="optional-'.$i.'" class="checkbox customCheckbox">'.$name.'</label>';
-        echo '<span>+'.$markup.'</span>';
+        echo '<input type="radio" id="optional-'.$i.$j.'" class="input-checkbox" data-label="'.$name.': +'.$markup.'" name="'.$onlyAttrKS.'" value="'.$markup.'">';
+        echo '<label for="optional-'.$i.$j.'" class="checkbox customCheckbox">'.$name.'</label>';
+        echo '<span>+<span class="woocommerce-Price-currencySymbol"> €</span>'.$markup.'</span>';
         echo '</div>';
     $i ++; 
     }
     echo '</p>';
     echo '</div>';
+    $j ++;
 }
 echo '<input id="additionalPrice" type="hidden" name="additionalPrice" value="0">';
+echo '<input id="additionalLabel" type="hidden" name="additionalLabel" value="">';
 echo '<input id="prPrice" type="hidden" name="active_price" value="' . $active_price . '">';
 echo '</div>';
 
@@ -350,15 +353,19 @@ echo '</div>';
         $('.additionalPriceWrap input').on('change', function(){
             var pp = 'span.price';
             var addTotal = 0;
+            var Labeltext = '';
             $('.additionalPriceWrap input').each(function(){
                 if( $(this).prop('checked') === true ){
                     addTotal += parseInt($(this).val());
+                    Labeltext += $(this).data('label');
                 }
             });
+            console.log(Labeltext);
             var prRegPrice = parseInt($('#prPrice').val());
             var prTotal = prRegPrice + addTotal;
 
             $('#additionalPrice').val(addTotal);
+            $('#additionalLabel').val(Labeltext);
             $(pp).html('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">€</span>'+prTotal+'</span>');
         });
 
