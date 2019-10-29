@@ -1,4 +1,131 @@
 <<<<<<< HEAD
+2019-10-29T09:47:50+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(82): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action), Object(ActionScheduler_DateTime))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(68): ActionScheduler_Abstract_QueueRunner->schedule_next_instance(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_QueueRunner.php(80): ActionScheduler_Abstract_QueueRunner->process_action('377')
+#3 F:\xampp\htdocs\projects\2019\neo in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T09:48:00+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(82): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action), Object(ActionScheduler_DateTime))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(68): ActionScheduler_Abstract_QueueRunner->schedule_next_instance(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_QueueRunner.php(80): ActionScheduler_Abstract_QueueRunner->process_action('378')
+#3 F:\xampp\htdocs\projects\2019\neo in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T09:49:50+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(109): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(78): ActionScheduler_ActionFactory->store(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\functions.php(33): ActionScheduler_ActionFactory->recurring('wc_admin_unsnoo...', Array, 1572342590, 3600, 'wc-admin-notes')
+#3 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\qu in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T09:50:05+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(109): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(78): ActionScheduler_ActionFactory->store(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\functions.php(33): ActionScheduler_ActionFactory->recurring('wc_admin_unsnoo...', Array, 1572342604, 3600, 'wc-admin-notes')
+#3 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\qu in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T09:50:19+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(109): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(78): ActionScheduler_ActionFactory->store(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\functions.php(33): ActionScheduler_ActionFactory->recurring('wc_admin_unsnoo...', Array, 1572342619, 3600, 'wc-admin-notes')
+#3 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\qu in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T09:52:43+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(82): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action), Object(ActionScheduler_DateTime))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(68): ActionScheduler_Abstract_QueueRunner->schedule_next_instance(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_QueueRunner.php(80): ActionScheduler_Abstract_QueueRunner->process_action('377')
+#3 F:\xampp\htdocs\projects\2019\neo in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T09:54:39+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(82): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action), Object(ActionScheduler_DateTime))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(68): ActionScheduler_Abstract_QueueRunner->schedule_next_instance(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_QueueRunner.php(80): ActionScheduler_Abstract_QueueRunner->process_action('378')
+#3 F:\xampp\htdocs\projects\2019\neo in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T09:55:44+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(109): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(78): ActionScheduler_ActionFactory->store(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\functions.php(33): ActionScheduler_ActionFactory->recurring('wc_admin_unsnoo...', Array, 1572342944, 3600, 'wc-admin-notes')
+#3 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\qu in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T09:58:09+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(82): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action), Object(ActionScheduler_DateTime))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(68): ActionScheduler_Abstract_QueueRunner->schedule_next_instance(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_QueueRunner.php(80): ActionScheduler_Abstract_QueueRunner->process_action('377')
+#3 F:\xampp\htdocs\projects\2019\neo in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T09:59:10+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(82): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action), Object(ActionScheduler_DateTime))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(68): ActionScheduler_Abstract_QueueRunner->schedule_next_instance(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_QueueRunner.php(80): ActionScheduler_Abstract_QueueRunner->process_action('378')
+#3 F:\xampp\htdocs\projects\2019\neo in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T10:03:09+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(109): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(78): ActionScheduler_ActionFactory->store(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\functions.php(33): ActionScheduler_ActionFactory->recurring('wc_admin_unsnoo...', Array, 1572343389, 3600, 'wc-admin-notes')
+#3 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\qu in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T10:04:09+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(109): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(78): ActionScheduler_ActionFactory->store(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\functions.php(33): ActionScheduler_ActionFactory->recurring('wc_admin_unsnoo...', Array, 1572343449, 3600, 'wc-admin-notes')
+#3 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\qu in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T10:04:40+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(109): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(78): ActionScheduler_ActionFactory->store(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\functions.php(33): ActionScheduler_ActionFactory->recurring('wc_admin_unsnoo...', Array, 1572343480, 3600, 'wc-admin-notes')
+#3 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\qu in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T10:06:42+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(109): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(78): ActionScheduler_ActionFactory->store(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\functions.php(33): ActionScheduler_ActionFactory->recurring('wc_admin_unsnoo...', Array, 1572343602, 3600, 'wc-admin-notes')
+#3 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\qu in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T10:06:58+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(109): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(78): ActionScheduler_ActionFactory->store(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\functions.php(33): ActionScheduler_ActionFactory->recurring('wc_admin_unsnoo...', Array, 1572343618, 3600, 'wc-admin-notes')
+#3 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\qu in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T10:09:00+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(109): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_ActionFactory.php(78): ActionScheduler_ActionFactory->store(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\functions.php(33): ActionScheduler_ActionFactory->recurring('wc_admin_unsnoo...', Array, 1572343739, 3600, 'wc-admin-notes')
+#3 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\qu in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T10:13:14+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(82): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action), Object(ActionScheduler_DateTime))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(68): ActionScheduler_Abstract_QueueRunner->schedule_next_instance(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_QueueRunner.php(80): ActionScheduler_Abstract_QueueRunner->process_action('377')
+#3 F:\xampp\htdocs\projects\2019\neo in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+
+2019-10-29T10:15:27+00:00 CRITICAL Uncaught RuntimeException: Error saving action: Unable to save action. in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php:33
+Stack trace:
+#0 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(82): ActionScheduler_wpPostStore->save_action(Object(ActionScheduler_Action), Object(ActionScheduler_DateTime))
+#1 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_Abstract_QueueRunner.php(68): ActionScheduler_Abstract_QueueRunner->schedule_next_instance(Object(ActionScheduler_Action))
+#2 F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_QueueRunner.php(80): ActionScheduler_Abstract_QueueRunner->process_action('378')
+#3 F:\xampp\htdocs\projects\2019\neo in F:\xampp\htdocs\projects\2019\neo-wireless\nwcontent\plugins\woocommerce\includes\libraries\action-scheduler\classes\ActionScheduler_wpPostStore.php on line 33
+=======
+<<<<<<< HEAD
 2019-10-29T08:39:28+00:00 CRITICAL syntax error, unexpected '$query' (T_VARIABLE), expecting '(' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php on line 121
 
 2019-10-29T08:39:39+00:00 CRITICAL syntax error, unexpected '$query' (T_VARIABLE), expecting '(' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php on line 121
@@ -40,6 +167,7 @@ Stack trace:
 #7 {main}
   thrown in D:\xampp\htdocs\projects\2019\neowireless\nwcontent\themes\neo-wireless-html\header.php on line 104
 >>>>>>> 257b8e9b58f3a97a04408a78e824b0c1196aa9ba
+>>>>>>> 8293954a9259d35c8acdcf7fe8e32775e40aa5f8
 
 2019-10-29T14:03:36+00:00 CRITICAL syntax error, unexpected ')' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\templates\page-banner.php on line 5
 

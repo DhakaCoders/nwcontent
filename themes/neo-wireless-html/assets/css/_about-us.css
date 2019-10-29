@@ -79,16 +79,15 @@
 
 /*nw-content-sec-wrp*/
 
-
+.nw-about-content-wrp{
+	margin-top: -225px;
+	position: relative;
+	z-index: 25;
+}
 .nw-about-content-sec{
-	background-image: url(../images/who-we-are-bg.png), url(../images/who-we-are-bg-2.png);
-	/*background-size: cover;
-	background-size: contain;*/
-	background-size: auto;
-	background-repeat: no-repeat, no-repeat;
-	background-position: left top, right bottom;
-	padding-bottom: 240px;
-    padding-top: 530px;
+	background: #f4f7f9;
+	padding-bottom: 60px;
+    margin-top: 75px;
 }
 .nw-about-content-lft{
 	background: #FFFFFF;
@@ -165,7 +164,6 @@
     float: right;
     width: 50%;
     padding-left: 90px;
-    padding-top: 185px;
     padding-right: 10px;
 }
 .nw-about-content-rgt ul li{
@@ -205,8 +203,13 @@
 /*nw-team-sec-wrp*/
 
 .nw-team-sec-wrp{
-    padding-top: 50px;
+    padding-top: 215px;
     margin-bottom: 70px;
+    position: relative;
+}
+.nw-team-sec-wrp .container{
+	position: relative;
+	z-index: 32;
 }
 .nw-team-sec-head{
 	text-align: center;

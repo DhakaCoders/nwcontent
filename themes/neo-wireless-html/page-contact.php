@@ -22,8 +22,6 @@ get_template_part('templates/page', 'banner');
 
 ?>
 <section class="contact-form-sec-wrp">
-  <!-- <div class="contact-form-bg"></div>
-  <div class="contact-form-bg-skw"></div> -->
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -108,10 +106,7 @@ get_template_part('templates/page', 'banner');
 </section>
 
 <section class="poligon"></section>
-<section class="poligon2">
-  <div class="top-skip"></div>
-  <div class="bottom-skip"></div>
-</section>
+
 
 <?php get_footer(); ?>
 

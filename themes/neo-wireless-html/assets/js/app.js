@@ -130,6 +130,7 @@ $('.googleMapTringle').css('border-left', windowWidth);
 $('.top-skip').css('border-left', windowWidth);
 $('.bottom-skip').css('border-left', windowWidth);
 
+
 /**
 On Resize
 */

@@ -20,7 +20,6 @@ Text Domain: neowireless
 }
 
 .nw-about-content-sec{
-	background: transparent!important;
 	position: relative;
 	overflow: hidden;
 }
@@ -40,17 +39,7 @@ Text Domain: neowireless
 	background-size: cover!important;
 	background-position: center center!important;
 }
-.nw-about-bg-solid{
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	height: 50%;
-	background: #F4F7F9;
-	-webkit-transform: skew(-22deg) rotate(6deg);
-    -moz-transform: skew(-22deg) rotate(6deg);
-    transform: skew(22deg) rotate(6deg);
-}
+
 .nw-about-bg-sec-bg-skw-white {
     position: absolute;
     left: 0;
@@ -99,20 +88,13 @@ Text Domain: neowireless
     top: 0;
     z-index: 1;
 }
-.poligon{
-	height: 400px;
-	width: 100%;
-	background-image: url(assets/images/page-banner-bg.jpg);
-	background-position: center;
-	background-size: cover;
-	clip-path: polygon(0 0, 0 100%, 100% 50%);
-}
-.poligon2{
+
+.about-poligon-img{
 	height: 725px;
 	width: 100%;
-	background-image: url(assets/images/page-banner-bg.jpg);
-	background-position: center;
-	background-size: cover;
+	background-repeat: no-repeat!important;
+	background-position: center!important;
+	background-size: cover!important;
 	position: relative;
 	overflow: hidden;
 }
@@ -133,11 +115,13 @@ Text Domain: neowireless
 	position: absolute;
 	left: 0;
 	bottom: 0;
-    border-bottom: 380px solid #fff!important;
+    border-bottom: 380px solid #F4F7F9!important;
     border-left-color: transparent!important;
     border-left-style: solid!important;
     border-left: 1920px;
     z-index: 1;
 }
+
+
 
 
