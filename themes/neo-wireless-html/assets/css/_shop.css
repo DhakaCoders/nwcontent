@@ -67,7 +67,7 @@
 	padding-right: 20px;
 	padding-top: 16px;
 }
-.wccatalog select {
+.wccatalog select{
     border: 2px solid #F4F7F9;
     box-sizing: border-box;
     width: 325px;
@@ -76,21 +76,13 @@
     color: #43587B;
     padding: 15px 20px 18px;
     position: relative;
-}
-.wccatalog select:after{
-    content: "\f107" !important;
-    font-family: FontAwesome !important;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-/*--adjust as necessary--*/
-    color: #43587B !important;
-    font-size: 18px !important;
-    position: absolute !important;
-    top: 10px !important;
-    left: 0 !important;
-    width: 14px !important;
-    height: 8px !important;
+    background: url(../images/product-angle-icon.png);
+    background-repeat: no-repeat;
+    background-size: 14px 8px;
+    background-position: right 22px top 22px;
+    appearance:none;
+    -moz-appearance: none;
+	-webkit-appearance: none;
 }
 .woocommerce .woocommerce-ordering{
 	margin:0 !important;
@@ -455,11 +447,14 @@ span.xcp-plus{
 	    width: 100% !important;
 	}
 	.wccatalog select{
-		max-width:300px !important;
-		width: 100%;
+		width:250px !important;
 	}
 	.products li {
 	    width: 50% !important;
+	}
+	.woocommerce ul.products li.first,
+	.woocommerce-page ul.products li.first{
+		clear: none;
 	}
 	.xoo-cp-content {
 	    padding: 30px 55px 35px;
@@ -497,6 +492,25 @@ span.xcp-plus{
 	.wccatalog select{
 		width: 500px;
 	}
+	.woocommerce .woocommerce-ordering,
+	.woocommerce-page .woocommerce-ordering{
+		float: none;
+	}
+	.wccatalog select {
+	    width: 100% !important;
+	}
+	.wccatalog select {
+	    width: 100%;
+	    border: 0;
+	    padding: 5px 15px 5px 0;
+	    margin-bottom: 30px;
+	    background-position: right 0px top 11px;
+	}
+	.wccatalog span{
+		padding-top: 0;
+		padding-right: 0;
+	}
+	
 
 	
 
@@ -540,15 +554,7 @@ span.xcp-plus{
 	a.xcp-btn {
 	    margin: 5px 0 !important;
 	}
-	.wccatalog select {
-	    width: 290px !important;
-	    width: 100%;
-	}
-	.wccatalog select {
-	    border: 0;
-	    padding: 5px 15px 5px 0;
-	    margin-bottom: 30px;
-	}
+	
 
 }
 

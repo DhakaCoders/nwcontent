@@ -52,3 +52,13 @@ Stack trace:
 #6 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\class-w in F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 324
 >>>>>>> 8da9f96d5497763d8fc440bfa08c56d679edf412
 
+2019-10-28T22:00:33+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Product_Simple::get_variation_attributes() in F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\themes\neo-wireless-html\inc\woo-functions.php:308
+Stack trace:
+#0 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\class-wp-hook.php(286): product_option_custom_field('')
+#1 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters('', Array)
+#2 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#3 F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\themes\neo-wireless-html\woocommerce\single-product\add-to-cart\simple.php(33): do_action('woocommerce_bef...')
+#4 F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\plugins\woocommerce\includes\wc-core-functions.php(249): include('F:\\xampp\\htdocs...')
+#5 F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\plugins\woocommerce\includes\wc-template-functions.php(1581): wc_get_template('single-product/...')
+#6 F:\xampp\htdocs\2019\neo-wireless-wp\wp-includes\class-w in F:\xampp\htdocs\2019\neo-wireless-wp\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 308
+
