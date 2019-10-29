@@ -4,7 +4,7 @@ Template Name: Contact
 */
 
 get_header();
-get_template_part('templates/page', 'banner');
+get_template_part('templates/page', 'banner2');
 
   $spacialArry = array(".", "/", "+", " ");$replaceArray = '';
   $adres = get_field('address', 'options');
@@ -20,6 +20,10 @@ get_template_part('templates/page', 'banner');
   $twturl = get_field('twitter_url', 'options');
   $insturl = get_field('instagram_url', 'options');
 
+  $titel = get_field('titel');
+  $beschrijving = get_field('beschrijving');
+  $google_map = get_field('google_maps');
+
 ?>
 <section class="contact-form-sec-wrp">
   <div class="container">
@@ -28,8 +32,10 @@ get_template_part('templates/page', 'banner');
         <div class="contact-form-wrp clearfix">
           <div class="contac-form-lft">
             <div class="contac-form-dsc">
-              <h1>Send us an e-mail</h1>
-              <p>Cras egestas tortor non accumsan placerat. Proin est risus, convallis nec magna sed, semper consequat est.</p>
+              <?php 
+              if( !empty( $titel ) ) printf( '<h1>%s</h1>', $titel); 
+              if( !empty( $beschrijving ) ) echo wpautop($beschrijving); 
+              ?>
               <span><i><img src="<?php echo THEME_URI; ?>/assets/images/dotted-icon.svg"></i></span>
             </div>
             <div class="contact-form">
@@ -45,7 +51,7 @@ get_template_part('templates/page', 'banner');
                     <use xlink:href="#contact-map-icon-svg"></use>
                   </svg> 
                 </i>
-                <?php if( !empty( $adres ) ) printf('%s', $adres);  ?>
+                <?php if( !empty( $adres ) ) echo $adres;  ?>
                </a>
                <?php if( !empty( $show_telefoon ) ): ?>
                 <a class="phone" href="tel:<?php echo $telefoon; ?>"><i>
@@ -102,7 +108,7 @@ get_template_part('templates/page', 'banner');
 
 <section class="google-map-sec-wrp">
   <div class="googleMapTringle"></div>
-  <div id="googlemap" data-latitude="50.937809" data-longitude="4.040952"></div>
+  <div data-homeurl="<?php echo THEME_URI; ?>" id="googlemap" data-latitude="<?php echo $google_map['lat']; ?>" data-longitude="<?php echo $google_map['lng']; ?>"></div>
 </section>
 
 <section class="poligon"></section>

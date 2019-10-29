@@ -51,6 +51,7 @@
 }
 .wccontent-wrapper.wcsingle .wcdetails.wcdetails-expand {
     height: 100%;
+    height: auto;
     overflow: hidden;
 }
 .wccontent-wrapper.wcsingle .wcdetails h2{
