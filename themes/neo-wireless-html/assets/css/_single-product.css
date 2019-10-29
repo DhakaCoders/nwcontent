@@ -608,7 +608,11 @@
 }
 
 
-
+.woocommerce div.product .out-of-stock {
+    color: #ff5c26 !important;
+    font-size: 24px !important;
+    padding-bottom: 30px;
+}
 
 
 
