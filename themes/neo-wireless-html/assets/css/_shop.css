@@ -454,7 +454,28 @@ span.xcp-plus{
 	background: #F4F7F9;
 }
 
+.woocommerce-page ul.products li.product{
+	position: relative;
+}
+.woocommerce ul.products li.product .stock,
+.woocommerce-page ul.products li.product .stock,
+.woocommerce ul.products li.product .out-of-stock,
+.woocommerce-page ul.products li.product .out-of-stock {
+	color: #fff;
+    font-size: 15px;
+    padding: 5px 15px;
+    position: absolute;
+    top: 0;
+    border-radius: 50px;
+    background: #FF5C26;
+    right: 12px;
+}
 
+/* Add this if you want Out of Stock to appear in red */
+.woocommerce ul.products li.product .out-of-stock,
+.woocommerce-page ul.products li.product .out-of-stock {
+    color: #fff;
+}
 /*
 ---------------------
  Responsive Css
