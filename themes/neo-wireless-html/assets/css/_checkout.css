@@ -3,10 +3,12 @@
 checkout-info-sec-wrp
 ----------------------
 */
+.wccontent-wrapper{
+	padding-bottom: 120px;
+}
 #wccheckout-wrapper .default-page-con{
 	padding-top: 0;
 }
-
 #wccheckout-wrapper .checkout-cart{
 	background-color: #F4F7F9;
 	padding: 70px 50px 40px 50px;
@@ -53,7 +55,6 @@ checkout-info-sec-wrp
 	margin-bottom: 15px;
 }
 #wccheckout-wrapper .variation dd{
-	display: none;
 	float: left;
     margin-right: 10px;
 }
@@ -189,9 +190,8 @@ checkout-info-sec-wrp
 	margin: 0 -12px;
 }
 #wccheckout-wrapper .woocommerce form .form-row {
-    padding: 0 12px;
+    padding:15px 12px;
     margin: 0;
-    margin-bottom: 8px;
 }
 #wccheckout-wrapper .select2-container .select2-selection--single {
     box-sizing: border-box;
@@ -220,31 +220,20 @@ checkout-info-sec-wrp
 #wccheckout-wrapper .product-quantity span {
     border-radius: 2px;
     margin-top: -2px;
-    width: 21px;
+    width: 23px;
     height: 21px;
     float: left;
     padding: 0px 5px 0; 
-}
-#wccheckout-wrapper .product-quantity span.plus {
-    border: none;
+    background: #fff;
     position: absolute;
-    right: 0;
-    top: 0;
-     background-color: #ff0000 !important;
 }
-#wccheckout-wrapper .product-quantity span.minus {
-    float: none;
-    position: absolute;
-    left: 0;
-    top: 0;
-     background-color: #ff0000 !important;
+#wccheckout-wrapper .product-quantity span.plus{
+	right: 0;
+	top: 2px;
 }
-#wccheckout-wrapper .quantity {
-    position: absolute;
-    top: 0;
-    left: 5px;
-    right: 0;
-    text-align: center;
+#wccheckout-wrapper .product-quantity span.minus{
+	left: 0;
+	top: 2px;
 }
 #wccheckout-wrapper .product-quantity input[type="number"]{
     background: transparent;
@@ -267,27 +256,27 @@ checkout-info-sec-wrp
 #wccheckout-wrapper .quantity-wrapper i.qnt-minus:after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 5px;
+    top: 9px;
     background: url(../images/qnt-minus.svg);
     background-repeat: no-repeat;
     background-size: 100% auto;
-    width: 24px;
-    height: 21px;
+    width: 12px;
+    height: 4px;
 }
 #wccheckout-wrapper .quantity-wrapper i.qnt-plus:after {
     content: "";
     position: absolute;
-    left: 0;
-    top: 0;
-    background: url(../images/qnt-plus.svg);
+    left: 5px;
+    top: 5px;
+    background: url(../images/checkout-plus.svg);
     background-repeat: no-repeat;
     background-size: 100% auto;
-    width: 24px;
-    height: 21px;
+    width: 12px;
+    height: 12px;
 }
 #wccheckout-wrapper .quantity-wrapper{
-	position: static;
+	padding-left: 0;
 }
 #wccheckout-wrapper .woocommerce #respond input#submit.alt,
 #wccheckout-wrapper .woocommerce a.button.alt, .woocommerce button.button.alt,
@@ -344,6 +333,13 @@ ul li {
 #wccheckout-wrapper .xoo-cp-variations .variation:last-of-type {
     display: block !important;
 }
+#wccheckout-wrapper #payment{
+	background: #F4F7F9;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+
 /*
 ---------------------
  Responsive css
