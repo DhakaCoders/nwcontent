@@ -606,8 +606,14 @@
 }
 
 
-
-
+.obackorder-single {
+    color: green;
+    font-size: 22px;
+    padding-bottom: 20px;
+}
+p.stock.available-on-backorder {
+    display: none;
+}
 @media(max-width: 1399px){
 	.woocommerce div.product form.cart .variations tr:nth-child(1) {
 	    width: 42% !important;
