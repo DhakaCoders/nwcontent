@@ -11,6 +11,13 @@
 	text-align: center;
 	text-transform: uppercase;
 }
+#wccart-wrapper #respond input#submit.alt:hover, 
+#wccart-wrapper a.button.alt:hover, 
+#wccart-wrapper button.button.alt:hover, 
+#wccart-wrapper input.button.alt:hover,
+#wccart-wrapper .coupon .button:hover{
+	background: #e7440e!important;
+}
 #wccart-wrapper .coupon button.button{
 	font-size: 14px;
 	line-height: 16px;
@@ -89,6 +96,13 @@ a.xcp-btn.xoo-cp-close:hover{
 a.xoo-cp-btn-vc.xcp-btn:hover{
 	opacity: .7;
 }
+.woocommerce-message {
+    border-top-color: #FF5C26;
+}
+.woocommerce-message::before{
+	color: #FF5C26;
+}
+
 
 
 @media(max-width: 1199px){
