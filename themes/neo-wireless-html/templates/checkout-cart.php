@@ -1,3 +1,4 @@
+<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
 <?php
 echo '<div class="wccheckout-cart clearfix">';
 echo __( '<h3>Shopping Cart</h3>', 'woocommerce' );
@@ -71,9 +72,17 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 				</div>
 			</div>
 		</div>
+
 		</div>
+		<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+
+					<?php do_action( 'woocommerce_cart_actions' ); ?>
+
+					<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
+	</form>
 		<?php
 	}
 }
 get_template_part( 'templates/checkout-cart-total', null );
 echo '</div>';
+
