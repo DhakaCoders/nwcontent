@@ -261,8 +261,9 @@ function get_product_thumbnail_images(){
         $output .= __( '<h2>Gallery</h2>', 'woocommerce' );
 		$output .= '<ul>';
 		foreach ( $attachment_ids as $attachment_id ) {
-			$thumb_tag = cbv_get_image_tag($attachment_id, 'woocommerce_gallery_thumbnail');
-			$output .= '<li><a href="">'.$thumb_tag.'</a></li>';
+            $thumb_tag = cbv_get_image_tag($attachment_id, 'woocommerce_gallery_thumbnail');
+			$full_src = cbv_get_image_src($attachment_id);
+			$output .= '<li><a href="'.$full_src.'" data-fancybox="gallery">'.$thumb_tag.'</a></li>';
 		}
 		$output .= '</ul>';
 	}

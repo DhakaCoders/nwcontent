@@ -782,7 +782,11 @@ $(window).load(function(){
   }
 });
 
-new WOW().init();
+if($('[data-fancybox="gallery"]').length){
+  $('[data-fancybox="gallery"]').fancybox({
+    // Options will go here
+  });
+}
 
 // product counter
 
@@ -821,6 +825,7 @@ if( $('.quantity-wrapper').length ){
 
 }
 
+new WOW().init();
 
 
 })(jQuery);
