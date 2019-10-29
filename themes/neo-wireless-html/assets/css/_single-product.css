@@ -398,19 +398,15 @@
 	background-color: #fff!important;
 	font-size: 14px!important;
 	font-weight: 500!important;
-	letter-spacing: 4.5px!important;
 	border-radius: 0!important;
 	border: 1px solid #DEE7ED!important;
 	border-right: 0!important;
 	padding: 6px 2px!important;
-	height: 35px!important;
 	width: 100% !important;
 	line-height: 20px!important;
-	text-align: center!important;
 	letter-spacing: -0.1px!important;
 	color: #43587B!important;
-	letter-spacing: normal;
-
+	text-transform: initial!important;
 }
 .woocommerce-variation-add-to-cart:first-child input[type=radio] + label{
 	border-right: 1px solid #DEE7ED!important;
@@ -633,6 +629,39 @@
     float: right;
 }
 
+.wccontent-wrapper.wcsingle .woocommerce-input-wrapper {
+    width: 100%;
+    float: none;
+    padding-top: 5px;
+    max-width: 370px;
+    position: relative;
+}
+.woocommerce-variation-add-to-cart input[type=radio] + label {
+    text-align: left!important;
+    padding: 6px 65px 6px 10px!important;
+    border-radius: 4px!important;
+}
+.wccontent-wrapper.wcsingle .woocommerce-input-wrapper > span {
+    display: inline-block;
+    margin: initial;
+    margin-top: 0;
+    position: absolute;
+    top:50%;
+    right:10px;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.wccontent-wrapper.wcsingle .woocommerce-input-wrapper {
+    width: 100%;
+    float: none;
+    padding-bottom: 5px;
+    max-width: 370px;
+    position: relative;
+}
+.custom_attribues_wrapper {
+    margin-top: 20px;
+}
 } 
 
 @media(max-width: 1199px){
@@ -685,7 +714,7 @@
 	    width: 48px;
 	    height: 50px;
 	    border-radius: 4px;
-	    padding: 0px 11px;
+	    padding: 0px 15px;
 	}
 	.quantity-wrapper .plus {
 		right: -4px;
@@ -744,7 +773,15 @@
 
 }
 
-@media(max-width: 369px){
+@media(max-width: 379px){
+.quantity-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-left: 0;
+    width: 100%;
+    margin-top: 25px;
+}
+
 	.quantity-wrapper .minus {
 	    right: auto;
 	    bottom: 0;
