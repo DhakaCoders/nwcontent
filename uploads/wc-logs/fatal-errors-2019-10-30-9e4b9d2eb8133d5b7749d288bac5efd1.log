@@ -4,3 +4,17 @@
 2019-10-30T15:45:50+00:00 CRITICAL syntax error, unexpected '$product_thumb' (T_VARIABLE) in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 81
 >>>>>>> ca9ccff53e3606e06fa030d9b2be3df63a40ac05
 
+2019-10-30T17:15:57+00:00 CRITICAL Uncaught Error: Call to a member function set() on null in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php:114
+Stack trace:
+#0 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(286): faq_pre_get_posts(Object(WP_Query))
+#1 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\plugin.php(531): WP_Hook->do_action(Array)
+#3 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-query.php(1752): do_action_ref_array('pre_get_posts', Array)
+#4 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp-query.php(3403): WP_Query->get_posts()
+#5 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp.php(622): WP_Query->query(Array)
+#6 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\class-wp.php(739): WP->query_posts()
+#7 E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\functions.php(1105): WP->main('')
+#8 E:\X in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\functions.php on line 114
+
+2019-10-30T17:35:21+00:00 CRITICAL syntax error, unexpected ':' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\search.php on line 31
+
