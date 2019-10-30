@@ -109,6 +109,7 @@
 	right: 3px!important;
 	width: 23px!important;
 	height: 20px!important;
+	position: absolute!important;
 }
 #wccart-wrapper .quantity{
 	float: left;
@@ -116,6 +117,28 @@
 #wccart-wrapper .quantity-wrapper .plus{
 	top: 3px!important;
 	bottom: initial!important;
+}
+#wccart-wrapper .quantity-wrapper .plus i.qnt-plus:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../images/qnt-plus-single.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 24px;
+    height: 21px;
+}
+#wccart-wrapper .quantity-wrapper .minus i.qnt-minus:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url(../images/qnt-minus-single.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 24px;
+    height: 21px;
 }
 #wccart-wrapper .quantity-wrapper .minus{
 	bottom: 3px!important;
