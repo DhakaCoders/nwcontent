@@ -229,6 +229,7 @@
     font-weight: 600;
     line-height: 24px;
     margin-bottom: 0;
+    color: #43587B;
 }
 .nw-team-member-wrp {
     overflow: hidden;
@@ -267,7 +268,7 @@
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
 }
-.nw-team-member:after{
+/*.nw-team-member:after{
 	content: "";
 	position: absolute;
 	top:0;
@@ -288,7 +289,7 @@
 }
 .nw-team-grd:hover .nw-team-member:after{
 	opacity: 1
-}
+}*/
 .nw-team-member-des h3{
 	font-weight: 600;
 	line-height: 24px;

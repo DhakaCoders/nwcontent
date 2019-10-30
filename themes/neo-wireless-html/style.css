@@ -15,15 +15,12 @@ Text Domain: neowireless
 
 @import url('assets/css/main.css');
 
-.home-bnr-xs-nav-bar-controller.show-xs{
+/*.home-bnr-xs-nav-bar-controller.show-xs{
 	display: none!important;
+}*/
+.checkout-cart button[name="update_cart"]{
+	display: none;
 }
-
-
-
-
-
-
 /*contact*/
 .google-map-sec-wrp{
 	margin-top: 0;
@@ -41,6 +38,5 @@ Text Domain: neowireless
     -moz-transform:  rotate(-9deg);
     transform:  rotate(-9deg);
 }*/
-
 
 

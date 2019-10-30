@@ -111,7 +111,6 @@
 	margin-bottom: 35px;
 	background-size: cover!important;
 	background-position: center center!important;
-	min-height: 410px;
 }
 .dfp-plate-one-img-bx img{
 	width: 100%;
@@ -430,10 +429,6 @@ Gallery design
 #news-details-page-controller{
 	padding-top: 35px;
 }
-#news-details-page-controller .default-page-con{
-	padding-bottom: 55px;
-	float: left;
-}
 #news-details-page-controller .blog-post-date-bdr{
 	position: absolute;
 	right: 0;
@@ -446,16 +441,22 @@ Gallery design
 .dft-share-link{
 	padding-top: 35px;
 }
-#news-details-page-controller .default-page-con{
-	position: relative;
-}
+
 #main-content{
 	position: relative;
 }
-#main-content .default-page-con-inner{
+.singlePagegap{
+	height: 120px;
+	width: 100%;
+}
+#news-details-page-controller .default-page-con{
 	position: relative;
 	padding-left: 110px;
 	padding-right: 110px;
+	padding-bottom: 0;
+}
+.single .footer-top-sec-wrp{
+	margin-top: 110px;
 }
 #main-content .sidebar {
     max-width: 110px;
@@ -464,6 +465,7 @@ Gallery design
     top: 220px;
     left: 0;
     float: left;
+    z-index: 99;
 }
 
 .dft-news-details-social-icon ul{
@@ -498,18 +500,24 @@ Gallery design
 	#main-content .default-page-con-inner{
 		padding-left: 0;
 	}
-	#main-content .sidebar {
-	    max-width: 110px;
-	    top: 337px;
-	    left: -15px;
-	    z-index: 10;
-	    background: #7B8CA8;
-	    max-width: 40px;
-	    padding: 10px 10px 11px;
-	    text-align: center;
-	}
+
 	#news-details-page-controller .default-page-con{
 		float: none;
+	}
+	#news-details-page-controller .default-page-con{
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.dft-news-details-social-icon ul{
+		background: #7B8CA8;
+	    max-width: 43px;
+	    padding: 10px 10px 11px!important;
+	    text-align: center;
+	    max-width: 40px;
+	    width: 100%;
+	    position: fixed;
+	    top: 50%;
+	    left: 0;
 	}
 	.dft-news-details-social-icon ul li a svg{
 		fill: #fff;
@@ -569,9 +577,6 @@ Gallery design
 	}
 	.default-page-con{
 		padding-bottom: 100px;
-	}
-	#main-content .sidebar {
-	    top: 292px;
 	}
 	#news-details-page-controller .blog-post-date-bdr{
 		display: none;
@@ -659,12 +664,6 @@ Gallery design
 	}
 	.dft-2grd-img-con-item-des h4{
 		margin-bottom: 15px;
-	}
-	#main-content .sidebar {
-	    top: 239px;
-	}
-	.dfp-plate-one-img-bx{
-		min-height: 250px;
 	}
 	.dft-img-title-grd-col-inner span{
 		max-width: 48px;

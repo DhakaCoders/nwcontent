@@ -262,7 +262,9 @@ $('.hdr-search button').on('click', function(){
 if (windowWidth > 991) {
   if( $('#sidebar').length ){
       $('#sidebar').stickySidebar({
-          topSpacing: 80,
+        containerSelector: '#main-content',
+        innerWrapperSelector: '.sidebar__inner',
+          topSpacing: 220,
           bottomSpacing: 60
       });
     }
@@ -436,16 +438,18 @@ if( $('.quantity-wrapper').length ){
       btnDown = spinner.find('.minus'),
       min = 1,
       max = input.attr('max');
+      console.log(max);
 
     btnUp.click(function() {
-      var oldValue = parseFloat(input.val());
-      if (oldValue <= max) {
+      var oldValue = parseInt(input.val());
+      if (oldValue == max) {
         var newVal = oldValue;
       } else {
         var newVal = oldValue + 1;
       }
-      spinner.find("input").val(newVal);
-      spinner.find("input").trigger("change");
+      spinner.find('input[type="number"]').val(newVal);
+      spinner.find('input[type="number"]').trigger("change");
+      $('.checkout-cart button[name="update_cart"]').fadeIn();
     });
 
     btnDown.click(function() {
@@ -457,6 +461,7 @@ if( $('.quantity-wrapper').length ){
       }
       spinner.find("input").val(newVal);
       spinner.find("input").trigger("change");
+      $('.checkout-cart button[name="update_cart"]').fadeIn();
     });
 
   });

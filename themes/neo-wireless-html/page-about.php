@@ -10,7 +10,7 @@ $intro = get_field('intro', $thisID);
 $showhide_intro = get_field('showhide_intro', $thisID);
 if($showhide_intro){ 
 	if(!empty($intro['afbeelding'])){
-		$introposter = cbv_get_image_src($intro['afbeelding'], 'intro_sec');
+		$introposter = cbv_get_image_src($intro['afbeelding'], 'introgird');
 	}else{
 		$introposter = '';
 	}
@@ -167,11 +167,10 @@ $teamQuery = new WP_Query(array(
             <li>
               <div class="nw-team-grd">
                 <div class="nw-team-member-wrp"> 
-                  <div class="nw-team-member" style="background: url(<?php echo $refImgsrc; ?>);"></div>
-                  <a href="<?php the_permalink(); ?>" class="overlay-link"></a>          
+                  <div class="nw-team-member" style="background: url(<?php echo $refImgsrc; ?>);"></div>          
                 </div>
                 <div class="nw-team-member-des">
-                  <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                  <h3><?php the_title(); ?></h3>
                   <?php if( !empty( $funct ) ) printf( '<span>%s</span>', $funct); ?>
                   <div class="team-cel-no"> 
                     <i>

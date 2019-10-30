@@ -161,7 +161,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
 		                        while($memQuery->have_posts()): $memQuery->the_post();
 		                        $gridImage = get_post_thumbnail_id(get_the_ID());
 		                        if(!empty($gridImage)){
-		                          $pimgScr = cbv_get_image_src($gridImage, 'vgrid3');
+		                          $pimgScr = cbv_get_image_src($gridImage, 'pgprodgrid');
 		                        }else{
 		                          $pimgScr = '';
 		                        }  
@@ -199,7 +199,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
 		        endwhile;
               	?>
               <div class="dft-share-link">
-<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=466258030197150" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=466258030197150" width="450" height="25" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
               </div>
             </div>
           </article>
