@@ -36,11 +36,17 @@ if($banner):
         <?php if($posters): ?>
         <div class="col-sm-6 hide-xs">
           <div class="main-bnr-box-imgs">
-            <?php foreach($posters as $poster): $link3 = $poster['link']; ?>
+            <?php 
+              foreach($posters as $poster): $link3 = $poster['link']; 
+                $posterr = '';
+                if(!empty($poster['image'])){
+                  $posterr = cbv_get_image_src($poster['image'], 'hmbbox');
+                }
+            ?>
               <div class="main-bnr-img-bx-scale">
                 <a class="overlay-link" href="<?php echo $link3['url']; ?>"></a>
                 <div>
-                  <div class="main-bnr-img-bx" style="background: url(<?php echo $poster['image']; ?>);">
+                  <div class="main-bnr-img-bx" style="background: url(<?php echo $posterr; ?>);">
                   </div>
                   <?php 
                       if( is_array( $link3 ) &&  !empty( $link3['url'] ) ){
@@ -252,13 +258,20 @@ $wifi = get_field('wifi_sec', HOMEID);
 $show__hidemwifi = get_field('show__hidemwifi', HOMEID);
 if($show__hidemwifi){ 
   $customClass = '';
-  //if(is_shop() OR is_product()) $customClass = ' wcftmargin';
+  $mountposter = '';
+  if(!empty($mounting['image'])){
+    $mountposter = cbv_get_image_src($mounting['image'], 'fttopbox');
+  }
+  $wifiposter = '';
+  if(!empty($wifi['image'])){
+    $wifiposter = cbv_get_image_src($wifi['image'], 'fttopbox');
+  }
 ?>
 <section class="footer-top-sec-wrp home-footer-top-sec-wrp <?php echo $customClass; ?> clearfix">
   <div class="googleMapTringle" style="border-left: 2040px;"></div>
    <div class="footer-top-lft">
      <div class="footer-top-lft-bg">
-      <div class="footer-top-lft-bg-img" style="background: url(<?php echo $mounting['image']; ?>);"></div>
+      <div class="footer-top-lft-bg-img" style="background: url(<?php echo $mountposter; ?>);"></div>
        <div class="footer-top-dsc">
         <?php 
           if( !empty( $mounting['title'] ) ) printf( '<h2>%s</h2>', $mounting['title']); 
@@ -274,7 +287,7 @@ if($show__hidemwifi){
    </div>
    <div class="footer-top-rgt">
      <div class="footer-top-rgt-bg">
-      <div class="footer-top-rgt-bg-img" style="background: url(<?php echo $wifi['image']; ?>);"></div>
+      <div class="footer-top-rgt-bg-img" style="background: url(<?php echo $wifiposter; ?>);"></div>
        <div class="footer-top-dsc">
         <?php 
           if( !empty( $wifi['title'] ) ) printf( '<h2>%s</h2>', $wifi['title']); 

@@ -10,7 +10,7 @@ $intro = get_field('intro', $thisID);
 $showhide_intro = get_field('showhide_intro', $thisID);
 if($showhide_intro){ 
 	if(!empty($intro['afbeelding'])){
-		$introposter = cbv_get_image_src($intro['afbeelding'], 'intro_sec');
+		$introposter = cbv_get_image_src($intro['afbeelding'], 'introgird');
 	}else{
 		$introposter = '';
 	}
