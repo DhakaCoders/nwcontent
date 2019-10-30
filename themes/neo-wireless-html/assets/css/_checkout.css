@@ -402,8 +402,9 @@ ul li {
 }
 #wccheckout-wrapper .woocommerce-error,
 #wccheckout-wrapper .woocommerce-info,
-#wccheckout-wrapper .woocommerce-message{
-	padding: 15px 0;
+#wccheckout-wrapper .woocommerce-message {
+    padding: 15px 15px;
+    margin-top: 20px;
 }
 #wccheckout-wrapper .woocommerce table.shop_table_responsive tr:nth-child(2n) td,
 #wccheckout-wrapper .woocommerce-page table.shop_table_responsive tr:nth-child(2n) td{
