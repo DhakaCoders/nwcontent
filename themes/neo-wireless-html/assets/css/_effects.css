@@ -53,6 +53,9 @@ nav.main-nav ul li.current-menu-item a{
 .hdr-cart-btn:hover{
 	background-color: #fff;
 }
+.xs-popup-main-menu-controller .hdr-cart-btn:hover{
+	background: #dd5427;
+}
 .hdr-cart-btn:hover em svg,
 .dft-news-details-social-icon ul li a:hover svg{
 	fill: #FF5C26;
