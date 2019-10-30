@@ -26,6 +26,9 @@
 	min-height: 52px;
 	min-width: 180px;
 }
+.woocommerce-error{
+	border-top-color: #FF5C26;
+}
 #shipping_method li:after,
 .woo-variation-swatches-stylesheet-enabled .variable-items-wrapper li:after{
 	content: none;
