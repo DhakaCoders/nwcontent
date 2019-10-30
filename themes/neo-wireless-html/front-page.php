@@ -54,17 +54,8 @@ if($banner):
   </div>    
 </section>
 <?php endif; ?>
-<div class="cookie-policy-wrp">
-   <div class="cookie-policy-dsc">
-     <h4>Cookie Policy</h4>
-     <p>Deze site maakt gebruik van cookies om uw surfervaring te verbeteren.</p>
-     <a href="#"> Meer Info</a>
-     <div class="cookie-btn">
-       <a href="#">Ok, Bedankt</a>
-     </div>
-   </div>
- </div>
 </section><!-- end of main-slider-sec-wrp -->
+
 <?php if($banner): if($posters){ ?>
 <section class="show-xs main-bnr-box-imgs-xs">
   <div class="container">
