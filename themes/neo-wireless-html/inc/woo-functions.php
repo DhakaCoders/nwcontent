@@ -333,6 +333,9 @@ function add_repair_price_option_to_single_product(){
 function product_option_custom_field(){
     global $product, $woocommerce;
 $wo_currency = get_woocommerce_currency_symbol();
+$wo_decimals = wc_get_price_decimals();
+$wo_separator = wc_get_price_thousand_separator();
+
 $active_price = (float) $product->get_price();
 
 $attributes = $product->get_attributes(); //get all attributes
@@ -341,8 +344,7 @@ $pa_capacity = get_the_terms( $product->get_id(), 'pa_capacity');
 $onlyAttr = array_diff_key($attributes, $attrVariation); //get attribues that are not used for variation
 $onlyAttrK = array_keys($onlyAttr); //keys -> pa_capacity, pa_color
 
-
-echo '<div class="custom_attribues_wrapper clearfix" data-currency="'.$wo_currency.'">';
+echo '<div class="custom_attribues_wrapper clearfix" data-currency="'.$wo_currency.'" data-decimals="'.$wo_decimals.'" data-separator="'.$wo_separator.'">';
 $j = 1;
 foreach ( $onlyAttrK as $onlyAttrKS ) {
     echo '<div class="hidden-field additionalPriceWrap">';
@@ -360,7 +362,7 @@ foreach ( $onlyAttrK as $onlyAttrKS ) {
         echo '<div class="woocommerce-input-wrapper">';
         echo '<input type="radio" id="optional-'.$i.$j.'" class="input-checkbox" data-label="'.$name.': + '.$wo_currency.$markup.'" name="'.$onlyAttrKS.'" value="'.$markup.'">';
         echo '<label for="optional-'.$i.$j.'" class="checkbox customCheckbox">'.$name.'</label>';
-        echo '<span>+ <span class="woocommerce-Price-currencySymbol">'.$wo_currency.'</span>'.$markup.'</span>';
+        echo '<span>+ '.wc_price($markup).'</span>';
         echo '</div>';
     $i ++; 
     }
@@ -378,8 +380,10 @@ echo '</div>';
     <script type="text/javascript">
     jQuery(function($) {
         var currency = $('.custom_attribues_wrapper').data('currency');
+        var decimals = $('.custom_attribues_wrapper').data('decimals');
+        var separator = $('.custom_attribues_wrapper').data('separator');
         $('.additionalPriceWrap input').on('change', function(){
-            var pp = 'span.price';
+            var pp = 'div.wcprice span.price';
             var addTotal = 0;
             var Labeltext = '';
             $('.additionalPriceWrap input').each(function(){
@@ -391,6 +395,11 @@ echo '</div>';
             console.log(Labeltext);
             var prRegPrice = parseInt($('#prPrice').val());
             var prTotal = prRegPrice + addTotal;
+
+
+            //var valueString="1500"; //can be 1500.0 or 1500.00 
+            var formatAmount=parseFloat(prTotal).toFixed(decimals);
+            prTotal= formatAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 
             $('#additionalPrice').val(addTotal);
             $('#additionalLabel').val(Labeltext);
