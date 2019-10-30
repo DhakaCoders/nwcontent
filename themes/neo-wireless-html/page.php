@@ -124,7 +124,7 @@ while ( have_posts() ) :
                         echo '</div>';
                     endwhile;
 
-                echo '</div></div>';
+                echo '</div></div> <div class="dft-2grd-img-content-separetor"></div>';
               endif; wp_reset_postdata();
             }elseif( get_row_layout() == 'horizontal_rule' ){
               $fc_horizontal_rule = get_sub_field('fc_horizontal_rule');
