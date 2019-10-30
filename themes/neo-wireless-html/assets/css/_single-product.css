@@ -84,11 +84,20 @@
 	padding: 1px 10px 15px 25px;
 	font-weight: 400;
 	font-size: 16px;
-	line-height: 30px;
+	position: relative;
+    line-height: 24px !important;
 	color: #7B8CA8;
 }
 .wccontent-wrapper.wcsingle .wcdetails ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
     top: 6px;
+    background: url(../images/list-icon.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 14px;
+    height: 14px;
 }
 .wccontent-wrapper.wcsingle .wcdetails .wcdetailsbtn{
 	position: absolute;
@@ -166,6 +175,7 @@
 .woocommerce-variation-price{
 	display: block;
 }
+.single_variation_wrap 
 .woocommerce div.product form.cart {
     margin-bottom: 47px!important;
 }
@@ -347,8 +357,8 @@
 	background:url(../images/qnt-minus.svg);
 	background-repeat: no-repeat;
 	background-size: 100% auto;
-	width:24px; 
-	height:21px;
+	width:13px; 
+	height:4px;
 }
 .wcoptioanl{
 	display: block;
