@@ -150,13 +150,6 @@ ul.products{
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
 }
-.products h4 a {
-    display: inline-block;
-    color: #43587B;
-}
-.products h4 a:hover {
-    color: #FF5C26;
-}
 .products .moreproduct a:hover:after{
 	right: -5px;
 }
@@ -452,11 +445,6 @@ span.xcp-plus{
 	line-height: 18px;
 	color: #7B8CA8;
 }
-
-.wcpage-default-con #payment{
-	background: #F4F7F9;
-	margin-top: 30px;
-}
 .wcpage-default-con .woocommerce-info{
 	background: #F4F7F9;
 }
@@ -472,10 +460,10 @@ span.xcp-plus{
     font-size: 15px;
     padding: 5px 15px;
     position: absolute;
-    top: 11px;
+    top: 0;
     border-radius: 50px;
-    background: #ff5c26;
-    left: 22px;
+    background: #FF5C26;
+    right: 12px;
 }
 
 /* Add this if you want Out of Stock to appear in red */
