@@ -229,10 +229,12 @@ remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_r
 add_action( 'woocommerce_single_product_summary', 'get_wc_product_desctiption', 10, 1 );
 function get_wc_product_desctiption(){
 	global $product, $post;
+    $prefix = '';
+    if( $product->is_type('variable') ) $prefix = __( '<span class="price-prefix">Starting at </span>', 'woocommerce' );
 	$short_description = apply_filters( 'woocommerce_description', wpautop( $post->post_content, true ));
 	$output = '';
 	$output .= '<div class="wcprice">';
-	$output .= __( '<span class="price-prefix">Starting at </span>', 'woocommerce' ).'<span class="price">'. $product->get_price_html().'</span>';
+	$output .= $prefix.'<span class="price">'. $product->get_price_html().'</span>';
 	$output .= '</div>';
 	$output .= '<div class="wcdetails">';
 	$output .= __( '<h2>Description</h2>', 'woocommerce' );
@@ -300,7 +302,7 @@ function get_product_thumbnail_images(){
         $output .= __( '<h2>Gallery</h2>', 'woocommerce' );
 		$output .= '<ul>';
 		foreach ( $attachment_ids as $attachment_id ) {
-            $thumb_src = cbv_get_image_src($attachment_id, 'woocommerce_gallery_thumbnail');
+            $thumb_src = cbv_get_image_src($attachment_id, 'prodgallery');
 			$full_src = cbv_get_image_src($attachment_id);
             $output .= '<li><a href="'.$full_src.'" data-fancybox="gallery">';
             $output .= '<div><div class="wcgallery-thumbnail" style="background: url('.$thumb_src.'); height: 152px"></div></div>';

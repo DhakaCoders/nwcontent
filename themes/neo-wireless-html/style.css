@@ -15,9 +15,12 @@ Text Domain: neowireless
 
 @import url('assets/css/main.css');
 
+<<<<<<< HEAD
+=======
 /*.home-bnr-xs-nav-bar-controller.show-xs{
 	display: none!important;
 }*/
+>>>>>>> 8af678decbbb8b3302342f2ac3d4cb58fb8a1d88
 .checkout-cart button[name="update_cart"]{
 	display: none;
 }
