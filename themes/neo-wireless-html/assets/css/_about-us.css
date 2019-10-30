@@ -369,8 +369,7 @@
 	    padding-left: 25px;
 	    font-weight: 300;
 	    font-size: 13px;
-	    line-height: 24px;
-	    margin-top: 25px;
+    	padding-top: 23px;
 	}
 	.nw-about-content-rgt {
 	    float: right;
@@ -473,6 +472,12 @@
 	    line-height: 25px;
 	    margin-bottom: 15px;
 	}
+	.team-cel-no {
+	    padding-top: 15px;
+	}
+	.team-cel-no i {
+	    top: 18px;
+	}	
 }
 
 @media(max-width: 639px){
