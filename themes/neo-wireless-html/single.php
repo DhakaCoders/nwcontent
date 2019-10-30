@@ -112,7 +112,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
 		              echo "<div class='gallery-wrap clearfix'><div class='gallery gallery-columns-{$kolom}'>";
 		                foreach( $gallery_cn as $image ):
 		                echo "<figure class='gallery-item'><div class='gallery-icon portrait'>";
-		                if( $lightbox ) echo "<a href='{$image['url']}'>";
+		                if( $lightbox ) echo "<a data-fancybox='gallery' href='{$image['url']}'>";
 		                    echo wp_get_attachment_image( $image['ID'], 'vgrid2' );
 		                if( $lightbox ) echo "</a>";
 		                echo "</div></figure>";
