@@ -161,7 +161,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
 		                        while($memQuery->have_posts()): $memQuery->the_post();
 		                        $gridImage = get_post_thumbnail_id(get_the_ID());
 		                        if(!empty($gridImage)){
-		                          $pimgScr = cbv_get_image_src($gridImage, 'vgrid3');
+		                          $pimgScr = cbv_get_image_src($gridImage, 'pgprodgrid');
 		                        }else{
 		                          $pimgScr = '';
 		                        }  

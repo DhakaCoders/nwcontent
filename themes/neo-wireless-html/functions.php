@@ -25,6 +25,10 @@ if( !function_exists('cbv_theme_setup') ){
 		add_image_size( 'srchgrid', 324, 206, true );
 		add_image_size( 'hmslgrid', 376, 240, true );
 		add_image_size( 'hmbbox', 480, 250, true );
+		add_image_size( 'fttopbox', 660, 408, true );
+		add_image_size( 'introgird', 556, 474, true );
+		add_image_size( 'bloggrid', 556, 360, true );
+		add_image_size( 'pgprodgrid', 440, 280, true );
 		
 
 		
