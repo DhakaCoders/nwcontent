@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 2019-10-30T16:55:30+00:00 CRITICAL syntax error, unexpected '<', expecting end of file in D:\xampp\htdocs\projects\2019\neowireless\nwcontent\themes\neo-wireless-html\front-page.php on line 249
+=======
+2019-10-30T15:45:50+00:00 CRITICAL syntax error, unexpected '$product_thumb' (T_VARIABLE) in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\inc\woo-functions.php on line 81
+>>>>>>> ca9ccff53e3606e06fa030d9b2be3df63a40ac05
 
