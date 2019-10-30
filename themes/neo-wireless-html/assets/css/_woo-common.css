@@ -26,6 +26,9 @@
 	min-height: 52px;
 	min-width: 180px;
 }
+.woocommerce-error{
+	border-top-color: #FF5C26;
+}
 #shipping_method li:after,
 .woo-variation-swatches-stylesheet-enabled .variable-items-wrapper li:after{
 	content: none;
@@ -102,7 +105,10 @@ a.xoo-cp-btn-vc.xcp-btn:hover{
 .woocommerce-message::before{
 	color: #FF5C26;
 }
-
+.cartpopup-variations .xoo-cp-variations .variation:last-of-type,
+.cartpopup-variations .xoo-cp-variations .variation dd{
+	display: block;
+}
 
 
 @media(max-width: 1199px){

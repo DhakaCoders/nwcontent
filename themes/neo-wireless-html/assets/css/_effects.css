@@ -1,7 +1,7 @@
 /**
 All Transitions
 */
-.woocommerce ul.products li.product:hover .catalogue-image a img,
+.woocommerce ul.products li.product:hover .catalogue-image a,
 .nw-post-gird-innr:hover .nw-post-gird-img,
 a,input,img,textarea,button,
 .main-bnr-img-bx a em,
@@ -15,7 +15,7 @@ a.xcp-btn.xoo-cp-close,.main-bnr-img-bx,
 	-ms-transition: all 0.5s ease;
 	-webkit-transition: all 0.5s ease;
 }
-.woocommerce ul.products li.product:hover .catalogue-image a img,
+.woocommerce ul.products li.product:hover .catalogue-image a,
 .nw-post-gird-innr:hover .nw-post-gird-img,
 .scale,.dft-2grd-img-con-item-col:hover .dft-2grd-img-con-item-img,
 .main-bnr-img-bx-scale:hover > div .main-bnr-img-bx,
@@ -52,6 +52,9 @@ nav.main-nav ul li.current-menu-item a{
 
 .hdr-cart-btn:hover{
 	background-color: #fff;
+}
+.xs-popup-main-menu-controller .hdr-cart-btn:hover{
+	background: #dd5427;
 }
 .hdr-cart-btn:hover em svg,
 .dft-news-details-social-icon ul li a:hover svg{

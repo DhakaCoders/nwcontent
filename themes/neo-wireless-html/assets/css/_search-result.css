@@ -381,10 +381,18 @@
     color: #43587B;
     margin-bottom: 30px;
 }
+
+.product-search-result,
+.article-search-result{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .article-search-result-lft,
 .product-search-result-lft{
   width:36%;
-  float: left;
+  order: 1;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
@@ -394,7 +402,7 @@
 .article-search-result-rgt,
 .product-search-result-rgt{
   width: 64%;
-  float: left;
+  order: 2;
   padding: 27px 20px 35px 25px;
   position: relative;
 }
@@ -934,6 +942,10 @@
 
 
 @media(max-width: 639px){
+  .article-search-result, 
+  .product-search-result{
+    display: block
+  }  
   .article-search-result-lft, 
   .product-search-result-lft {
       width: 100%;

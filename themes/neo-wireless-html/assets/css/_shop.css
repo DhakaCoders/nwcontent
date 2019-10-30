@@ -127,6 +127,9 @@ ul.products{
 	font-weight: 600;
 	margin-bottom: 5px; 
 }
+.products h4:hover a{
+	color: #ff5c26 !important;
+}
 .products .shorttext-loop p {
     color: #7B8CA8;
     margin-bottom: 14px;
@@ -216,7 +219,8 @@ ul.products{
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);
 }
-.woocommerce ul.products li.product .onsale {
+.woocommerce ul.products li.product .onsale,
+.woocommerce.single-product .onsale{
     width: 50px !important;
     height: 50px !important;
     background-color: #ff5c26 !important;
@@ -225,6 +229,11 @@ ul.products{
     top: 11px !important;
     font-size: 14px;
     line-height: 40px;
+}
+.woocommerce.single-product .onsale {
+    right: auto!important;
+    top: -15px !important;
+    left: -15px;
 }
 .catalogue-image{
 	overflow: hidden;

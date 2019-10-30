@@ -301,7 +301,7 @@
           </a>
         </div>
         <div class="nav-opener">
-         <div class="nav-opener-btn">
+         <div class="nav-opener-btn closeBtn">
             <img src="<?php echo THEME_URI; ?>/assets/images/close-icon.svg">
           </div>
           <strong>CLOSE</strong>
