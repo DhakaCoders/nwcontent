@@ -15,8 +15,8 @@ if($banner):
         <div class="col-sm-6">
           <div class="main-bnr-des">
            <?php 
-            if( !empty( $banner['title'] ) ) printf( '<span>%s</span>', $banner['title']); 
-            if( !empty( $banner['bold_title'] ) ) printf( '<strong>%s</strong>', $banner['bold_title']); 
+            if( !empty( $banner['subtitle'] ) ) printf( '<span>%s</span>', $banner['subtitle']); 
+            if( !empty( $banner['title'] ) ) printf( '<strong>%s</strong>', $banner['title']); 
             if( !empty( $banner['content'] ) ) echo wpautop($banner['content']);
           ?>
             <div class="main-bnr-des-btns">

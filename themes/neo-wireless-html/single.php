@@ -39,21 +39,21 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
               <div class="dft-news-details-social-icon">
                 <ul class="clearfix ulc">
                   <li>
-                    <a href="#">
+                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_the_permalink(); ?>">
                       <svg class="fb-icon-svg" width="11" height="20" viewBox="0 0 11 20" fill="#43587B">
                         <use xlink:href="#fb-icon-svg"></use>
                       </svg> 
                     </a>
                     </li>
                   <li>
-                    <a href="#">
+                    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo get_the_permalink(); ?>&title=<?php echo get_the_title(); ?>&summary=<?php echo get_the_excerpt(); ?>&source=">
                       <svg class="linkedin-icon-svg" width="20" height="18" viewBox="0 0 20 18" fill="#43587B">
                         <use xlink:href="#linkedin-icon-svg"></use>
                       </svg>
                     </a>
                     </li>
                   <li>
-                    <a href="#">
+                    <a target="_blank" href="https://twitter.com/home?status=<?php echo get_the_permalink(); ?> <?php echo get_the_title(); ?>">
                       <svg class="twitter-icon-svg" width="22" height="18" viewBox="0 0 22 18" fill="#43587B">
                         <use xlink:href="#twitter-icon-svg"></use>
                       </svg>
@@ -67,6 +67,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
           <article class="default-page-con clearfix" id="content">
             <div class="default-page-con-inner">
             	<div class="dfp-promo-module dateblog clearfix">
+            		<h1><?php echo get_the_title(); ?></h1>
 	            	<div class="blog-post-date-bdr">
 	                  <strong><?php echo get_the_date('d'); ?></strong>
 	                  <span><?php echo get_the_date('M'); ?></span>
@@ -75,11 +76,9 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
               	<?php 
 		        while ( have_rows('inhoud') ) : the_row(); 
 		          if( get_row_layout() == 'introductietekst' ){
-		              $title = get_sub_field('titel');
 		              $subtitel = get_sub_field('subtitel');
 		              $afbeelding = get_sub_field('afbeelding');
 		              echo '<div class="dfp-promo-module clearfix">';
-		                if( !empty($title) ) printf('<h1>%s</h1>', $title);
 		                if( !empty($afbeelding) ){
 		                  echo '<div class="dfp-plate-one-img-bx">', cbv_get_image_tag($afbeelding), '</div>';
 		                }
@@ -200,7 +199,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
 		        endwhile;
               	?>
               <div class="dft-share-link">
-                <img src="<?php echo THEME_URI; ?>/assets/images/share-link-img.jpg">
+<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=466258030197150" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
               </div>
             </div>
           </article>

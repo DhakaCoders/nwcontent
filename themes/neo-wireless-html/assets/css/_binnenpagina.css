@@ -261,7 +261,12 @@ Gallery design
 	padding: 0 12px;
 	margin-bottom: 24px;
 }
-
+/*.dfpagegalleryitem{
+	height: 320px;
+	background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+}*/
 .gallery-item img {
 	width: 100%;
 }
@@ -310,13 +315,14 @@ Gallery design
 /*extra*/
 .dft2grdImgConSlider{
 	margin: 0 -12px!important;
-	padding-bottom: 75px;
+	padding-bottom: 30px;
 }
-.dft-2grd-img-content-separetor{
-	height: 3px;
-	width: 100%;
-	background: #F4F7F9;
-	margin-bottom: 45px;
+.dft-2grd-img-content-separetor {
+    height: 3px;
+    width: 100%;
+    background: #F4F7F9;
+    margin-bottom: 45px;
+    margin-top: 45px;
 }
 .dft-2grd-img-con-item-col{
 	padding: 0 12px;
