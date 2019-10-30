@@ -255,12 +255,12 @@
 }
 
 
-.quantity-wrapper .qty {
+.wccontent-wrapper.wcsingle .quantity-wrapper .qty {
     width: 100% !important;
     text-align: center !important;
     padding-right: 12px !important;
 }
-.quantity-wrapper{
+.wccontent-wrapper.wcsingle .quantity-wrapper{
 	width: 70px;
 	height: 52px;
 	border-radius: 5px;
@@ -272,8 +272,8 @@
 	padding: 0 11px;
 	margin-left: 8px;
 }
-.quantity-wrapper .plus,
-.quantity-wrapper .minus{
+.wccontent-wrapper.wcsingle .quantity-wrapper .plus,
+.wccontent-wrapper.wcsingle .quantity-wrapper .minus{
 	cursor: pointer;
 	display: inline-block;
 	vertical-align: baseline;
@@ -291,25 +291,25 @@
 	-webkit-transition: all .5s;
 	transition: all .5s;
 }
-.quantity-wrapper .plus {
+.wccontent-wrapper.wcsingle .quantity-wrapper .plus {
     right: 27px;
     top: 3px;
 	-ms-transition: all .5s;
 	-webkit-transition: all .5s;
 	transition: all .5s;
 }
-.quantity-wrapper .minus {
+.wccontent-wrapper.wcsingle .quantity-wrapper .minus {
 	right: 27px;
     bottom: 3px;
 	-ms-transition: all .5s;
 	-webkit-transition: all .5s;
 	transition: all .5s;
 }
-.quantity-wrapper .plus:hover,
-.quantity-wrapper .minus:hover {
+.wccontent-wrapper.wcsingle .quantity-wrapper .plus:hover,
+.wccontent-wrapper.wcsingle .quantity-wrapper .minus:hover {
     opacity: .6
 }
-.quantity-wrapper input[type="number"]{  
+.wccontent-wrapper.wcsingle .quantity-wrapper input[type="number"]{  
 	width: 12px;
 	border: none;
 	background: transparent;
@@ -323,42 +323,42 @@
 	letter-spacing: -0.2px;
 	color: #7B8CA8;
 }         
-.quantity-wrapper input[type=number]::-webkit-inner-spin-button, 
-.quantity-wrapper input[type=number]::-webkit-outer-spin-button { 
+.wccontent-wrapper.wcsingle .quantity-wrapper input[type=number]::-webkit-inner-spin-button, 
+.wccontent-wrapper.wcsingle .quantity-wrapper input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     margin: 0;
     opacity: 0;
 }
-.quantity-wrapper i.qnt-plus,
-.quantity-wrapper i.qnt-minus{
+.wccontent-wrapper.wcsingle .quantity-wrapper i.qnt-plus,
+.wccontent-wrapper.wcsingle .quantity-wrapper i.qnt-minus{
 	position: relative;
 	height: 100%
 }
 
-.quantity-wrapper i.qnt-plus:after{
+.wccontent-wrapper.wcsingle .quantity-wrapper i.qnt-plus:after{
 	content: "";
 	position: absolute;
 	left: 0;
 	top: 0;
-	background:url(../images/qnt-plus.svg);
+	background:url(../images/qnt-plus-single.svg);
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	width:24px; 
 	height:21px;
 }
 
-.quantity-wrapper i.qnt-minus:after{
+.wccontent-wrapper.wcsingle .quantity-wrapper i.qnt-minus:after{
 	content: "";
 	position: absolute;
 	left: 0;
 	bottom:0;
-	background:url(../images/qnt-minus.svg);
+	background:url(../images/qnt-minus-single.svg);
 	background-repeat: no-repeat;
 	background-size: 100% auto;
-	width:13px; 
-	height:4px;
+	width:24px; 
+	height:21px;
 }
 .wcoptioanl{
 	display: block;
@@ -753,36 +753,36 @@ color:red!important;
 	    background: url(../images/dot-line.svg);
 	    background-repeat: no-repeat;
 	}
-	.quantity-wrapper input[type="number"] {
+	.wccontent-wrapper.wcsingle .quantity-wrapper input[type="number"] {
 	    text-align: center !important;
 	}
-	.quantity-wrapper {
+	.wccontent-wrapper.wcsingle .quantity-wrapper {
 	    width: 48px;
 	    height: 50px;
 	    border-radius: 4px;
 	    padding: 0px 15px;
 	}
-	.quantity-wrapper .plus {
+	.wccontent-wrapper.wcsingle .quantity-wrapper .plus {
 	    right: -7px;
 	    top: -1px;
 	}
-	.quantity-wrapper .minus {
+	.wccontent-wrapper.wcsingle .quantity-wrapper .minus {
 	    right: -45px;
 	    bottom: -1px;
 	}
-	.quantity-wrapper i.qnt-plus::after {
+	.wccontent-wrapper.wcsingle .quantity-wrapper i.qnt-plus::after {
 	    background: url(../images/qnt-plus-xs.svg);
 	    background-repeat: no-repeat;
 	    width: 37px;
 	    height: 50px;
 	}
-	.quantity-wrapper i.qnt-minus::after {
+	.wccontent-wrapper.wcsingle .quantity-wrapper i.qnt-minus::after {
 	    background: url(../images/qnt-minus-xs.svg);
 	    background-repeat: no-repeat;
 	    width: 37px;
 	    height: 50px;
 	}
-	.quantity-wrapper .qty {
+	.wccontent-wrapper.wcsingle .quantity-wrapper .qty {
 	    padding-right: 0 !important;
 	}
 	.wccontent-wrapper.wcsingle {
@@ -850,19 +850,19 @@ color:red!important;
 	.quantity{
 	    width: 100%;
 	}
-	.quantity-wrapper {
+	.wccontent-wrapper.wcsingle .quantity-wrapper {
 	    position: relative;
 	    display: inline-block;
 	    padding: 0;
 	    margin-left: 0;
 	    margin-top: 20px;
 	}
-	.quantity-wrapper .minus {
+	.wccontent-wrapper.wcsingle .quantity-wrapper .minus {
 		right: auto;
 		bottom: -1px;
 		left: 97px;
 	}
-	.quantity-wrapper .plus {
+	.wccontent-wrapper.wcsingle .quantity-wrapper .plus {
 	    right: auto;
 	    top: -1px;
 	    left: 56px;
