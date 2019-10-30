@@ -430,10 +430,6 @@ Gallery design
 #news-details-page-controller{
 	padding-top: 35px;
 }
-#news-details-page-controller .default-page-con{
-	padding-bottom: 55px;
-	float: left;
-}
 #news-details-page-controller .blog-post-date-bdr{
 	position: absolute;
 	right: 0;
@@ -446,16 +442,22 @@ Gallery design
 .dft-share-link{
 	padding-top: 35px;
 }
-#news-details-page-controller .default-page-con{
-	position: relative;
-}
+
 #main-content{
 	position: relative;
 }
-#main-content .default-page-con-inner{
+.singlePagegap{
+	height: 120px;
+	width: 100%;
+}
+#news-details-page-controller .default-page-con{
 	position: relative;
 	padding-left: 110px;
 	padding-right: 110px;
+	padding-bottom: 0;
+}
+.single .footer-top-sec-wrp{
+	margin-top: 220px;
 }
 #main-content .sidebar {
     max-width: 110px;
@@ -464,6 +466,7 @@ Gallery design
     top: 220px;
     left: 0;
     float: left;
+    z-index: 99;
 }
 
 .dft-news-details-social-icon ul{
