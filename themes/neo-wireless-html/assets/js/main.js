@@ -262,7 +262,7 @@ $('.hdr-search button').on('click', function(){
 if (windowWidth > 991) {
   if( $('#sidebar').length ){
       $('#sidebar').stickySidebar({
-          topSpacing: 100,
+          topSpacing: 80,
           bottomSpacing: 60
       });
     }
