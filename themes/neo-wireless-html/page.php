@@ -54,7 +54,7 @@ while ( have_posts() ) :
                 foreach( $gallery_cn as $image ):
                 $imgsrc = cbv_get_image_src($image['ID'], 'dfpageg1');  
                 echo "<figure class='gallery-item'><div class='gallery-icon portrait'>";
-                if( $lightbox ) echo "<a href='{$image['url']}'>";
+                if( $lightbox ) echo "<a data-fancybox='gallery' href='{$image['url']}'>";
                     //echo '<div class="dfpagegalleryitem" style="background: url('.$imgsrc.');"></div>';
                     echo wp_get_attachment_image( $image['ID'], 'dfpageg1' );
                 if( $lightbox ) echo "</a>";
