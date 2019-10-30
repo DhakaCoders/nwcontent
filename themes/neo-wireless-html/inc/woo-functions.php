@@ -77,9 +77,18 @@ add_action('woocommerce_shop_loop_item_title', 'add_shorttext_below_title_loop',
 if (!function_exists('add_shorttext_below_title_loop')) {
 	function add_shorttext_below_title_loop() {
 		global $product, $woocommerce, $post;
+        $product_thumb = '';
+        $thumb_id = get_post_thumbnail_id($product->get_id());
+        if(!empty($thumb_id)){
+            $product_thumb = cbv_get_image_src($thumb_id, 'woocommerce_thumbnail');
+        }
+        
         $term_obj_list = get_the_terms( $product->get_id(), 'product_cat' );
   		$short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
-		echo '<div class="catalogue-image"><a href="'.get_permalink( $product->get_id() ).'">'.woocommerce_get_product_thumbnail().'</a></div>';
+		echo '<div class="catalogue-image"><a href="'.get_permalink( $product->get_id() ).'">';
+        echo '<div class="wcarchive-thumb" style="background:url('.$product_thumb.'); height:300px"></div>';
+
+        echo '</a></div>';
         if ( $term_obj_list && ! is_wp_error( $term_obj_list ) ) : 
           printf('<h5>%s</h5>', join(', ', wp_list_pluck($term_obj_list, 'name')));
         endif;
@@ -268,7 +277,7 @@ function get_product_gallery_video(){
 	$output .= '<div class="singlePage-vdo-wrp art-video"><div class="video-play-wrap"><div class="video-play-main">';
     $output .= '<a class="img-zoom" data-fancybox="article" href="https://www.youtube.com/watch?v=b4Yx9eHfsuc">
                 <i><img src="'.THEME_URI.'/assets/images/vplay.svg"></i>
-                <img alt="" src="'.THEME_URI.'/assets/images/video-g.png">
+                <div class="wcgvideo-thumbnail" style="background: url('.THEME_URI.'/assets/images/video-g.png); height: 360px"></div>
                 </a>';
      $output .= '</div></div></div>';
 	
@@ -291,9 +300,11 @@ function get_product_thumbnail_images(){
         $output .= __( '<h2>Gallery</h2>', 'woocommerce' );
 		$output .= '<ul>';
 		foreach ( $attachment_ids as $attachment_id ) {
-            $thumb_tag = cbv_get_image_tag($attachment_id, 'woocommerce_gallery_thumbnail');
+            $thumb_src = cbv_get_image_src($attachment_id, 'woocommerce_gallery_thumbnail');
 			$full_src = cbv_get_image_src($attachment_id);
-			$output .= '<li><a href="'.$full_src.'" data-fancybox="gallery">'.$thumb_tag.'</a></li>';
+            $output .= '<li><a href="'.$full_src.'" data-fancybox="gallery">';
+            $output .= '<div><div class="wcgallery-thumbnail" style="background: url('.$thumb_src.'); height: 152px"></div></div>';
+			$output .= '</a></li>';
 		}
 		$output .= '</ul>';
 	}
