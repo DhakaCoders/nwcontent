@@ -34,7 +34,7 @@ while ( have_posts() ) :
               echo '</div>';    
             }elseif( get_row_layout() == 'afbeelding_tekst' ){
               $fc_afbeelding = get_sub_field('fc_afbeelding');
-              $imgsrc = cbv_get_image_src($fc_afbeelding, 'full');
+              $imgsrc = cbv_get_image_src($fc_afbeelding, 'dfpageg1');
               $fc_tekst = get_sub_field('fc_tekst');
               $positie_afbeelding = get_sub_field('positie_afbeelding');
               $imgposcls = ( $positie_afbeelding == 'right' ) ? 'fl-dft-rgtimg-lftdes' : '';
@@ -52,9 +52,11 @@ while ( have_posts() ) :
               if( $gallery_cn ):
               echo "<div class='gallery-wrap clearfix'><div class='gallery gallery-columns-{$kolom}'>";
                 foreach( $gallery_cn as $image ):
+                $imgsrc = cbv_get_image_src($image['ID'], 'dfpageg1');  
                 echo "<figure class='gallery-item'><div class='gallery-icon portrait'>";
                 if( $lightbox ) echo "<a href='{$image['url']}'>";
-                    echo wp_get_attachment_image( $image['ID'], 'vgrid2' );
+                    //echo '<div class="dfpagegalleryitem" style="background: url('.$imgsrc.');"></div>';
+                    echo wp_get_attachment_image( $image['ID'], 'dfpageg1' );
                 if( $lightbox ) echo "</a>";
                 echo "</div></figure>";
                 endforeach;
@@ -122,8 +124,11 @@ while ( have_posts() ) :
                         echo '</div>';
                     endwhile;
 
-                echo '</div><div class="dft-2grd-img-content-separetor"></div></div>';
+                echo '</div></div>';
               endif; wp_reset_postdata();
+            }elseif( get_row_layout() == 'horizontal_rule' ){
+              $fc_horizontal_rule = get_sub_field('fc_horizontal_rule');
+              echo '<div class="dft-2grd-img-content-separetor" style="height:'.$fc_horizontal_rule.'px"></div>';
             }elseif( get_row_layout() == 'afbeelding' ){
               $fc_afbeelding = get_sub_field('fc_afbeelding');
               if( !empty( $fc_afbeelding ) ){

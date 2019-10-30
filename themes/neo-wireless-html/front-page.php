@@ -15,8 +15,8 @@ if($banner):
         <div class="col-sm-6">
           <div class="main-bnr-des">
            <?php 
-            if( !empty( $banner['title'] ) ) printf( '<span>%s</span>', $banner['title']); 
-            if( !empty( $banner['bold_title'] ) ) printf( '<strong>%s</strong>', $banner['bold_title']); 
+            if( !empty( $banner['subtitle'] ) ) printf( '<span>%s</span>', $banner['subtitle']); 
+            if( !empty( $banner['title'] ) ) printf( '<strong>%s</strong>', $banner['title']); 
             if( !empty( $banner['content'] ) ) echo wpautop($banner['content']);
           ?>
             <div class="main-bnr-des-btns">
@@ -59,17 +59,8 @@ if($banner):
   </div>    
 </section>
 <?php endif; ?>
-<div class="cookie-policy-wrp">
-   <div class="cookie-policy-dsc">
-     <h4>Cookie Policy</h4>
-     <p>Deze site maakt gebruik van cookies om uw surfervaring te verbeteren.</p>
-     <a href="#"> Meer Info</a>
-     <div class="cookie-btn">
-       <a href="#">Ok, Bedankt</a>
-     </div>
-   </div>
- </div>
 </section><!-- end of main-slider-sec-wrp -->
+
 <?php if($banner): if($posters){ ?>
 <section class="show-xs main-bnr-box-imgs-xs">
   <div class="container">

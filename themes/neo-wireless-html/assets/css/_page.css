@@ -127,16 +127,22 @@ h1.banner-page-title,
 	top: 30%;
 	z-index: 50;
 }
-.cookie-policy-dsc{
+.cookie-policy-dsc,
+#catapult-cookie-bar{
+	position: fixed;
+	right: 25px;
+	top: auto;
+	z-index: 50;
 	background: #66D6FF;
 	padding: 30px 30px;
 	color: #fff;
-	max-width: 345px;
-	width: 100%;
+	max-width: 345px!important;
+	width: 100%!important;
 	font-size: 16px;
 	text-align: center;
 }
-.cookie-policy-dsc h4{
+.cookie-policy-dsc h4,
+#catapult-cookie-bar h3{
 	margin: 0;
 	text-transform: uppercase;
 	margin-bottom: 15px;
@@ -144,7 +150,8 @@ h1.banner-page-title,
 	line-height: 26px;
 	font-weight: 800;
 }
-.cookie-policy-dsc > a {
+.cookie-policy-dsc > a,
+#catapult-cookie-bar a{
 	display: inline-block;
 	vertical-align: baseline;
 	text-decoration: none;
@@ -154,8 +161,12 @@ h1.banner-page-title,
 	font-size: 18px;
 	line-height: 20px;
 	position: relative;
+	display: table;
+	margin: 0 auto;
+	margin-top: 10px;
 }
-.cookie-policy-dsc > a:after{
+.cookie-policy-dsc > a:after,
+#catapult-cookie-bar a:after{
 	content: "";
 	position: absolute;
 	right: 0;
@@ -169,20 +180,25 @@ h1.banner-page-title,
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 }
-.cookie-policy-dsc > a:hover:after{
+.cookie-policy-dsc > a:hover:after,
+#catapult-cookie-bar a:hover:after{
 	right: -5px;
 }
-.cookie-btn {
+.cookie-btn,
+#catapult-cookie-bar button{
 	margin-top: 20px;
 }
-.cookie-btn a{
+.cookie-btn a,
+#catapult-cookie-bar button{
 	display: inline-block;
 	vertical-align: baseline;
 	text-decoration: none;
 	color: #fff;
 	font-weight: 600;
-	border:2px solid #fff;
-	padding: 12px 35px;
+	border:2px solid #fff!important;
+	padding: 12px 35px!important;
+	border-radius: 0!important;
+	background: transparent;
 	font-size: 16px;
 	line-height: 18px;
 	text-transform: uppercase;
@@ -190,7 +206,8 @@ h1.banner-page-title,
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 }
-.cookie-btn a:hover{
+.cookie-btn a:hover,
+#catapult-cookie-bar button:hover{
 	background-color: #ff5c26;
 	border-color: #ff5c26;
 }
