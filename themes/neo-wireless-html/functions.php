@@ -23,6 +23,8 @@ if( !function_exists('cbv_theme_setup') ){
 			add_theme_support('category-thumbnails');
 		}
 		add_image_size( 'srchgrid', 324, 206, true );
+		add_image_size( 'hmslgrid', 376, 240, true );
+		add_image_size( 'hmbbox', 480, 250, true );
 		
 
 		

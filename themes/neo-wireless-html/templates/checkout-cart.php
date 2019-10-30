@@ -74,15 +74,15 @@ foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 		</div>
 
 		</div>
-		<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
-
-					<?php do_action( 'woocommerce_cart_actions' ); ?>
-
-					<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); ?>
-	</form>
+	
 		<?php
 	}
-}
+}?>
+<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+
+<?php do_action( 'woocommerce_cart_actions' ); ?>
+
+<?php wp_nonce_field( 'woocommerce-cart', 'woocommerce-cart-nonce' ); 
 get_template_part( 'templates/checkout-cart-total', null );
-echo '</div>';
+echo '</div></form>';
 

@@ -36,7 +36,7 @@ if($banner):
         <?php if($posters): ?>
         <div class="col-sm-6 hide-xs">
           <div class="main-bnr-box-imgs">
-            <?php foreach($posters as $poster): $link3 = $poster['link'];?>
+            <?php foreach($posters as $poster): $link3 = $poster['link']; ?>
               <div class="main-bnr-img-bx-scale">
                 <a class="overlay-link" href="<?php echo $link3['url']; ?>"></a>
                 <div>
@@ -160,7 +160,7 @@ if( $proQuery->have_posts() ){
             while($proQuery->have_posts()): $proQuery->the_post(); 
             $gridImage = get_post_thumbnail_id(get_the_ID());
             if(!empty($gridImage)){
-              $refImgsrc = cbv_get_image_src($gridImage, 'full');
+              $refImgsrc = cbv_get_image_src($gridImage, 'hmslgrid');
             }else{
               $refImgsrc = '';
             }  
