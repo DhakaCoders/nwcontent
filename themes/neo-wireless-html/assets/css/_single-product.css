@@ -8,6 +8,19 @@
     width: 52%;
     clear: none;
 }
+.woocommerce div.product div.images.woocommerce-product-gallery .woocommerce-product-gallery__wrapper{
+    overflow: hidden;
+}
+.woocommerce div.product div.images.woocommerce-product-gallery img {
+    -ms-transition: all .5s ease;
+    -webkit-transition:  all .5s ease;
+    transition:  all .5s ease;
+}
+.woocommerce div.product div.images.woocommerce-product-gallery .woocommerce-product-gallery__wrapper:hover img {
+    -ms-transform: scale(1.08);
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+}
 .wccontent-wrapper.wcsingle{
 	padding-top: 112px;
 }
@@ -71,11 +84,20 @@
 	padding: 1px 10px 15px 25px;
 	font-weight: 400;
 	font-size: 16px;
-	line-height: 30px;
+	position: relative;
+    line-height: 24px !important;
 	color: #7B8CA8;
 }
 .wccontent-wrapper.wcsingle .wcdetails ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
     top: 6px;
+    background: url(../images/list-icon.svg);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 14px;
+    height: 14px;
 }
 .wccontent-wrapper.wcsingle .wcdetails .wcdetailsbtn{
 	position: absolute;
@@ -153,6 +175,7 @@
 .woocommerce-variation-price{
 	display: block;
 }
+.single_variation_wrap 
 .woocommerce div.product form.cart {
     margin-bottom: 47px!important;
 }
@@ -334,8 +357,8 @@
 	background:url(../images/qnt-minus.svg);
 	background-repeat: no-repeat;
 	background-size: 100% auto;
-	width:24px; 
-	height:21px;
+	width:13px; 
+	height:4px;
 }
 .wcoptioanl{
 	display: block;
@@ -604,7 +627,6 @@
     padding-bottom: 30px;
 }
 
-
 .obackorder-single {
     color: green;
     font-size: 22px;
@@ -613,6 +635,9 @@
 p.stock.available-on-backorder {
     display: none;
 }
+
+
+
 @media(max-width: 1399px){
 	.woocommerce div.product form.cart .variations tr:nth-child(1) {
 	    width: 42% !important;
@@ -657,8 +682,8 @@ p.stock.available-on-backorder {
 	    -webkit-transform: translateY(-50%);
 	    transform: translateY(-50%);
 	}
-	.woocommerce-variation-add-to-cart input[type="radio"]:checked + span {
-		color:#fff;
+	.woocommerce-variation-add-to-cart input[type=radio]:checked + label + span{
+		color: #fff;
 	}
 	.wccontent-wrapper.wcsingle .woocommerce-input-wrapper {
 	    width: 100%;
@@ -670,6 +695,14 @@ p.stock.available-on-backorder {
 	.custom_attribues_wrapper {
 	    margin-top: 20px;
 	}
+
+.wccontent-wrapper.wcsingle .woocommerce-input-wrapper:focus > span {
+color:red!important;
+}
+
+
+
+
 } 
 
 @media(max-width: 1199px){
