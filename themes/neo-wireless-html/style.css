@@ -18,12 +18,9 @@ Text Domain: neowireless
 .home-bnr-xs-nav-bar-controller.show-xs{
 	display: none!important;
 }
-
-
-
-
-
-
+.checkout-cart button[name="update_cart"]{
+	display: none;
+}
 /*contact*/
 .google-map-sec-wrp{
 	margin-top: 0;
