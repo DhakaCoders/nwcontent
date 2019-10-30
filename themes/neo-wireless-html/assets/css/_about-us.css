@@ -464,13 +464,17 @@
 	    margin-bottom: 20px;
 	}
 	.nw-about-content-sec {
-	    padding-top: 250px;
-	    padding-bottom: 100px;
+	    padding-top: 0px;
+	    padding-bottom: 60px;
+	    margin-top: 0px;
 	}
 	.nw-about-content-lft strong {
 	    font-size: 20px;
 	    line-height: 25px;
 	    margin-bottom: 15px;
+	}
+	.nw-team-sec-wrp .googleMapTringle {
+	    border-top: 0 !important;
 	}
 	.team-cel-no {
 	    padding-top: 15px;

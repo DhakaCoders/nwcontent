@@ -181,7 +181,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
 		                        echo '</div>';
 		                    endwhile;
 
-		                echo '</div><div class="dft-2grd-img-content-separetor"></div></div>';
+		                echo '</div></div> <div class="dft-2grd-img-content-separetor"></div>';
 		              endif; wp_reset_postdata();
 		            }elseif( get_row_layout() == 'afbeelding' ){
 		              $fc_afbeelding = get_sub_field('fc_afbeelding');
