@@ -117,6 +117,9 @@ a.xoo-cp-btn-vc.xcp-btn:hover{
 .woocommerce input.button{
 	background: #FF5C26;
 	color: #fff;
+		transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
 }
 
 @media(max-width: 1199px){
