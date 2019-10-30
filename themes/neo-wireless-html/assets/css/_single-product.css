@@ -572,6 +572,9 @@
 	width:100%;
 }
 .wccontent-wrapper.wcsingle .gellery-wrapper ul li a .wcgallery-thumbnail{
+	background-repeat: no-repeat!important;
+    background-size: cover!important;
+    background-position: center center!important;
 	-ms-transition: all .5s ease;
 	-webkit-transition: all .5s ease;
 	transition: all .5s ease;
