@@ -250,6 +250,7 @@ checkout-info-sec-wrp
     color: #43587B;
     line-height: 28px;
     text-align: left;
+    padding-left: 0 !important;
 }
 #wccheckout-wrapper .select2-container--default .select2-selection--single .select2-selection__arrow{
 	display: none;

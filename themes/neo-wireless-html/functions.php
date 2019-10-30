@@ -29,6 +29,7 @@ if( !function_exists('cbv_theme_setup') ){
 		add_image_size( 'introgird', 556, 474, true );
 		add_image_size( 'bloggrid', 556, 360, true );
 		add_image_size( 'pgprodgrid', 440, 280, true );
+		add_image_size( 'prodgallery', 222, 152, true );
 		
 
 		
