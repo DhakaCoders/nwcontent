@@ -196,14 +196,15 @@ footer-wrap
 .ftr-btm-rgt-con{
 	float: right;
 	width: 39%;
+	text-align: right;
 }
 .ftr-btm-rgt-con a{
-	display:block;
+	display:inline-block;
+	vertical-align: baseline;
 	text-decoration: none;
 	font-size: 14px;
 	line-height: 16px;
 	color: #7B8CA8;
-	text-align: right;
 	padding-top: 4px;
 }
 
@@ -220,12 +221,23 @@ footer-top-sec-wrp
 .footer-top-lft{
 	width: 50%;
 }
-.footer-top-rgt-bg,
-.footer-top-lft-bg{
+.footer-top-lft-bg,
+.footer-top-rgt-bg{
+	position: relative;
+	overflow: hidden;
+	min-height: 408px !important;
+}
+.footer-top-rgt-bg-img,
+.footer-top-lft-bg-img{
 	background-repeat: no-repeat !important;
 	background-size: cover !important;
 	background-position: center center !important;
-	min-height: 408px !important;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
 }
 .footer-top-lft{
 	padding-right: 5px;
@@ -242,6 +254,8 @@ footer-top-sec-wrp
     color: #fff;
     max-width: 700px;
     width: 100%;
+    z-index: 2;
+    position: relative;
 }
 .footer-top-dsc h2{
 	margin: 0;
@@ -475,10 +489,7 @@ footer-top-sec-wrp
 	}
 	.ftr-btm-rgt-con {
 	    width: 100%;
-	    float: none;
-	}
-	.ftr-btm-rgt-con a{
-		text-align: center;
+	    text-align: center;
 	}
 	.ftr-btm-menu p {
 	    font-size: 14px;
@@ -487,14 +498,22 @@ footer-top-sec-wrp
 	    float: none;
 	    text-align: center;
 	    margin-bottom: 25px;
+	    padding-left: 15px;
+	    padding-right: 15px;
 	}
 	.ftr-btm-menu ul {
-	    float: none;
-	    margin: 0 auto;
-	    padding: 0;
+		padding: 0;
+		text-align: center;
+		padding-left: 15px;
+		padding-right: 15px;
 	    list-style: none;
-	    display: table;
+	    float: none;
 	    margin-bottom: 35px;
+	}
+	.ftr-btm-menu ul li{
+		float: none;
+		display: inline-block;
+		vertical-align: baseline;
 	}
 	.ftr-btm-innr{
 		border-top: 3px solid #f4f7f9;
@@ -559,8 +578,11 @@ footer-top-sec-wrp
 		font-size: 33px;
 		line-height: 36px;
 	}
-	.footer-top-rgt, .footer-top-lft {
+	.footer-top-rgt, 
+	.footer-top-lft {
 	    width: 100%;
+	    padding-left: 5px;
+	    padding-right: 5px;
 	}
 	.footer-top-lft {
 	    margin-right: 0;

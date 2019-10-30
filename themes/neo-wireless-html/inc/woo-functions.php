@@ -77,9 +77,18 @@ add_action('woocommerce_shop_loop_item_title', 'add_shorttext_below_title_loop',
 if (!function_exists('add_shorttext_below_title_loop')) {
 	function add_shorttext_below_title_loop() {
 		global $product, $woocommerce, $post;
+        $product_thumb = '';
+        $thumb_id = get_post_thumbnail_id($product->get_id());
+        if(!empty($thumb_id)){
+            $product_thumb = cbv_get_image_src($thumb_id, 'woocommerce_thumbnail');
+        }
+        
         $term_obj_list = get_the_terms( $product->get_id(), 'product_cat' );
   		$short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
-		echo '<div class="catalogue-image"><a href="'.get_permalink( $product->get_id() ).'">'.woocommerce_get_product_thumbnail().'</a></div>';
+		echo '<div class="catalogue-image"><a href="'.get_permalink( $product->get_id() ).'">';
+        echo '<div class="wcarchive-thumb" style="background:url('.$product_thumb.'); height:300px"></div>';
+
+        echo '</a></div>';
         if ( $term_obj_list && ! is_wp_error( $term_obj_list ) ) : 
           printf('<h5>%s</h5>', join(', ', wp_list_pluck($term_obj_list, 'name')));
         endif;
@@ -268,7 +277,7 @@ function get_product_gallery_video(){
 	$output .= '<div class="singlePage-vdo-wrp art-video"><div class="video-play-wrap"><div class="video-play-main">';
     $output .= '<a class="img-zoom" data-fancybox="article" href="https://www.youtube.com/watch?v=b4Yx9eHfsuc">
                 <i><img src="'.THEME_URI.'/assets/images/vplay.svg"></i>
-                <img alt="" src="'.THEME_URI.'/assets/images/video-g.png">
+                <div class="wcgvideo-thumbnail" style="background: url('.THEME_URI.'/assets/images/video-g.png); height: 360px"></div>
                 </a>';
      $output .= '</div></div></div>';
 	
@@ -291,9 +300,11 @@ function get_product_thumbnail_images(){
         $output .= __( '<h2>Gallery</h2>', 'woocommerce' );
 		$output .= '<ul>';
 		foreach ( $attachment_ids as $attachment_id ) {
-            $thumb_tag = cbv_get_image_tag($attachment_id, 'woocommerce_gallery_thumbnail');
+            $thumb_src = cbv_get_image_src($attachment_id, 'woocommerce_gallery_thumbnail');
 			$full_src = cbv_get_image_src($attachment_id);
-			$output .= '<li><a href="'.$full_src.'" data-fancybox="gallery">'.$thumb_tag.'</a></li>';
+            $output .= '<li><a href="'.$full_src.'" data-fancybox="gallery">';
+            $output .= '<div><div class="wcgallery-thumbnail" style="background: url('.$thumb_src.'); height: 152px"></div></div>';
+			$output .= '</a></li>';
 		}
 		$output .= '</ul>';
 	}
@@ -333,6 +344,9 @@ function add_repair_price_option_to_single_product(){
 function product_option_custom_field(){
     global $product, $woocommerce;
 $wo_currency = get_woocommerce_currency_symbol();
+$wo_decimals = wc_get_price_decimals();
+$wo_separator = wc_get_price_thousand_separator();
+
 $active_price = (float) $product->get_price();
 
 $attributes = $product->get_attributes(); //get all attributes
@@ -341,8 +355,7 @@ $pa_capacity = get_the_terms( $product->get_id(), 'pa_capacity');
 $onlyAttr = array_diff_key($attributes, $attrVariation); //get attribues that are not used for variation
 $onlyAttrK = array_keys($onlyAttr); //keys -> pa_capacity, pa_color
 
-
-echo '<div class="custom_attribues_wrapper clearfix" data-currency="'.$wo_currency.'">';
+echo '<div class="custom_attribues_wrapper clearfix" data-currency="'.$wo_currency.'" data-decimals="'.$wo_decimals.'" data-separator="'.$wo_separator.'">';
 $j = 1;
 foreach ( $onlyAttrK as $onlyAttrKS ) {
     echo '<div class="hidden-field additionalPriceWrap">';
@@ -360,7 +373,7 @@ foreach ( $onlyAttrK as $onlyAttrKS ) {
         echo '<div class="woocommerce-input-wrapper">';
         echo '<input type="radio" id="optional-'.$i.$j.'" class="input-checkbox" data-label="'.$name.': + '.$wo_currency.$markup.'" name="'.$onlyAttrKS.'" value="'.$markup.'">';
         echo '<label for="optional-'.$i.$j.'" class="checkbox customCheckbox">'.$name.'</label>';
-        echo '<span>+ <span class="woocommerce-Price-currencySymbol">'.$wo_currency.'</span>'.$markup.'</span>';
+        echo '<span>+ '.wc_price($markup).'</span>';
         echo '</div>';
     $i ++; 
     }
@@ -378,8 +391,10 @@ echo '</div>';
     <script type="text/javascript">
     jQuery(function($) {
         var currency = $('.custom_attribues_wrapper').data('currency');
+        var decimals = $('.custom_attribues_wrapper').data('decimals');
+        var separator = $('.custom_attribues_wrapper').data('separator');
         $('.additionalPriceWrap input').on('change', function(){
-            var pp = 'span.price';
+            var pp = 'div.wcprice span.price';
             var addTotal = 0;
             var Labeltext = '';
             $('.additionalPriceWrap input').each(function(){
@@ -391,6 +406,11 @@ echo '</div>';
             console.log(Labeltext);
             var prRegPrice = parseInt($('#prPrice').val());
             var prTotal = prRegPrice + addTotal;
+
+
+            //var valueString="1500"; //can be 1500.0 or 1500.00 
+            var formatAmount=parseFloat(prTotal).toFixed(decimals);
+            prTotal= formatAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
 
             $('#additionalPrice').val(addTotal);
             $('#additionalLabel').val(Labeltext);

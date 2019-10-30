@@ -336,7 +336,8 @@ label.wpforms-field-label{
 	    padding-left: 32px;
 	    padding-bottom: 30px;
 	}
-	.contact-info a i {
+	.contact-info a i,
+	.contact-info a i svg{
 	    width: 24px;
 	    height: 24px;
 	}

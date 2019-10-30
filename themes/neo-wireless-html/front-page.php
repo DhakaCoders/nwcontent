@@ -37,13 +37,18 @@ if($banner):
         <div class="col-sm-6 hide-xs">
           <div class="main-bnr-box-imgs">
             <?php foreach($posters as $poster): $link3 = $poster['link'];?>
-            <div class="main-bnr-img-bx" style="background: url(<?php echo $poster['image']; ?>);">
-              <?php 
-                if( is_array( $link3 ) &&  !empty( $link3['url'] ) ){
-                  printf('<a href="%s" target="%s">%s<em><img src="'.THEME_URI.'/assets/images/white-link-arrow.svg"></em></a>', $link3['url'], $link3['target'], $link3['title']); 
-                }
-              ?>
-            </div>
+              <div class="main-bnr-img-bx-scale">
+                <a class="overlay-link" href="<?php echo $link3['url']; ?>"></a>
+                <div>
+                  <div class="main-bnr-img-bx" style="background: url(<?php echo $poster['image']; ?>);">
+                  </div>
+                  <?php 
+                      if( is_array( $link3 ) &&  !empty( $link3['url'] ) ){
+                        printf('<a href="%s" target="%s">%s<em><img src="'.THEME_URI.'/assets/images/white-link-arrow.svg"></em></a>', $link3['url'], $link3['target'], $link3['title']); 
+                      }
+                    ?>
+                </div>
+              </div>
             <?php endforeach; ?>
           </div>
             
@@ -54,17 +59,8 @@ if($banner):
   </div>    
 </section>
 <?php endif; ?>
-<div class="cookie-policy-wrp">
-   <div class="cookie-policy-dsc">
-     <h4>Cookie Policy</h4>
-     <p>Deze site maakt gebruik van cookies om uw surfervaring te verbeteren.</p>
-     <a href="#"> Meer Info</a>
-     <div class="cookie-btn">
-       <a href="#">Ok, Bedankt</a>
-     </div>
-   </div>
- </div>
 </section><!-- end of main-slider-sec-wrp -->
+
 <?php if($banner): if($posters){ ?>
 <section class="show-xs main-bnr-box-imgs-xs">
   <div class="container">
@@ -72,12 +68,17 @@ if($banner):
       <div class="col-sm-12">
         <div class="main-bnr-box-imgs">
           <?php foreach($posters as $poster): $link3 = $poster['link'];?>
-          <div class="main-bnr-img-bx" style="background: url(<?php echo $poster['image']; ?>);">
-            <?php 
-              if( is_array( $link3 ) &&  !empty( $link3['url'] ) ){
-                printf('<a href="%s" target="%s">%s<em><img src="'.THEME_URI.'/assets/images/white-link-arrow.svg"></em></a>', $link3['url'], $link3['target'], $link3['title']); 
-              }
-            ?>
+          <div class="main-bnr-img-bx-scale">
+            <a class="overlay-link" href="<?php echo $link3['url']; ?>"></a>
+            <div>
+              <div class="main-bnr-img-bx" style="background: url(<?php echo $poster['image']; ?>);">
+                </div>
+                <?php 
+                    if( is_array( $link3 ) &&  !empty( $link3['url'] ) ){
+                      printf('<a href="%s" target="%s">%s<em><img src="'.THEME_URI.'/assets/images/white-link-arrow.svg"></em></a>', $link3['url'], $link3['target'], $link3['title']); 
+                    }
+                  ?>
+            </div>
           </div>
           <?php endforeach; ?>
         </div>
@@ -168,6 +169,7 @@ if( $proQuery->have_posts() ){
             <div class="nw-product-slide-item">
               <div class="nw-product-slide-item-inr clearfix">
                 <div class="nw-product-slide-item-img" style="background: url(<?php echo $refImgsrc; ?>);">
+                  <a class="overlay-link" href="<?php the_permalink(); ?>"></a>
                 </div>
                 <div class="nw-product-slide-item-dsc">
                   <span><?php 
@@ -176,7 +178,7 @@ if( $proQuery->have_posts() ){
                     printf('%s', join(', ', wp_list_pluck($term_obj_list, 'name')));
                   endif;
                   ?></span>
-                  <h4><?php the_title(); ?></h4>
+                  <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                   <?php echo $short_description; ?>
                   <a href="<?php the_permalink(); ?>">More Info</a>
                 </div>
@@ -241,6 +243,51 @@ if($show_hide_howwhat){
     </div>
   </div>
 </section><!-- end of nw-content-sec-wrp -->
-<?php } 
-get_template_part('templates/footer', 'top');
-get_footer(); ?>
+<?php } ?>
+
+
+<?php
+$mounting = get_field('mounting', HOMEID);
+$wifi = get_field('wifi_sec', HOMEID);
+$show__hidemwifi = get_field('show__hidemwifi', HOMEID);
+if($show__hidemwifi){ 
+  $customClass = '';
+  //if(is_shop() OR is_product()) $customClass = ' wcftmargin';
+?>
+<section class="footer-top-sec-wrp<?php echo $customClass; ?> clearfix">
+   <div class="footer-top-lft">
+     <div class="footer-top-lft-bg">
+      <div class="footer-top-lft-bg-img" style="background: url(<?php echo $mounting['image']; ?>);"></div>
+       <div class="footer-top-dsc">
+        <?php 
+          if( !empty( $mounting['title'] ) ) printf( '<h2>%s</h2>', $mounting['title']); 
+          if( !empty( $mounting['content'] ) ) echo wpautop($mounting['content']);
+
+          $link7 = $mounting['link'];
+          if( is_array( $link7 ) &&  !empty( $link7['url'] ) ){
+            printf('<a href="%s" target="%s">%s</a>', $link7['url'], $link7['target'], $link7['title']); 
+          }
+        ?> 
+       </div>
+     </div>
+   </div>
+   <div class="footer-top-rgt">
+     <div class="footer-top-rgt-bg">
+      <div class="footer-top-rgt-bg-img" style="background: url(<?php echo $wifi['image']; ?>);"></div>
+       <div class="footer-top-dsc">
+        <?php 
+          if( !empty( $wifi['title'] ) ) printf( '<h2>%s</h2>', $wifi['title']); 
+          if( !empty( $wifi['content'] ) ) echo wpautop($wifi['content']);
+
+          $link8 = $wifi['link'];
+          if( is_array( $link8 ) &&  !empty( $link8['url'] ) ){
+            printf('<a href="%s" target="%s">%s</a>', $link8['url'], $link8['target'], $link8['title']); 
+          }
+        ?> 
+       </div>
+     </div>
+   </div>
+</section><!--end of footer-top-sec-wrp -->
+<?php } ?>
+
+<?php get_footer(); ?>
