@@ -66,16 +66,20 @@ if ($('.wcdetailsbtn').length) {
 
 
 
-//accordion
+//shop page side bar
 
 if (windowWidth <= 767) {
   if ($('.wpf_item').length){
+
+    $('.wpf_item:first-child').addClass('active');
+
     $('.wpf_item .wpf_item_name').on('click', function(){
       $(this).parent().siblings().removeClass('active');
       $(this).next('.wpf_item > ul').slideToggle();
       $(this).parent().siblings().find('.wpf_item > ul').slideUp();
       $(this).parent().toggleClass('active');
     });
+
   }
 }
 // http://codepen.io/norman_pixelkings/pen/NNbqgG
