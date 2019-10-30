@@ -272,7 +272,7 @@ nw-content-sec-wrp
 -------------------------
 */
 .nw-content-sec-wrp{
-	padding-bottom: 190px;
+	padding-bottom: 0;
 	position: relative;
 	overflow: hidden;
 	background-color: #f4f7f9;
@@ -958,7 +958,7 @@ Responsive css
 	.nw-product-slider-sec-wrp {
 	    padding-top: 35px;
 	}
-	
+
 
 
 }
