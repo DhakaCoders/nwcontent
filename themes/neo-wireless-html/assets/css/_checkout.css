@@ -26,6 +26,25 @@ checkout-info-sec-wrp
 	border-top: 2px solid #E1E7F0;
 	padding-top: 35px;
 	padding-bottom: 35px;
+	float: left;
+	width: 100%;
+}
+#wccheckout-wrapper .wccheckout-cart .button{
+	float: right;
+	margin-bottom:35px !important;
+	font-size:14px;
+	line-height: 16px;
+	background: #ff5c26;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 700;
+	text-transform: uppercase;
+	-ms-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+#wccheckout-wrapper .wccheckout-cart .button:hover{
+	background: #fc4103;
 }
 #wccheckout-wrapper .checkout-cart .product-thumbnail.checkoutimg{
     width: 27%;
@@ -46,7 +65,7 @@ checkout-info-sec-wrp
 	font-weight: 600 !important;
 	color: #43587B;
 	margin-top: -5px;
-	margin-bottom: 5px;
+	margin-bottom: 8px;
 }
 #wccheckout-wrapper .variation dt{
 	font-size: 16px;
@@ -70,8 +89,11 @@ checkout-info-sec-wrp
 	font-weight: 300;
 	margin-top: 2px;
 }
-#wccheckout-wrapper .cart_totals{
-	border-top: 4px solid #FFFFFF;
+#wccheckout-wrapper .cart_totals {
+    border-top: 4px solid #FFFFFF;
+    float: left;
+    width: 100%;
+    padding-top: 20px;
 }
 #wccheckout-wrapper .woocommerce table.shop_table {
     border: none;
@@ -285,7 +307,7 @@ checkout-info-sec-wrp
     position: absolute;
     left: 0px;
     top: 9px;
-    background: url(../images/qnt-minus.svg);
+    background: url(../images/checkout-minus.svg);
     background-repeat: no-repeat;
     background-size: 100% auto;
     width: 12px;
@@ -374,7 +396,9 @@ ul li {
 #wccheckout-wrapper .woocommerce-page table.shop_table_responsive tr:nth-child(2n) td{
 	background: transparent;
 }
-
+#wccheckout-wrapper .woocommerce-checkout-review-order{
+	padding-left: 30px;
+}
 
 /*
 ---------------------
@@ -384,6 +408,9 @@ ul li {
 @media(max-width: 1399px){
 	#wccheckout-wrapper .woocommerce-shipping-fields,
 	#wccheckout-wrapper .woocommerce-billing-fields{
+		padding-left: 0;
+	}
+	#wccheckout-wrapper .woocommerce-checkout-review-order{
 		padding-left: 0;
 	}
 	#wccheckout-wrapper .woocommerce-shipping-fields h3,
@@ -444,6 +471,10 @@ ul li {
 	#wccheckout-wrapper .checkout-cart .cartdetails {
 	    padding-left: 20px;
 	}
+	#wccheckout-wrapper .wrapper-quantity{
+		float: left;
+		width: 100%;
+	}
 }
 
 
@@ -481,6 +512,12 @@ ul li {
 	#wccheckout-wrapper .woocommerce-billing-fields h3:after{
 		background:url(../images/dotted-round-icon-xs.svg);
 		background-repeat: no-repeat;
+	}
+	#wccheckout-wrapper .wccheckout-cart .button{
+		margin-bottom: 20px !important;
+	}
+	#wccheckout-wrapper #payment{
+		margin-bottom: 70px;
 	}
 
 	
