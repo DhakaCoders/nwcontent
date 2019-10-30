@@ -37,13 +37,18 @@ if($banner):
         <div class="col-sm-6 hide-xs">
           <div class="main-bnr-box-imgs">
             <?php foreach($posters as $poster): $link3 = $poster['link'];?>
-            <div class="main-bnr-img-bx" style="background: url(<?php echo $poster['image']; ?>);">
-              <?php 
-                if( is_array( $link3 ) &&  !empty( $link3['url'] ) ){
-                  printf('<a href="%s" target="%s">%s<em><img src="'.THEME_URI.'/assets/images/white-link-arrow.svg"></em></a>', $link3['url'], $link3['target'], $link3['title']); 
-                }
-              ?>
-            </div>
+              <div class="main-bnr-img-bx-scale">
+                <a class="overlay-link" href="<?php echo $link3['url']; ?>"></a>
+                <div>
+                  <div class="main-bnr-img-bx" style="background: url(<?php echo $poster['image']; ?>);">
+                  </div>
+                  <?php 
+                      if( is_array( $link3 ) &&  !empty( $link3['url'] ) ){
+                        printf('<a href="%s" target="%s">%s<em><img src="'.THEME_URI.'/assets/images/white-link-arrow.svg"></em></a>', $link3['url'], $link3['target'], $link3['title']); 
+                      }
+                    ?>
+                </div>
+              </div>
             <?php endforeach; ?>
           </div>
             
@@ -63,12 +68,17 @@ if($banner):
       <div class="col-sm-12">
         <div class="main-bnr-box-imgs">
           <?php foreach($posters as $poster): $link3 = $poster['link'];?>
-          <div class="main-bnr-img-bx" style="background: url(<?php echo $poster['image']; ?>);">
-            <?php 
-              if( is_array( $link3 ) &&  !empty( $link3['url'] ) ){
-                printf('<a href="%s" target="%s">%s<em><img src="'.THEME_URI.'/assets/images/white-link-arrow.svg"></em></a>', $link3['url'], $link3['target'], $link3['title']); 
-              }
-            ?>
+          <div class="main-bnr-img-bx-scale">
+            <a class="overlay-link" href="<?php echo $link3['url']; ?>"></a>
+            <div>
+              <div class="main-bnr-img-bx" style="background: url(<?php echo $poster['image']; ?>);">
+                </div>
+                <?php 
+                    if( is_array( $link3 ) &&  !empty( $link3['url'] ) ){
+                      printf('<a href="%s" target="%s">%s<em><img src="'.THEME_URI.'/assets/images/white-link-arrow.svg"></em></a>', $link3['url'], $link3['target'], $link3['title']); 
+                    }
+                  ?>
+            </div>
           </div>
           <?php endforeach; ?>
         </div>
