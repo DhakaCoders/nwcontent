@@ -15,9 +15,9 @@ Text Domain: neowireless
 
 @import url('assets/css/main.css');
 
-.home-bnr-xs-nav-bar-controller.show-xs{
+/*.home-bnr-xs-nav-bar-controller.show-xs{
 	display: none!important;
-}
+}*/
 .checkout-cart button[name="update_cart"]{
 	display: none;
 }
