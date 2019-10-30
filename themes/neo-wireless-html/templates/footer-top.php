@@ -4,12 +4,19 @@ $wifi = get_field('wifi_sec', HOMEID);
 $show__hidemwifi = get_field('show__hidemwifi', HOMEID);
 if($show__hidemwifi){ 
   $customClass = '';
-  //if(is_shop() OR is_product()) $customClass = ' wcftmargin';
+  $mountposter = '';
+  if(!empty($mounting['image'])){
+    $mountposter = cbv_get_image_src($mounting['image'], 'fttopbox');
+  }
+  $wifiposter = '';
+  if(!empty($wifi['image'])){
+    $wifiposter = cbv_get_image_src($wifi['image'], 'fttopbox');
+  }
 ?>
 <section class="footer-top-sec-wrp<?php echo $customClass; ?> clearfix">
    <div class="footer-top-lft">
      <div class="footer-top-lft-bg">
-      <div class="footer-top-lft-bg-img" style="background: url(<?php echo $mounting['image']; ?>);"></div>
+      <div class="footer-top-lft-bg-img" style="background: url(<?php echo $mountposter; ?>);"></div>
        <div class="footer-top-dsc">
         <?php 
           if( !empty( $mounting['title'] ) ) printf( '<h2>%s</h2>', $mounting['title']); 
@@ -25,7 +32,7 @@ if($show__hidemwifi){
    </div>
    <div class="footer-top-rgt">
      <div class="footer-top-rgt-bg">
-      <div class="footer-top-rgt-bg-img" style="background: url(<?php echo $wifi['image']; ?>);"></div>
+      <div class="footer-top-rgt-bg-img" style="background: url(<?php echo $wifiposter; ?>);"></div>
        <div class="footer-top-dsc">
         <?php 
           if( !empty( $wifi['title'] ) ) printf( '<h2>%s</h2>', $wifi['title']); 

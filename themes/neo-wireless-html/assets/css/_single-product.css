@@ -173,7 +173,7 @@
     margin-top: 5px;
 }
 .wccontent-wrapper.wcsingle .woocommerce-variation-price{
-	display: none;
+	/*display: none;*/
 }
 .single_variation_wrap 
 .woocommerce div.product form.cart {

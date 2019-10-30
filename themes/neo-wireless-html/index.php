@@ -38,7 +38,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
 				<?php 
 	            while( have_posts() ): the_post();
 	            $postID = get_the_ID(); 
-	            $postImg = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), 'full' );
+	            $postImg = wp_get_attachment_image_src( get_post_thumbnail_id( $postID ), 'bloggrid' );
 	            if( is_array($postImg) && !empty( $postImg[0] ) ) $useIMG = $postImg[0]; else $useIMG = THEME_URI.'/assets/images/sb-blogdef2.jpg';
 	            ?>
               <li>
