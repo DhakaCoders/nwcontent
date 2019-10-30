@@ -215,11 +215,12 @@
 	text-align: center;
 	max-width: 910px;
 	margin: 0 auto;
-	padding-bottom: 12px;
+	padding-bottom: 13px;
 }
 .nw-team-sec-head h3{
 	font-weight: 600;
 	font-size: 36px;
+	margin-bottom: 16px;
 	text-align: center;
 	color: #43587B;
 	text-transform: capitalize;
@@ -240,8 +241,8 @@
     border-bottom: 3px solid #F4F7F9;
 }
 .nw-team-grd-con > ul{
-	margin-right: -11px;
-	margin-left: -11px;
+	margin-right: -12px;
+	margin-left: -12px;
 }
 .nw-team-grd-con > ul > li::after{
 	content: none;
@@ -249,7 +250,7 @@
 .nw-team-grd-con > ul > li{
 	width:25%;
 	float: left;
-	padding: 0 11px;
+	padding: 0 12px;
 	margin-bottom: 30px;
 }
 .nw-team-grd-con > ul > li:nth-child(4n+1){
@@ -305,6 +306,7 @@
 	font-size: 13px;
 	line-height: 15px;
 	text-transform: uppercase;
+	padding-bottom: 15px;
 	color: #02BEE8;	
 }
 .team-cel-no{
@@ -313,8 +315,9 @@
 	font-weight: 300;
 	font-size: 18px;
 	line-height: 24px;
-    margin-top: 40px;
+    padding-top: 23px;
     color: #43587B;
+    border-top: 1px solid #F4F7F9;
 }
 .team-cel-no i{
 	display: inline-block;
@@ -325,7 +328,7 @@
 .team-cel-no i{
 	display: inline-block;
 	position: absolute;
-	top:3px;
+	top:27px;
 	left: 0;
 }
 .team-cel-no a{
@@ -366,8 +369,7 @@
 	    padding-left: 25px;
 	    font-weight: 300;
 	    font-size: 13px;
-	    line-height: 24px;
-	    margin-top: 25px;
+    	padding-top: 23px;
 	}
 	.nw-about-content-rgt {
 	    float: right;
@@ -462,14 +464,24 @@
 	    margin-bottom: 20px;
 	}
 	.nw-about-content-sec {
-	    padding-top: 250px;
-	    padding-bottom: 100px;
+	    padding-top: 0px;
+	    padding-bottom: 60px;
+	    margin-top: 0px;
 	}
 	.nw-about-content-lft strong {
 	    font-size: 20px;
 	    line-height: 25px;
 	    margin-bottom: 15px;
 	}
+	.nw-team-sec-wrp .googleMapTringle {
+	    border-top: 0 !important;
+	}
+	.team-cel-no {
+	    padding-top: 15px;
+	}
+	.team-cel-no i {
+	    top: 18px;
+	}	
 }
 
 @media(max-width: 639px){
