@@ -105,7 +105,10 @@ a.xoo-cp-btn-vc.xcp-btn:hover{
 .woocommerce-message::before{
 	color: #FF5C26;
 }
-
+.cartpopup-variations .xoo-cp-variations .variation:last-of-type,
+.cartpopup-variations .xoo-cp-variations .variation dd{
+	display: block;
+}
 
 
 @media(max-width: 1199px){
