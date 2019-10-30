@@ -641,6 +641,9 @@
     font-size: 24px !important;
     padding-bottom: 30px;
 }
+.wccontent-wrapper.wcsingle .added_to_cart.wc-forward{
+	display: none;
+}
 
 .obackorder-single {
     color: green;
