@@ -237,7 +237,17 @@ input#ship-to-different-address-checkbox {
   	transform: translate(-50%, -50%);
   	z-index: 2
 }
+.nw-about-content-sec{
+	position: relative;
+	overflow: hidden;
+}
 
+.about-poligon-img{
+	min-height: 740px;
+	background-size: cover!important;
+	background-position: center center!important;
+	position: relative;
+}
 
 .google-map-sec-wrp{
 	max-width: 100%;
