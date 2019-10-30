@@ -8,7 +8,8 @@ if($show__hidemwifi){
 ?>
 <section class="footer-top-sec-wrp<?php echo $customClass; ?> clearfix">
    <div class="footer-top-lft">
-     <div class="footer-top-lft-bg" style="background: url(<?php echo $mounting['image']; ?>);">
+     <div class="footer-top-lft-bg">
+      <div class="footer-top-lft-bg-img" style="background: url(<?php echo $mounting['image']; ?>);"></div>
        <div class="footer-top-dsc">
         <?php 
           if( !empty( $mounting['title'] ) ) printf( '<h2>%s</h2>', $mounting['title']); 
@@ -23,7 +24,8 @@ if($show__hidemwifi){
      </div>
    </div>
    <div class="footer-top-rgt">
-     <div class="footer-top-rgt-bg" style="background: url(<?php echo $wifi['image']; ?>);">
+     <div class="footer-top-rgt-bg">
+      <div class="footer-top-rgt-bg-img" style="background: url(<?php echo $wifi['image']; ?>);"></div>
        <div class="footer-top-dsc">
         <?php 
           if( !empty( $wifi['title'] ) ) printf( '<h2>%s</h2>', $wifi['title']); 

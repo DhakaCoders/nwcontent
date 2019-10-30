@@ -8,7 +8,9 @@ a,input,img,textarea,button,
 .blog-post-grd-des a em,
 .dftPromoModuleSlider ul.slick-dots li,em,
 .dft-2grd-img-con-item-img,.blog-post-date-bdr,.hdr-cart-btn,svg,
-a.xcp-btn.xoo-cp-close,.main-bnr-img-bx{
+a.xcp-btn.xoo-cp-close,.main-bnr-img-bx,
+.footer-top-rgt-bg-img,
+.footer-top-lft-bg-img{
 	transition: all 0.5s ease;
 	-ms-transition: all 0.5s ease;
 	-webkit-transition: all 0.5s ease;
@@ -16,7 +18,9 @@ a.xcp-btn.xoo-cp-close,.main-bnr-img-bx{
 .woocommerce ul.products li.product:hover .catalogue-image a img,
 .nw-post-gird-innr:hover .nw-post-gird-img,
 .scale,.dft-2grd-img-con-item-col:hover .dft-2grd-img-con-item-img,
-.main-bnr-img-bx-scale:hover > div .main-bnr-img-bx{
+.main-bnr-img-bx-scale:hover > div .main-bnr-img-bx,
+.footer-top-lft-bg:hover .footer-top-lft-bg-img,
+.footer-top-rgt-bg:hover .footer-top-rgt-bg-img{
 	transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-webkit-transform: scale(1.1);
