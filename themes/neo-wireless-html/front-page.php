@@ -254,7 +254,8 @@ if($show__hidemwifi){
   $customClass = '';
   //if(is_shop() OR is_product()) $customClass = ' wcftmargin';
 ?>
-<section class="footer-top-sec-wrp<?php echo $customClass; ?> clearfix">
+<section class="footer-top-sec-wrp home-footer-top-sec-wrp <?php echo $customClass; ?> clearfix">
+  <div class="googleMapTringle" style="border-left: 2040px;"></div>
    <div class="footer-top-lft">
      <div class="footer-top-lft-bg">
       <div class="footer-top-lft-bg-img" style="background: url(<?php echo $mounting['image']; ?>);"></div>

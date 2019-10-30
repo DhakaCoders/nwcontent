@@ -295,16 +295,26 @@ input#ship-to-different-address-checkbox {
     z-index: 1;	
 }
 
+.footer-top-sec-wrp.home-footer-top-sec-wrp{
+	position: relative;
+	padding-top: 250px;
+	overflow: hidden;
+}
+.footer-top-sec-wrp.home-footer-top-sec-wrp .googleMapTringle{
+	border-top: 150px solid #F4F7F9!important;
+}
 
 
 @media(max-width: 1699px){
 	.top-skip-home{
-		border-top: 770px solid #fff!important;
+		border-top: 406px solid #fff!important;
 	}
 
 }
 @media(max-width: 1199px){
-
+	.top-skip-home {
+	    border-top: 345px solid #fff!important;
+	}
 
 }
 
