@@ -22,7 +22,7 @@ if( !function_exists('cbv_theme_setup') ){
 		if(function_exists('add_theme_support')) {
 			add_theme_support('category-thumbnails');
 		}
-		add_image_size( 'dfpageg1', 440, 320, true );
+		add_image_size( 'srchgrid', 324, 206, true );
 		
 
 		
@@ -107,18 +107,6 @@ add_post_type_support( 'page', 'excerpt' );
 
 add_filter('use_block_editor_for_post', '__return_false');
 
-
-function searchfilter($query) {
-    if (is_search() && is_admin() && $query->is_main_query() ) {
-        $query->set('post_type',array('post, product'));
-        $query->set( 'posts_per_page', '4' );
-    }
-return $query;
-}
- 
-add_filter('pre_get_posts','searchfilter');
-
-
 function get_custom_post_type_single_template($single_template) {
      global $post;
      if (is_search() && ! empty ( $_GET['s']) ) {
@@ -127,7 +115,7 @@ function get_custom_post_type_single_template($single_template) {
      return $single_template;
 }
 
-add_filter( "template_redirect", "get_custom_post_type_single_template" );
+//add_filter( "template_redirect", "get_custom_post_type_single_template" );
 
 
 function defer_parsing_of_js ( $url ) {

@@ -1,37 +1,26 @@
 <?php get_header(); 
 
-$searchResult = '';
+$searchResult = ''; $typeResult = '';
 if(isset($_GET['s']) && !empty($_GET['s'])) $searchResult = $_GET['s'];
+if(isset($_GET['type']) && !empty($_GET['type'])) $typeResult = $_GET['type'];
 $scrollId = '';
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-if($searchResult == 'products'){
+if($typeResult == 'products'){
   $proQuery = new WP_Query(array(
       'post_type' => 'product',
-      'posts_per_page'=> 5,
+      's' => esc_sql($searchResult),
+      'posts_per_page'=> 2,
       'order'=> 'DESC',
       'paged' => $paged
     ));
     $artQuery = new WP_Query();
     $scrollId = 'filterSearch';
-}elseif($searchResult == 'articles'){
+}elseif($typeResult == 'articles'){
     $proQuery = new WP_Query();
     $artQuery = new WP_Query(array(
       'post_type' => 'post',
-      'posts_per_page'=> 4,
-      'order'=> 'DESC',
-      'paged' => $paged
-    ));
-    $scrollId = 'filterSearch';
-}elseif($searchResult == 'all'){
-  $proQuery = new WP_Query(array(
-      'post_type' => 'product',
-      'posts_per_page'=> 4,
-      'order'=> 'DESC',
-      'paged' => $paged
-    ));
-    $artQuery = new WP_Query(array(
-      'post_type' => 'post',
-      'posts_per_page'=> 4,
+      's' => esc_sql($searchResult),
+      'posts_per_page'=> 2,
       'order'=> 'DESC',
       'paged' => $paged
     ));
@@ -40,17 +29,18 @@ if($searchResult == 'products'){
   $proQuery = new WP_Query(array(
       'post_type' => 'product',
       's' => esc_sql($searchResult),
-      'posts_per_page'=> 4,
+      'posts_per_page'=> 2,
       'order'=> 'DESC',
       'paged' => $paged
     ));
     $artQuery = new WP_Query(array(
       'post_type' => 'post',
       's' => esc_sql($searchResult),
-      'posts_per_page'=> 4,
+      'posts_per_page'=> 2,
       'order'=> 'DESC',
       'paged' => $paged
     ));
+    $scrollId = 'filterSearch';
 }
 
 $thisID = get_option('page_for_posts');
@@ -101,26 +91,27 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
             </div>
             <div class="radio-check-box-wrapper clearfix"> 
               <div class="radio-box-wrp">
-                <h2>Search Results</h2>
+                <?php _e( '<h2>Search Results</h2>', 'neowireless' ); ?>
                 <div class="radio-box-block"> 
                   <form id="allproductartical" action="">
+                    <input type="hidden" name="s" value="<?php echo get_search_query(); ?>">
                     <p>
-                      <input type="radio" id="test1" name="s" value="all" <?php echo ($searchResult == 'all')? 'checked': ''; ?>>
+                      <input type="radio" id="test1" name="type" value="all" <?php echo ($typeResult == 'all')? 'checked': ''; ?>>
                       <label for="test1">All</label>
                     </p>
                     <p>
-                      <input type="radio" id="test2" name="s" value="products" <?php echo ($searchResult == 'products')? 'checked': ''; ?>>
+                      <input type="radio" id="test2" name="type" value="products" <?php echo ($typeResult == 'products')? 'checked': ''; ?>>
                       <label for="test2">Products</label>
                     </p>
                     <p>
-                      <input type="radio" id="test3" name="s" value="articles" <?php echo ($searchResult == 'articles')? 'checked': ''; ?>>
+                      <input type="radio" id="test3" name="type" value="articles" <?php echo ($typeResult == 'articles')? 'checked': ''; ?>>
                       <label for="test3">Articles</label>
                     </p>                  
                   </form>
                 </div>             
               </div>
               <div class="check-box-wrp">
-                <h2>Search Filters</h2>         
+                <?php _e( '<h2>Search Filters</h2>', 'neowireless' ); ?>        
                 <div class="check-box-block"> 
                   <form>
                     <div class="form-group">
@@ -158,7 +149,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
             <div class="search-pagi-controller"> 
               <div class="search-pagi-main"> 
  
-                <?php
+            <?php
             if( $maxnum_pages > 1 ):
             global $wp_query;
             $big = 999999999; // need an unlikely integer
@@ -171,36 +162,34 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
               'show_all' => true,
               'prev_next' => false
             ) );
-            else:
-              echo '<div class="hasgap"></div>';
             endif; 
             ?>
-                <a class="search-prev-link" href="#">   
-                  <i>
+                <span class="search-prev-link">   
+                  <?php previous_posts_link( '<i>
                     <svg width="34" height="34" viewBox="0 0 34 34" fill="#8798B6;">
                       <use xlink:href="#search-prev-link-svg"></use>
                     </svg>                  
-                  </i>
-                </a>
-
-                <a class="search-next-link" href="#">
-                  <i>
+                  </i>' ); ?>
+                </span>
+                
+                <span class="search-next-link">
+                  <?php next_posts_link( '<i>
                     <svg width="34" height="34" viewBox="0 0 34 34" fill="#8798B6;">
                       <use xlink:href="#search-next-link-svg"></use>
                     </svg>                    
-                  </i>
-                </a>
+                  </i>', $maxnum_pages );?>
+                </span>
               </div>
             </div>
             <div class="search-result-controller"> 
               <?php if ( $proQuery->have_posts() ) :  ?>
               <div class="product-search-result-wrp">
-                <h2>Products</h2>
+                <?php _e( '<h2>Products</h2>', 'neowireless' ); ?>
                 <ul class="ulc"> 
                 <?php while ( $proQuery->have_posts() ) : $proQuery->the_post();
                     $gridImage = get_post_thumbnail_id(get_the_ID());
                     if(!empty($gridImage)){
-                      $pImgsrc = cbv_get_image_src($gridImage, 'full');
+                      $pImgsrc = cbv_get_image_src($gridImage, 'srchgrid');
                     }else{
                       $pImgsrc = '';
                     }   
@@ -211,10 +200,15 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
                         <a href="<?php the_permalink(); ?>" class="overlay-link"></a>
                       </div>
                       <div class="product-search-result-rgt matchHeightCol-search-grd">
-                        <span>Mounting Accessories</span>
+                        <span><?php 
+                        $term_obj_list = get_the_terms( get_the_ID(), 'product_cat' );
+                        if ( $term_obj_list && ! is_wp_error( $term_obj_list ) ) : 
+                          printf('%s', join(', ', wp_list_pluck($term_obj_list, 'name')));
+                        endif;
+                        ?></span>
                         <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                         <?php the_excerpt(); ?>
-                        <a href="<?php the_permalink(); ?>">More Info</a>
+                        <a href="<?php the_permalink(); ?>"><?php _e( 'More Info', 'neowireless' ); ?></a>
                       </div>
                     </div>
                   </li> 
@@ -225,12 +219,12 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
               </div>
               <?php endif; wp_reset_postdata(); if($artQuery->have_posts()): ?>
               <div class="article-search-result-wrp">
-                <h2>Articles</h2>
+                <?php _e( '<h2>Articles</h2>', 'neowireless' ); ?>
                 <ul class="ulc"> 
                   <?php while ( $artQuery->have_posts() ) : $artQuery->the_post();
                     $gridImage = get_post_thumbnail_id(get_the_ID());
                     if(!empty($gridImage)){
-                      $pImgsrc = cbv_get_image_src($gridImage, 'full');
+                      $pImgsrc = cbv_get_image_src($gridImage, 'srchgrid');
                     }else{
                       $pImgsrc = '';
                     }   
@@ -246,7 +240,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
                           <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>                          
                         </div>
                         <?php the_excerpt(); ?>
-                        <a href="<?php the_permalink(); ?>">Read More</a>
+                        <a href="<?php the_permalink(); ?>"><?php _e( 'Read More', 'neowireless' ); ?></a>
                         <div class="date"> 
                           <strong><?php echo get_the_date('d'); ?></strong>
                           <span><?php echo get_the_date('M'); ?></span>
@@ -261,34 +255,39 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
             </div>
             <div class="search-pagi-controller"> 
               <div class="search-pagi-main"> 
-                <ul class="ulc clearfix">
-                  <li>
-                    <span class="active">1</span>
-                  </li>
-                  <li>
-                    <a href="#">2</a>
-                  </li>
-                  <li>
-                    <a href="#">3</a>
-                  </li>
-                  <li>
-                    <a href="#">4</a>
-                  </li>
-                </ul>                
-                <a class="search-prev-link" href="#">   
-                  <i>
+                 
+              <?php
+              if( $maxnum_pages > 1 ):
+              global $wp_query;
+              $big = 999999999; // need an unlikely integer
+              echo paginate_links( array(
+                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                'format' => '?paged=%#%',
+                'current' => max( 1, get_query_var('paged') ),
+                'total' => $maxnum_pages,
+                'type'  => 'list',
+                'show_all' => true,
+                'prev_next' => false
+              ) );
+              endif; 
+
+              
+              ?>             
+                <span class="search-prev-link">   
+                  <?php previous_posts_link( '<i>
                     <svg width="34" height="34" viewBox="0 0 34 34" fill="#8798B6;">
                       <use xlink:href="#search-prev-link-svg"></use>
                     </svg>                  
-                  </i>
-                </a>
-                <a class="search-next-link" href="#">
-                  <i>
+                  </i>' ); ?>
+                </span>
+                
+                <span class="search-next-link">
+                  <?php next_posts_link( '<i>
                     <svg width="34" height="34" viewBox="0 0 34 34" fill="#8798B6;">
                       <use xlink:href="#search-next-link-svg"></use>
                     </svg>                    
-                  </i>
-                </a>
+                  </i>', $maxnum_pages );?>
+                </span>
               </div>
             </div>
             <?php else: ?>
