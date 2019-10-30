@@ -181,7 +181,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
 		                        echo '</div>';
 		                    endwhile;
 
-		                echo '</div><div class="dft-2grd-img-content-separetor"></div></div>';
+		                echo '</div></div> <div class="dft-2grd-img-content-separetor"></div>';
 		              endif; wp_reset_postdata();
 		            }elseif( get_row_layout() == 'afbeelding' ){
 		              $fc_afbeelding = get_sub_field('fc_afbeelding');
@@ -199,7 +199,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
 		        endwhile;
               	?>
               <div class="dft-share-link">
-<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=466258030197150" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=466258030197150" width="450" height="25" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
               </div>
             </div>
           </article>

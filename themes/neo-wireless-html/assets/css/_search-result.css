@@ -227,7 +227,6 @@
     font-weight: 600;
     text-transform: uppercase;
     color: #43587B;
-
 }
 .radio-box-block input[type="radio"]:checked + label,
 .radio-box-block input[type="radio"]:checked + label span{
@@ -287,10 +286,13 @@
 }
 .search-pagi-controller .search-pagi-main{
 	position: relative;
+  padding: 0 40px;
 }
 .search-pagi-controller .search-pagi-main ul{
 	display: table;
 	margin:0 auto;
+  padding: 0;
+  list-style:none;
 }
 .search-pagi-controller .search-pagi-main li{
 	font-weight: 600;
@@ -303,7 +305,7 @@
 .search-pagi-controller .search-pagi-main li:after{
 	content: none;
 }
-.search-pagi-controller .search-pagi-main li > span.active,
+.search-pagi-controller .search-pagi-main li > span.current,
 .search-pagi-controller .search-pagi-main li > a{
 	color: #7B8CA8;
 	position: relative;
@@ -311,10 +313,10 @@
 	padding: 30px 3px;
 }
 .search-pagi-controller .search-pagi-main li > a:hover,
-.search-pagi-controller .search-pagi-main li > span.active{
+.search-pagi-controller .search-pagi-main li > span.current{
 	color: #FF5C26;
 }
-.search-pagi-main li span.active:after{
+.search-pagi-main li > span.current:after{
 	content: "";
 	position: absolute;
 	bottom: 0;
@@ -324,29 +326,35 @@
 	width:100%;
 	background: #FF5C26; 
 }
-a.search-prev-link{
+.search-prev-link{
   display: inline-block;
   vertical-align: baseline;
   max-width: 35px;
   position: absolute;
   top:55%;
   left: 0;
+  -ms-transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-a.search-next-link{
+.search-next-link{
   display: inline-block;
   vertical-align: baseline;
   position: absolute;
   top:55%;
   right: 0;
+  -ms-transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-a.search-prev-link:hover,
-a.search-next-link:hover{
+.search-prev-link:hover,
+.search-next-link:hover{
   opacity: .5
 }
 

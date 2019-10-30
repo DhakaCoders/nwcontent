@@ -23,6 +23,7 @@
 }
 .wccontent-wrapper.wcsingle{
 	padding-top: 112px;
+	padding-bottom: 0;
 }
 .wccontent-wrapper.wcsingle h1.product_title{
 	font-weight: 700;
@@ -193,7 +194,7 @@
 	display: inline-block;
 	vertical-align: baseline;
 	color: #02BEE8;
-	padding: 0 30px;
+	padding-right: 30px;
 	font-weight: 600;
 	font-size: 14px;
 	line-height: 20px;
