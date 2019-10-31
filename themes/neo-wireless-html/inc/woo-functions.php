@@ -345,6 +345,14 @@ function add_repair_price_option_to_single_product(){
 
 function product_option_custom_field(){
     global $product, $woocommerce;
+
+// variation regular price
+if($product->is_type('variable')){
+    //$sale_price     =  $product->get_variation_sale_price( 'min', true );
+    $regular_price  =  $product->get_variation_regular_price( 'max', true );
+}
+
+
 $wo_currency = get_woocommerce_currency_symbol();
 $wo_decimals = wc_get_price_decimals();
 $wo_separator = wc_get_price_thousand_separator();
@@ -357,7 +365,7 @@ $pa_capacity = get_the_terms( $product->get_id(), 'pa_capacity');
 $onlyAttr = array_diff_key($attributes, $attrVariation); //get attribues that are not used for variation
 $onlyAttrK = array_keys($onlyAttr); //keys -> pa_capacity, pa_color
 
-echo '<div class="custom_attribues_wrapper clearfix" data-currency="'.$wo_currency.'" data-decimals="'.$wo_decimals.'" data-separator="'.$wo_separator.'">';
+echo '<div class="custom_attribues_wrapper clearfix" data-currency="'.$wo_currency.'" data-decimals="'.$wo_decimals.'" data-separator="'.$wo_separator.'" data-pvariation="'.$regular_price.'">';
 $j = 1;
 foreach ( $onlyAttrK as $onlyAttrKS ) {
     echo '<div class="hidden-field additionalPriceWrap">';
@@ -395,8 +403,10 @@ echo '</div>';
         var currency = $('.custom_attribues_wrapper').data('currency');
         var decimals = $('.custom_attribues_wrapper').data('decimals');
         var separator = $('.custom_attribues_wrapper').data('separator');
+        var pvariation = parseInt($('.custom_attribues_wrapper').data('pvariation'));
         $('.additionalPriceWrap input').on('change', function(){
             var pp = 'div.wcprice span.price';
+            var pvr = 'div.woocommerce-variation-price span.price';
             var addTotal = 0;
             var Labeltext = '';
             $('.additionalPriceWrap input').each(function(){
@@ -409,17 +419,23 @@ echo '</div>';
             var prRegPrice = parseInt($('#prPrice').val());
             var prTotal = prRegPrice + addTotal;
 
-
-            //var valueString="1500"; //can be 1500.0 or 1500.00 
-            var formatAmount=parseFloat(prTotal).toFixed(decimals);
-            prTotal= formatAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+            prTotal = formatPrice(prTotal, decimals, separator);
+            var prvTotal = formatPrice(addTotal + pvariation, decimals, separator);
+            
 
             $('#additionalPrice').val(addTotal);
             $('#additionalLabel').val(Labeltext);
             $(pp).html('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">'+currency+'</span>'+prTotal+'</span>');
+            $(pvr).html('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">'+currency+'</span>'+prvTotal+'</span>');
         });
 
     });
+
+    function formatPrice(pricetotal, decimals, separator){
+        //var valueString="1500"; //can be 1500.0 or 1500.00 
+        var formatAmount=parseFloat(pricetotal).toFixed(decimals);
+        return formatAmount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+    }
     </script>
     <?php
 }
