@@ -40,6 +40,11 @@
 .search-catalog .wcsearch button:hover{
 	border-color: #ff5c26;
 }
+.search-catalog .wcsearch button:hover{
+	border-color: #ff5c26;
+	background-color: #ff5c26 !important; 
+	background-image: url(../images/product-search-icon-hover.svg) !important;
+}
 .search-catalog .wccatalog{
 	float: right;
 }
