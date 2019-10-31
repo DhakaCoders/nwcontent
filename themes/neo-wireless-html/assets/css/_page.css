@@ -411,7 +411,7 @@ input#ship-to-different-address-checkbox {
 	    left: 0;
 	    right: 0;
 	    bottom: 0;
-	    z-index: 30;
+	    z-index: 40;
 	}
 	.xs-menu-btn-bar {
 	    padding: 25px 30px 20px;

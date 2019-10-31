@@ -891,7 +891,10 @@
   /* Product page sidebar */
 
   .wpf_form {
-      margin: 0 0 35px!important;
+      margin: 0 0 20px!important;
+  }
+  .woosidebar-left{
+    padding-bottom: 20px;
   }
   .wpf_item.wpf_item_wpf_cat,
   .wpf_item.wpf_item_pa_color,

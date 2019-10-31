@@ -311,17 +311,21 @@ class WPF_Public {
 	        }
 
             add_filter('post_class', array($this, 'post_classes'), 10, 1);
-            $sort_bar = !is_woocommerce() && (empty($form['data']['result']) || empty($form['data']['sort']));		
-            query_posts(apply_filters('wpf_query', $query_args));
-			
+            $sort_bar = !is_woocommerce() && (empty($form['data']['result']) || empty($form['data']['sort']));
+			$query_args = apply_filters('wpf_query', $query_args);
+            if(!empty($data['s'])){
+				$query_args['s'] = $data['s'];
+            }
+            query_posts($query_args);
             if ($sort_bar) {
                 global $wp_query;
                 $is_post_type_archive = $wp_query->is_post_type_archive;
                 $wp_query->is_post_type_archive = true;
             }
             if (WPF_Utils::is_ajax()) {
-                global $wp_filter;
+                global $wp_filter,$themify;
                 unset($wp_filter['woocommerce_archive_description']);
+				$themify->post_layout = themify_check( 'setting-products_layout' ) ? themify_get( 'setting-products_layout' ) : 'list-post';
             }
             ob_start();
             woocommerce_content();
@@ -354,19 +358,12 @@ class WPF_Public {
                 'is_paginated'=>1,
                 'meta_query' => array(),
                 'tax_query' => array(),
+                'post__not_in' => array(),
                 'posts_per_page' => !empty($data['posts_per_page']) ? (int) $data['posts_per_page'] : apply_filters('loop_shop_per_page', get_option('posts_per_page')),
                 'paged' => !empty($post['wpf_page']) ? intval($post['wpf_page']) : (is_front_page() ? get_query_var('page', 1) : get_query_var('paged', 1)),
             );
-            $this->pagination = $data['pagination_type'];
+			$this->pagination = $data['pagination_type'];
 			
-			if (!empty($data['out_of_stock'])) {
-				$query_args['meta_query'] = array( array(
-							'key'       => '_stock_status',
-							'value'     => 'outofstock',
-							'compare'   => 'NOT IN'
-						)
-					);
-			}
             if (!empty($data['pagination'])) {
                 remove_action('woocommerce_after_shop_loop', 'woocommerce_pagination', 10);
                 remove_action('woocommerce_before_shop_loop', 'woocommerce_pagination', 20);
@@ -392,6 +389,17 @@ class WPF_Public {
                 remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
                 $this->templates[] = 'loop/result-count.php';
             }
+			
+			if ( empty($query_args['orderby']) ){
+				$query_args['orderby'] = array( 'menu_order' => 'ASC' );
+			} else {
+				$temp = explode( ' ', $query_args['orderby']);
+				$temp_o = !empty($query_args['order']) ? $query_args['order'] : 'DESC';
+				$query_args['orderby'] = array( 'menu_order' => 'ASC' );
+				foreach ( $temp as $v) {
+					$query_args['orderby'][$v] = $temp_o;
+				}					
+			}
         }
         $args = array();
         foreach ($layout as $type => $item) {
@@ -422,9 +430,27 @@ class WPF_Public {
             }
         }
 
-		if ( $build && ! empty( $query_args['tax_query'] ) ) {
-			$query_args['tax_query']['relation'] = isset($data['tax_relation']) ? $data['tax_relation'] : 'AND';
-		}
+        if ( $build ) {
+			if ( ! empty( $query_args['tax_query'] ) ) {
+				$query_args['tax_query']['relation'] = isset($data['tax_relation']) ? $data['tax_relation'] : 'AND';
+			}
+
+			if ( ! empty( $data['out_of_stock'] ) ) {
+				$query_args['meta_query'] = array( array(
+					'key'       => '_stock_status',
+					'value'     => 'outofstock',
+					'compare'   => 'NOT IN'
+				    )
+				);
+				if ( !empty( $query_args['tax_query'] ) ) {
+					$this->filter_variable_outofstock_product( $query_args );
+				}
+			}
+
+			if ( !empty($query_args['post__not_in']) ) {
+				$query_args['post__not_in'] = array_unique($query_args['post__not_in']);
+			}
+        }
 
         return $build ? $query_args : $args;
     }
@@ -494,6 +520,89 @@ class WPF_Public {
         return $query_args;
     }
 
+
+	private function filter_variable_outofstock_product ( &$query_args ) {
+		global $wpdb;
+
+		$conditions = array();
+		$opt = !empty($query_args['tax_query']['relation']) ? strtoupper( $query_args['tax_query']['relation'] ) : 'AND';
+		$joins = array(); // for AND Operator only.
+
+		foreach ( $query_args['tax_query'] as $k => $tax_q ) {
+		    if ( strtolower($k) === 'relation' ) continue;
+			$meta_key = 'attribute_' . $tax_q['taxonomy'];
+			$value = $tax_q['terms'];
+
+			foreach ( $value as $k => $tmp ) {
+				$value[$k] = '"' . $tmp . '"';
+			}
+			$value = implode( ',', $value);
+			$temp = "(%s.meta_key = '$meta_key' AND %s.meta_value IN ($value))";
+
+			array_push( $conditions, $temp);
+        }
+
+		if ( count($conditions) > 1 ) {
+		    $i = 1;
+		    foreach ( $conditions as $k => $condition) {
+			    if ( $opt === 'AND' ) {
+			        if ($k === 0){
+				        $conditions[$k] = sprintf($condition, 'l', 'l');
+                    } else {
+				        $key = 'pa'.$i;
+				        $conditions[$k] = sprintf($condition, $key, $key);
+				        $i++;
+				        $temp = "LEFT JOIN `{$wpdb->postmeta}` AS ". $key ." ON ". $key .".post_id = l.post_id";
+				        array_push($joins,$temp);
+                    }
+                } else {
+				    $conditions[$k] = sprintf($condition, 'l', 'l');
+                }
+            }
+        } else {
+			$conditions[0] = sprintf($conditions[0], 'l', 'l');
+        }
+
+		$conditions = implode(' '. $opt .' ', $conditions);
+		$joins = implode( ' ', $joins);
+		$get_products = $wpdb->get_results("SELECT DISTINCT l.post_id, r.meta_value FROM `{$wpdb->postmeta}` AS l LEFT JOIN `{$wpdb->postmeta}` AS r ON r.post_id = l.post_id AND r.meta_key = '_stock_status' " . $joins . " WHERE " . $conditions, ARRAY_A);
+		if (!empty($get_products)) {
+			$instock = array();
+			$outofstock = array();
+			foreach ( $get_products as $p ) {
+				if ( !empty(  $p['meta_value'] ) ) {
+					if ( $p['meta_value'] === 'instock' ) array_push( $instock,  $p['post_id']);
+
+					if ( $p['meta_value'] === 'outofstock' ) array_push( $outofstock,  $p['post_id']);
+				}
+			}
+			$stock = array_merge( $instock, $outofstock);
+			$stock = array_unique($stock);
+			if ( !empty($stock) ) {
+				$get_products = $wpdb->get_results("SELECT `post_parent`, `ID` FROM `{$wpdb->posts}` WHERE `post_parent` <> 0 AND `post_status` = 'publish' AND `ID` IN (" . implode(',' , $stock). ")");
+				$n_outofstock = array();
+				$n_instock = array();
+				if (!empty($get_products)) {
+					foreach ( $get_products as $p ) {
+						if ( in_array( $p->ID, $instock ) ) array_push( $n_instock,  $p->post_parent);
+
+						if ( in_array( $p->ID, $outofstock ) ) array_push( $n_outofstock,  $p->post_parent);
+					}
+					unset($instock, $outofstock, $stock);
+					$n_instock = array_unique($n_instock);
+					$n_outofstock = array_unique($n_outofstock);
+					foreach ( $n_outofstock as $k => $s ) {
+						if ( in_array($s, $n_instock) ) unset( $n_outofstock[$k] );
+					}
+					foreach ( $query_args['post__not_in'] as $k => $s ) {
+						if ( in_array($s, $n_instock) ) unset( $query_args['post__not_in'][$k] );
+					}
+					$query_args['post__not_in'] = array_merge($query_args['post__not_in'], $n_outofstock);
+				}
+			}
+		}
+	}
+
     public function get_page_title($title) {
         if (!empty($_POST['wpf_page_id'])) {
             $p = get_post($_POST['wpf_page_id']);
@@ -527,6 +636,7 @@ class WPF_Public {
     private function set_order($order, &$query) {
 
         $_GET['orderby'] = $order;
+		
         switch ($order) {
             case 'rand' :
                 $query['orderby'] = 'rand';

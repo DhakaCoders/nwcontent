@@ -531,7 +531,8 @@ ul li {
 	#wccheckout-wrapper .woocommerce-billing-fields{
 		padding-left: 0;
 	}
-	#wccheckout-wrapper .woocommerce-checkout-review-order{
+	#wccheckout-wrapper .woocommerce-checkout-review-order,
+	.woocommerce-additional-fields{
 		padding-left: 0;
 	}
 	#wccheckout-wrapper .woocommerce-shipping-fields h3,
@@ -695,7 +696,8 @@ ul li {
 		clear: left;
 	}
 	#wccheckout-wrapper .woocommerce-shipping-fields__field-wrapper,
-	#wccheckout-wrapper .woocommerce-billing-fields__field-wrapper {
+	#wccheckout-wrapper .woocommerce-billing-fields__field-wrapper,
+	.woocommerce-additional-fields .woocommerce-additional-fields__field-wrapper{
 	    margin: 0;
 	}
 	.innerpage-con-wrap .woocommerce form .form-row {

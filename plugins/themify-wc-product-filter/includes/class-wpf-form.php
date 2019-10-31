@@ -675,6 +675,9 @@ class WPF_Form {
             <?php if ($is_result_page): ?>
                 <input type="hidden" value="" name="wpf_page" />
             <?php endif; ?>
+			<?php if (!empty($_GET['s'])): ?>
+                <input type="hidden" value="<?php echo sanitize_text_field($_GET['s']); ?>" name="s" />
+			<?php endif; ?>
             <div class="wpf_items_wrapper wpf_layout_<?php echo $template['data']['type'] ?><?php if ($is_group): ?> wpf_items_grouped<?php endif; ?>">
                 <?php foreach ($layout as $type => $module): ?>
                     <?php if (!empty($sort_cmb[$type])): ?>

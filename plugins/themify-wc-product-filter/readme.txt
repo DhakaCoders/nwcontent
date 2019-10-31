@@ -3,8 +3,8 @@ Contributors: themifyme
 Plugin Name: Themify - WooCommerce Product Filter
 Tags: builder, drag-and-drop, form-builder, drag-and-drop-builder, woocommerce, layout-builder, product, product-search, ajax-search, content, editor, content-builder, responsive, visual, visual-builder, wysiwyg, woocommerce-product-search, woocommerce-product-filter, ecommerce
 Requires at least: 4.5
-Tested up to: 5.2.2
-Stable tag: 1.2.0
+Tested up to: 5.2.4
+Stable tag: 1.2.1
 
 Increase sales and convert better with the Themify Product Filter plugin. This plugin help shoppers easily find products on their WooCommerce shop. It allows users to easily filter through products by price range, categories, attributes, tags, and much more. 
 

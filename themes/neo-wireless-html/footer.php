@@ -288,10 +288,7 @@
     </a>
     </div>
     <div class="nw-lang">
-      <ul class="ulc">
-        <li class="lag-active"><a href="#">EN </a></li>
-        <li><a href="#">ES</a></li>
-      </ul>
+      <?php cbv_languages_list(); ?>
     </div>
     <div class="xs-menu-btn-bar-popup">
       <div class="xs-menu-btn-bar clearfix">

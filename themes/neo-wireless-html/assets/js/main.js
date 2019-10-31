@@ -146,9 +146,9 @@ if( $('#googlemap').length ){
           mapTypeControl:false,
           scrollwheel: false,
 
-          zoomControl: false,
-          disableDefaultUI: true,
-          zoom:17,
+          //zoomControl: false,
+          //disableDefaultUI: true,
+          zoom:11,
           streetViewControl: false,
           rotateControl: false,
           mapTypeId:google.maps.MapTypeId.ROADMAP,
