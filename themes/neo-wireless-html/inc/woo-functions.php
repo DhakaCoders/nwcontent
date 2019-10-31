@@ -349,7 +349,7 @@ function product_option_custom_field(){
 // variation regular price
 if($product->is_type('variable')){
     //$sale_price     =  $product->get_variation_sale_price( 'min', true );
-    $regular_price  =  $product->get_variation_regular_price( 'max', true );
+    $regular_price  =  $product->get_variation_regular_price();
 }
 
 
@@ -400,13 +400,26 @@ echo '</div>';
     ?>
     <script type="text/javascript">
     jQuery(function($) {
+        var pp = 'div.wcprice span.price';
+        var pvr = '#wcvariation-price';
+        var pvariation = 0;
+
         var currency = $('.custom_attribues_wrapper').data('currency');
         var decimals = $('.custom_attribues_wrapper').data('decimals');
         var separator = $('.custom_attribues_wrapper').data('separator');
-        var pvariation = parseInt($('.custom_attribues_wrapper').data('pvariation'));
+        
+        pvariation = parseInt($('.custom_attribues_wrapper').data('pvariation'));
+        // when variation is found, do something
+        $('.variations_form').on( 'found_variation', function( event, variation ) {
+                pvariation = parseInt(variation['display_regular_price']); 
+                var addTotalV = parseInt($('#additionalPrice').val());
+                addTotalV = formatPrice(addTotalV + pvariation, decimals, separator);
+                $(pvr).html('<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">'+currency+'</span>'+addTotalV+'</span></span>');
+
+        });
+
+        //console.log(pvariation);
         $('.additionalPriceWrap input').on('change', function(){
-            var pp = 'div.wcprice span.price';
-            var pvr = 'div.woocommerce-variation-price span.price';
             var addTotal = 0;
             var Labeltext = '';
             $('.additionalPriceWrap input').each(function(){
@@ -426,7 +439,7 @@ echo '</div>';
             $('#additionalPrice').val(addTotal);
             $('#additionalLabel').val(Labeltext);
             $(pp).html('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">'+currency+'</span>'+prTotal+'</span>');
-            $(pvr).html('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">'+currency+'</span>'+prvTotal+'</span>');
+            $(pvr).html('<span class="price"><span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">'+currency+'</span>'+prvTotal+'</span></span>');
         });
 
     });

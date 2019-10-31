@@ -682,6 +682,12 @@ p.stock.available-on-backorder {
     background: #0cd1fd;
     color: #fff;
 }
+div#wcvariation-price {
+    padding-bottom: 20px;
+}
+.woocommerce-variation-price {
+    display: none;
+}
 @media(max-width: 1399px){
 	.woocommerce div.product form.cart .variations tr:nth-child(1) {
 	    width: 42% !important;
