@@ -123,10 +123,7 @@
             <div class="hdr-rgt clearfix hide-xs">
               <div class="hdr-topbar clearfix">
                 <div class="nw-lang">
-                  <ul class="ulc">
-                    <li class="lag-active"><a href="#">EN </a></li>
-                    <li><a href="#">ES</a></li>
-                  </ul>
+                  <?php cbv_languages_list(); ?>
                 </div>
                 <nav class="main-nav">
                   <?php 

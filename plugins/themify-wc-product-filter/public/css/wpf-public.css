@@ -161,7 +161,7 @@
     color: #5b6270;
     outline: none;
 }
-.wpf_items_wrapper .wpf_item ul {
+.wpf_form .wpf_items_wrapper .wpf_item ul {
     margin: 0;
     padding: 0;    
 }
@@ -251,7 +251,7 @@
 GRID & COLUMNS
 *************************************************************************************/
 
-.wpf_column_vertical li{
+.wpf_items_wrapper ul.wpf_column_vertical li{
     display: block;
     margin-bottom: .8em;
     
@@ -269,13 +269,35 @@ GRID & COLUMNS
     float: left;
     clear: none;
 }
-.wpf_column_3  li{
-    padding-right: 3.2%;
-    width: 33.2%;    
+.wpf_form .wpf_items_wrapper .wpf_column_3  li{
+    width: 30.4%;
+	margin-right: 3.2%;
+	vertical-align: top;
+	clear: none;
 }
-.wpf_column_2  li{
-    width: 50%;
-    padding-right: 3.2%;    
+.wpf_form .wpf_items_wrapper .wpf_column_2  li{
+    width: 47.8%;
+    margin-right: 3.2%;
+	vertical-align: top;
+	clear: none;
+}
+.wpf_items_wrapper ul.wpf_column_2 li,
+.wpf_items_wrapper ul.wpf_column_3 li {
+    position: relative;
+    margin-right: 1%;
+}
+.wpf_items_wrapper ul.wpf_column_2 li:nth-child(2n),
+.wpf_items_wrapper ul.wpf_column_3 li:nth-child(3n){
+    margin-right: 0;
+}
+.wpf_items_wrapper ul.wpf_column_2 li:nth-child(2n+1),
+.wpf_items_wrapper ul.wpf_column_3 li:nth-child(3n+1){
+	clear: left;
+}
+.wpf_column_2 .wpf_item_count {
+    position: absolute;
+    top: 5px;
+    margin-left: 3px;
 }
 
 /*
@@ -345,7 +367,7 @@ PRICE Tooltip
     height: 2px;
     background: rgba(0,0,0,.15);
     border: none;
-    margin: 2.5em .0 .8em 0;
+    margin: 2.5em 0 .8em 0;
 }
 .wpf_slider.ui-slider .ui-widget-header{
     background: #975dc3;

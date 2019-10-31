@@ -293,10 +293,11 @@ function cbv_languages_list(){
   if ( function_exists( 'icl_get_languages' ) ) {
     $languages = icl_get_languages('skip_missing=0&orderby=code');
     if(!empty($languages)){
-        echo '<div class="language">';
+        echo '<ul class="ulc">';
+        $languages = array_reverse($languages);
         foreach($languages as $l){
             if($l['active']) 
-              $activeCls = 'active';
+              $activeCls = 'lag-active"';
             else 
               $activeCls = '';
 /*            if($l['country_flag_url']){
@@ -305,14 +306,14 @@ function cbv_languages_list(){
                 echo '</a>';
             }*/
             if(!$l['active']) 
-              echo '<a class="'.$activeCls.'" href="'.$l['url'].'">'; 
+              echo '<li class="'.$activeCls.'"><a href="'.$l['url'].'">'; 
             else 
-              echo '<a class="'.$activeCls.'" href="javascript:void(0)">';
+              echo '<li class="'.$activeCls.'"><a href="javascript:void(0)">';
             
             echo icl_disp_language($l['language_code'], $l['language_code']);
-            echo '</a>';
+            echo '</a></li>';
         }
-        echo '</div>';
+        echo '</ul>';
     }
   }
 }

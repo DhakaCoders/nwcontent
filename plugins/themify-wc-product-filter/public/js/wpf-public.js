@@ -133,9 +133,10 @@
                 success: function (resp) {
                     if (resp) {
                         var scrollTo = $container,
-                            products=null;
+                            products=null,
+                            containerClass = $('.products', $container).attr('class');
                         $container.data('slug', $form.data('slug'));
-						$.event.trigger('wpf_ajax_before_replace');
+                        $.event.trigger('wpf_ajax_before_replace');
                         if (in_scroll) {
                             resp = $(resp);
                             products = resp.find('.product');
@@ -166,7 +167,7 @@
                                 }
                             productsContainer.imagesLoaded().always( function ( instance ) {
                                 var p = $( instance.elements[0] );
-                                p.addClass( 'masonry-done' );
+                                p.addClass( containerClass + ' masonry-done' );
                                 if ( products !== null ) {
                                     p.isotope( 'destroy' );
                                     products.addClass( 'wpf_transient_end_product' );
