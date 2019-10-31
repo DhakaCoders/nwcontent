@@ -5,12 +5,13 @@
 #wccart-wrapper table.shop_table thead tr {
 	border-bottom: 3px solid #E1E7F0;
 }
-#wccart-wrapper table.shop_table thead tr th{
-	font-size: 20px;
-	line-height: 20px;
-	font-weight: 600;
-	text-transform: uppercase;
-	text-align: left;
+#wccart-wrapper table.shop_table thead tr th {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 9px 20px;
 }
 #wccart-wrapper .product-thumbnail a{
 	display: block;
@@ -26,7 +27,7 @@
 }
 #wccart-wrapper table.shop_table thead tr td.product-thumbnail,
 #wccart-wrapper table.shop_table tbody tr td.product-thumbnail{
-	width: 18%!important;
+	width: 10%!important;
 }
 #wccart-wrapper table.shop_table thead tr td.product-name,
 #wccart-wrapper table.shop_table tbody tr td.product-name{
@@ -44,9 +45,10 @@
 #wccart-wrapper table.shop_table tbody tr td.product-subtotal{
 	width: 15%!important;
 }
-
+#wccart-wrapper table.shop_table td{
+	padding: 20px 20px;
+}
 #wccart-wrapper table.shop_table tbody tr td.product-name{
-	padding-top: 0;
 	text-align: left;
 }
 #wccart-wrapper table.shop_table tbody tr td.product-quantity{
@@ -54,16 +56,16 @@
 }
 
 #wccart-wrapper table.shop_table tbody tr td.product-name{
-	font-size: 18px;
+	font-size: 16px;
 }
 #wccart-wrapper table.shop_table tbody tr td.product-name a {
-    font-size: 25px;
+    font-size: 22px;
     color: #43587B;
     display: block;
 }
 #wccart-wrapper table.shop_table tbody tr td.product-price,
 #wccart-wrapper table.shop_table tbody tr td.product-subtotal{
-	font-size: 25px;
+    font-size: 22px;
     color: #43587B;
 }
 #wccart-wrapper table.shop_table tbody tr td.product-thumbnail{
@@ -85,8 +87,6 @@
 	display: none;
 }
 #wccart-wrapper tbody dl dt{
-	display: block;
-	width: 100%;
 	font-weight: 400;
 }
 

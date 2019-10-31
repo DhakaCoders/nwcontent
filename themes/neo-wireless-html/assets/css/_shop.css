@@ -28,15 +28,17 @@
 	top:14px;
 	width:44px;
 	height:44px;
-	background-color: inherit !important;
 	border: 2px solid #8798B6;
 	box-sizing: border-box;
 	border-radius: 8px;
-	background-image: url(../images/product-search-icon.svg) !important;
-	background-repeat: no-repeat;
-	background-size:18px 18px;
 	text-indent: -99999px;
-	background-position: left 11px top 10px
+	background: #fff url(../images/product-search-icon.svg) !important;
+	background-repeat: no-repeat!important;
+	background-size:18px 18px!important;
+	background-position: left 11px top 10px!important;
+}
+.search-catalog .wcsearch button:hover{
+	border-color: #ff5c26;
 }
 .search-catalog .wccatalog{
 	float: right;

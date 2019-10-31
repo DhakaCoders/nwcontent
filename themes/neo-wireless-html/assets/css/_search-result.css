@@ -527,7 +527,7 @@
 }
 .wpf_item .wpf_item_name {
   font-weight: 300!important;
-  font-size: 36px!important;
+  font-size: 30px!important;
   line-height: 30px!important;
   display: block!important;
   cursor: auto!important;
@@ -538,10 +538,12 @@
   margin-bottom: 30px!important;
   text-transform: capitalize!important;
 }
+.wpf_items_wrapper .wpf_item ul.wpf_links li{
+    padding-left: 23px!important;
+}
 .wpf_items_wrapper .wpf_item ul li {
     display: block!important;
     margin: 0!important;
-    padding-left: 23px!important;
     padding-bottom: 17px!important;
     font-weight: 600!important;
     font-size: 16px!important;
@@ -560,7 +562,7 @@
   display: inline-block;
   vertical-align: baseline;
 }
-.wpf_items_wrapper .wpf_item ul li:after {
+.wpf_items_wrapper .wpf_item ul.wpf_links li:after {
   content: "";
   position: absolute;
   left: 0;

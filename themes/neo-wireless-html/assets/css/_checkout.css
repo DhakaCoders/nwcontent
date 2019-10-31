@@ -71,11 +71,20 @@ checkout-info-sec-wrp
 	font-size: 16px;
 	line-height: 18px;
 	color: #7B8CA8;
-	margin-bottom: 15px;
+	margin-bottom: 0;
 }
 #wccheckout-wrapper .variation dd{
 	float: left;
-    margin-right: 10px;
+    margin-right: 0;
+}
+#wccheckout-wrapper .variation dt,
+#wccheckout-wrapper .variation dd{
+	display: inline-block;
+	margin: 0;
+	float: initial;
+}
+#wccheckout-wrapper .variation p{
+	margin: 0;
 }
 #wccheckout-wrapper .product-subtotal{
 	float: left;
@@ -143,7 +152,7 @@ checkout-info-sec-wrp
 	font-weight: 600;
 	color: #43587B;
 	position: relative;
-	padding-bottom:15px;
+	padding-bottom: 20px;
 	margin-bottom: 30px;
 }
 #wccheckout-wrapper .woocommerce-shipping-fields h3:after,
@@ -161,8 +170,7 @@ checkout-info-sec-wrp
 #wccheckout-wrapper .woocommerce-shipping-fields h3 label{
 	margin: 0;
 }
-#wccheckout-wrapper .woocommerce-shipping-fields .woocommerce-billing-fields__field-wrapper p label,
-#wccheckout-wrapper .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper p label{
+#wccheckout-wrapper .woocommerce-checkout p label{
 	font-size: 16px !important;
 	line-height: 18px !important;
 	font-weight: 600;
@@ -204,15 +212,27 @@ checkout-info-sec-wrp
 	width: 100%;
 	float: none !important;
 }
+#wccheckout-wrapper .woocommerce-shipping-fields__field-wrapper,
+#wccheckout-wrapper .woocommerce-billing-fields__field-wrapper{
+	margin: 0 -12px;
+}
+#wccheckout-wrapper .woocommerce form .form-row {
+    padding:0 12px 10px;
+    margin: 0;
+    width: 100%;
+    float: left;
+}
 #wccheckout-wrapper .woocommerce form .form-row-first,
 #wccheckout-wrapper .woocommerce form .form-row-last,
 #wccheckout-wrapper .woocommerce-page form .form-row-first,
-#wccheckout-wrapper .woocommerce-page form .form-row-last {
+#wccheckout-wrapper .woocommerce-page form .form-row-last,
+#wccheckout-wrapper .woocommerce-billing-fields p#billing_email_field{
     width: 50%;
 }
 #wccheckout-wrapper .woocommerce-shipping-fields p#shipping_city_field,
 #wccheckout-wrapper .woocommerce-billing-fields p#billing_city_field,
-#wccheckout-wrapper .woocommerce-billing-fields p.form-row-first{
+#wccheckout-wrapper .woocommerce-billing-fields p.form-row-first,
+#wccheckout-wrapper .woocommerce-billing-fields p#billing_email_field{
 	float: left !important;
 }
 #wccheckout-wrapper .woocommerce-shipping-fields p#shipping_postcode_field,
@@ -224,14 +244,6 @@ checkout-info-sec-wrp
 #wccheckout-wrapper .woocommerce form .form-row-wide,
 #wccheckout-wrapper .woocommerce-page form .form-row-wide{
 	clear: none;
-}
-#wccheckout-wrapper .woocommerce-shipping-fields__field-wrapper,
-#wccheckout-wrapper .woocommerce-billing-fields__field-wrapper{
-	margin: 0 -12px;
-}
-#wccheckout-wrapper .woocommerce form .form-row {
-    padding:0 12px 10px;
-    margin: 0;
 }
 #wccheckout-wrapper .select2-container .select2-selection--single {
     box-sizing: border-box;
@@ -475,6 +487,39 @@ ul li {
 	font-weight: 300;
 }
 
+#wccheckout-wrapper{
+	padding-bottom: 120px;
+}
+.woocommerce-additional-fields {
+    padding-left: 30px;
+    padding-top: 25px;
+}
+.woocommerce-additional-fields .woocommerce-additional-fields__field-wrapper{
+	margin: 0 -12px;
+}
+#customer_details:before,
+#customer_details:after,
+#customer_details > div:before,
+#customer_details > div:after {
+  content: "";
+  display: table;
+} 
+#customer_details:after,
+#customer_details > div:after{
+  clear: both;
+}
+#wccheckout-wrapper .woocommerce .wccheckout-cart table.shop_table tbody tr.order-total th{
+	font-style: normal;
+	font-weight: 300;
+	font-size: 24px;
+	line-height: 36px;	
+}
+#wccheckout-wrapper .woocommerce .wccheckout-cart table.shop_table tbody tr.order-total th + td{
+	line-height: 40px;	
+}
+#wccheckout-wrapper .wrapper-quantity{
+	overflow: hidden;
+}
 /*
 ---------------------
  Responsive css
