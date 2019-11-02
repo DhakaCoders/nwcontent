@@ -488,7 +488,7 @@ nw-post-grid-sec-wrp
 	transition: all 0.5s;
 }
 .nw-post-btn a:hover{
-	background-color: #394a67;
+	background-color: #2b3951;
 }
 .main-banner{
 	padding: 200px 0 60px;
@@ -562,7 +562,10 @@ nw-post-grid-sec-wrp
 	background: #FF5C26;
 	border-color: #FF5C26;
 }
-
+.main-bnr-des-btns a:last-child:hover{
+	background: #c74115;
+	border-color: #c74115;	
+}
 .main-bnr-box-imgs{
 	max-width: 480px;
 	float: right;

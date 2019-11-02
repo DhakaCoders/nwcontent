@@ -635,14 +635,31 @@ ul li {
 		background:url(../images/dotted-round-icon-xs.svg);
 		background-repeat: no-repeat;
 	}
-	#wccheckout-wrapper .wccheckout-cart .button{
+	#wccheckout-wrapper .wccheckout-cart .button,
+	.checkout-cart button[name="update_cart"]{
+		margin-top: 40px !important;
 		margin-bottom: 20px !important;
 	}
 	#wccheckout-wrapper #payment{
 		margin-bottom: 70px;
 	}
 
-	
+	#wccart-wrapper tbody tr td span{
+		float: none!important;
+	}
+	.cart-collaterals tbody tr {
+	    display: table!important;
+	    width: 100%;
+	}
+	.cart-collaterals tbody th,
+	.cart-collaterals tbody td{
+		display: table-cell!important;
+	}
+	.cart-collaterals tbody tr th,
+	.cart-collaterals tbody tr td{
+		padding: 20px 20px!important;
+		border-top: 1px solid #ebe9eb!important;
+	}
 
 
 }
@@ -671,6 +688,7 @@ ul li {
 	    padding-top: 20px;
 	}
 	#wccheckout-wrapper .checkout-cart .product-thumbnail.checkoutimg a img{
+		max-width: 150px;
 		width: 100%;
 	}
 	#wccheckout-wrapper .woocommerce table.shop_table{

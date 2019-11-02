@@ -492,6 +492,14 @@ span.xcp-plus{
 .woocommerce-page ul.products li.product .out-of-stock {
     color: #fff;
 }
+.cartpopup-quantity .xoo-cp-qtybox{
+	width: 80px;
+}
+.cartpopup-quantity .xoo-cp-qtybox span.xcp-plus{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
 /*
 ---------------------
  Responsive Css
@@ -624,8 +632,8 @@ span.xcp-plus{
 		margin-bottom: 10px;
 	}
 	.products h5 {
-	    margin-top: 8px;
-	    margin-bottom: 10px;
+	    margin-top: 15px;
+	    margin-bottom: 12px;
 	}
 	.xoo-cp-btns {
 	    max-width: 100%;
