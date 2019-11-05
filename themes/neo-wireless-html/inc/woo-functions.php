@@ -428,7 +428,7 @@ echo '</div>';
                     Labeltext += $(this).data('label')+', ';
                 }
             });
-            console.log(Labeltext);
+            //console.log(Labeltext);
             var prRegPrice = parseInt($('#prPrice').val());
             var prTotal = prRegPrice + addTotal;
 

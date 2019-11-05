@@ -1,2 +1,14 @@
 2019-10-31T11:41:19+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in E:\XamppServer\htdocs\2019\10\neowireless\wp-includes\Requests\Transport\cURL.php on line 441
 
+2019-10-31T15:50:43+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\advanced-custom-fields-pro\includes\fields\class-acf-field-post_object.php on line 3
+
+2019-10-31T15:50:43+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\advanced-custom-fields-pro\includes\fields\class-acf-field-page_link.php on line 3
+
+2019-10-31T15:50:43+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\advanced-custom-fields-pro\includes\fields\class-acf-field-page_link.php on line 3
+
+2019-10-31T15:50:43+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\advanced-custom-fields-pro\includes\fields\class-acf-field-page_link.php on line 3
+
+2019-10-31T15:50:43+00:00 CRITICAL Maximum execution time of 30 seconds exceeded in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\plugins\advanced-custom-fields-pro\includes\fields\class-acf-field-page_link.php on line 3
+
+2019-10-31T16:04:40+00:00 CRITICAL syntax error, unexpected '}' in E:\XamppServer\htdocs\2019\10\neowireless\nwcontent\themes\neo-wireless-html\search.php on line 157
+

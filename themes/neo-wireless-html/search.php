@@ -43,6 +43,18 @@ if($typeResult == 'products'){
     $scrollId = 'filterSearch';
 }
 
+    $pcountQuery = new WP_Query(array(
+      'post_type' => 'product',
+      's' => esc_sql($searchResult),
+      'posts_per_page'=> -1
+    ));
+    $acountQuery = new WP_Query(array(
+      'post_type' => 'post',
+      's' => esc_sql($searchResult),
+      'posts_per_page'=> -1
+    ));
+
+
 $thisID = get_option('page_for_posts');
 $standaardbanner = get_field('bannerafbeelding', $thisID);
 ?>
@@ -110,7 +122,7 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
                   </form>
                 </div>             
               </div>
-              <div class="check-box-wrp">
+<!--               <div class="check-box-wrp">
                 <?php _e( '<h2>Search Filters</h2>', 'neowireless' ); ?>        
                 <div class="check-box-block"> 
                   <form>
@@ -128,19 +140,24 @@ $standaardbanner = get_field('bannerafbeelding', $thisID);
                     </div>
                   </form>
                 </div> 
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="search-result-rgt-main matchHeightCol"> 
             <?php
              if ( $proQuery->have_posts() OR $artQuery->have_posts()) : 
-              $productCount = $proQuery->found_posts;
-              $postCount = $artQuery->found_posts;
+              $productCount = $pcountQuery->found_posts;
+              $postCount = $acountQuery->found_posts;
               $totalCount = 0;
               if(!empty($productCount) OR !empty($postCount)){
                 $totalCount = $productCount + $postCount;
               }
-              $maxnum_pages = $proQuery->max_num_pages + $artQuery->max_num_pages;
+              if($proQuery->max_num_pages > $artQuery->max_num_pages){
+                $maxnum_pages = $proQuery->max_num_pages;
+              }else{
+                $maxnum_pages = $artQuery->max_num_pages;
+              }
+              
 
             ?>
             <div class="search-result-rgt-head" id="<?php echo $scrollId; ?>"> 
