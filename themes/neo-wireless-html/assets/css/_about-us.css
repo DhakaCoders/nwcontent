@@ -268,28 +268,6 @@
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
 }
-/*.nw-team-member:after{
-	content: "";
-	position: absolute;
-	top:0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: #00000070;
-	opacity: 0;
-    -ms-transition: all .5s ease;
-    -webkit-transition: all .5s ease;
-    transition: all .5s ease;
-}
-.nw-team-grd:hover .nw-team-member{
-	-ms-transform: scale(1.1);
-	-webkit-transform: scale(1.1);
-	-o-transform: scale(1.1);	
-	transform: scale(1.1);
-}
-.nw-team-grd:hover .nw-team-member:after{
-	opacity: 1
-}*/
 .nw-team-member-des h3{
 	font-weight: 600;
 	line-height: 24px;
@@ -342,18 +320,6 @@
 .team-cel-no i svg{
 	fill: #43587B!important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
